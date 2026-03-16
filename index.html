@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>可转债综合评分排名 | 2026-03-16</title>
+<meta name="description" content="基于价格、溢价率、评级、行业逻辑四维评分的可转债筛选排名，数据截止2026-03-16">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif; background:#f0f2f5; color:#333; }
+  
+  .header { background:linear-gradient(135deg,#1a237e 0%,#0d47a1 50%,#01579b 100%); color:#fff; padding:32px 24px 28px; }
+  .header h1 { font-size:24px; margin-bottom:8px; letter-spacing:0.5px; }
+  .header .subtitle { font-size:13px; opacity:0.85; line-height:1.6; }
+  .meta { display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; font-size:12px; }
+  .meta span { background:rgba(255,255,255,0.18); padding:4px 12px; border-radius:20px; backdrop-filter:blur(4px); }
+
+  .disclaimer-bar { background:#fff3cd; border-bottom:2px solid #ffc107; padding:10px 24px; font-size:12px; color:#856404; text-align:center; }
+
+  .container { max-width:1440px; margin:0 auto; padding:20px 16px; }
+  
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin-bottom:24px; }
+  .stat { background:#fff; border-radius:12px; padding:16px 12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+  .stat-val { font-size:26px; font-weight:bold; color:#1565c0; }
+  .stat-lbl { font-size:11px; color:#888; margin-top:4px; }
+
+  .section-title { font-size:17px; font-weight:bold; margin:24px 0 12px; color:#1a237e; border-left:4px solid #1a237e; padding-left:12px; }
+  
+  .cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:14px; margin-bottom:32px; }
+  .card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.08); transition:transform 0.2s,box-shadow 0.2s; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.12); }
+  .card-header { padding:14px 16px; }
+  .card-rank { font-size:12px; color:#888; margin-right:6px; }
+  .card-bond { font-size:16px; font-weight:bold; color:#1a237e; margin-right:6px; }
+  .card-stock { font-size:12px; color:#666; }
+  .card-body { padding:12px 16px 16px; }
+  .card-tags { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  .card-logic { font-size:13px; color:#444; line-height:1.5; margin-bottom:12px; padding:8px 10px; background:#f8f9fa; border-radius:6px; }
+  .card-metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .metric { text-align:center; padding:7px 4px; background:#f8f9fa; border-radius:6px; }
+  .metric-val { font-size:14px; font-weight:bold; color:#333; }
+  .metric-lbl { font-size:10px; color:#888; margin-top:2px; }
+
+  .table-wrap { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.08); overflow-x:auto; margin-bottom:24px; }
+  table { width:100%; border-collapse:collapse; font-size:13px; min-width:900px; }
+  thead th { background:#1a237e; color:#fff; padding:11px 9px; text-align:center; white-space:nowrap; font-size:12px; position:sticky; top:0; z-index:1; }
+  tbody td { padding:9px 9px; text-align:center; border-bottom:1px solid #eee; vertical-align:middle; }
+  tbody tr:hover { background:#e8eaf6 !important; }
+  
+  .bond-name { font-weight:bold; color:#1a237e; font-size:14px; }
+  .stock-name { font-size:11px; color:#888; margin-top:2px; }
+  .industry-tag { background:#e3f2fd; color:#1565c0; padding:3px 8px; border-radius:10px; font-size:11px; white-space:nowrap; }
+  .logic-tag { padding:3px 8px; border-radius:10px; font-size:11px; }
+  .rating-badge { padding:3px 8px; border-radius:6px; font-size:12px; font-weight:bold; }
+  .logic-score { display:flex; flex-direction:column; align-items:center; padding:4px 8px; border-radius:8px; gap:2px; min-width:72px; }
+  .stars { font-size:12px; letter-spacing:-1px; }
+  .logic-text { text-align:left; font-size:12px; color:#555; max-width:240px; line-height:1.5; }
+
+  .legend { display:flex; gap:14px; margin-bottom:12px; flex-wrap:wrap; }
+  .legend-item { display:flex; align-items:center; gap:6px; font-size:12px; color:#555; }
+  .legend-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+
+  .score-method { background:#fff; border-radius:12px; padding:18px 20px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+  .score-method h3 { font-size:15px; color:#1a237e; margin-bottom:10px; }
+  .score-method .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px; }
+  .score-item { background:#f8f9fa; padding:10px 12px; border-radius:8px; }
+  .score-item .name { font-weight:bold; font-size:13px; color:#333; }
+  .score-item .desc { font-size:12px; color:#666; margin-top:4px; line-height:1.5; }
+
+  .footer { text-align:center; padding:24px 16px; font-size:12px; color:#aaa; line-height:1.8; }
+  .footer .warning { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:12px 16px; color:#856404; margin-bottom:12px; text-align:left; font-size:12px; line-height:1.8; }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size:20px; }
+    .cards-grid { grid-template-columns:1fr; }
+    .container { padding:12px 10px; }
+    .stats { grid-template-columns:repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-bar">
+  ⚠️ 本页面内容仅供学习与研究参考，不构成任何投资建议。市场有风险，投资须谨慎。
+</div>
+
+<div class="header">
+  <h1>📊 可转债综合评分排名</h1>
+  <p class="subtitle">筛选条件：评级 ≥ AA- · 到期日 > 2026-09-15 · 价格 &lt; 130元<br>
+  评分维度：当前价格（30%）+ 转股溢价率（25%）+ 信用评级（20%）+ 行业逻辑（25%）</p>
+  <div class="meta">
+    <span>数据截止：2026-03-16</span>
+    <span>候选标的：56 只（可交易 55 只）</span>
+    <span>精选标的：19 只（逻辑评分≥4）</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 统计概览 -->
+  <div class="stats">
+    <div class="stat"><div class="stat-val">55</div><div class="stat-lbl">可交易标的</div></div>
+    <div class="stat"><div class="stat-val" style="color:#1a7a4a">19</div><div class="stat-lbl">逻辑强精选</div></div>
+    <div class="stat"><div class="stat-val">18</div><div class="stat-lbl">AAA/AA+</div></div>
+    <div class="stat"><div class="stat-val">4</div><div class="stat-lbl">价格&lt;115</div></div>
+    <div class="stat"><div class="stat-val">11</div><div class="stat-lbl">溢价率&lt;40%</div></div>
+    <div class="stat"><div class="stat-val">8.5</div><div class="stat-lbl">最高综合分</div></div>
+  </div>
+
+  <!-- 评分方法说明 -->
+  <div class="score-method">
+    <h3>📐 综合评分方法说明</h3>
+    <div class="grid">
+      <div class="score-item"><div class="name">💰 当前价格 · 权重30%</div><div class="desc">价格越低，安全边际越高。&lt;110分满分，110-130按梯度递减。</div></div>
+      <div class="score-item"><div class="name">📉 转股溢价率 · 权重25%</div><div class="desc">溢价率越低，股性越强，正股上涨带动转债弹性越大。</div></div>
+      <div class="score-item"><div class="name">🏦 信用评级 · 权重20%</div><div class="desc">AAA-AA-梯级评分，反映发行人偿债能力和纯债兜底保障。</div></div>
+      <div class="score-item"><div class="name">📈 行业逻辑 · 权重25%</div><div class="desc">基于2025Q4-2026Q1行业研究，对正股所在赛道景气度和催化剂打分（1-5星）。</div></div>
+    </div>
+  </div>
+
+  <!-- 图例 -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#c6efce"></div>行业逻辑极强 (5星)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e8f8e8"></div>行业逻辑较强 (4星)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fffacd"></div>中性 (3星)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fff8e1"></div>综合排名 TOP5</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f3f8ff"></div>综合排名 TOP6-10</div>
+    <div class="legend-item" style="color:#999"><div style="width:12px;height:12px;background:#eee;border-radius:50%;flex-shrink:0"></div>已赎回/停止交易</div>
+  </div>
+
+  <!-- 精选卡片 -->
+  <div class="section-title">⭐ 行业逻辑评分 4-5 分精选标的（共 19 只，已排除已赎回）</div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#2</span>
+            <span class="card-bond">晶能转债</span>
+            <span class="card-stock">晶科能源</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">8.4</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">光伏组件</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 TOPCon全球出货第一，美国关税后欧洲市场受益，底部区域</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">124.1</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">-0.2%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">124.2</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA+</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">83.4亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20290420</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#c6efce;border-left:4px solid #1a7a4a">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#3</span>
+            <span class="card-bond">立讯转债</span>
+            <span class="card-stock">立讯精密</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">8.4</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">消费电子</span>
+          <span class="logic-tag" style="color:#1a7a4a;background:#c6efce">★★★★★ 逻辑极强</span>
+        </div>
+        <div class="card-logic">📈 苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">124.5</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">41.3%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">88.1</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA+</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">30.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20261103</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#5</span>
+            <span class="card-bond">希望转2</span>
+            <span class="card-stock">新希望</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">8.1</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">养殖/饲料</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 猪价反转周期明确+大北农饲料协同，困境反转逻辑清晰</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">121.6</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">45.2%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">83.8</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">81.4亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20271102</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#6</span>
+            <span class="card-bond">上银转债</span>
+            <span class="card-stock">上海银行</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">8.0</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">城商行</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 上海区位优势，零售转型有成效，息差优于同业</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">125.2</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">8.7%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">115.2</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">199.8亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20270125</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#8</span>
+            <span class="card-bond">南航转债</span>
+            <span class="card-stock">南方航空</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.75</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">航空出行</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 出境游复苏+暑运旺季预期，油价下行改善盈利</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.0</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">23.6%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">101.9</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">59.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20261015</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#9</span>
+            <span class="card-bond">韦尔转债</span>
+            <span class="card-stock">豪威集团</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.65</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">半导体</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 车载CIS量价双升，汽车+AI双轮，华为车合作深化</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">120.1</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">71.0%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">70.2</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA+</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">24.3亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20261228</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#10</span>
+            <span class="card-bond">山路转债</span>
+            <span class="card-stock">山东路桥</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.5</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">基建施工</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 山东省重点基建+专业资质壁垒，十五五开局受益明确</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.1</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">52.8%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">82.5</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">48.4亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20290324</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#11</span>
+            <span class="card-bond">禾丰转债</span>
+            <span class="card-stock">禾丰股份</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.45</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">饲料动保</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 养殖景气回升带动饲料量价，动保高毛利产品放量</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">124.9</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">67.6%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">74.5</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">14.7亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280422</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#12</span>
+            <span class="card-bond">长汽转债</span>
+            <span class="card-stock">长城汽车</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.4</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">汽车整车</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 坦克品牌越野细分强势+海外收入高增，智电转型加速</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">115.8</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">115.3%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">53.8</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">35.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20270610</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#16</span>
+            <span class="card-bond">中特转债</span>
+            <span class="card-stock">中信特钢</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.25</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">特钢</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 风电/军工/航空特钢订单强劲，高端制造国产替代明确</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">129.8</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">66.0%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">78.2</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">50.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280225</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#18</span>
+            <span class="card-bond">三诺转债</span>
+            <span class="card-stock">三诺生物</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">7.05</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">体外诊断</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 CGM国产替代加速，医保扩容驱动CGM放量，政策催化明确</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">114.5</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">133.7%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">49.0</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">5.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20261221</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#22</span>
+            <span class="card-bond">冠宇转债</span>
+            <span class="card-stock">珠海冠宇</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.85</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">消费锂电</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 AI PC/MR设备拉动消费电池，笔电换机周期开启</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.7</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">71.8%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">73.7</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">30.9亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20281024</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#23</span>
+            <span class="card-bond">爱玛转债</span>
+            <span class="card-stock">爱玛科技</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.85</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">两轮电动车</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 大换电政策催化+出海加速，行业整合中份额持续提升</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">127.1</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">65.3%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">76.9</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">20.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20290223</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#28</span>
+            <span class="card-bond">顺博转债</span>
+            <span class="card-stock">顺博合金</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.65</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">再生铝</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 新能源车轻量化需求强劲，绿色再生铝政策红利大</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.2</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">77.6%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">71.1</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA-</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">8.3亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280812</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#29</span>
+            <span class="card-bond">巨星转债</span>
+            <span class="card-stock">巨星农牧</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.65</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">生猪养殖</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 猪周期上行，成本控制改善，盈利修复弹性大</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">127.2</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">67.7%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">75.9</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA-</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">9.0亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280425</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#31</span>
+            <span class="card-bond">珀莱转债</span>
+            <span class="card-stock">珀莱雅</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.6</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">国货美妆</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 大单品矩阵成熟，防晒+抗老系列高增，出海布局加速</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">128.2</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">80.7%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">71.0</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">7.5亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20271208</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#33</span>
+            <span class="card-bond">通22转债</span>
+            <span class="card-stock">通威股份</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.5</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">光伏硅料</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 硅料价格触底反弹预期，组件一体化降本增效，困境反转</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.8</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">127.1%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">55.8</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AAA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">119.8亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280224</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#40</span>
+            <span class="card-bond">科沃转债</span>
+            <span class="card-stock">科沃斯</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">6.2</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">服务机器人</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 AI具身机器人热潮，扫地机AI化+商用机器人双赛道</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">122.0</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">232.9%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">36.6</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">10.4亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20271130</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" style="background:#e8f8e8;border-left:4px solid #2e8b57">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <span class="card-rank">#49</span>
+            <span class="card-bond">天奈转债</span>
+            <span class="card-stock">天奈科技</span>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:bold;color:#1565c0">5.4</div>
+            <div style="font-size:11px;color:#888">综合评分</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="industry-tag">碳纳米管</span>
+          <span class="logic-tag" style="color:#2e8b57;background:#e8f8e8">★★★★☆ 逻辑较强</span>
+        </div>
+        <div class="card-logic">📈 固态电池导电剂绑定，储能市场爆发期，高增速确定</div>
+        <div class="card-metrics">
+          <div class="metric"><div class="metric-val">126.0</div><div class="metric-lbl">当前价格</div></div>
+          <div class="metric"><div class="metric-val" style="color:#c62828">181.6%</div><div class="metric-lbl">转股溢价率</div></div>
+          <div class="metric"><div class="metric-val">44.8</div><div class="metric-lbl">纯债价值</div></div>
+          <div class="metric"><div class="metric-val">AA-</div><div class="metric-lbl">评级</div></div>
+          <div class="metric"><div class="metric-val">8.3亿</div><div class="metric-lbl">剩余规模</div></div>
+          <div class="metric"><div class="metric-val" style="font-size:13px">20280127</div><div class="metric-lbl">到期日</div></div>
+        </div>
+      </div>
+    </div></div>
+
+  <!-- 完整排名表 -->
+  <div class="section-title">📋 全部候选标的综合排名（共 56 只）</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>排名</th><th>转债名称 / 正股</th><th>所属行业</th><th>综合评分</th>
+          <th>当前价格</th><th>转股溢价率</th><th>纯债价值</th><th>最新评级</th>
+          <th>行业逻辑评分</th><th>上涨逻辑摘要</th><th>到期日</th><th>剩余规模</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr style="background:#f5f5f5;opacity:0.5;">
+      <td style="font-weight:bold;color:#333">1</td>
+      <td><div class="bond-name">信服转债<span style="background:#ef5350;color:#fff;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:bold;margin-left:6px">已赎回</span></div><div class="stock-name">深信服</div></td>
+      <td><span class="industry-tag">网络安全</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#999">8.5</td>
+      <td style="font-size:13px;color:#555">116.60</td>
+      <td style="font-size:13px;color:#c62828">7.8%</td>
+      <td style="font-size:13px;color:#444">108.21</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">已于2026年3月触发赎回条款，停止交易，不可新仓</td>
+      <td style="font-size:11px;color:#888">20290727</td>
+      <td style="font-size:12px;color:#555">2.9亿</td>
+    </tr>
+    <tr style="background:#fff8e1;">
+      <td style="font-weight:bold;color:#333">🥈 2</td>
+      <td><div class="bond-name">晶能转债</div><div class="stock-name">晶科能源</div></td>
+      <td><span class="industry-tag">光伏组件</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">8.4</td>
+      <td style="font-size:13px;color:#555">124.05</td>
+      <td style="font-size:13px;color:#c62828">-0.2%</td>
+      <td style="font-size:13px;color:#444">124.25</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">TOPCon全球出货第一，美国关税后欧洲市场受益，底部区域</td>
+      <td style="font-size:11px;color:#888">20290420</td>
+      <td style="font-size:12px;color:#555">83.4亿</td>
+    </tr>
+    <tr style="background:#fff8e1;">
+      <td style="font-weight:bold;color:#333">🥉 3</td>
+      <td><div class="bond-name">立讯转债</div><div class="stock-name">立讯精密</div></td>
+      <td><span class="industry-tag">消费电子</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">8.4</td>
+      <td style="font-size:13px;color:#555">124.50</td>
+      <td style="font-size:13px;color:#c62828">41.3%</td>
+      <td style="font-size:13px;color:#444">88.14</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#1a7a4a;background:#c6efce">
+          <span class="stars">★★★★★</span>
+          <span style="font-size:11px">逻辑极强</span>
+        </div>
+      </td>
+      <td class="logic-text">苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益</td>
+      <td style="font-size:11px;color:#888">20261103</td>
+      <td style="font-size:12px;color:#555">30.0亿</td>
+    </tr>
+    <tr style="background:#fff8e1;">
+      <td style="font-weight:bold;color:#333">4</td>
+      <td><div class="bond-name">永22转债</div><div class="stock-name">永冠新材</div></td>
+      <td><span class="industry-tag">汽车内饰</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">8.1</td>
+      <td style="font-size:13px;color:#555">114.32</td>
+      <td style="font-size:13px;color:#c62828">-2.9%</td>
+      <td style="font-size:13px;color:#444">117.70</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">轻量化+电动化带动需求，利润率受成本压制</td>
+      <td style="font-size:11px;color:#888">20280728</td>
+      <td style="font-size:12px;color:#555">6.7亿</td>
+    </tr>
+    <tr style="background:#fff8e1;">
+      <td style="font-weight:bold;color:#333">5</td>
+      <td><div class="bond-name">希望转2</div><div class="stock-name">新希望</div></td>
+      <td><span class="industry-tag">养殖/饲料</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">8.1</td>
+      <td style="font-size:13px;color:#555">121.60</td>
+      <td style="font-size:13px;color:#c62828">45.2%</td>
+      <td style="font-size:13px;color:#444">83.76</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">猪价反转周期明确+大北农饲料协同，困境反转逻辑清晰</td>
+      <td style="font-size:11px;color:#888">20271102</td>
+      <td style="font-size:12px;color:#555">81.4亿</td>
+    </tr>
+    <tr style="background:#f3f8ff;">
+      <td style="font-weight:bold;color:#333">6</td>
+      <td><div class="bond-name">上银转债</div><div class="stock-name">上海银行</div></td>
+      <td><span class="industry-tag">城商行</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">8.0</td>
+      <td style="font-size:13px;color:#555">125.16</td>
+      <td style="font-size:13px;color:#c62828">8.7%</td>
+      <td style="font-size:13px;color:#444">115.17</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">上海区位优势，零售转型有成效，息差优于同业</td>
+      <td style="font-size:11px;color:#888">20270125</td>
+      <td style="font-size:12px;color:#555">199.8亿</td>
+    </tr>
+    <tr style="background:#f3f8ff;">
+      <td style="font-weight:bold;color:#333">7</td>
+      <td><div class="bond-name">兴业转债</div><div class="stock-name">兴业银行</div></td>
+      <td><span class="industry-tag">股份制银行</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.85</td>
+      <td style="font-size:13px;color:#555">123.29</td>
+      <td style="font-size:13px;color:#c62828">35.1%</td>
+      <td style="font-size:13px;color:#444">91.27</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">净息差压力边际缓解，高股息防御策略配置价值</td>
+      <td style="font-size:11px;color:#888">20271227</td>
+      <td style="font-size:12px;color:#555">413.5亿</td>
+    </tr>
+    <tr style="background:#f3f8ff;">
+      <td style="font-weight:bold;color:#333">8</td>
+      <td><div class="bond-name">南航转债</div><div class="stock-name">南方航空</div></td>
+      <td><span class="industry-tag">航空出行</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.75</td>
+      <td style="font-size:13px;color:#555">126.00</td>
+      <td style="font-size:13px;color:#c62828">23.6%</td>
+      <td style="font-size:13px;color:#444">101.94</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">出境游复苏+暑运旺季预期，油价下行改善盈利</td>
+      <td style="font-size:11px;color:#888">20261015</td>
+      <td style="font-size:12px;color:#555">59.0亿</td>
+    </tr>
+    <tr style="background:#f3f8ff;">
+      <td style="font-weight:bold;color:#333">9</td>
+      <td><div class="bond-name">韦尔转债</div><div class="stock-name">豪威集团</div></td>
+      <td><span class="industry-tag">半导体</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.65</td>
+      <td style="font-size:13px;color:#555">120.08</td>
+      <td style="font-size:13px;color:#c62828">71.0%</td>
+      <td style="font-size:13px;color:#444">70.22</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">车载CIS量价双升，汽车+AI双轮，华为车合作深化</td>
+      <td style="font-size:11px;color:#888">20261228</td>
+      <td style="font-size:12px;color:#555">24.3亿</td>
+    </tr>
+    <tr style="background:#f3f8ff;">
+      <td style="font-weight:bold;color:#333">10</td>
+      <td><div class="bond-name">山路转债</div><div class="stock-name">山东路桥</div></td>
+      <td><span class="industry-tag">基建施工</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.5</td>
+      <td style="font-size:13px;color:#555">126.12</td>
+      <td style="font-size:13px;color:#c62828">52.8%</td>
+      <td style="font-size:13px;color:#444">82.52</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">山东省重点基建+专业资质壁垒，十五五开局受益明确</td>
+      <td style="font-size:11px;color:#888">20290324</td>
+      <td style="font-size:12px;color:#555">48.4亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">11</td>
+      <td><div class="bond-name">禾丰转债</div><div class="stock-name">禾丰股份</div></td>
+      <td><span class="industry-tag">饲料动保</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.45</td>
+      <td style="font-size:13px;color:#555">124.90</td>
+      <td style="font-size:13px;color:#c62828">67.6%</td>
+      <td style="font-size:13px;color:#444">74.53</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">养殖景气回升带动饲料量价，动保高毛利产品放量</td>
+      <td style="font-size:11px;color:#888">20280422</td>
+      <td style="font-size:12px;color:#555">14.7亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">12</td>
+      <td><div class="bond-name">长汽转债</div><div class="stock-name">长城汽车</div></td>
+      <td><span class="industry-tag">汽车整车</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.4</td>
+      <td style="font-size:13px;color:#555">115.83</td>
+      <td style="font-size:13px;color:#c62828">115.3%</td>
+      <td style="font-size:13px;color:#444">53.80</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">坦克品牌越野细分强势+海外收入高增，智电转型加速</td>
+      <td style="font-size:11px;color:#888">20270610</td>
+      <td style="font-size:12px;color:#555">35.0亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">13</td>
+      <td><div class="bond-name">冀东转债</div><div class="stock-name">金隅冀东</div></td>
+      <td><span class="industry-tag">其他</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.25</td>
+      <td style="font-size:13px;color:#555">105.96</td>
+      <td style="font-size:13px;color:#c62828">167.2%</td>
+      <td style="font-size:13px;color:#444">39.66</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">-</td>
+      <td style="font-size:11px;color:#888">20261105</td>
+      <td style="font-size:12px;color:#555">17.8亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">14</td>
+      <td><div class="bond-name">能化转债</div><div class="stock-name">甘肃能化</div></td>
+      <td><span class="industry-tag">煤化工</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.25</td>
+      <td style="font-size:13px;color:#555">127.30</td>
+      <td style="font-size:13px;color:#c62828">31.3%</td>
+      <td style="font-size:13px;color:#444">96.93</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">煤价下行降本，化肥出口增长，产能过剩压制盈利</td>
+      <td style="font-size:11px;color:#888">20261210</td>
+      <td style="font-size:12px;color:#555">19.5亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">15</td>
+      <td><div class="bond-name">渝水转债</div><div class="stock-name">重庆水务</div></td>
+      <td><span class="industry-tag">公用事业</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.25</td>
+      <td style="font-size:13px;color:#555">129.29</td>
+      <td style="font-size:13px;color:#c62828">33.7%</td>
+      <td style="font-size:13px;color:#444">96.68</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">水价改革预期+稳定现金流，高股息防御属性</td>
+      <td style="font-size:11px;color:#888">20310109</td>
+      <td style="font-size:12px;color:#555">19.0亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">16</td>
+      <td><div class="bond-name">中特转债</div><div class="stock-name">中信特钢</div></td>
+      <td><span class="industry-tag">特钢</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.25</td>
+      <td style="font-size:13px;color:#555">129.79</td>
+      <td style="font-size:13px;color:#c62828">66.0%</td>
+      <td style="font-size:13px;color:#444">78.18</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">风电/军工/航空特钢订单强劲，高端制造国产替代明确</td>
+      <td style="font-size:11px;color:#888">20280225</td>
+      <td style="font-size:12px;color:#555">50.0亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">17</td>
+      <td><div class="bond-name">大参转债</div><div class="stock-name">大参林</div></td>
+      <td><span class="industry-tag">连锁药店</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.1</td>
+      <td style="font-size:13px;color:#555">129.87</td>
+      <td style="font-size:13px;color:#c62828">18.2%</td>
+      <td style="font-size:13px;color:#444">109.91</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">处方外流持续受益，但集中度提升竞争加剧</td>
+      <td style="font-size:11px;color:#888">20261022</td>
+      <td style="font-size:12px;color:#555">14.1亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">18</td>
+      <td><div class="bond-name">三诺转债</div><div class="stock-name">三诺生物</div></td>
+      <td><span class="industry-tag">体外诊断</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.05</td>
+      <td style="font-size:13px;color:#555">114.47</td>
+      <td style="font-size:13px;color:#c62828">133.7%</td>
+      <td style="font-size:13px;color:#444">48.98</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">CGM国产替代加速，医保扩容驱动CGM放量，政策催化明确</td>
+      <td style="font-size:11px;color:#888">20261221</td>
+      <td style="font-size:12px;color:#555">5.0亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">19</td>
+      <td><div class="bond-name">绿动转债</div><div class="stock-name">绿色动力</div></td>
+      <td><span class="industry-tag">垃圾发电</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">7.05</td>
+      <td style="font-size:13px;color:#555">129.29</td>
+      <td style="font-size:13px;color:#c62828">30.9%</td>
+      <td style="font-size:13px;color:#444">98.76</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">稳定现金流+碳交易预期，但项目扩张空间有限</td>
+      <td style="font-size:11px;color:#888">20280225</td>
+      <td style="font-size:12px;color:#555">23.6亿</td>
+    </tr>
+    <tr style="background:#f9fff9;">
+      <td style="font-weight:bold;color:#333">20</td>
+      <td><div class="bond-name">太平转债</div><div class="stock-name">太平鸟</div></td>
+      <td><span class="industry-tag">服装品牌</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.95</td>
+      <td style="font-size:13px;color:#555">122.99</td>
+      <td style="font-size:13px;color:#c62828">66.2%</td>
+      <td style="font-size:13px;color:#444">73.99</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">数字化渠道优化见效，但消费复苏低于预期</td>
+      <td style="font-size:11px;color:#888">20270715</td>
+      <td style="font-size:12px;color:#555">8.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">21</td>
+      <td><div class="bond-name">中环转2</div><div class="stock-name">中赋科技</div></td>
+      <td><span class="industry-tag">IT服务</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.9</td>
+      <td style="font-size:13px;color:#555">128.99</td>
+      <td style="font-size:13px;color:#c62828">-0.4%</td>
+      <td style="font-size:13px;color:#444">129.53</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">数字化转型需求稳健，但竞争激烈利润率偏低</td>
+      <td style="font-size:11px;color:#888">20280506</td>
+      <td style="font-size:12px;color:#555">1.3亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">22</td>
+      <td><div class="bond-name">冠宇转债</div><div class="stock-name">珠海冠宇</div></td>
+      <td><span class="industry-tag">消费锂电</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.85</td>
+      <td style="font-size:13px;color:#555">126.69</td>
+      <td style="font-size:13px;color:#c62828">71.8%</td>
+      <td style="font-size:13px;color:#444">73.74</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">AI PC/MR设备拉动消费电池，笔电换机周期开启</td>
+      <td style="font-size:11px;color:#888">20281024</td>
+      <td style="font-size:12px;color:#555">30.9亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">23</td>
+      <td><div class="bond-name">爱玛转债</div><div class="stock-name">爱玛科技</div></td>
+      <td><span class="industry-tag">两轮电动车</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.85</td>
+      <td style="font-size:13px;color:#555">127.07</td>
+      <td style="font-size:13px;color:#c62828">65.3%</td>
+      <td style="font-size:13px;color:#444">76.88</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">大换电政策催化+出海加速，行业整合中份额持续提升</td>
+      <td style="font-size:11px;color:#888">20290223</td>
+      <td style="font-size:12px;color:#555">20.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">24</td>
+      <td><div class="bond-name">贵燃转债</div><div class="stock-name">贵州燃气</div></td>
+      <td><span class="industry-tag">城燃</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.85</td>
+      <td style="font-size:13px;color:#555">129.79</td>
+      <td style="font-size:13px;color:#c62828">34.5%</td>
+      <td style="font-size:13px;color:#444">96.48</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">居民气价上调+工业气稳增，股息稳健防御</td>
+      <td style="font-size:11px;color:#888">20271227</td>
+      <td style="font-size:12px;color:#555">9.2亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">25</td>
+      <td><div class="bond-name">浙建转债</div><div class="stock-name">浙江建投</div></td>
+      <td><span class="industry-tag">建筑施工</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.8</td>
+      <td style="font-size:13px;color:#555">127.54</td>
+      <td style="font-size:13px;color:#c62828">52.8%</td>
+      <td style="font-size:13px;color:#444">83.46</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">浙江省国资背景，政府投资受益，但毛利率承压</td>
+      <td style="font-size:11px;color:#888">20291225</td>
+      <td style="font-size:12px;color:#555">9.9亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">26</td>
+      <td><div class="bond-name">盛虹转债</div><div class="stock-name">东方盛虹</div></td>
+      <td><span class="industry-tag">大炼化</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.8</td>
+      <td style="font-size:13px;color:#555">127.85</td>
+      <td style="font-size:13px;color:#c62828">46.1%</td>
+      <td style="font-size:13px;color:#444">87.51</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">裂解价差修复预期，但化工品价格波动大，中性</td>
+      <td style="font-size:11px;color:#888">20270322</td>
+      <td style="font-size:12px;color:#555">50.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">27</td>
+      <td><div class="bond-name">盛泰转债</div><div class="stock-name">盛泰集团</div></td>
+      <td><span class="industry-tag">纺织代工</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.7</td>
+      <td style="font-size:13px;color:#555">124.93</td>
+      <td style="font-size:13px;color:#c62828">82.5%</td>
+      <td style="font-size:13px;color:#444">68.47</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">出口订单稳定，东南亚转单受益，汇率有风险</td>
+      <td style="font-size:11px;color:#888">20281107</td>
+      <td style="font-size:12px;color:#555">7.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">28</td>
+      <td><div class="bond-name">顺博转债</div><div class="stock-name">顺博合金</div></td>
+      <td><span class="industry-tag">再生铝</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.65</td>
+      <td style="font-size:13px;color:#555">126.20</td>
+      <td style="font-size:13px;color:#c62828">77.6%</td>
+      <td style="font-size:13px;color:#444">71.07</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">新能源车轻量化需求强劲，绿色再生铝政策红利大</td>
+      <td style="font-size:11px;color:#888">20280812</td>
+      <td style="font-size:12px;color:#555">8.3亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">29</td>
+      <td><div class="bond-name">巨星转债</div><div class="stock-name">巨星农牧</div></td>
+      <td><span class="industry-tag">生猪养殖</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.65</td>
+      <td style="font-size:13px;color:#555">127.23</td>
+      <td style="font-size:13px;color:#c62828">67.7%</td>
+      <td style="font-size:13px;color:#444">75.88</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">猪周期上行，成本控制改善，盈利修复弹性大</td>
+      <td style="font-size:11px;color:#888">20280425</td>
+      <td style="font-size:12px;color:#555">9.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">30</td>
+      <td><div class="bond-name">康泰转2</div><div class="stock-name">康泰生物</div></td>
+      <td><span class="industry-tag">疫苗</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.6</td>
+      <td style="font-size:13px;color:#555">128.10</td>
+      <td style="font-size:13px;color:#c62828">43.0%</td>
+      <td style="font-size:13px;color:#444">89.57</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">9价HPV放量，但行业竞争加剧压制盈利，中性观望</td>
+      <td style="font-size:11px;color:#888">20270715</td>
+      <td style="font-size:12px;color:#555">20.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">31</td>
+      <td><div class="bond-name">珀莱转债</div><div class="stock-name">珀莱雅</div></td>
+      <td><span class="industry-tag">国货美妆</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.6</td>
+      <td style="font-size:13px;color:#555">128.19</td>
+      <td style="font-size:13px;color:#c62828">80.7%</td>
+      <td style="font-size:13px;color:#444">70.96</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">大单品矩阵成熟，防晒+抗老系列高增，出海布局加速</td>
+      <td style="font-size:11px;color:#888">20271208</td>
+      <td style="font-size:12px;color:#555">7.5亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">32</td>
+      <td><div class="bond-name">仙乐转债</div><div class="stock-name">仙乐健康</div></td>
+      <td><span class="industry-tag">功能食品</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.5</td>
+      <td style="font-size:13px;color:#555">124.49</td>
+      <td style="font-size:13px;color:#c62828">91.6%</td>
+      <td style="font-size:13px;color:#444">64.97</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">保健品代工需求稳健，海外订单持续，稳定增长</td>
+      <td style="font-size:11px;color:#888">20270419</td>
+      <td style="font-size:12px;color:#555">10.2亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">33</td>
+      <td><div class="bond-name">通22转债</div><div class="stock-name">通威股份</div></td>
+      <td><span class="industry-tag">光伏硅料</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.5</td>
+      <td style="font-size:13px;color:#555">126.81</td>
+      <td style="font-size:13px;color:#c62828">127.1%</td>
+      <td style="font-size:13px;color:#444">55.84</td>
+      <td><span class="rating-badge" style="background:#1a237e;color:#fff">AAA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">硅料价格触底反弹预期，组件一体化降本增效，困境反转</td>
+      <td style="font-size:11px;color:#888">20280224</td>
+      <td style="font-size:12px;color:#555">119.8亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">34</td>
+      <td><div class="bond-name">韵达转债</div><div class="stock-name">韵达股份</div></td>
+      <td><span class="industry-tag">快递物流</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.4</td>
+      <td style="font-size:13px;color:#555">123.05</td>
+      <td style="font-size:13px;color:#c62828">106.2%</td>
+      <td style="font-size:13px;color:#444">59.68</td>
+      <td><span class="rating-badge" style="background:#283593;color:#fff">AA+</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">价格战缓和但格局未根本改善，电商增速放缓</td>
+      <td style="font-size:11px;color:#888">20290411</td>
+      <td style="font-size:12px;color:#555">24.5亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">35</td>
+      <td><div class="bond-name">嘉诚转债</div><div class="stock-name">嘉诚国际</div></td>
+      <td><span class="industry-tag">物流</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.4</td>
+      <td style="font-size:13px;color:#555">128.96</td>
+      <td style="font-size:13px;color:#c62828">47.1%</td>
+      <td style="font-size:13px;color:#444">87.63</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">跨境电商物流受益，行业竞争压缩利润</td>
+      <td style="font-size:11px;color:#888">20280901</td>
+      <td style="font-size:12px;color:#555">8.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">36</td>
+      <td><div class="bond-name">锂科转债</div><div class="stock-name">五矿新能</div></td>
+      <td><span class="industry-tag">三元正极</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.35</td>
+      <td style="font-size:13px;color:#555">129.68</td>
+      <td style="font-size:13px;color:#c62828">69.2%</td>
+      <td style="font-size:13px;color:#444">76.63</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">海外电芯出口受益，但三元材料行业竞争格局不佳</td>
+      <td style="font-size:11px;color:#888">20281011</td>
+      <td style="font-size:12px;color:#555">32.5亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">37</td>
+      <td><div class="bond-name">益丰转债</div><div class="stock-name">益丰药房</div></td>
+      <td><span class="industry-tag">连锁药店</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.35</td>
+      <td style="font-size:13px;color:#555">129.96</td>
+      <td style="font-size:13px;color:#c62828">68.3%</td>
+      <td style="font-size:13px;color:#444">77.23</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">DTP处方药高增，华东市场密度提升，稳健增长</td>
+      <td style="font-size:11px;color:#888">20300304</td>
+      <td style="font-size:12px;color:#555">18.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">38</td>
+      <td><div class="bond-name">洽洽转债</div><div class="stock-name">洽洽食品</div></td>
+      <td><span class="industry-tag">休闲食品</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.3</td>
+      <td style="font-size:13px;color:#555">114.80</td>
+      <td style="font-size:13px;color:#c62828">186.6%</td>
+      <td style="font-size:13px;color:#444">40.05</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">海外收入高增亮点，但国内大本营增速放缓</td>
+      <td style="font-size:11px;color:#888">20261020</td>
+      <td style="font-size:12px;color:#555">13.4亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">39</td>
+      <td><div class="bond-name">健帆转债</div><div class="stock-name">健帆生物</div></td>
+      <td><span class="industry-tag">血液净化</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.25</td>
+      <td style="font-size:13px;color:#555">119.89</td>
+      <td style="font-size:13px;color:#c62828">146.1%</td>
+      <td style="font-size:13px;color:#444">48.72</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">耗材壁垒较高，但市场渗透率提升速度偏慢</td>
+      <td style="font-size:11px;color:#888">20270623</td>
+      <td style="font-size:12px;color:#555">10.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">40</td>
+      <td><div class="bond-name">科沃转债</div><div class="stock-name">科沃斯</div></td>
+      <td><span class="industry-tag">服务机器人</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.2</td>
+      <td style="font-size:13px;color:#555">122.02</td>
+      <td style="font-size:13px;color:#c62828">232.9%</td>
+      <td style="font-size:13px;color:#444">36.65</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">AI具身机器人热潮，扫地机AI化+商用机器人双赛道</td>
+      <td style="font-size:11px;color:#888">20271130</td>
+      <td style="font-size:12px;color:#555">10.4亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">41</td>
+      <td><div class="bond-name">九强转债</div><div class="stock-name">九强生物</div></td>
+      <td><span class="industry-tag">体外诊断</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.15</td>
+      <td style="font-size:13px;color:#555">125.65</td>
+      <td style="font-size:13px;color:#c62828">64.9%</td>
+      <td style="font-size:13px;color:#444">76.21</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">生化诊断进口替代持续，但增速放缓趋势明显</td>
+      <td style="font-size:11px;color:#888">20280630</td>
+      <td style="font-size:12px;color:#555">11.2亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">42</td>
+      <td><div class="bond-name">江山转债</div><div class="stock-name">江山欧派</div></td>
+      <td><span class="industry-tag">全屋定制</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.15</td>
+      <td style="font-size:13px;color:#555">126.16</td>
+      <td style="font-size:13px;color:#c62828">75.9%</td>
+      <td style="font-size:13px;color:#444">71.72</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">整装渠道深耕，地产后周期需求释放时间较长</td>
+      <td style="font-size:11px;color:#888">20270611</td>
+      <td style="font-size:12px;color:#555">5.8亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">43</td>
+      <td><div class="bond-name">甬金转债</div><div class="stock-name">甬金股份</div></td>
+      <td><span class="industry-tag">精密带钢</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.15</td>
+      <td style="font-size:13px;color:#555">126.98</td>
+      <td style="font-size:13px;color:#c62828">79.5%</td>
+      <td style="font-size:13px;color:#444">70.76</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">高端制造供应链受益，但下游需求分化不均</td>
+      <td style="font-size:11px;color:#888">20271213</td>
+      <td style="font-size:12px;color:#555">10.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">44</td>
+      <td><div class="bond-name">科思转债</div><div class="stock-name">科思股份</div></td>
+      <td><span class="industry-tag">功能材料</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">6.15</td>
+      <td style="font-size:13px;color:#555">129.35</td>
+      <td style="font-size:13px;color:#c62828">67.2%</td>
+      <td style="font-size:13px;color:#444">77.34</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">光固化材料需求稳健，产品结构持续高端化</td>
+      <td style="font-size:11px;color:#888">20290413</td>
+      <td style="font-size:12px;color:#555">7.2亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">45</td>
+      <td><div class="bond-name">华海转债</div><div class="stock-name">华海药业</div></td>
+      <td><span class="industry-tag">原料药</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.95</td>
+      <td style="font-size:13px;color:#555">120.80</td>
+      <td style="font-size:13px;color:#c62828">152.3%</td>
+      <td style="font-size:13px;color:#444">47.88</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">API出口复苏，但美国关税风险较大，不确定性高</td>
+      <td style="font-size:11px;color:#888">20261102</td>
+      <td style="font-size:12px;color:#555">18.4亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">46</td>
+      <td><div class="bond-name">蒙娜转债</div><div class="stock-name">蒙娜丽莎</div></td>
+      <td><span class="industry-tag">建筑陶瓷</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.9</td>
+      <td style="font-size:13px;color:#555">127.34</td>
+      <td style="font-size:13px;color:#c62828">93.4%</td>
+      <td style="font-size:13px;color:#444">65.83</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">旧改+以旧换新补贴催化，但竞争格局依然激烈</td>
+      <td style="font-size:11px;color:#888">20270816</td>
+      <td style="font-size:12px;color:#555">3.4亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">47</td>
+      <td><div class="bond-name">李子转债</div><div class="stock-name">李子园</div></td>
+      <td><span class="industry-tag">乳饮料</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.6</td>
+      <td style="font-size:13px;color:#555">126.72</td>
+      <td style="font-size:13px;color:#c62828">103.5%</td>
+      <td style="font-size:13px;color:#444">62.28</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">区域品牌扩张有序，但含乳饮料赛道竞争激烈</td>
+      <td style="font-size:11px;color:#888">20290620</td>
+      <td style="font-size:12px;color:#555">6.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">48</td>
+      <td><div class="bond-name">火星转债</div><div class="stock-name">火星人</div></td>
+      <td><span class="industry-tag">集成灶</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.5</td>
+      <td style="font-size:13px;color:#555">124.34</td>
+      <td style="font-size:13px;color:#c62828">257.7%</td>
+      <td style="font-size:13px;color:#444">34.76</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">集成灶渗透率持续提升，但行业增速边际放缓</td>
+      <td style="font-size:11px;color:#888">20280805</td>
+      <td style="font-size:12px;color:#555">5.3亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">49</td>
+      <td><div class="bond-name">天奈转债</div><div class="stock-name">天奈科技</div></td>
+      <td><span class="industry-tag">碳纳米管</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.4</td>
+      <td style="font-size:13px;color:#555">126.05</td>
+      <td style="font-size:13px;color:#c62828">181.6%</td>
+      <td style="font-size:13px;color:#444">44.77</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#2e8b57;background:#e8f8e8">
+          <span class="stars">★★★★☆</span>
+          <span style="font-size:11px">逻辑较强</span>
+        </div>
+      </td>
+      <td class="logic-text">固态电池导电剂绑定，储能市场爆发期，高增速确定</td>
+      <td style="font-size:11px;color:#888">20280127</td>
+      <td style="font-size:12px;color:#555">8.3亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">50</td>
+      <td><div class="bond-name">欧晶转债</div><div class="stock-name">欧晶科技</div></td>
+      <td><span class="industry-tag">石英坩埚</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.4</td>
+      <td style="font-size:13px;color:#555">127.90</td>
+      <td style="font-size:13px;color:#c62828">110.7%</td>
+      <td style="font-size:13px;color:#444">60.71</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">绑定半导体石英砂赛道，但产能扩张同质化竞争加剧</td>
+      <td style="font-size:11px;color:#888">20291124</td>
+      <td style="font-size:12px;color:#555">4.7亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">51</td>
+      <td><div class="bond-name">金23转债</div><div class="stock-name">金牌家居</div></td>
+      <td><span class="industry-tag">定制家居</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.35</td>
+      <td style="font-size:13px;color:#555">126.16</td>
+      <td style="font-size:13px;color:#c62828">135.9%</td>
+      <td style="font-size:13px;color:#444">53.48</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">以旧换新补贴刺激，但地产竣工端复苏慢于预期</td>
+      <td style="font-size:11px;color:#888">20290417</td>
+      <td style="font-size:12px;color:#555">7.7亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">52</td>
+      <td><div class="bond-name">建龙转债</div><div class="stock-name">建龙微纳</div></td>
+      <td><span class="industry-tag">分子筛</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.15</td>
+      <td style="font-size:13px;color:#555">126.85</td>
+      <td style="font-size:13px;color:#c62828">146.4%</td>
+      <td style="font-size:13px;color:#444">51.49</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">VOCs治理+氢能需求，但需求增速慢于预期</td>
+      <td style="font-size:11px;color:#888">20290308</td>
+      <td style="font-size:12px;color:#555">7.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">53</td>
+      <td><div class="bond-name">寿22转债</div><div class="stock-name">寿仙谷</div></td>
+      <td><span class="industry-tag">中药材</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.15</td>
+      <td style="font-size:13px;color:#555">127.17</td>
+      <td style="font-size:13px;color:#c62828">134.7%</td>
+      <td style="font-size:13px;color:#444">54.18</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">高端中药消费升级，标准化产业链仍待完善</td>
+      <td style="font-size:11px;color:#888">20281117</td>
+      <td style="font-size:12px;color:#555">4.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">54</td>
+      <td><div class="bond-name">博22转债</div><div class="stock-name">苏博特</div></td>
+      <td><span class="industry-tag">混凝土外加剂</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.15</td>
+      <td style="font-size:13px;color:#555">128.03</td>
+      <td style="font-size:13px;color:#c62828">155.9%</td>
+      <td style="font-size:13px;color:#444">50.02</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">基建稳增但回款压力大，政府债化解风险中</td>
+      <td style="font-size:11px;color:#888">20280701</td>
+      <td style="font-size:12px;color:#555">8.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">55</td>
+      <td><div class="bond-name">福莱转债</div><div class="stock-name">福莱特</div></td>
+      <td><span class="industry-tag">光伏玻璃</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">5.1</td>
+      <td style="font-size:13px;color:#555">125.85</td>
+      <td style="font-size:13px;color:#c62828">224.2%</td>
+      <td style="font-size:13px;color:#444">38.82</td>
+      <td><span class="rating-badge" style="background:#1565c0;color:#fff">AA</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">双玻渗透率提升，但产能过剩压制估值，弱复苏</td>
+      <td style="font-size:11px;color:#888">20280520</td>
+      <td style="font-size:12px;color:#555">40.0亿</td>
+    </tr>
+    <tr style="background:#fff;">
+      <td style="font-weight:bold;color:#333">56</td>
+      <td><div class="bond-name">立高转债</div><div class="stock-name">立高食品</div></td>
+      <td><span class="industry-tag">烘焙B端</span></td>
+      <td style="font-weight:bold;font-size:16px;color:#1565c0">4.9</td>
+      <td style="font-size:13px;color:#555">125.02</td>
+      <td style="font-size:13px;color:#c62828">222.2%</td>
+      <td style="font-size:13px;color:#444">38.80</td>
+      <td><span class="rating-badge" style="background:#0277bd;color:#fff">AA-</span></td>
+      <td>
+        <div class="logic-score" style="color:#b8860b;background:#fffacd">
+          <span class="stars">★★★☆☆</span>
+          <span style="font-size:11px">中性</span>
+        </div>
+      </td>
+      <td class="logic-text">餐饮消费复苏受益，B端原料稳步增长，弹性有限</td>
+      <td style="font-size:11px;color:#888">20290307</td>
+      <td style="font-size:12px;color:#555">9.5亿</td>
+    </tr></tbody>
+    </table>
+  </div>
+
+  <!-- 免责声明 -->
+  <div class="footer">
+    <div class="warning">
+      <strong>⚠️ 重要免责声明</strong><br>
+      本页面所展示的内容（包括但不限于评分、排名、行业逻辑分析）均为个人学习研究目的整理，<strong>不构成任何形式的投资建议、推荐或邀约</strong>。<br>
+      · 可转债市场存在价格波动风险、流动性风险、信用风险及赎回风险，投资者可能面临本金损失。<br>
+      · 评分模型基于历史数据和主观判断，不能预测未来收益，过去表现不代表未来结果。<br>
+      · 标注"已赎回"的标的已停止交易，任何历史评分均无实际参考价值。<br>
+      · 投资者应根据自身风险承受能力、财务状况独立作出投资决策，并在必要时咨询专业投资顾问。<br>
+      · 本页面数据截止 2026-03-16，市场情况瞬息万变，请以最新市场数据为准。
+    </div>
+    生成时间：2026-03-16 09:17 &nbsp;|&nbsp; 数据来源：tushare &nbsp;|&nbsp; 仅供学习参考
+  </div>
+</div>
+
+</body>
+</html>

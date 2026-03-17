@@ -10138,7 +10138,7 @@
       · 投资者应根据自身风险承受能力独立作出投资决策，必要时咨询专业投资顾问。<br>
       · 本页面数据截止 2026-03-17，市场情况瞬息万变，请以最新市场数据为准。
     </div>
-    生成时间：2026-03-17 07:44 &nbsp;|&nbsp; 数据来源：tushare &nbsp;|&nbsp; 仅供学习参考
+    生成时间：2026-03-17 08:44 &nbsp;|&nbsp; 数据来源：tushare &nbsp;|&nbsp; 仅供学习参考
   </div>
 </div>
 
@@ -10271,7 +10271,7 @@ function filterByConceptKeyword(keyword, conceptKey) {
       // 查 CONCEPT_MAP 判断热点
       Object.keys(CONCEPT_MAP).forEach(function(k) { if (k.toLowerCase() === c) isHot = CONCEPT_MAP[k].hot; });
       var style = isHot ? 'background:#ff6d00;color:#fff' : 'background:#e3f2fd;color:#1565c0';
-      return '<span class="concept-tag" style="' + style + '" onclick="document.getElementById('concept-input').value='' + c + '';doConceptSearch()">' + c + '</span>';
+      return '<span class="concept-tag" style="' + style + '" data-concept="' + c + '" onclick="searchConcept(this.dataset.concept)">' + c + '</span>';
     }).join('');
     tableHtml += '<tr style="border-bottom:1px solid #eee">' +
       '<td style="padding:8px;font-weight:bold;color:#1a237e">' + bondName + riskHtml + '</td>' +

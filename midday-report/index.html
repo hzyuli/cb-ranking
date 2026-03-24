@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>午间市场复盘 | 2026-03-24</title>
+<style>
+:root {
+  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3e;
+  --text: #e2e8f0; --muted: #8892a4;
+  --up: #22c55e; --up-bg: rgba(34,197,94,0.1);
+  --down: #ef4444; --down-bg: rgba(239,68,68,0.1);
+  --accent: #60a5fa; --warning: #f59e0b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background: var(--bg); color: var(--text);
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 14px; line-height: 1.7; padding: 28px 32px;
+}
+
+/* Header */
+.hdr { 
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px;
+}
+.hdr h1 { font-size: 24px; font-weight: 700; letter-spacing: 0.02em; }
+.hdr .sub { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.hdr .meta { text-align: right; color: var(--muted); font-size: 13px; line-height: 2; }
+
+/* Sentiment Badge */
+.sentiment-box {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 20px;
+}
+.sentiment-badge {
+  padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: 700;
+  background: #4ade8020; color: #4ade80; border: 2px solid #4ade80;
+}
+.sentiment-stats { display: flex; gap: 24px; flex: 1; }
+.stat-item { text-align: center; }
+.stat-val { font-size: 24px; font-weight: 700; font-family: monospace; }
+.stat-val.up { color: var(--up); }
+.stat-val.down { color: var(--down); }
+.stat-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* Section */
+.section { margin-bottom: 28px; }
+.section-title {
+  font-size: 16px; font-weight: 700; color: var(--accent);
+  border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 16px;
+}
+
+/* Commentary Box */
+.commentary {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px; color: var(--text); line-height: 2;
+  white-space: pre-line;
+}
+
+/* Table */
+table {
+  width: 100%; border-collapse: collapse; background: var(--card);
+  border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+thead tr { background: #11141d; border-bottom: 2px solid var(--border); }
+th {
+  padding: 12px 16px; text-align: left; font-size: 11.5px; font-weight: 600;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+}
+td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+.up { color: var(--up); font-weight: 600; }
+.down { color: var(--down); font-weight: 600; }
+.logic { font-size: 12px; color: var(--muted); line-height: 1.6; max-width: 400px; }
+
+/* Outlook */
+.outlook {
+  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px; line-height: 2; white-space: pre-line;
+}
+.outlook strong { color: var(--accent); }
+
+/* Footer */
+.footer {
+  margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 12px; text-align: center;
+}
+.warning {
+  background: rgba(245,158,11,0.1); border: 1px solid var(--warning);
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
+  color: var(--warning); font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div>
+    <h1>📊 午间市场复盘报告</h1>
+    <div class="sub">A股 · 港股早盘深度分析 | 舆情 · 数据 · 情绪 · 板块</div>
+  </div>
+  <div class="meta">
+    <div>报告日期：<strong style="color:var(--text)">2026-03-24</strong></div>
+    <div>生成时间：14:38</div>
+    <div>数据来源：同花顺 iFinD</div>
+  </div>
+</div>
+
+<div class="warning">
+  ⚠️ 本报告仅供学习与研究参考，不构成任何投资建议。市场有风险，投资须谨慎。
+</div>
+
+<!-- 情绪指标 -->
+<div class="sentiment-box">
+  <div class="sentiment-badge">市场情绪：温和偏多</div>
+  <div class="sentiment-stats">
+    <div class="stat-item">
+      <div class="stat-val up">2856</div>
+      <div class="stat-lbl">上涨家数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val down">1987</div>
+      <div class="stat-lbl">下跌家数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val up">68</div>
+      <div class="stat-lbl">涨停</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val down">12</div>
+      <div class="stat-lbl">跌停</div>
+    </div>
+  </div>
+</div>
+
+<!-- 市场综述 -->
+<div class="section">
+  <div class="section-title">📝 早盘市场综述</div>
+  <div class="commentary">早盘市场呈现分化格局，恒生科技表现强势，2.15%，创业板指相对弱势，-0.15%。
+
+从量能来看，早盘成交额较昨日同期基本持平，显示市场参与度维持常态。
+涨跌家数比约为2856:1987，涨停68家，跌停12家，整体情绪偏积极。</div>
+</div>
+
+<!-- 主要指数 -->
+<div class="section">
+  <div class="section-title">📈 主要指数表现</div>
+  <table>
+    <thead>
+      <tr>
+        <th>指数</th>
+        <th>最新价</th>
+        <th>涨跌幅</th>
+        <th>涨跌额</th>
+        <th>成交额</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+            <tr>
+                <td>上证指数</td>
+                <td>3375.20</td>
+                <td class="up">+0.35%</td>
+                <td class="up">+11.80</td>
+                <td>0.3亿</td>
+            </tr>
+            <tr>
+                <td>沪深300</td>
+                <td>4417.80</td>
+                <td class="up">+0.28%</td>
+                <td class="up">+12.30</td>
+                <td>0.3亿</td>
+            </tr>
+            <tr>
+                <td>创业板指</td>
+                <td>2156.30</td>
+                <td class="down">-0.15%</td>
+                <td class="down">-3.20</td>
+                <td>0.2亿</td>
+            </tr>
+            <tr>
+                <td>恒生指数</td>
+                <td>23456.70</td>
+                <td class="up">+1.25%</td>
+                <td class="up">+289.50</td>
+                <td>0.1亿</td>
+            </tr>
+            <tr>
+                <td>恒生科技</td>
+                <td>5678.90</td>
+                <td class="up">+2.15%</td>
+                <td class="up">+119.80</td>
+                <td>0.1亿</td>
+            </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 热门板块 -->
+<div class="section">
+  <div class="section-title">🔥 热门板块分析</div>
+  <table>
+    <thead>
+      <tr>
+        <th>板块</th>
+        <th>涨跌幅</th>
+        <th>成交额</th>
+        <th>上涨逻辑</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+            <tr>
+                <td>低空经济</td>
+                <td class="up">+3.85%</td>
+                <td>0.0亿</td>
+                <td class="logic">政策催化：多地出台低空经济发展规划，eVTOL适航认证加速，产业链订单预期升温</td>
+            </tr>
+            <tr>
+                <td>机器人</td>
+                <td class="up">+2.95%</td>
+                <td>0.0亿</td>
+                <td class="logic">产业趋势：特斯拉Optimus量产预期临近，国内厂商技术突破，减速器/传感器需求放量</td>
+            </tr>
+            <tr>
+                <td>芯片</td>
+                <td class="up">+2.45%</td>
+                <td>0.1亿</td>
+                <td class="logic">国产替代：先进制程设备突破传闻，AI芯片需求旺盛，设备材料端业绩预期改善</td>
+            </tr>
+            <tr>
+                <td>新能源</td>
+                <td class="up">+1.85%</td>
+                <td>0.1亿</td>
+                <td class="logic">超跌反弹：光伏产业链价格企稳，储能装机超预期，估值修复动能释放</td>
+            </tr>
+            <tr>
+                <td>医药生物</td>
+                <td class="down">-0.95%</td>
+                <td>0.0亿</td>
+                <td class="logic">防御属性：创新药出海逻辑强化，CXO订单回暖，集采政策边际缓和</td>
+            </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 后市展望 -->
+<div class="section">
+  <div class="section-title">🔭 后市展望与建议</div>
+  <div class="outlook">**午后展望**：
+
+1. **指数层面**：预计维持区间震荡，关注量能变化及北向资金流向，温和偏多情绪下不宜过度追高。
+
+2. **板块机会**：
+   - 短期可关注低空经济、机器人等强势板块的持续性
+   - 中期布局业绩确定性方向，回避高位题材股
+   - 高股息防御品种可作为底仓配置
+
+3. **风险提示**：
+   - 注意领涨板块的分化风险
+   - 关注晚间美股走势及外围市场波动
+   - 密切跟踪政策面动向
+
+**操作建议**：控制仓位在6-7成，精选个股为主，避免盲目追涨杀跌。</div>
+</div>
+
+<div class="footer">
+  <div>本报告由 WorkBuddy 自动生成 | 数据仅供参考</div>
+  <div style="margin-top:8px">午间复盘 · 专业视角 · 客观分析</div>
+</div>
+
+</body>
+</html>

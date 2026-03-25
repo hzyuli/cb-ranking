@@ -5,248 +5,347 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>午间市场复盘 - 2026-03-25</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: "Microsoft YaHei", Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
             padding: 20px;
-            background: #f5f7fa;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        /* Header */
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
             text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
         }
         .header h1 {
-            margin: 0;
             font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .header p {
-            margin: 10px 0 0;
-            opacity: 0.9;
+        .header .subtitle {
+            color: #94a3b8;
+            font-size: 14px;
         }
-        .section {
-            padding: 25px;
-            border-bottom: 1px solid #eee;
-        }
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
+        
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(102,126,234,0.5);
             display: flex;
             align-items: center;
+            gap: 10px;
         }
-        .section-title::before {
-            content: "▌";
-            color: #667eea;
-            margin-right: 10px;
+        
+        /* Sentiment */
+        .sentiment-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
-        .impact-card {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
+        .sentiment-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .impact-card.bullish {
-            border-left-color: #28a745;
-            background: #f8fff8;
+        .sentiment-icon { font-size: 32px; }
+        .sentiment-text {
+            font-size: 20px;
         }
-        .impact-card.bearish {
-            border-left-color: #dc3545;
-            background: #fff8f8;
+        .sentiment-stats {
+            display: flex;
+            gap: 16px;
         }
-        .impact-card.neutral {
-            border-left-color: #ffc107;
-            background: #fffdf5;
-        }
-        .impact-title {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #333;
-        }
-        .impact-reason {
-            font-size: 14px;
-            color: #666;
-            margin-top: 8px;
-            font-style: italic;
-        }
-        .impact-target {
-            display: inline-block;
-            background: #e9ecef;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 13px;
-            margin-top: 8px;
-            color: #495057;
-        }
-        .news-item {
-            padding: 12px;
-            margin-bottom: 10px;
-            background: #fff;
-            border: 1px solid #e9ecef;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-        .news-item:hover {
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-color: #667eea;
-        }
-        .news-title {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 6px;
-        }
-        .news-meta {
-            font-size: 12px;
-            color: #999;
-        }
-        .asset-grid {
+        .stat-bullish { color: #4ade80; }
+        .stat-neutral { color: #94a3b8; }
+        .stat-bearish { color: #f87171; }
+        
+        /* Index Grid */
+        .index-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
         }
-        .asset-card {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
+        .index-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 16px;
             text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .asset-name {
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
+        .index-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
-        .asset-price {
+        .index-card.positive {
+            border-left: 4px solid #4ade80;
+        }
+        .index-card.negative {
+            border-left: 4px solid #f87171;
+        }
+        .index-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .index-code {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+        .index-price {
             font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
+            font-weight: 700;
+            font-family: monospace;
         }
-        .asset-change {
-            font-size: 14px;
-            margin-top: 5px;
+        .index-change {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 8px;
         }
-        .positive { color: #28a745; }
-        .negative { color: #dc3545; }
-        .footer {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
+        .positive .index-change { color: #4ade80; }
+        .negative .index-change { color: #f87171; }
+        
+        /* Sector List */
+        .sector-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
-        .tag {
-            display: inline-block;
+        .sector-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .sector-item.positive { border-left: 4px solid #4ade80; }
+        .sector-item.negative { border-left: 4px solid #f87171; }
+        .sector-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        .sector-change {
+            font-weight: 700;
+            font-size: 16px;
+            margin-right: 16px;
+        }
+        .positive .sector-change { color: #4ade80; }
+        .negative .sector-change { color: #f87171; }
+        .sector-strength {
+            background: rgba(255,255,255,0.1);
             padding: 4px 12px;
             border-radius: 12px;
             font-size: 12px;
-            font-weight: bold;
-            margin-right: 8px;
         }
-        .tag-bullish { background: #d4edda; color: #155724; }
-        .tag-bearish { background: #f8d7da; color: #721c24; }
-        .tag-neutral { background: #fff3cd; color: #856404; }
+        
+        /* Conclusion */
+        .conclusion {
+            background: rgba(102,126,234,0.15);
+            border-radius: 12px;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .conclusion h4 {
+            margin-bottom: 12px;
+            color: #a5b4fc;
+        }
+        .conclusion p {
+            margin-bottom: 8px;
+        }
+        .risk-tip {
+            color: #f59e0b;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .positive { color: #4ade80; }
+        .negative { color: #f87171; }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <div class="header">
-            <h1>🌅 午间市场复盘报告</h1>
-            <p>2026-03-25 | 深度分析版</p>
+            <h1>午间市场复盘报告</h1>
+            <div class="subtitle">2026-03-25 11:30 | A股 + 港股 | 数据来源: 同花顺 iFinD</div>
         </div>
         
-        <!-- 多资产联动分析 -->
-        <div class="section">
-            <div class="section-title">🌐 多资产联动分析</div>
+        <!-- Market Sentiment -->
+        <div class="card">
+            <div class="card-title">市场情绪</div>
             
-            <div class="asset-grid">
-
-                <div class="asset-card">
-                    <div class="asset-name">🛢️ 原油</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🥇 黄金</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🇺🇸 标普500期货</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🇺🇸 纳斯达克期货</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🇺🇸 道琼斯期货</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🏛️ 10年期国债</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-
-                <div class="asset-card">
-                    <div class="asset-name">🏛️ 5年期国债</div>
-                    <div class="asset-price">N/A</div>
-                    <div class="asset-change positive">
-                        0.00%
-                    </div>
-                </div>
-</div></div>
-        <div class="section">
-            <div class="section-title">📰 早盘舆情分析</div>
-</div>
-        <div class="section">
-            <div class="section-title">📝 综合研判与午后展望</div>
-            
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; line-height: 2;">
-                <h4 style="margin-top: 0; color: #333;">🎯 核心观点</h4>
-
-                <p><strong>风险提示:</strong> 午后需密切关注成交量变化和北向资金流向，谨防冲高回落。</p>
+    <div class="sentiment-box">
+        <div class="sentiment-main">
+            <span class="sentiment-icon">📊</span>
+            <span class="sentiment-text">市场情绪：<strong>略偏空</strong></span>
+        </div>
+        <div class="sentiment-stats">
+            <span class="stat-bullish">上涨 4</span>
+            <span class="stat-neutral">持平 1</span>
+            <span class="stat-bearish">下跌 5</span>
+        </div>
+    </div>
+        </div>
+        
+        <!-- Main Indices -->
+        <div class="card">
+            <div class="card-title">主要指数表现</div>
+            <div class="index-grid">
+                
+        <div class="index-card negative">
+            <div class="index-name">上证指数</div>
+            <div class="index-code">000001.SH</div>
+            <div class="index-price">3574.59</div>
+            <div class="index-change">▼ 0.98%</div>
+        </div>
+        <div class="index-card negative">
+            <div class="index-name">深证成指</div>
+            <div class="index-code">399001.SZ</div>
+            <div class="index-price">4213.88</div>
+            <div class="index-change">▼ 1.59%</div>
+        </div>
+        <div class="index-card negative">
+            <div class="index-name">创业板指</div>
+            <div class="index-code">399006.SZ</div>
+            <div class="index-price">2775.73</div>
+            <div class="index-change">▼ 0.67%</div>
+        </div>
+        <div class="index-card negative">
+            <div class="index-name">沪深300</div>
+            <div class="index-code">000300.SH</div>
+            <div class="index-price">185.02</div>
+            <div class="index-change">▼ 0.54%</div>
+        </div>
+        <div class="index-card positive">
+            <div class="index-name">上证50</div>
+            <div class="index-code">000016.SH</div>
+            <div class="index-price">4963.99</div>
+            <div class="index-change">▲ 1.88%</div>
+        </div>
+        <div class="index-card negative">
+            <div class="index-name">科创50</div>
+            <div class="index-code">000688.SH</div>
+            <div class="index-price">2060.94</div>
+            <div class="index-change">▼ 1.81%</div>
+        </div>
+        <div class="index-card positive">
+            <div class="index-name">恒生科技</div>
+            <div class="index-code">HSTECH.HI</div>
+            <div class="index-price">2843.37</div>
+            <div class="index-change">▲ 0.15%</div>
+        </div>
+        <div class="index-card positive">
+            <div class="index-name">恒生指数</div>
+            <div class="index-code">HSI.HI</div>
+            <div class="index-price">3065.01</div>
+            <div class="index-change">▲ 0.52%</div>
+        </div>
+        <div class="index-card positive">
+            <div class="index-name">中证1000</div>
+            <div class="index-code">000852.SH</div>
+            <div class="index-price">1384.89</div>
+            <div class="index-change">▲ 2.49%</div>
+        </div>
+        <div class="index-card positive">
+            <div class="index-name">中证500</div>
+            <div class="index-code">000905.SH</div>
+            <div class="index-price">4807.85</div>
+            <div class="index-change">▲ 0.79%</div>
+        </div>
             </div>
         </div>
         
+        <!-- Hot Sectors -->
+        <div class="card">
+            <div class="card-title">热门板块</div>
+            <div class="sector-list">
+                
+        <div class="sector-item positive">
+            <div class="sector-name">白酒</div>
+            <div class="sector-change">▲ 4.30%</div>
+            <div class="sector-strength">强</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">消费电子</div>
+            <div class="sector-change">▲ 3.42%</div>
+            <div class="sector-strength">强</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">人工智能</div>
+            <div class="sector-change">▲ 3.36%</div>
+            <div class="sector-strength">强</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">半导体</div>
+            <div class="sector-change">▲ 3.35%</div>
+            <div class="sector-strength">强</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">新能源</div>
+            <div class="sector-change">▲ 2.41%</div>
+            <div class="sector-strength">强</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">房地产</div>
+            <div class="sector-change">▲ 0.48%</div>
+            <div class="sector-strength">弱</div>
+        </div>
+            </div>
+        </div>
+        
+        <!-- Conclusion -->
+        <div class="card">
+            <div class="card-title">午后展望</div>
+            <div class="conclusion">
+                <h4>核心观点</h4>
+                <p><strong>市场状态：</strong>略偏空（📊 上涨4家 / 下跌5家）</p>
+                <p><strong>重点关注：</strong>白酒, 消费电子, 人工智能等板块表现</p>
+                <p><strong>操作建议：</strong>控制仓位，关注量能变化，谨防冲高回落</p>
+                <p class="risk-tip">风险提示：午盘需关注北向资金流向及美股期货动态</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
         <div class="footer">
-            <p>📅 报告生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
-            <p>📊 数据来源: 同花顺 iFinD | 🤖 AI分析助手生成</p>
+            <p>报告生成时间: 2026-03-25 13:16:22</p>
+            <p>数据来源: 同花顺 iFinD | AI分析助手生成</p>
         </div>
     </div>
 </body>

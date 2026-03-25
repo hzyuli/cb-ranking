@@ -1,274 +1,253 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>午间市场复盘 | 2026-03-24</title>
-<style>
-:root {
-  --bg: #0f1117; --card: #1a1d27; --border: #2a2d3e;
-  --text: #e2e8f0; --muted: #8892a4;
-  --up: #22c55e; --up-bg: rgba(34,197,94,0.1);
-  --down: #ef4444; --down-bg: rgba(239,68,68,0.1);
-  --accent: #60a5fa; --warning: #f59e0b;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { 
-  background: var(--bg); color: var(--text);
-  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 14px; line-height: 1.7; padding: 28px 32px;
-}
-
-/* Header */
-.hdr { 
-  display: flex; justify-content: space-between; align-items: flex-start;
-  padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px;
-}
-.hdr h1 { font-size: 24px; font-weight: 700; letter-spacing: 0.02em; }
-.hdr .sub { color: var(--muted); font-size: 13px; margin-top: 6px; }
-.hdr .meta { text-align: right; color: var(--muted); font-size: 13px; line-height: 2; }
-
-/* Sentiment Badge */
-.sentiment-box {
-  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 20px 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 20px;
-}
-.sentiment-badge {
-  padding: 12px 24px; border-radius: 8px; font-size: 18px; font-weight: 700;
-  background: #4ade8020; color: #4ade80; border: 2px solid #4ade80;
-}
-.sentiment-stats { display: flex; gap: 24px; flex: 1; }
-.stat-item { text-align: center; }
-.stat-val { font-size: 24px; font-weight: 700; font-family: monospace; }
-.stat-val.up { color: var(--up); }
-.stat-val.down { color: var(--down); }
-.stat-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
-
-/* Section */
-.section { margin-bottom: 28px; }
-.section-title {
-  font-size: 16px; font-weight: 700; color: var(--accent);
-  border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 16px;
-}
-
-/* Commentary Box */
-.commentary {
-  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 20px; color: var(--text); line-height: 2;
-  white-space: pre-line;
-}
-
-/* Table */
-table {
-  width: 100%; border-collapse: collapse; background: var(--card);
-  border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.45);
-}
-thead tr { background: #11141d; border-bottom: 2px solid var(--border); }
-th {
-  padding: 12px 16px; text-align: left; font-size: 11.5px; font-weight: 600;
-  color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
-}
-td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-tr:last-child td { border-bottom: none; }
-.up { color: var(--up); font-weight: 600; }
-.down { color: var(--down); font-weight: 600; }
-.logic { font-size: 12px; color: var(--muted); line-height: 1.6; max-width: 400px; }
-
-/* Outlook */
-.outlook {
-  background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 20px; line-height: 2; white-space: pre-line;
-}
-.outlook strong { color: var(--accent); }
-
-/* Footer */
-.footer {
-  margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border);
-  color: var(--muted); font-size: 12px; text-align: center;
-}
-.warning {
-  background: rgba(245,158,11,0.1); border: 1px solid var(--warning);
-  border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
-  color: var(--warning); font-size: 12px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>午间市场复盘 - 2026-03-25</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        .header p {
+            margin: 10px 0 0;
+            opacity: 0.9;
+        }
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::before {
+            content: "▌";
+            color: #667eea;
+            margin-right: 10px;
+        }
+        .impact-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .impact-card.bullish {
+            border-left-color: #28a745;
+            background: #f8fff8;
+        }
+        .impact-card.bearish {
+            border-left-color: #dc3545;
+            background: #fff8f8;
+        }
+        .impact-card.neutral {
+            border-left-color: #ffc107;
+            background: #fffdf5;
+        }
+        .impact-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .impact-reason {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .impact-target {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-top: 8px;
+            color: #495057;
+        }
+        .news-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .news-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        .news-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+        }
+        .asset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .asset-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .asset-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .asset-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .asset-change {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .positive { color: #28a745; }
+        .negative { color: #dc3545; }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .tag-bullish { background: #d4edda; color: #155724; }
+        .tag-bearish { background: #f8d7da; color: #721c24; }
+        .tag-neutral { background: #fff3cd; color: #856404; }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>🌅 午间市场复盘报告</h1>
+            <p>2026-03-25 | 深度分析版</p>
+        </div>
+        
+        <!-- 多资产联动分析 -->
+        <div class="section">
+            <div class="section-title">🌐 多资产联动分析</div>
+            
+            <div class="asset-grid">
 
-<div class="hdr">
-  <div>
-    <h1>📊 午间市场复盘报告</h1>
-    <div class="sub">A股 · 港股早盘深度分析 | 舆情 · 数据 · 情绪 · 板块</div>
-  </div>
-  <div class="meta">
-    <div>报告日期：<strong style="color:var(--text)">2026-03-24</strong></div>
-    <div>生成时间：14:38</div>
-    <div>数据来源：同花顺 iFinD</div>
-  </div>
+                <div class="asset-card">
+                    <div class="asset-name">🛢️ 原油</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🥇 黄金</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🇺🇸 标普500期货</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🇺🇸 纳斯达克期货</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🇺🇸 道琼斯期货</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🏛️ 10年期国债</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+
+                <div class="asset-card">
+                    <div class="asset-name">🏛️ 5年期国债</div>
+                    <div class="asset-price">N/A</div>
+                    <div class="asset-change positive">
+                        0.00%
+                    </div>
+                </div>
+</div></div>
+        <div class="section">
+            <div class="section-title">📰 早盘舆情分析</div>
 </div>
+        <div class="section">
+            <div class="section-title">📝 综合研判与午后展望</div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; line-height: 2;">
+                <h4 style="margin-top: 0; color: #333;">🎯 核心观点</h4>
 
-<div class="warning">
-  ⚠️ 本报告仅供学习与研究参考，不构成任何投资建议。市场有风险，投资须谨慎。
-</div>
-
-<!-- 情绪指标 -->
-<div class="sentiment-box">
-  <div class="sentiment-badge">市场情绪：温和偏多</div>
-  <div class="sentiment-stats">
-    <div class="stat-item">
-      <div class="stat-val up">2856</div>
-      <div class="stat-lbl">上涨家数</div>
+                <p><strong>风险提示:</strong> 午后需密切关注成交量变化和北向资金流向，谨防冲高回落。</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📅 报告生成时间: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}</p>
+            <p>📊 数据来源: 同花顺 iFinD | 🤖 AI分析助手生成</p>
+        </div>
     </div>
-    <div class="stat-item">
-      <div class="stat-val down">1987</div>
-      <div class="stat-lbl">下跌家数</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val up">68</div>
-      <div class="stat-lbl">涨停</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-val down">12</div>
-      <div class="stat-lbl">跌停</div>
-    </div>
-  </div>
-</div>
-
-<!-- 市场综述 -->
-<div class="section">
-  <div class="section-title">📝 早盘市场综述</div>
-  <div class="commentary">早盘市场呈现分化格局，恒生科技表现强势，2.15%，创业板指相对弱势，-0.15%。
-
-从量能来看，早盘成交额较昨日同期基本持平，显示市场参与度维持常态。
-涨跌家数比约为2856:1987，涨停68家，跌停12家，整体情绪偏积极。</div>
-</div>
-
-<!-- 主要指数 -->
-<div class="section">
-  <div class="section-title">📈 主要指数表现</div>
-  <table>
-    <thead>
-      <tr>
-        <th>指数</th>
-        <th>最新价</th>
-        <th>涨跌幅</th>
-        <th>涨跌额</th>
-        <th>成交额</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-            <tr>
-                <td>上证指数</td>
-                <td>3375.20</td>
-                <td class="up">+0.35%</td>
-                <td class="up">+11.80</td>
-                <td>0.3亿</td>
-            </tr>
-            <tr>
-                <td>沪深300</td>
-                <td>4417.80</td>
-                <td class="up">+0.28%</td>
-                <td class="up">+12.30</td>
-                <td>0.3亿</td>
-            </tr>
-            <tr>
-                <td>创业板指</td>
-                <td>2156.30</td>
-                <td class="down">-0.15%</td>
-                <td class="down">-3.20</td>
-                <td>0.2亿</td>
-            </tr>
-            <tr>
-                <td>恒生指数</td>
-                <td>23456.70</td>
-                <td class="up">+1.25%</td>
-                <td class="up">+289.50</td>
-                <td>0.1亿</td>
-            </tr>
-            <tr>
-                <td>恒生科技</td>
-                <td>5678.90</td>
-                <td class="up">+2.15%</td>
-                <td class="up">+119.80</td>
-                <td>0.1亿</td>
-            </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- 热门板块 -->
-<div class="section">
-  <div class="section-title">🔥 热门板块分析</div>
-  <table>
-    <thead>
-      <tr>
-        <th>板块</th>
-        <th>涨跌幅</th>
-        <th>成交额</th>
-        <th>上涨逻辑</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-            <tr>
-                <td>低空经济</td>
-                <td class="up">+3.85%</td>
-                <td>0.0亿</td>
-                <td class="logic">政策催化：多地出台低空经济发展规划，eVTOL适航认证加速，产业链订单预期升温</td>
-            </tr>
-            <tr>
-                <td>机器人</td>
-                <td class="up">+2.95%</td>
-                <td>0.0亿</td>
-                <td class="logic">产业趋势：特斯拉Optimus量产预期临近，国内厂商技术突破，减速器/传感器需求放量</td>
-            </tr>
-            <tr>
-                <td>芯片</td>
-                <td class="up">+2.45%</td>
-                <td>0.1亿</td>
-                <td class="logic">国产替代：先进制程设备突破传闻，AI芯片需求旺盛，设备材料端业绩预期改善</td>
-            </tr>
-            <tr>
-                <td>新能源</td>
-                <td class="up">+1.85%</td>
-                <td>0.1亿</td>
-                <td class="logic">超跌反弹：光伏产业链价格企稳，储能装机超预期，估值修复动能释放</td>
-            </tr>
-            <tr>
-                <td>医药生物</td>
-                <td class="down">-0.95%</td>
-                <td>0.0亿</td>
-                <td class="logic">防御属性：创新药出海逻辑强化，CXO订单回暖，集采政策边际缓和</td>
-            </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- 后市展望 -->
-<div class="section">
-  <div class="section-title">🔭 后市展望与建议</div>
-  <div class="outlook">**午后展望**：
-
-1. **指数层面**：预计维持区间震荡，关注量能变化及北向资金流向，温和偏多情绪下不宜过度追高。
-
-2. **板块机会**：
-   - 短期可关注低空经济、机器人等强势板块的持续性
-   - 中期布局业绩确定性方向，回避高位题材股
-   - 高股息防御品种可作为底仓配置
-
-3. **风险提示**：
-   - 注意领涨板块的分化风险
-   - 关注晚间美股走势及外围市场波动
-   - 密切跟踪政策面动向
-
-**操作建议**：控制仓位在6-7成，精选个股为主，避免盲目追涨杀跌。</div>
-</div>
-
-<div class="footer">
-  <div>本报告由 WorkBuddy 自动生成 | 数据仅供参考</div>
-  <div style="margin-top:8px">午间复盘 · 专业视角 · 客观分析</div>
-</div>
-
 </body>
 </html>

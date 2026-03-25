@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>长上引线交易策略报告 - 2026-03-24</title>
+    <title>长上引线交易策略报告 - 20260324</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.6; }
@@ -11,6 +11,7 @@
         .header { background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 40px; margin-bottom: 30px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1); text-align: center; }
         .header h1 { color: #4a5568; font-size: 2.5rem; margin-bottom: 10px; }
         .header .subtitle { color: #718096; font-size: 1.2rem; margin-bottom: 20px; }
+        .data-date { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 15px 30px; border-radius: 10px; font-size: 1.1rem; font-weight: bold; margin: 15px 0; display: inline-block; }
         .stats { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
         .stat-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; min-width: 150px; }
         .stat-card .number { font-size: 2.5rem; font-weight: bold; }
@@ -46,6 +47,7 @@
         .condition-badge.false { background: #f1f5f9; color: #64748b; }
         .footer { text-align: center; margin-top: 40px; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
         .footer a { color: white; text-decoration: none; }
+        .data-note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 10px 15px; margin: 10px 0; border-radius: 5px; font-size: 0.9rem; }
         @media (max-width: 768px) {
             .signal-grid { grid-template-columns: 1fr; }
             .stats { flex-direction: column; align-items: center; }
@@ -57,23 +59,21 @@
     <div class="container">
         <div class="header">
             <h1>📈 长上引线交易策略报告</h1>
-            <div class="subtitle">基于2026-03-24收盘数据的专业分析</div>
+            <div class="subtitle">基于真实市场数据的专业分析</div>
+            <div class="data-date">📅 数据日期：2026-03-24 (昨日收盘)</div>
+            <div class="data-note">⚠️ 本报告使用真实数据。如数据日期显示"昨日收盘"，表示今日收盘数据尚未发布。</div>
             <div class="stats">
                 <div class="stat-card">
-                    <div class="number">10</div>
+                    <div class="number">13</div>
                     <div class="label">分析标的</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number">8</div>
+                    <div class="number">12</div>
                     <div class="label">买入信号</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number">2</div>
+                    <div class="number">1</div>
                     <div class="label">观察信号</div>
-                </div>
-                <div class="stat-card">
-                    <div class="number">2026-03-24</div>
-                    <div class="label">数据日期</div>
                 </div>
             </div>
         </div>
@@ -90,12 +90,12 @@
             </ul>
         </div>
         
-        <div class="signal-section"><h2 class="section-title">✅ 买入信号 (8只)</h2><div class="signal-grid">
+        <div class="signal-section"><h2 class="section-title">✅ 买入信号 (12只)</h2><div class="signal-grid">
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">晶能转债</div>
-                <div class="bond-code">123195.SZ | 新能源</div>
+                <div class="bond-name">123138.SZ</div>
+                <div class="bond-code">123138.SZ</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -106,44 +106,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">187.74元</span>
+                <span class="metric-value">129.67元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-0.21%</span>
+                <span class="metric-value positive">1.66%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.53</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">2.75%</span>
+                <span class="metric-value">64.5</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.68</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">1170.43万</span>
+                <span class="metric-value">0万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge false">近5日线: ✗</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：25.6元 | 溢价率：633.36%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">禾丰转债</div>
-                <div class="bond-code">113657.SH | 农业</div>
+                <div class="bond-name">123195.SZ</div>
+                <div class="bond-code">123195.SZ</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -154,44 +150,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">191.63元</span>
+                <span class="metric-value">154.4元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">2.34%</span>
+                <span class="metric-value positive">5.07%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.08</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">0.98%</span>
+                <span class="metric-value">234.73</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.37</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">4132.99万</span>
+                <span class="metric-value">1万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge false">上引线≥1.5: ✗</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：18.3元 | 溢价率：947.16%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">立讯转债</div>
-                <div class="bond-code">128136.SZ | 电子</div>
+                <div class="bond-name">123196.SZ</div>
+                <div class="bond-code">123196.SZ</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -202,92 +194,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">176.07元</span>
+                <span class="metric-value">130.5元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">3.7%</span>
+                <span class="metric-value positive">2.19%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.54</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">1.51%</span>
+                <span class="metric-value">85.78</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">1.18</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">4594.76万</span>
+                <span class="metric-value">0万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge false">缩量: ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：32.5元 | 溢价率：441.75%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">韦尔转债</div>
-                <div class="bond-code">113616.SH | 半导体</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 5/5</span>
-            </div>
-        </div>
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">177.36元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-1.1%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.85</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">0.18%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.63</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">3315.23万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：45.2元 | 溢价率：292.39%
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">珀莱转债</div>
-                <div class="bond-code">113659.SH | 化妆品</div>
+                <div class="bond-name">127076.SZ</div>
+                <div class="bond-code">127076.SZ</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -298,44 +238,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">135.32元</span>
+                <span class="metric-value">132.81元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">2.37%</span>
+                <span class="metric-value positive">2.95%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">2.56</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">-1.78%</span>
+                <span class="metric-value">117.68</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.83</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">2412.09万</span>
+                <span class="metric-value">1万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge false">缩量: ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：19.8元 | 溢价率：583.43%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">希望转2</div>
-                <div class="bond-code">127075.SZ | 农业</div>
+                <div class="bond-name">113658.SH</div>
+                <div class="bond-code">113658.SH</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -346,44 +282,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">175.49元</span>
+                <span class="metric-value">137.3元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-0.97%</span>
+                <span class="metric-value positive">3.02%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">2.24</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">-1.76%</span>
+                <span class="metric-value">124.27</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.98</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">3635.9万</span>
+                <span class="metric-value">1万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge false">缩量: ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：15.6元 | 溢价率：1024.94%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">巨星转债</div>
-                <div class="bond-code">113658.SH | 农业</div>
+                <div class="bond-name">113659.SH</div>
+                <div class="bond-code">113659.SH</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -394,44 +326,40 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">139.87元</span>
+                <span class="metric-value">131.38元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">3.18%</span>
+                <span class="metric-value positive">2.6%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">2.49</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">-2.09%</span>
+                <span class="metric-value">102.4</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.71</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">1386.54万</span>
+                <span class="metric-value">1万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge false">近5日线: ✗</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：16.9元 | 溢价率：727.63%
+            数据日期：20260324
         </div>
     </div>
     
     <div class="signal-card buy">
         <div class="card-header">
             <div>
-                <div class="bond-name">科沃转债</div>
-                <div class="bond-code">118036.SH | 家电</div>
+                <div class="bond-name">110087.SH</div>
+                <div class="bond-code">110087.SH</div>
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
@@ -442,46 +370,262 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">181.97元</span>
+                <span class="metric-value">138.44元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-0.04%</span>
+                <span class="metric-value positive">2.12%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">-0.23%</span>
+                <span class="metric-value">87.89</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.85</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">609.96万</span>
+                <span class="metric-value">3万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge false">缩量: ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：24.3元 | 溢价率：648.85%
+            数据日期：20260324
+        </div>
+    </div>
+    
+    <div class="signal-card buy">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">128136.SZ</div>
+                <div class="bond-code">128136.SZ</div>
+            </div>
+            <div>
+                <span class="signal-badge buy">买入</span>
+                <span class="score-badge">评分: 4/5</span>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">122.38元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">1.46%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线比例</span>
+                <span class="metric-value">53.42</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">0.75</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">1万</span>
+            </div>
+        </div>
+        
+        <div class="conditions">
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260324
+        </div>
+    </div>
+    
+    <div class="signal-card buy">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">113616.SH</div>
+                <div class="bond-code">113616.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge buy">买入</span>
+                <span class="score-badge">评分: 4/5</span>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">115.09元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">1.24%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线比例</span>
+                <span class="metric-value">42.73</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">0.75</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">1万</span>
+            </div>
+        </div>
+        
+        <div class="conditions">
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260324
+        </div>
+    </div>
+    
+    <div class="signal-card buy">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">118037.SH</div>
+                <div class="bond-code">118037.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge buy">买入</span>
+                <span class="score-badge">评分: 4/5</span>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">131.46元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">2.7%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线比例</span>
+                <span class="metric-value">106.35</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">0.75</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">0万</span>
+            </div>
+        </div>
+        
+        <div class="conditions">
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260324
+        </div>
+    </div>
+    
+    <div class="signal-card buy">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">113650.SH</div>
+                <div class="bond-code">113650.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge buy">买入</span>
+                <span class="score-badge">评分: 4/5</span>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">124.83元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">2.49%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线比例</span>
+                <span class="metric-value">93.07</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">0.75</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">0万</span>
+            </div>
+        </div>
+        
+        <div class="conditions">
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260324
+        </div>
+    </div>
+    
+    <div class="signal-card buy">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">113048.SH</div>
+                <div class="bond-code">113048.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge buy">买入</span>
+                <span class="score-badge">评分: 4/5</span>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">135.97元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">2.74%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线比例</span>
+                <span class="metric-value">111.73</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">0.75</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">3万</span>
+            </div>
+        </div>
+        
+        <div class="conditions">
+            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+        
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260324
         </div>
     </div>
     </div></div>
         
-        <div class="signal-section"><h2 class="section-title">👀 观察信号 (2只)</h2><div class="signal-grid">
+        <div class="signal-section"><h2 class="section-title">👀 观察信号 (1只)</h2><div class="signal-grid">
     <div class="signal-card watch">
         <div class="card-header">
             <div>
-                <div class="bond-name">冠宇转债</div>
-                <div class="bond-code">118037.SH | 消费电子</div>
+                <div class="bond-name">127075.SZ</div>
+                <div class="bond-code">127075.SZ</div>
             </div>
             <div>
                 <span class="signal-badge watch">观察</span>
@@ -492,91 +636,39 @@
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
-                <span class="metric-value">177.74元</span>
+                <span class="metric-value">156.5元</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-3.37%</span>
+                <span class="metric-value positive">0.0%</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.09</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">-2.53%</span>
+                <span class="metric-value">0.0</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.5</span>
+                <span class="metric-value">0.75</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
-                <span class="metric-value">2783.82万</span>
+                <span class="metric-value">17万</span>
             </div>
         </div>
         
         <div class="conditions">
-            <span class="condition-badge false">上引线≥1.5: ✗</span><span class="condition-badge false">近5日线: ✗</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
+            <span class="condition-badge false">上引线≥1.5: ✗</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
         
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：28.7元 | 溢价率：519.3%
-        </div>
-    </div>
-    
-    <div class="signal-card watch">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">三诺转债</div>
-                <div class="bond-code">123196.SZ | 医疗</div>
-            </div>
-            <div>
-                <span class="signal-badge watch">观察</span>
-                <span class="score-badge">评分: 3/5</span>
-            </div>
-        </div>
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">166.36元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value negative">-1.42%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">1.32</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">5日线距离</span>
-                <span class="metric-value">2.65%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.4</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">3177.63万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge false">上引线≥1.5: ✗</span><span class="condition-badge false">近5日线: ✗</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge true">流动性: ✓</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            转股价：22.1元 | 溢价率：652.76%
+            数据日期：20260324
         </div>
     </div>
     </div></div>
         
         <div class="footer">
-            <p>📊 长上引线交易策略 | 生成时间：2026-03-25 13:34:08</p>
-            <p>⚠️ 免责声明：本报告基于模拟数据生成，仅供参考，不构成投资建议</p>
+            <p>📊 长上引线交易策略 | 生成时间：2026-03-25 14:27:52</p>
+            <p>📅 数据来源：finance-data API | ⚠️ 免责声明：本报告仅供参考，不构成投资建议</p>
         </div>
     </div>
 </body>

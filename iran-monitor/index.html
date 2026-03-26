@@ -32,7 +32,7 @@
   }
   .score-big {
     font-size: 72px; font-weight: 900;
-    color: #22c55e;
+    color: #84cc16;
     line-height: 1;
     min-width: 110px;
     text-align: center;
@@ -79,25 +79,25 @@
 <body>
 <div class="header">
   <h1>🇺🇸🇮🇷 美伊战争烈度监控 <span class="badge">每小时更新</span></h1>
-  <div class="sub">数据来源：媒体 RSS（Reuters / BBC / Al Jazeera / Google News）+ Polymarket 市场概率 | 最后更新：2026-03-26 10:19</div>
+  <div class="sub">数据来源：媒体 RSS（Reuters / BBC / Al Jazeera / Google News）+ Polymarket 市场概率 | 最后更新：2026-03-26 10:57</div>
 </div>
 
 <div class="container">
 
   <!-- 当前分值卡片 -->
   <div class="score-card">
-    <div class="score-big">1.1</div>
+    <div class="score-big">31.8</div>
     <div class="score-info">
-      <div class="label">和平/外交</div>
-      <div class="time">记录时间：2026-03-26 10:19</div>
-      <div class="pmbar">Polymarket 开战概率：<strong style="color:#f59e0b">15.0%</strong></div>
+      <div class="label">紧张克制</div>
+      <div class="time">记录时间：2026-03-26 10:57</div>
+      <div class="pmbar">Polymarket 开战概率：<strong style="color:#f59e0b">15.0%</strong><div style="font-size:12px;color:#94a3b8;margin-top:8px">WTI: $75.00 | Brent: $80.00 | <span style="color:#22c55e">↓0.00%</span></div></div>
       <div style="margin-top:16px;font-size:12px;color:#475569">
         <strong style="color:#94a3b8">评分说明：</strong>
-        <span style="color:#22c55e">0-2 和平</span> ·
-        <span style="color:#84cc16">3-4 紧张克制</span> ·
-        <span style="color:#f59e0b">5-6 显著升级</span> ·
-        <span style="color:#f97316">7-8 准军事冲突</span> ·
-        <span style="color:#ef4444">9-10 全面战争</span>
+        <span style="color:#22c55e">0-20 和平</span> ·
+        <span style="color:#84cc16">21-40 紧张克制</span> ·
+        <span style="color:#f59e0b">41-60 显著升级</span> ·
+        <span style="color:#f97316">61-80 准军事冲突</span> ·
+        <span style="color:#ef4444">81-100 全面战争</span>
       </div>
     </div>
   </div>
@@ -110,16 +110,86 @@
     </div>
   </div>
 
-  <!-- 两列面板 -->
-  <div class="two-col">
-    <div class="panel">
-      <h3>📰 最新相关新闻（前 5 条）</h3>
-      <ul><li style="margin:4px 0;line-height:1.5">Tehran issues warning to regional neighbour if Iranian island occupied</li><li style="margin:4px 0;line-height:1.5">Trump says Iranian leaders want deal ‘so badly’ but fear retaliation</li><li style="margin:4px 0;line-height:1.5">Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon</li><li style="margin:4px 0;line-height:1.5">Egypt says it is ready to host Iran de-escalation talks</li><li style="margin:4px 0;line-height:1.5">Iranian foreign minister rejects talks with US</li></ul>
-    </div>
-    <div class="panel">
-      <h3>📊 本次评分依据</h3>
-      <ul><li style="margin:4px 0;color:#94a3b8">关键词命中：missiles hit(×1), iran war(×1), killed(×1)</li><li style="margin:4px 0;color:#94a3b8">参考新闻 20 条（来自 Reuters/BBC/Al Jazeera/Google News）</li></ul>
-    </div>
+  <!-- 维度得分 -->
+  <div class="panel">
+    <h3 style="margin-bottom:16px">📊 七维度得分详情</h3>
+    
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">军事对峙</span>
+            <span style="color:#f97316;font-size:13px;font-weight:600">15.0/25</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#f97316;height:100%;width:60.0%;transition:width 0.3s"></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">iran war(×1)</div>
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">外交博弈</span>
+            <span style="color:#22c55e;font-size:13px;font-weight:600">0.0/20</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#22c55e;height:100%;width:0.0%;transition:width 0.3s"></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">warning(×1), deal(×1), talks(×3), de-escalation(×1)</div>
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">经济制裁</span>
+            <span style="color:#22c55e;font-size:13px;font-weight:600">0.0/15</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#22c55e;height:100%;width:0.0%;transition:width 0.3s"></div>
+          </div>
+          
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">油价冲击</span>
+            <span style="color:#22c55e;font-size:13px;font-weight:600">0.0/15</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#22c55e;height:100%;width:0.0%;transition:width 0.3s"></div>
+          </div>
+          
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">地区代理</span>
+            <span style="color:#f97316;font-size:13px;font-weight:600">6.0/10</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#f97316;height:100%;width:60.0%;transition:width 0.3s"></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">lebanon(×1)</div>
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">媒体热度</span>
+            <span style="color:#ef4444;font-size:13px;font-weight:600">10.0/10</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#ef4444;height:100%;width:100.0%;transition:width 0.3s"></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">新闻20条</div>
+        </div>
+        <div style="margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+            <span style="color:#e2e8f0;font-size:13px;font-weight:500">市场预期</span>
+            <span style="color:#22c55e;font-size:13px;font-weight:600">0.8/5</span>
+          </div>
+          <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
+            <div style="background:#22c55e;height:100%;width:15.0%;transition:width 0.3s"></div>
+          </div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">概率15.0%</div>
+        </div>
+  </div>
+
+  <!-- 新闻列表 -->
+  <div class="panel">
+    <h3>📰 最新相关新闻（前 5 条）</h3>
+    <ul><li style="margin:4px 0;line-height:1.5">Tehran issues warning to regional neighbour if Iranian island occupied</li><li style="margin:4px 0;line-height:1.5">Trump says Iranian leaders want deal ‘so badly’ but fear retaliation</li><li style="margin:4px 0;line-height:1.5">Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon</li><li style="margin:4px 0;line-height:1.5">Egypt says it is ready to host Iran de-escalation talks</li><li style="margin:4px 0;line-height:1.5">Iranian foreign minister rejects talks with US</li></ul>
   </div>
 
   <!-- 历史表格 -->
@@ -131,12 +201,11 @@
           <th style="text-align:left;padding:6px 10px;color:#64748b;border-bottom:1px solid #334155">时间</th>
           <th style="text-align:center;padding:6px 10px;color:#64748b;border-bottom:1px solid #334155">分值</th>
           <th style="text-align:left;padding:6px 10px;color:#64748b;border-bottom:1px solid #334155">烈度标签</th>
-          <th style="text-align:left;padding:6px 10px;color:#64748b;border-bottom:1px solid #334155">关键词命中</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td style="padding:6px 10px;color:#94a3b8">2026-03-26 10:19</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#22c55e">1.1</td><td style="padding:6px 10px;color:#cbd5e1">和平/外交</td><td style="padding:6px 10px;color:#64748b;font-size:12px">missiles hit(×1), iran war(×1), killed(×1)</td></tr>
-<tr><td style="padding:6px 10px;color:#94a3b8">2026-03-26 09:18</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#22c55e">2.8</td><td style="padding:6px 10px;color:#cbd5e1">紧张克制</td><td style="padding:6px 10px;color:#64748b;font-size:12px">missiles hit(×1), iran war(×3), killed(×1)</td></tr>
+        <tr><td style="padding:6px 10px;color:#94a3b8">2026-03-26 10:57</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#84cc16">31.8</td><td style="padding:6px 10px;color:#cbd5e1">紧张克制</td></tr>
+<tr><td style="padding:6px 10px;color:#94a3b8">2026-03-26 09:18</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#22c55e">2.8</td><td style="padding:6px 10px;color:#cbd5e1">紧张克制</td></tr>
 
       </tbody>
     </table>
@@ -148,8 +217,8 @@
 </div>
 
 <script>
-const labels = ["2026-03-26 09:18", "2026-03-26 10:19"];
-const scores = [2.8, 1.12];
+const labels = ["2026-03-26 09:18", "2026-03-26 10:57"];
+const scores = [2.8, 31.8];
 
 const ctx = document.getElementById('lineChart').getContext('2d');
 
@@ -202,11 +271,11 @@ new Chart(ctx, {
         grid:  { color: 'rgba(255,255,255,0.04)' },
       },
       y: {
-        min: 0, max: 10,
+        min: 0, max: 100,
         ticks: {
           color: '#64748b',
           callback: v => v.toFixed(0),
-          stepSize: 1,
+          stepSize: 10,
         },
         grid: { color: 'rgba(255,255,255,0.06)' },
       }

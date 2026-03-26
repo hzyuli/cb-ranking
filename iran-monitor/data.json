@@ -21,5 +21,28 @@
       "Palestine weekly wrap: West Bank attacks surge, Israel restricts Gaza aid"
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-03-26 10:19",
+    "score": 1.12,
+    "label": "和平/外交",
+    "basis": [
+      "关键词命中：missiles hit(×1), iran war(×1), killed(×1)",
+      "参考新闻 20 条（来自 Reuters/BBC/Al Jazeera/Google News）"
+    ],
+    "hit_kws": [
+      "missiles hit(×1)",
+      "iran war(×1)",
+      "killed(×1)"
+    ],
+    "pm_prob": 15.0,
+    "top_news": [
+      "Tehran issues warning to regional neighbour if Iranian island occupied",
+      "Trump says Iranian leaders want deal ‘so badly’ but fear retaliation",
+      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
+      "Egypt says it is ready to host Iran de-escalation talks",
+      "Iranian foreign minister rejects talks with US"
+    ],
+    "news_count": 20
   }
 ]

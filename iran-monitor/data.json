@@ -239,5 +239,87 @@
       "Australia bans visitors from Iran amid war in the Middle East"
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-03-26 14:23",
+    "score": 40.0,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "strike iran(×1)",
+          "iran war(×3)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "talks(×2)",
+          "negotiation(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 0.0,
+        "max": 15,
+        "kws": [
+          "WTI $76.00 / Brent $79.00",
+          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
+          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
+        ],
+        "wti": 76.0,
+        "brent": 79.0,
+        "change": 0.0
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Read Trump's full statement on Iran attacks - PBS",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 4.25,
+        "max": 5,
+        "kws": [
+          "新闻17条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      "Who wants what and why from US-Iran peace talks?",
+      "Democrats flip Florida state seat that includes Trump's Mar-a-Lago home",
+      "Pentagon Orders 2,000 Airborne Troops to Middle East - The New York Times",
+      "US-Israel war on Iran: What’s happening on day 26 of attacks? - Al Jazeera",
+      "Iran war: Tehran sets own terms to end war, rejects US plan - DW.com"
+    ],
+    "news_count": 17
   }
 ]

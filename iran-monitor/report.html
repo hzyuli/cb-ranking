@@ -91,6 +91,39 @@
         .level-high { background: #f97316; color: #000; }
         .level-extreme { background: #dc2626; color: #fff; }
         
+        /* 计算公式说明 */
+        .formula-section {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+        }
+        .formula-section h2 { font-size: 18px; margin-bottom: 16px; color: #fff; }
+        .formula-box {
+            background: #0a0a0a;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 16px;
+            color: #fbbf24;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .formula-detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        .formula-item {
+            background: #0a0a0a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        .formula-item .weight { color: #60a5fa; font-weight: 600; }
+        .formula-item .desc { color: #888; font-size: 12px; margin-top: 4px; }
+        
         /* 关键指标 */
         .key-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 40px; }
         .metric-card {
@@ -103,21 +136,43 @@
         .metric-value { font-size: 32px; font-weight: bold; color: #fff; }
         .metric-sub { font-size: 12px; color: #666; margin-top: 4px; }
         
-        /* 概率条形图 */
+        /* 概率条形图 - 修复布局问题 */
         .chart-section { background: #1a1a1a; border-radius: 12px; padding: 24px; margin-bottom: 30px; border: 1px solid #333; }
         .chart-section h2 { font-size: 18px; margin-bottom: 20px; color: #fff; }
         .bar-chart { display: flex; flex-direction: column; gap: 16px; }
         .bar-item { display: flex; align-items: center; gap: 12px; }
-        .bar-label { width: 200px; font-size: 13px; color: #aaa; flex-shrink: 0; }
-        .bar-container { flex: 1; height: 24px; background: #2a2a2a; border-radius: 4px; overflow: hidden; }
-        .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
-        .bar-value { width: 60px; text-align: right; font-size: 14px; font-weight: 600; }
+        .bar-label { width: 220px; font-size: 13px; color: #aaa; flex-shrink: 0; }
+        .bar-container { flex: 1; height: 24px; background: #2a2a2a; border-radius: 4px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; position: absolute; left: 0; top: 0; }
+        .bar-value { width: 60px; text-align: right; font-size: 14px; font-weight: 600; flex-shrink: 0; }
         
-        /* 趋势图 */
-        .trend-section { background: #1a1a1a; border-radius: 12px; padding: 24px; border: 1px solid #333; }
+        /* 趋势图 - 修复布局问题 */
+        .trend-section { background: #1a1a1a; border-radius: 12px; padding: 24px; margin-bottom: 30px; border: 1px solid #333; }
         .trend-section h2 { font-size: 18px; margin-bottom: 20px; color: #fff; }
-        .trend-chart { height: 200px; display: flex; align-items: flex-end; gap: 4px; padding-bottom: 30px; position: relative; }
-        .trend-bar { flex: 1; background: #3b82f6; border-radius: 4px 4px 0 0; min-width: 20px; transition: height 0.3s; position: relative; }
+        .trend-chart-wrapper { 
+            height: 220px; 
+            position: relative; 
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+        .trend-chart { 
+            display: flex; 
+            align-items: flex-end; 
+            gap: 4px; 
+            height: 100%;
+            width: 100%;
+        }
+        .trend-bar { 
+            flex: 1; 
+            background: #3b82f6; 
+            border-radius: 4px 4px 0 0; 
+            min-width: 15px;
+            max-width: 50px;
+            transition: height 0.3s; 
+            position: relative;
+            cursor: pointer;
+        }
         .trend-bar:hover { background: #60a5fa; }
         .trend-bar .tooltip {
             display: none;
@@ -131,7 +186,7 @@
             border-radius: 6px;
             font-size: 12px;
             white-space: nowrap;
-            z-index: 10;
+            z-index: 100;
         }
         .trend-bar:hover .tooltip { display: block; }
         .trend-labels { 
@@ -180,6 +235,32 @@
             </div>
         </div>
         
+        <!-- 计算公式说明 -->
+        <div class="formula-section">
+            <h2>WII 计算公式</h2>
+            <div class="formula-box">
+                WII = P(进入伊朗_4月) × 0.4 + P(进入伊朗_3月) × 0.3 + P(哈尔格岛失控) × 0.2 - P(停火_3月) × 0.1
+            </div>
+            <div class="formula-detail">
+                <div class="formula-item">
+                    <span class="weight">P(进入伊朗_4月) × 0.4</span>
+                    <div class="desc">美军4月30日前进入伊朗的概率 × 40%</div>
+                </div>
+                <div class="formula-item">
+                    <span class="weight">P(进入伊朗_3月) × 0.3</span>
+                    <div class="desc">美军3月31日前进入伊朗的概率 × 30%</div>
+                </div>
+                <div class="formula-item">
+                    <span class="weight">P(哈尔格岛失控) × 0.2</span>
+                    <div class="desc">哈尔格岛3月31日前失控的概率 × 20%</div>
+                </div>
+                <div class="formula-item">
+                    <span class="weight">- P(停火_3月) × 0.1</span>
+                    <div class="desc">3月底前停火概率 × -10%（负权重）</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="key-metrics">
             <div class="metric-card">
                 <h3>4月底进入伊朗概率</h3>
@@ -209,8 +290,10 @@
         </div>
         
         <div class="trend-section">
-            <h2>最近24小时趋势</h2>
-            <div class="trend-chart" id="trendChart"></div>
+            <h2>最近24小时 WII 趋势</h2>
+            <div class="trend-chart-wrapper">
+                <div class="trend-chart" id="trendChart"></div>
+            </div>
             <div class="trend-labels" id="trendLabels"></div>
         </div>
         
@@ -238,9 +321,6 @@
     </div>
     
     <script>
-        // 从 latest.json 读取数据
-        const DATA = null;  // 将由 Python 填充
-        
         function loadData() {
             fetch('latest.json')
                 .then(r => r.json())
@@ -302,17 +382,18 @@
                 </div>
             `).join('');
             
-            // 趋势图
+            // 趋势图 - 修复：确保每个bar有独立高度
             if (history.length > 0) {
                 const trendChart = document.getElementById('trendChart');
-                const maxWii = Math.max(...history.map(h => h.wii));
-                const minWii = Math.min(...history.map(h => h.wii));
-                const range = Math.max(maxWii - minWii, 10);
+                const maxWii = Math.max(...history.map(h => h.wii), 40); // 至少40确保有空间
+                const minWii = Math.min(...history.map(h => h.wii), 0);
+                const range = maxWii - minWii || 1;
                 
-                trendChart.innerHTML = history.map(h => {
-                    const height = ((h.wii - Math.min(minWii, 0)) / range) * 160 + 20;
+                // 每个bar独立计算高度
+                trendChart.innerHTML = history.map((h, idx) => {
+                    const height = ((h.wii - minWii) / range) * 160 + 20; // 最小20px，最大180px
                     const time = h.timestamp.split('T')[1].substring(0, 5);
-                    return `<div class="trend-bar" style="height: ${height}px">
+                    return `<div class="trend-bar" style="height: ${height}px;" title="${time} WII: ${h.wii}%">
                         <div class="tooltip">${time}<br>WII: ${h.wii}%</div>
                     </div>`;
                 }).join('');

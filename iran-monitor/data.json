@@ -1,325 +1,140 @@
-[
-  {
-    "time": "2026-03-26 09:18",
-    "score": 2.8,
-    "label": "紧张克制",
-    "basis": [
-      "关键词命中：missiles hit(×1), iran war(×3), killed(×1)",
-      "参考新闻 20 条（来自 Reuters/BBC/Al Jazeera/Google News）"
-    ],
-    "hit_kws": [
-      "missiles hit(×1)",
-      "iran war(×3)",
-      "killed(×1)"
-    ],
-    "pm_prob": 15.0,
-    "top_news": [
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US",
-      "Video shows Israeli strike hitting displacement camp in Gaza",
-      "Palestine weekly wrap: West Bank attacks surge, Israel restricts Gaza aid"
-    ],
-    "news_count": 20
+{
+  "timestamp": "2026-03-26T15:21:00+08:00",
+  "wii": 46.9,
+  "level": "高",
+  "level_color": "orange",
+  "markets": {
+    "us_enter_iran_march31": {
+      "label": "US forces enter Iran by March 31",
+      "yes": 19.5,
+      "no": 80.5,
+      "volume_24h": 1489707,
+      "total_volume": 21661643
+    },
+    "us_enter_iran_april30": {
+      "label": "US forces enter Iran by April 30",
+      "yes": 58.5,
+      "no": 41.5,
+      "volume_24h": 554056,
+      "total_volume": 3799488
+    },
+    "ceasefire_march31": {
+      "label": "US x Iran ceasefire by March 31",
+      "yes": 12.5,
+      "no": 87.5,
+      "volume_24h": 3857231,
+      "total_volume": 30740689
+    },
+    "ceasefire_april15": {
+      "label": "US x Iran ceasefire by April 15",
+      "yes": 32.5,
+      "no": 67.5,
+      "volume_24h": 435001,
+      "total_volume": 4591610
+    },
+    "ceasefire_april30": {
+      "label": "US x Iran ceasefire by April 30",
+      "yes": 43.5,
+      "no": 56.5,
+      "volume_24h": 501884,
+      "total_volume": 5338020
+    },
+    "kharg_island_march31": {
+      "label": "Kharg Island no longer under Iranian control by March 31",
+      "yes": 7.5,
+      "no": 92.5,
+      "volume_24h": 491378,
+      "total_volume": 5088297
+    },
+    "iranian_regime_fall_march31": {
+      "label": "Will the Iranian regime fall by March 31",
+      "yes": 0.4,
+      "no": 99.6,
+      "volume_24h": 1397748,
+      "total_volume": 49223968
+    }
   },
-  {
-    "time": "2026-03-26 10:57",
-    "score": 31.8,
-    "label": "紧张克制",
-    "dimensions": {
-      "military": {
-        "score": 15,
-        "max": 25,
-        "kws": [
-          "iran war(×1)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×3)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [],
-        "wti": 75.0,
-        "brent": 80.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "media": {
-        "score": 10.0,
-        "max": 10,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+  "changes_since_last": {
+    "us_enter_iran_march31": 0.0,
+    "us_enter_iran_april30": 0.0,
+    "ceasefire_march31": 0.0,
+    "ceasefire_april15": -1.0,
+    "ceasefire_april30": 0.0,
+    "kharg_island_march31": -1.0,
+    "iranian_regime_fall_march31": -0.4
+  },
+  "anomaly": true,
+  "anomaly_detail": "检测到 2 项值得关注变化：1) 停火(4/15)概率从 33.5% 降至 32.5%(-1.0%)，反映市场对短期停火预期略有降温；2) 霍尔木兹海峡岛屿控制概率从 8.5% 降至 7.5%(-1.0%)，军事行动扩展概率微降；3) 政权更迭概率从 0.8% 降至 0.4%(-0.4%)，绝对值虽低但相对降幅50%。整体维持高烈度，Enter_April30(58.5%)仍在40-60%区间。",
+  "alerts": [
+    {"market": "ceasefire_april15", "change": -1.0, "severity": "moderate", "note": "短期停火预期降温"},
+    {"market": "kharg_island_march31", "change": -1.0, "severity": "moderate", "note": "军事扩展概率微降"},
+    {"market": "iranian_regime_fall_march31", "change": -0.4, "severity": "watch", "note": "政权更迭概率相对降幅50%，需持续跟踪"}
+  ],
+  "history": [
+    {
+      "timestamp": "2026-03-26T11:15:00+08:00",
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": null,
+        "ceasefire_april30": null,
+        "kharg_island_march31": 7.5,
+        "iranian_regime_fall_march31": null
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Tehran issues warning to regional neighbour if Iranian island occupied",
-      "Trump says Iranian leaders want deal ‘so badly’ but fear retaliation",
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 11:20",
-    "score": 31.8,
-    "label": "紧张克制",
-    "dimensions": {
-      "military": {
-        "score": 15,
-        "max": 25,
-        "kws": [
-          "iran war(×1)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×3)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [],
-        "wti": 75.0,
-        "brent": 80.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "media": {
-        "score": 10.0,
-        "max": 10,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T13:20:00+08:00",
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 20.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": null,
+        "ceasefire_april30": null,
+        "kharg_island_march31": 8.5,
+        "iranian_regime_fall_march31": null
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Tehran issues warning to regional neighbour if Iranian island occupied",
-      "Trump says Iranian leaders want deal ‘so badly’ but fear retaliation",
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 13:59",
-    "score": 50.8,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×2)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×5)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [
-          "WTI $76.00 / Brent $79.00",
-          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
-          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
-        ],
-        "wti": 76.0,
-        "brent": 79.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "lebanon(×2)"
-        ]
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T14:18:00+08:00",
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": 33.5,
+        "ceasefire_april30": 43.5,
+        "kharg_island_march31": 8.5,
+        "iranian_regime_fall_march31": 0.8
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
-      "Malaysia’s prime minister says Iran talks should end war",
-      "Videos show wave of missiles fired from Lebanon to Israel",
-      "Russia slams second US-Israeli strike at Iran’s Bushehr nuclear reactor",
-      "Australia bans visitors from Iran amid war in the Middle East"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 14:23",
-    "score": 40.0,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "strike iran(×1)",
-          "iran war(×3)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "talks(×2)",
-          "negotiation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [
-          "WTI $76.00 / Brent $79.00",
-          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
-          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
-        ],
-        "wti": 76.0,
-        "brent": 79.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 0,
-        "max": 10,
-        "kws": []
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)",
-          "retaliate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 4.25,
-        "max": 5,
-        "kws": [
-          "新闻17条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T15:20:00+08:00",
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": 33.5,
+        "ceasefire_april30": 43.5,
+        "kharg_island_march31": 8.5,
+        "iranian_regime_fall_march31": 0.8
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Who wants what and why from US-Iran peace talks?",
-      "Democrats flip Florida state seat that includes Trump's Mar-a-Lago home",
-      "Pentagon Orders 2,000 Airborne Troops to Middle East - The New York Times",
-      "US-Israel war on Iran: What’s happening on day 26 of attacks? - Al Jazeera",
-      "Iran war: Tehran sets own terms to end war, rejects US plan - DW.com"
-    ],
-    "news_count": 17
-  }
-]
+    {
+      "timestamp": "2026-03-26T15:21:00+08:00",
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": 32.5,
+        "ceasefire_april30": 43.5,
+        "kharg_island_march31": 7.5,
+        "iranian_regime_fall_march31": 0.4
+      }
+    }
+  ]
+}

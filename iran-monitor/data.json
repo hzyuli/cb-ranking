@@ -157,7 +157,7 @@
     "news_count": 20
   },
   {
-    "time": "2026-03-26 13:22",
+    "time": "2026-03-26 13:32",
     "score": 35.8,
     "label": "紧张克制",
     "dimensions": {
@@ -174,7 +174,7 @@
         "kws": [
           "warning(×1)",
           "deal(×1)",
-          "talks(×4)",
+          "talks(×5)",
           "de-escalation(×1)"
         ]
       },
@@ -186,7 +186,11 @@
       "oil": {
         "score": 0.0,
         "max": 15,
-        "kws": [],
+        "kws": [
+          "WTI $75.00 / Brent $80.00",
+          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
+          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
+        ],
         "wti": 75.0,
         "brent": 80.0,
         "change": 0.0
@@ -215,11 +219,11 @@
     },
     "pm_prob": 15.0,
     "top_news": [
+      "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
       "Malaysia’s prime minister says Iran talks should end war",
       "Videos show wave of missiles fired from Lebanon to Israel",
       "Russia slams second US-Israeli strike at Iran’s Bushehr nuclear reactor",
-      "Australia bans visitors from Iran amid war in the Middle East",
-      "Tehran issues warning to regional neighbour if Iranian island occupied"
+      "Australia bans visitors from Iran amid war in the Middle East"
     ],
     "news_count": 20
   }

@@ -425,5 +425,109 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-03-26 16:27",
+    "score": 50.7,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×2)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "warning(×1)",
+          "talks(×3)",
+          "negotiation(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 3.9075,
+        "max": 15,
+        "kws": [
+          "WTI $92.95 / Brent $99.68",
+          "日均变动 +2.60%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 92.95,
+        "brent": 99.68,
+        "change": 2.605
+      },
+      "proxy": {
+        "score": 6,
+        "max": 10,
+        "kws": [
+          "lebanon(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Read Trump's full statement on Iran attacks - PBS",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Two teenagers killed in Shiraz, two dead in Abu Dhabi as Iran war expands",
+        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-launch-extensive-strikes-on-central-iran-two-teenagers-killed?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "US-Israel war on Iran: What’s happening on day 27 of attacks?",
+        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-war-on-iran-whats-happening-on-day-27-of-attacks?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Deaths and debts: Missiles in Gulf shake millions of South Asian families",
+        "url": "https://www.aljazeera.com/features/2026/3/26/deaths-and-debts-missiles-in-gulf-shake-millions-of-south-asian-families?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Netanyahu boasts about ‘breaking boundaries in every sense of the word’",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/netanyahu-boasts-about-breaking-boundaries-in-every-sense-of-the-word?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
+        "url": "https://www.aljazeera.com/economy/2026/3/26/oil-prices-rise-higher-as-iran-denies-us-talks-dimming-deescalation-hopes?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

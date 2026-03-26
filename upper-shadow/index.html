@@ -63,7 +63,7 @@
         <div class="header">
             <h1>📈 长上引线交易策略报告</h1>
             <div class="subtitle">基于真实市场数据的专业分析</div>
-            <div class="data-date">📅 数据日期：2026-03-25 (今日收盘)</div>
+            <div class="data-date">📅 数据日期：2026-03-25 (昨日收盘)</div>
             <div class="data-note">⚠️ 本报告使用真实数据。如数据日期显示"昨日收盘"，表示今日收盘数据尚未发布。</div>
             <div class="stats">
                 <div class="stat-card">
@@ -71,29 +71,31 @@
                     <div class="label">分析标的</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number">13</div>
+                    <div class="number">5</div>
                     <div class="label">买入信号</div>
                 </div>
                 <div class="stat-card">
-                    <div class="number">0</div>
+                    <div class="number">8</div>
                     <div class="label">观察信号</div>
                 </div>
             </div>
         </div>
         
         <div class="strategy-logic">
-            <h2>🎯 策略逻辑说明</h2>
+            <h2>🎯 策略逻辑说明（v2 振幅占比版）</h2>
             <ul>
-                <li><strong>上引线比例 ≥ 1.5</strong>：表明冲高回落，有上涨动能</li>
-                <li><strong>5日均线距离 ≤ ±2%</strong>：处于关键支撑/压力位附近</li>
-                <li><strong>成交量比 ＜ 80%</strong>：抛压减弱，缩量调整</li>
+                <li><strong>上引线占振幅 ≥ 40%（核心）</strong>：上引线 / 全天振幅，避免十字星误报；>60% 强信号，>80% 极强压制</li>
+                <li><strong>上引线绝对值 ≥ 0.5 元（核心）</strong>：排除微小波动，确保冲高幅度有实质意义</li>
+                <li><strong>阴线形态（加分项）</strong>：收盘价 < 开盘价，表示冲高后卖压宣泄，次日低开是买点</li>
+                <li><strong>5日均线距离 ≤ ±2%</strong>：处于关键支撑/压力位附近，止损位明确</li>
+                <li><strong>成交量比 ＜ 80%</strong>：缩量调整，抛压减弱</li>
                 <li><strong>价格范围 90-200元</strong>：排除极端价格转债</li>
-                <li><strong>最低成交额 ≥ 100万元</strong>：确保流动性</li>
-                <li><strong>评分 ≥ 4分</strong>：满足4个以上条件为买入信号</li>
+                <li><strong>最低成交额 ≥ 50万元</strong>：确保基本流动性</li>
+                <li><strong>买入条件</strong>：核心2条必须全满足 + 7项评分 ≥ 4</li>
             </ul>
         </div>
         
-        <div class="signal-section"><h2 class="section-title">✅ 买入信号 (13只)</h2><div class="signal-grid">
+        <div class="signal-section"><h2 class="section-title">✅ 买入信号 (5只)</h2><div class="signal-grid">
     <div class="signal-card buy">
         <div class="card-header">
             <div>
@@ -102,12 +104,13 @@
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
+                <span class="score-badge">评分: 4/7</span>
             </div>
         </div>
+
         
         
-        
+
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
@@ -118,69 +121,35 @@
                 <span class="metric-value positive">0.24%</span>
             </div>
             <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">9.26</span>
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">1.35元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#10b981;font-weight:bold;">67.3% 强(60-80%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.910元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
+                <span class="metric-value">1.00</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
                 <span class="metric-value">0万</span>
             </div>
         </div>
-        
+
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+            <span class="condition-badge true">上引线≥40%振幅: ✓</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">蓝晓转02</div>
-                <div class="bond-code">123195.SZ</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">159.66元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">3.41%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">163.11</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">2万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
+
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
             数据日期：20260325
         </div>
@@ -194,12 +163,13 @@
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
+                <span class="score-badge">评分: 4/7</span>
             </div>
         </div>
+
         
         
-        
+
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
@@ -210,69 +180,35 @@
                 <span class="metric-value positive">1.0%</span>
             </div>
             <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">39.39</span>
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">1.98元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#f59e0b;font-weight:bold;">46.8% 中(40-60%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.927元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
+                <span class="metric-value">1.00</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
                 <span class="metric-value">0万</span>
             </div>
         </div>
-        
+
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+            <span class="condition-badge true">上引线≥40%振幅: ✓</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">百川转2</div>
-                <div class="bond-code">127075.SZ</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">166.0元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">6.07%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">302.3</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">11万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
+
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
             数据日期：20260325
         </div>
@@ -286,12 +222,13 @@
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
+                <span class="score-badge">评分: 4/7</span>
             </div>
         </div>
+
         
         
-        
+
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
@@ -302,268 +239,35 @@
                 <span class="metric-value positive">2.93%</span>
             </div>
             <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">120.12</span>
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">5.85元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#f59e0b;font-weight:bold;">40.7% 中(40-60%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">2.378元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
+                <span class="metric-value">1.00</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
                 <span class="metric-value">2万</span>
             </div>
         </div>
-        
+
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+            <span class="condition-badge true">上引线≥40%振幅: ✓</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">密卫转债</div>
-                <div class="bond-code">113658.SH</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">139.25元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">1.43%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">59.55</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">1万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">莱克转债</div>
-                <div class="bond-code">113659.SH</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">133.11元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">1.32%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">52.65</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">1万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">天业转债</div>
-                <div class="bond-code">110087.SH</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
-            <div class="logic-content">[PVC/氯碱化工] 中东地缘推油价→乙烯法成本↑电石法套利空间打开，烧碱涨停，97万吨产能直接受益，出口中亚高增</div>
-        </div>
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">138.87元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">0.31%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">13.0</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">3万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">立讯转债</div>
-                <div class="bond-code">128136.SZ</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
-            <div class="logic-content">[消费电子] 苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益</div>
-        </div>
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">127.43元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">4.13%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">157.85</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">6万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">韦尔转债</div>
-                <div class="bond-code">113616.SH</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
-            <div class="logic-content">[半导体] 车载CIS量价双升，汽车+AI双轮，华为车合作深化</div>
-        </div>
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">117.43元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">2.03%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">71.66</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">1万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
+
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
             数据日期：20260325
         </div>
@@ -577,12 +281,13 @@
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
+                <span class="score-badge">评分: 4/7</span>
             </div>
         </div>
+
         
         
-        
+
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
@@ -593,74 +298,35 @@
                 <span class="metric-value positive">0.94%</span>
             </div>
             <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">37.52</span>
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">2.13元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#f59e0b;font-weight:bold;">43.2% 中(40-60%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.920元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
+                <span class="metric-value">1.00</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
                 <span class="metric-value">0万</span>
             </div>
         </div>
-        
+
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+            <span class="condition-badge true">上引线≥40%振幅: ✓</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
-        
-        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
-            数据日期：20260325
-        </div>
-    </div>
-    
-    <div class="signal-card buy">
-        <div class="card-header">
-            <div>
-                <div class="bond-name">博22转债</div>
-                <div class="bond-code">113650.SH</div>
-            </div>
-            <div>
-                <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
-            </div>
-        </div>
-        
-        
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
-            <div class="logic-content">[混凝土外加剂] 基建稳增但回款压力大，政府债化解风险中</div>
-        </div>
-        
-        
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <span class="metric-label">收盘价</span>
-                <span class="metric-value">125.94元</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">涨跌幅</span>
-                <span class="metric-value positive">0.89%</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">33.69</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
-            </div>
-            <div class="metric-item">
-                <span class="metric-label">成交额</span>
-                <span class="metric-value">0万</span>
-            </div>
-        </div>
-        
-        <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
-        </div>
-        
+
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
             数据日期：20260325
         </div>
@@ -674,9 +340,10 @@
             </div>
             <div>
                 <span class="signal-badge buy">买入</span>
-                <span class="score-badge">评分: 4/5</span>
+                <span class="score-badge">评分: 5/7</span>
             </div>
         </div>
+
         
         
         <div class="industry-logic">
@@ -684,7 +351,7 @@
             <div class="logic-content">[光伏电站/EPC] 晶科电力（非晶科能源），光伏电站投资运营，2024年净利+76%；电站资产稳定现金流，AA评级，但正股估值偏高，电站运营弹性有限</div>
         </div>
         
-        
+
         <div class="metrics-grid">
             <div class="metric-item">
                 <span class="metric-label">收盘价</span>
@@ -695,33 +362,537 @@
                 <span class="metric-value negative">-0.14%</span>
             </div>
             <div class="metric-item">
-                <span class="metric-label">上引线比例</span>
-                <span class="metric-value">3.82</span>
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">4.45元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#f59e0b;font-weight:bold;">49.6% 中(40-60%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">2.210元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#ef4444;font-size:0.85rem;">▼ 阴线</span></span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交量比</span>
-                <span class="metric-value">0.75</span>
+                <span class="metric-value">1.00</span>
             </div>
             <div class="metric-item">
                 <span class="metric-label">成交额</span>
                 <span class="metric-value">4万</span>
             </div>
         </div>
-        
+
         <div class="conditions">
-            <span class="condition-badge true">上引线≥1.5: ✓</span><span class="condition-badge true">近5日线: ✓</span><span class="condition-badge true">缩量: ✓</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+            <span class="condition-badge true">上引线≥40%振幅: ✓</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge true">阴线(冲高回落): ✓</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
         </div>
-        
+
         <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
             数据日期：20260325
         </div>
     </div>
     </div></div>
         
+        <div class="signal-section"><h2 class="section-title">👀 观察信号 (8只)</h2><div class="signal-grid">
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">蓝晓转02</div>
+                <div class="bond-code">123195.SZ</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
         
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">159.66元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">3.41%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">10.78元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">29.9% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">3.224元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">2万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">百川转2</div>
+                <div class="bond-code">127075.SZ</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 2/7</span>
+            </div>
+        </div>
+
+        
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">166.0元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">6.07%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">10.99元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">0.0% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.000元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">11万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge false">上引线≥0.5元: ✗</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">密卫转债</div>
+                <div class="bond-code">113658.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
+        
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">139.25元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">1.43%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">4.08元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">25.8% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">1.052元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">1万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">莱克转债</div>
+                <div class="bond-code">113659.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
+        
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">133.11元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">1.32%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">3.44元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">25.7% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.886元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">1万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">天业转债</div>
+                <div class="bond-code">110087.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
+        
+        
+        <div class="industry-logic">
+            <div class="logic-label">💡 行业逻辑</div>
+            <div class="logic-content">[PVC/氯碱化工] 中东地缘推油价→乙烯法成本↑电石法套利空间打开，烧碱涨停，97万吨产能直接受益，出口中亚高增</div>
+        </div>
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">138.87元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">0.31%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">2.69元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">35.9% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.964元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">3万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">立讯转债</div>
+                <div class="bond-code">128136.SZ</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
+        
+        
+        <div class="industry-logic">
+            <div class="logic-label">💡 行业逻辑</div>
+            <div class="logic-content">[消费电子] 苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益</div>
+        </div>
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">127.43元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">4.13%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">7.26元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">34.9% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">2.536元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">6万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">韦尔转债</div>
+                <div class="bond-code">113616.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 2/7</span>
+            </div>
+        </div>
+
+        
+        
+        <div class="industry-logic">
+            <div class="logic-label">💡 行业逻辑</div>
+            <div class="logic-content">[半导体] 车载CIS量价双升，汽车+AI双轮，华为车合作深化</div>
+        </div>
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">117.43元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">2.03%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">2.77元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">15.7% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.434元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">1万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge false">上引线≥0.5元: ✗</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    
+    <div class="signal-card watch">
+        <div class="card-header">
+            <div>
+                <div class="bond-name">博22转债</div>
+                <div class="bond-code">113650.SH</div>
+            </div>
+            <div>
+                <span class="signal-badge watch">观察</span>
+                <span class="score-badge">评分: 3/7</span>
+            </div>
+        </div>
+
+        
+        
+        <div class="industry-logic">
+            <div class="logic-label">💡 行业逻辑</div>
+            <div class="logic-content">[混凝土外加剂] 基建稳增但回款压力大，政府债化解风险中</div>
+        </div>
+        
+
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <span class="metric-label">收盘价</span>
+                <span class="metric-value">125.94元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">涨跌幅</span>
+                <span class="metric-value positive">0.89%</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">今日振幅</span>
+                <span class="metric-value">1.91元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线占振幅</span>
+                <span class="metric-value" style="color:#94a3b8;font-weight:bold;">29.2% 弱(<40%)</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">上引线绝对值</span>
+                <span class="metric-value">0.557元</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">K线形态</span>
+                <span class="metric-value"><span style="color:#10b981;font-size:0.85rem;">▲ 阳线</span></span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交量比</span>
+                <span class="metric-value">1.00</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">成交额</span>
+                <span class="metric-value">0万</span>
+            </div>
+        </div>
+
+        <div class="conditions">
+            <span class="condition-badge false">上引线≥40%振幅: ✗</span><span class="condition-badge true">上引线≥0.5元: ✓</span><span class="condition-badge false">阴线(冲高回落): ✗</span><span class="condition-badge true">近MA5(±2%): ✓</span><span class="condition-badge false">缩量(<80%): ✗</span><span class="condition-badge true">价格范围: ✓</span><span class="condition-badge false">流动性: ✗</span>
+        </div>
+
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+            数据日期：20260325
+        </div>
+    </div>
+    </div></div>
         
         <div class="footer">
-            <p>📊 长上引线交易策略 | 生成时间：2026-03-25 16:30:58</p>
+            <p>📊 长上引线交易策略 | 生成时间：2026-03-26 10:01:20</p>
             <p>📅 数据来源：finance-data API | ⚠️ 免责声明：本报告仅供参考，不构成投资建议</p>
         </div>
     </div>

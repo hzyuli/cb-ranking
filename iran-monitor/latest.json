@@ -1,70 +1,70 @@
 {
-  "timestamp": "2026-03-26T15:27:00+08:00",
-  "wii": 29.5,
-  "level": "高",
-  "level_color": "orange",
+  "timestamp": "2026-03-26T16:35:50.263299+08:00",
+  "wii": 30.6,
+  "level": "极强",
+  "level_color": "red",
   "markets": {
     "us_enter_iran_march31": {
       "label": "US forces enter Iran by March 31",
-      "yes": 19.5,
-      "no": 80.5,
-      "volume_24h": 1488171,
-      "total_volume": 21662155
+      "yes": 21.5,
+      "no": 78.5,
+      "volume_24h": 1517670,
+      "total_volume": 21741055
     },
     "us_enter_iran_april30": {
       "label": "US forces enter Iran by April 30",
-      "yes": 58.5,
-      "no": 41.5,
-      "volume_24h": 534793,
-      "total_volume": 3799512
+      "yes": 59.5,
+      "no": 40.5,
+      "volume_24h": 582219,
+      "total_volume": 3854988
     },
     "ceasefire_march31": {
       "label": "US x Iran ceasefire by March 31",
-      "yes": 12.5,
-      "no": 87.5,
-      "volume_24h": 3854900,
-      "total_volume": 30740846
+      "yes": 11.5,
+      "no": 88.5,
+      "volume_24h": 3815145,
+      "total_volume": 30799572
     },
     "ceasefire_april15": {
       "label": "US x Iran ceasefire by April 15",
       "yes": 32.0,
       "no": 68.0,
-      "volume_24h": 434576,
-      "total_volume": 4591770
+      "volume_24h": 436263,
+      "total_volume": 4596974
     },
     "ceasefire_april30": {
       "label": "US x Iran ceasefire by April 30",
       "yes": 43.5,
       "no": 56.5,
-      "volume_24h": 501942,
-      "total_volume": 5338202
+      "volume_24h": 503724,
+      "total_volume": 5341783
     },
     "kharg_island_march31": {
       "label": "Kharg Island no longer under Iranian control by March 31",
       "yes": 7.5,
       "no": 92.5,
-      "volume_24h": 491480,
-      "total_volume": 5088412
+      "volume_24h": 474295,
+      "total_volume": 5094927
     },
     "iranian_regime_fall_march31": {
       "label": "Will the Iranian regime fall by March 31",
-      "yes": 0.4,
-      "no": 99.6,
-      "volume_24h": 1398974,
-      "total_volume": 49228407
+      "yes": 0.7,
+      "no": 99.4,
+      "volume_24h": 1555668,
+      "total_volume": 49406056
     }
   },
   "changes_since_last": {
-    "us_enter_iran_march31": 0.0,
+    "us_enter_iran_march31": -1.0,
     "us_enter_iran_april30": 0.0,
-    "ceasefire_march31": 0.0,
+    "ceasefire_march31": -1.0,
     "ceasefire_april15": -0.5,
     "ceasefire_april30": 0.0,
     "kharg_island_march31": 0.0,
     "iranian_regime_fall_march31": 0.0
   },
   "anomaly": false,
-  "anomaly_detail": "无异常。所有4项核心指标（enter_march/enter_april/ceasefire_march/kharg）较上次均无变化。ceasefire_april15小幅下降0.5%未达异常阈值。WII维持高烈度区间29.5%，与极强边界(30%)相差0.5%。",
+  "anomaly_detail": "无超5%异常。变化: us_enter_iran_march31: -1.0%, ceasefire_march31: -1.0%, ceasefire_april15: -0.5%。WII=30.6%, 极强级。",
   "alerts": [],
   "history": [
     {
@@ -135,6 +135,34 @@
         "ceasefire_april30": 43.5,
         "kharg_island_march31": 7.5,
         "iranian_regime_fall_march31": 0.4
+      }
+    },
+    {
+      "timestamp": "2026-03-26T16:27:00+08:00",
+      "wii": 30.2,
+      "level": "极高",
+      "markets": {
+        "us_enter_iran_march31": 22.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": 32.5,
+        "ceasefire_april30": 43.5,
+        "kharg_island_march31": 7.5,
+        "iranian_regime_fall_march31": 0.7
+      }
+    },
+    {
+      "timestamp": "2026-03-26T16:35:50.263299+08:00",
+      "wii": 30.6,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 21.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 11.5,
+        "ceasefire_april15": 32.0,
+        "ceasefire_april30": 43.5,
+        "kharg_island_march31": 7.5,
+        "iranian_regime_fall_march31": 0.7
       }
     }
   ]

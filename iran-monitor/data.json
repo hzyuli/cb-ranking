@@ -427,8 +427,8 @@
     "news_count": 20
   },
   {
-    "time": "2026-03-26 16:27",
-    "score": 50.7,
+    "time": "2026-03-26 16:42",
+    "score": 51.7,
     "label": "显著升级",
     "dimensions": {
       "military": {
@@ -453,16 +453,16 @@
         "kws": []
       },
       "oil": {
-        "score": 3.9075,
+        "score": 4.965,
         "max": 15,
         "kws": [
-          "WTI $92.95 / Brent $99.68",
-          "日均变动 +2.60%（变动绝对值×1.5→油价得分）",
+          "WTI $93.60 / Brent $100.35",
+          "日均变动 +3.31%（变动绝对值×1.5→油价得分）",
           "数据来源：✅ 实时价格"
         ],
-        "wti": 92.95,
-        "brent": 99.68,
-        "change": 2.605
+        "wti": 93.6,
+        "brent": 100.35,
+        "change": 3.31
       },
       "proxy": {
         "score": 6,
@@ -475,8 +475,7 @@
         "score": 10,
         "max": 10,
         "kws": [
-          "obliterate(×1)",
-          "retaliate(×1)"
+          "retaliate(×2)"
         ],
         "stmt_count": 15,
         "top_stmts": [

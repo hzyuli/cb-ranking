@@ -23,18 +23,62 @@
     "news_count": 20
   },
   {
-    "time": "2026-03-26 10:19",
-    "score": 1.12,
-    "label": "和平/外交",
-    "basis": [
-      "关键词命中：missiles hit(×1), iran war(×1), killed(×1)",
-      "参考新闻 20 条（来自 Reuters/BBC/Al Jazeera/Google News）"
-    ],
-    "hit_kws": [
-      "missiles hit(×1)",
-      "iran war(×1)",
-      "killed(×1)"
-    ],
+    "time": "2026-03-26 10:57",
+    "score": 31.8,
+    "label": "紧张克制",
+    "dimensions": {
+      "military": {
+        "score": 15,
+        "max": 25,
+        "kws": [
+          "iran war(×1)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "warning(×1)",
+          "deal(×1)",
+          "talks(×3)",
+          "de-escalation(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 0.0,
+        "max": 15,
+        "kws": [],
+        "wti": 75.0,
+        "brent": 80.0,
+        "change": 0.0
+      },
+      "proxy": {
+        "score": 6,
+        "max": 10,
+        "kws": [
+          "lebanon(×1)"
+        ]
+      },
+      "media": {
+        "score": 10.0,
+        "max": 10,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
     "pm_prob": 15.0,
     "top_news": [
       "Tehran issues warning to regional neighbour if Iranian island occupied",

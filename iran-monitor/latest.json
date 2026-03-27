@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-27T08:44:00",
-  "wii": 31.63,
+  "timestamp": "2026-03-27T08:45:00",
+  "wii": 31.0,
   "level": "极强",
   "level_color": "red",
   "markets": {
@@ -64,7 +64,7 @@
     "iranian_regime_fall_march31": 0.0
   },
   "anomaly": false,
-  "anomaly_detail": "无异常。最大变化：ceasefire_april15 -1.0%（30.5%←31.5%），ceasefire_april30 -1.0%（42.5%←43.5%）。WII=31.63%，极强级别维持稳定（与上次31.0%基本持平）。",
+  "anomaly_detail": "无异常信号：所有核心指标（enter_march, enter_april, ceasefire_march, kharg）1小时内无变化（<5%阈值）。WII=31.0%，维持极强级别。",
   "alerts": [],
   "history": [
     {
@@ -166,8 +166,8 @@
       }
     },
     {
-      "timestamp": "2026-03-27T08:44:00",
-      "wii": 31.63,
+      "timestamp": "2026-03-27T08:45:00",
+      "wii": 31.0,
       "level": "极强",
       "markets": {
         "us_enter_iran_march31": 17.5,

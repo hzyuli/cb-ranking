@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美伊战争烈度监控 - Polymarket 数据</title>
+    <title>美伊战争烈度监控 - Polymarket + 航运数据</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -17,10 +13,7 @@
             padding: 20px;
             line-height: 1.6;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -50,9 +43,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-2px);
-        }
+        .card:hover { transform: translateY(-2px); }
         .card h3 {
             font-size: 14px;
             color: #8892b0;
@@ -60,24 +51,10 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .card .value {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .card .subtitle {
-            font-size: 12px;
-            color: #8892b0;
-        }
-        .wii-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .wii-value {
-            font-size: 48px;
-            font-weight: bold;
-        }
+        .card .value { font-size: 36px; font-weight: bold; margin-bottom: 5px; }
+        .card .subtitle { font-size: 12px; color: #8892b0; }
+        .wii-container { display: flex; align-items: center; justify-content: space-between; }
+        .wii-value { font-size: 48px; font-weight: bold; }
         .level-badge {
             padding: 8px 16px;
             border-radius: 20px;
@@ -86,31 +63,11 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        .level-low {
-            background: rgba(34, 197, 94, 0.2);
-            color: #22c55e;
-            border: 1px solid #22c55e;
-        }
-        .level-medium {
-            background: rgba(234, 179, 8, 0.2);
-            color: #eab308;
-            border: 1px solid #eab308;
-        }
-        .level-high {
-            background: rgba(249, 115, 22, 0.2);
-            color: #f97316;
-            border: 1px solid #f97316;
-        }
-        .level-extreme {
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
-            border: 1px solid #ef4444;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
+        .level-low { background: rgba(34, 197, 94, 0.2); color: #22c55e; border: 1px solid #22c55e; }
+        .level-medium { background: rgba(234, 179, 8, 0.2); color: #eab308; border: 1px solid #eab308; }
+        .level-high { background: rgba(249, 115, 22, 0.2); color: #f97316; border: 1px solid #f97316; }
+        .level-extreme { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
         .section {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
@@ -118,111 +75,45 @@
             margin-bottom: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .section h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #e0e0e0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .market-bars {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .market-row {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .market-label {
-            flex: 0 0 400px;
-            font-size: 14px;
-            color: #e0e0e0;
-        }
-        .bar-container {
-            flex: 1;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
-            overflow: hidden;
-            position: relative;
-        }
-        .bar {
-            height: 100%;
-            background: linear-gradient(90deg, #00d4ff, #7c3aed);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding-left: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            border-radius: 6px;
-            transition: width 0.3s ease;
-        }
+        .section h2 { font-size: 20px; margin-bottom: 20px; color: #e0e0e0; padding-bottom: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .market-bars { display: flex; flex-direction: column; gap: 20px; }
+        .market-row { display: flex; align-items: center; gap: 15px; }
+        .market-label { flex: 0 0 400px; font-size: 14px; color: #e0e0e0; }
+        .bar-container { flex: 1; height: 40px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; overflow: hidden; position: relative; }
+        .bar { height: 100%; display: flex; align-items: center; justify-content: flex-start; padding-left: 10px; color: white; font-weight: bold; font-size: 14px; border-radius: 6px; transition: width 0.3s ease; }
         .bar.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
         .bar.orange { background: linear-gradient(90deg, #f97316, #ea580c); }
         .bar.yellow { background: linear-gradient(90deg, #eab308, #ca8a04); }
         .bar.green { background: linear-gradient(90deg, #22c55e, #16a34a); }
-        .change {
-            flex: 0 0 80px;
-            font-size: 14px;
-            text-align: right;
-            font-weight: bold;
-        }
+        .change { flex: 0 0 80px; font-size: 14px; text-align: right; font-weight: bold; }
         .change.up { color: #22c55e; }
         .change.down { color: #ef4444; }
         .change.neutral { color: #8892b0; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        th { background: rgba(0, 0, 0, 0.2); font-weight: 600; color: #8892b0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        tr:hover { background: rgba(255, 255, 255, 0.05); }
+        .shipping-section { border-left: 4px solid #00d4ff; }
+        .shipping-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
         }
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        th {
-            background: rgba(0, 0, 0, 0.2);
-            font-weight: 600;
-            color: #8892b0;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        tr:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .yes-prob {
-            font-weight: bold;
-        }
-        .chart-container {
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.2);
+        .shipping-card {
+            background: rgba(0, 212, 255, 0.1);
             border-radius: 8px;
             padding: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
         }
-        .anomaly-box {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid #ef4444;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 15px;
-        }
-        .anomaly-box h3 {
-            color: #ef4444;
-            margin-bottom: 10px;
-        }
-        .anomaly-box ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .anomaly-box li {
-            color: #e0e0e0;
-            margin-bottom: 5px;
-        }
+        .shipping-label { font-size: 12px; color: #8892b0; margin-bottom: 10px; text-transform: uppercase; }
+        .shipping-value { font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+        .shipping-level { font-size: 14px; color: #8892b0; }
+        .shipping-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 15px; }
+        .shipping-stat { font-size: 14px; color: #e0e0e0; }
+        .shipping-daily { margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.2); border-radius: 8px; }
+        .shipping-daily h4 { margin-bottom: 10px; color: #00d4ff; }
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -233,15 +124,8 @@
             font-size: 12px;
         }
         @media (max-width: 768px) {
-            .market-label {
-                flex: 0 0 200px;
-            }
-            .market-row {
-                flex-wrap: wrap;
-            }
-            .bar-container {
-                min-width: 200px;
-            }
+            .market-label { flex: 0 0 200px; }
+            .market-row { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -249,21 +133,22 @@
     <div class="container">
         <div class="header">
             <h1>美伊战争烈度监控</h1>
-            <p style="color: #8892b0;">基于 Polymarket 预测市场数据 · 实时更新</p>
+            <p style="color: #8892b0;">基于 Polymarket 预测市场 + 霍尔木兹海峡航运数据 · 实时更新</p>
         </div>
-
+        
+        
         <div class="dashboard">
             <div class="card">
                 <h3>战争烈度指数 (WII)</h3>
                 <div class="wii-container">
-                    <div class="wii-value level-extreme">31.63%</div>
-                    <span class="level-badge level-extreme">极强</span>
+                    <div class="wii-value level-red">31.0%</div>
+                    <span class="level-badge level-red">极强</span>
                 </div>
             </div>
             <div class="card">
                 <h3>最后更新</h3>
-                <div class="value" style="font-size: 24px;">08:44</div>
-                <div class="subtitle">2026-03-27</div>
+                <div class="value" style="font-size: 24px;">2026-03-27 08:45</div>
+                <div class="subtitle">Polymarket 数据</div>
             </div>
             <div class="card">
                 <h3>美军入伊朗(4月)</h3>
@@ -276,17 +161,19 @@
                 <div class="subtitle">与上次 -1.0%</div>
             </div>
         </div>
-
+        
         <div class="section">
-            <h2>市场预测概率</h2>
+            <h2>Polymarket 市场预测概率</h2>
             <div class="market-bars">
+                
                 <div class="market-row">
                     <div class="market-label">US forces enter Iran by March 31</div>
                     <div class="bar-container">
-                        <div class="bar green" style="width: 17.5%;">17.5%</div>
+                        <div class="bar yellow" style="width: 17.5%;">17.5%</div>
                     </div>
                     <div class="change neutral">→ 0.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">US forces enter Iran by April 30</div>
                     <div class="bar-container">
@@ -294,6 +181,7 @@
                     </div>
                     <div class="change neutral">→ 0.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">US x Iran ceasefire by March 31</div>
                     <div class="bar-container">
@@ -301,6 +189,7 @@
                     </div>
                     <div class="change neutral">→ 0.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">US x Iran ceasefire by April 15</div>
                     <div class="bar-container">
@@ -308,6 +197,7 @@
                     </div>
                     <div class="change down">▼ -1.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">US x Iran ceasefire by April 30</div>
                     <div class="bar-container">
@@ -315,6 +205,7 @@
                     </div>
                     <div class="change down">▼ -1.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">Kharg Island no longer under Iranian control by March 31</div>
                     <div class="bar-container">
@@ -322,6 +213,7 @@
                     </div>
                     <div class="change neutral">→ 0.0%</div>
                 </div>
+            
                 <div class="market-row">
                     <div class="market-label">Will the Iranian regime fall by March 31</div>
                     <div class="bar-container">
@@ -329,77 +221,12 @@
                     </div>
                     <div class="change neutral">→ 0.0%</div>
                 </div>
+            
             </div>
         </div>
-
+        
         <div class="section">
-            <h2>详细数据表</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>市场名称</th>
-                        <th>Yes 概率</th>
-                        <th>No 概率</th>
-                        <th>与上次变化</th>
-                        <th>24h 交易量</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>US forces enter Iran by March 31</td>
-                        <td class="yes-prob" style="color: #22c55e;">17.5%</td>
-                        <td>82.5%</td>
-                        <td class="change neutral">→ 0.0%</td>
-                        <td>$2,050,855</td>
-                    </tr>
-                    <tr>
-                        <td>US forces enter Iran by April 30</td>
-                        <td class="yes-prob" style="color: #ef4444;">62.5%</td>
-                        <td>37.5%</td>
-                        <td class="change neutral">→ 0.0%</td>
-                        <td>$660,811</td>
-                    </tr>
-                    <tr>
-                        <td>US x Iran ceasefire by March 31</td>
-                        <td class="yes-prob" style="color: #22c55e;">5.5%</td>
-                        <td>94.5%</td>
-                        <td class="change neutral">→ 0.0%</td>
-                        <td>$2,324,191</td>
-                    </tr>
-                    <tr>
-                        <td>US x Iran ceasefire by April 15</td>
-                        <td class="yes-prob" style="color: #f97316;">30.5%</td>
-                        <td>69.5%</td>
-                        <td class="change down">▼ -1.0%</td>
-                        <td>$349,495</td>
-                    </tr>
-                    <tr>
-                        <td>US x Iran ceasefire by April 30</td>
-                        <td class="yes-prob" style="color: #f97316;">42.5%</td>
-                        <td>57.5%</td>
-                        <td class="change down">▼ -1.0%</td>
-                        <td>$519,096</td>
-                    </tr>
-                    <tr>
-                        <td>Kharg Island no longer under Iranian control by March 31</td>
-                        <td class="yes-prob" style="color: #22c55e;">6.5%</td>
-                        <td>93.5%</td>
-                        <td class="change neutral">→ 0.0%</td>
-                        <td>$666,611</td>
-                    </tr>
-                    <tr>
-                        <td>Will the Iranian regime fall by March 31</td>
-                        <td class="yes-prob" style="color: #22c55e;">0.8%</td>
-                        <td>99.2%</td>
-                        <td class="change neutral">→ 0.0%</td>
-                        <td>$2,361,079</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>历史趋势 (最近20条)</h2>
+            <h2>历史趋势（最近8条）</h2>
             <table>
                 <thead>
                     <tr>
@@ -409,160 +236,131 @@
                         <th>Enter Mar</th>
                         <th>Enter Apr</th>
                         <th>Cease Mar</th>
-                        <th>Cease Apr15</th>
-                        <th>Cease Apr30</th>
                         <th>Kharg</th>
-                        <th>Regime</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>03-26 11:15</td>
-                        <td style="color: #f97316;">29.9%</td>
-                        <td style="color: #f97316;">高</td>
-                        <td>19.5%</td>
-                        <td>59.5%</td>
-                        <td>12.5%</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>7.5%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>03-26 13:20</td>
-                        <td style="color: #ef4444;">30.0%</td>
-                        <td style="color: #ef4444;">极强</td>
-                        <td>20.5%</td>
-                        <td>58.5%</td>
-                        <td>12.5%</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>8.5%</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>03-26 14:18</td>
-                        <td style="color: #f97316;">29.7%</td>
-                        <td style="color: #f97316;">高</td>
-                        <td>19.5%</td>
-                        <td>58.5%</td>
-                        <td>12.5%</td>
-                        <td>33.5%</td>
-                        <td>43.5%</td>
-                        <td>8.5%</td>
-                        <td>0.8%</td>
-                    </tr>
-                    <tr>
-                        <td>03-26 15:21</td>
-                        <td style="color: #f97316;">29.5%</td>
-                        <td style="color: #f97316;">高</td>
-                        <td>19.5%</td>
-                        <td>58.5%</td>
-                        <td>12.5%</td>
-                        <td>32.5%</td>
-                        <td>43.5%</td>
-                        <td>7.5%</td>
-                        <td>0.4%</td>
-                    </tr>
-                    <tr>
-                        <td>03-26 16:36</td>
-                        <td style="color: #ef4444;">30.6%</td>
-                        <td style="color: #ef4444;">极强</td>
-                        <td>21.5%</td>
-                        <td>59.5%</td>
-                        <td>11.5%</td>
-                        <td>32.0%</td>
-                        <td>43.5%</td>
-                        <td>7.5%</td>
-                        <td>0.7%</td>
-                    </tr>
-                    <tr>
-                        <td>03-26 17:36</td>
-                        <td style="color: #ef4444;">33.0%</td>
-                        <td style="color: #ef4444;">极强</td>
-                        <td>23.5%</td>
-                        <td>60.5%</td>
-                        <td>12.5%</td>
-                        <td>31.5%</td>
-                        <td>43.5%</td>
-                        <td>8.5%</td>
-                        <td>0.5%</td>
-                    </tr>
-                    <tr>
-                        <td>03-27 08:39</td>
-                        <td style="color: #ef4444;">31.0%</td>
-                        <td style="color: #ef4444;">极强</td>
-                        <td>17.5%</td>
-                        <td>62.5%</td>
-                        <td>5.5%</td>
-                        <td>31.5%</td>
-                        <td>43.5%</td>
-                        <td>6.5%</td>
-                        <td>0.8%</td>
-                    </tr>
-                    <tr>
-                        <td>03-27 08:44</td>
-                        <td style="color: #ef4444;">31.63%</td>
-                        <td style="color: #ef4444; font-weight: bold;">极强</td>
-                        <td>17.5%</td>
-                        <td>62.5%</td>
-                        <td>5.5%</td>
-                        <td>30.5%</td>
-                        <td>42.5%</td>
-                        <td>6.5%</td>
-                        <td>0.8%</td>
-                    </tr>
+                    
+            <tr>
+                <td>2026-03-27 08:45</td>
+                <td style="color: #red;">31.0%</td>
+                <td style="color: #red;">极强</td>
+                <td>17.5%</td>
+                <td>62.5%</td>
+                <td>5.5%</td>
+                <td>6.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-27 08:39</td>
+                <td style="color: #red;">31.0%</td>
+                <td style="color: #red;">极强</td>
+                <td>17.5%</td>
+                <td>62.5%</td>
+                <td>5.5%</td>
+                <td>6.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 17:36</td>
+                <td style="color: #red;">33.0%</td>
+                <td style="color: #red;">极强</td>
+                <td>23.5%</td>
+                <td>60.5%</td>
+                <td>12.5%</td>
+                <td>8.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 16:35</td>
+                <td style="color: #red;">30.6%</td>
+                <td style="color: #red;">极强</td>
+                <td>21.5%</td>
+                <td>59.5%</td>
+                <td>11.5%</td>
+                <td>7.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 15:21</td>
+                <td style="color: #orange;">29.5%</td>
+                <td style="color: #orange;">高</td>
+                <td>19.5%</td>
+                <td>58.5%</td>
+                <td>12.5%</td>
+                <td>7.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 14:18</td>
+                <td style="color: #orange;">29.7%</td>
+                <td style="color: #orange;">高</td>
+                <td>19.5%</td>
+                <td>58.5%</td>
+                <td>12.5%</td>
+                <td>8.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 13:20</td>
+                <td style="color: #red;">30.0%</td>
+                <td style="color: #red;">极强</td>
+                <td>20.5%</td>
+                <td>58.5%</td>
+                <td>12.5%</td>
+                <td>8.5%</td>
+            </tr>
+        
+            <tr>
+                <td>2026-03-26 11:15</td>
+                <td style="color: #orange;">29.9%</td>
+                <td style="color: #orange;">高</td>
+                <td>19.5%</td>
+                <td>59.5%</td>
+                <td>12.5%</td>
+                <td>7.5%</td>
+            </tr>
+        
                 </tbody>
             </table>
         </div>
-
-        <div class="section">
-            <h2>WII 趋势图</h2>
-            <div class="chart-container">
-                <svg viewBox="0 0 800 300" style="width: 100%; height: auto;">
-                    <!-- Grid lines -->
-                    <line x1="50" y1="50" x2="780" y2="50" stroke="#8892b0" stroke-width="1" stroke-dasharray="5"/>
-                    <line x1="50" y1="100" x2="780" y2="100" stroke="#8892b0" stroke-width="1" stroke-dasharray="5"/>
-                    <line x1="50" y1="150" x2="780" y2="150" stroke="#8892b0" stroke-width="1" stroke-dasharray="5"/>
-                    <line x1="50" y1="200" x2="780" y2="200" stroke="#8892b0" stroke-width="1" stroke-dasharray="5"/>
-                    <line x1="50" y1="250" x2="780" y2="250" stroke="#8892b0" stroke-width="1"/>
-
-                    <!-- Y-axis labels -->
-                    <text x="10" y="55" fill="#8892b0" font-size="12">40%</text>
-                    <text x="10" y="105" fill="#8892b0" font-size="12">30%</text>
-                    <text x="10" y="155" fill="#8892b0" font-size="12">20%</text>
-                    <text x="10" y="205" fill="#8892b0" font-size="12">10%</text>
-                    <text x="15" y="255" fill="#8892b0" font-size="12">0%</text>
-
-                    <!-- Trend line -->
-                    <polyline fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                        points="50,100.5 150,100 250,101.5 350,102.5 450,97 550,85 650,95 750,91.85"/>
-
-                    <!-- Data points -->
-                    <circle cx="50" cy="100.5" r="4" fill="#ef4444"/>
-                    <circle cx="150" cy="100" r="4" fill="#ef4444"/>
-                    <circle cx="250" cy="101.5" r="4" fill="#f97316"/>
-                    <circle cx="350" cy="102.5" r="4" fill="#f97316"/>
-                    <circle cx="450" cy="97" r="4" fill="#ef4444"/>
-                    <circle cx="550" cy="85" r="4" fill="#ef4444"/>
-                    <circle cx="650" cy="95" r="4" fill="#ef4444"/>
-                    <circle cx="750" cy="91.85" r="6" fill="#ef4444"/>
-
-                    <!-- X-axis labels -->
-                    <text x="30" y="270" fill="#8892b0" font-size="10">11:15</text>
-                    <text x="130" y="270" fill="#8892b0" font-size="10">13:20</text>
-                    <text x="230" y="270" fill="#8892b0" font-size="10">14:18</text>
-                    <text x="330" y="270" fill="#8892b0" font-size="10">15:21</text>
-                    <text x="430" y="270" fill="#8892b0" font-size="10">16:36</text>
-                    <text x="530" y="270" fill="#8892b0" font-size="10">17:36</text>
-                    <text x="630" y="270" fill="#8892b0" font-size="10">08:39</text>
-                    <text x="730" y="270" fill="#e0e0e0" font-size="10" font-weight="bold">08:44</text>
-                </svg>
+    
+        
+        <div class="section shipping-section">
+            <h2>🚢 霍尔木兹海峡航运监控</h2>
+            
+            <div class="shipping-dashboard">
+                <div class="shipping-card">
+                    <div class="shipping-label">当前通行</div>
+                    <div class="shipping-value">0 艘</div>
+                </div>
+                <div class="shipping-card">
+                    <div class="shipping-label">阿曼湾船只</div>
+                    <div class="shipping-value">0 艘</div>
+                </div>
+                <div class="shipping-card">
+                    <div class="shipping-label">波斯湾船只</div>
+                    <div class="shipping-value">0 艘</div>
+                </div>
+                <div class="shipping-card">
+                    <div class="shipping-label">压力指数</div>
+                    <div class="shipping-value" style="color: #22c55e;">0%</div>
+                    <div class="shipping-level">正常</div>
+                </div>
             </div>
+            
+            <div class="shipping-info">
+                <div class="shipping-stat">更新时间: </div>
+                <div class="shipping-stat">数据来源: unknown</div>
+            </div>
+            
+            
+            
         </div>
-
+    
+        
         <div class="footer">
-            <p>数据来源: Polymarket 预测市场 | 更新频率: 每小时</p>
+            <p>数据来源: Polymarket 预测市场 + 金十数据（或手动输入） | 更新频率: 每小时</p>
             <p>免责声明: 本报告仅基于预测市场数据，不构成投资或决策建议</p>
         </div>
     </div>

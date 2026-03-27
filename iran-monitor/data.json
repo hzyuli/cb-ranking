@@ -631,5 +631,107 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-03-27 08:39",
+    "score": 48.2,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×3)"
+        ]
+      },
+      "diplomacy": {
+        "score": 2,
+        "max": 20,
+        "kws": [
+          "red line(×1)",
+          "deal(×1)",
+          "talks(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 5.49,
+        "max": 15,
+        "kws": [
+          "WTI $93.58 / Brent $101.08",
+          "日均变动 +3.66%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 93.58,
+        "brent": 101.08,
+        "change": 3.6599999999999997
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×2)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Read Trump's full statement on Iran attacks - PBS",
+          "Iran warns of ‘severe’ response in wake of Trump’s new strikes threat - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Iran war live: Trump delays attacks on Iranian energy sector by 10 days",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/3/27/iran-war-live-trump-delays-attacks-on-iranian-energy-sector-by-10-days?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Costa Rica to accept 25 deportees per week under Trump deportation effort",
+        "url": "https://www.aljazeera.com/news/2026/3/26/costa-rica-to-accept-25-deportees-per-week-under-trump-deportation-effort?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump ‘pausing’ plan to destroy Iranian power plants for 10 days",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/trump-pausing-plan-to-destroy-iranian-power-plants-for-10-days?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "EU’s top diplomat urges US to pressure Russia to stop aiding Iran",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/eus-top-diplomat-urges-us-to-pressure-russia-to-stop-aiding-iran?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Mbappe nets for 10-man France in win against Brazil in World Cup warm-up",
+        "url": "https://www.aljazeera.com/sports/2026/3/26/mbappe-nets-for-10-man-france-in-win-against-brazil-in-world-cup-warm-up?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

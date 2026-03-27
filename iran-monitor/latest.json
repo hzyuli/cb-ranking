@@ -4,28 +4,28 @@
   "level": "极强",
   "level_color": "red",
   "markets": {
-    "enter_march": {
+    "us_enter_iran_march31": {
       "label": "US forces enter Iran by March 31",
       "yes": 15.5,
       "no": 84.5,
       "volume_24h": 2068143,
       "total_volume": 23554847
     },
-    "enter_april": {
+    "us_enter_iran_april30": {
       "label": "US forces enter Iran by April 30",
       "yes": 62.5,
       "no": 37.5,
       "volume_24h": 652443,
       "total_volume": 4409558
     },
-    "ceasefire_march": {
+    "ceasefire_march31": {
       "label": "US x Iran ceasefire by March 31",
       "yes": 4.5,
       "no": 95.5,
       "volume_24h": 2381373,
       "total_volume": 32839657
     },
-    "kharg": {
+    "kharg_island_march31": {
       "label": "Kharg Island no longer under Iranian control by March 31",
       "yes": 6.5,
       "no": 93.5,
@@ -34,10 +34,10 @@
     }
   },
   "changes_since_last": {
-    "enter_march": -0.3,
-    "enter_april": -0.3,
-    "ceasefire_march": 0.3,
-    "kharg": 1.2
+    "us_enter_iran_march31": -0.3,
+    "us_enter_iran_april30": -0.3,
+    "ceasefire_march31": 0.3,
+    "kharg_island_march31": 1.2
   },
   "anomaly": false,
   "anomaly_detail": "无异常信号。所有核心指标1小时内变化均小于5%阈值。WII从31.0%降至30.5%，维持极强级别。",
@@ -47,10 +47,10 @@
       "wii": 29.9,
       "level": "高",
       "markets": {
-        "enter_march": 19.5,
-        "enter_april": 59.5,
-        "ceasefire_march": 12.5,
-        "kharg": 7.5
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 7.5
       }
     },
     {
@@ -58,10 +58,10 @@
       "wii": 30.0,
       "level": "极强",
       "markets": {
-        "enter_march": 20.5,
-        "enter_april": 58.5,
-        "ceasefire_march": 12.5,
-        "kharg": 8.5
+        "us_enter_iran_march31": 20.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
     {
@@ -69,10 +69,10 @@
       "wii": 29.7,
       "level": "高",
       "markets": {
-        "enter_march": 19.5,
-        "enter_april": 58.5,
-        "ceasefire_march": 12.5,
-        "kharg": 8.5
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
     {
@@ -80,10 +80,10 @@
       "wii": 29.5,
       "level": "高",
       "markets": {
-        "enter_march": 19.5,
-        "enter_april": 58.5,
-        "ceasefire_march": 12.5,
-        "kharg": 7.5
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 7.5
       }
     },
     {
@@ -91,10 +91,10 @@
       "wii": 30.6,
       "level": "极强",
       "markets": {
-        "enter_march": 21.5,
-        "enter_april": 59.5,
-        "ceasefire_march": 11.5,
-        "kharg": 7.5
+        "us_enter_iran_march31": 21.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 11.5,
+        "kharg_island_march31": 7.5
       }
     },
     {
@@ -102,10 +102,10 @@
       "wii": 33.0,
       "level": "极强",
       "markets": {
-        "enter_march": 23.5,
-        "enter_april": 60.5,
-        "ceasefire_march": 12.5,
-        "kharg": 8.5
+        "us_enter_iran_march31": 23.5,
+        "us_enter_iran_april30": 60.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
     {
@@ -113,10 +113,10 @@
       "wii": 31.0,
       "level": "极强",
       "markets": {
-        "enter_march": 17.5,
-        "enter_april": 62.5,
-        "ceasefire_march": 5.5,
-        "kharg": 6.5
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
+        "kharg_island_march31": 6.5
       }
     },
     {
@@ -124,10 +124,10 @@
       "wii": 31.0,
       "level": "极强",
       "markets": {
-        "enter_march": 17.5,
-        "enter_april": 62.5,
-        "ceasefire_march": 5.5,
-        "kharg": 6.5
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
+        "kharg_island_march31": 6.5
       }
     },
     {
@@ -135,10 +135,10 @@
       "wii": 31.0,
       "level": "高",
       "markets": {
-        "enter_march": 15.8,
-        "enter_april": 62.8,
-        "ceasefire_march": 4.2,
-        "kharg": 5.3
+        "us_enter_iran_march31": 15.8,
+        "us_enter_iran_april30": 62.8,
+        "ceasefire_march31": 4.2,
+        "kharg_island_march31": 5.3
       }
     }
   ]

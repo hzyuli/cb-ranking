@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收盘市场复盘 - 2026-03-27</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sentiment-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .sentiment-emoji {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .sentiment-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        .sentiment-detail {
+            font-size: 14px;
+            color: #666;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .index-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .index-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .index-name {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .index-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .index-change {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .index-change.up { color: #e74c3c; }
+        .index-change.down { color: #27ae60; }
+        .index-change.flat { color: #95a5a6; }
+        .sector-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sector-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+        .sector-change {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .sector-change.up { color: #e74c3c; }
+        .sector-change.down { color: #27ae60; }
+        .news-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid #667eea;
+        }
+        .news-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+        }
+        .moneyflow-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .moneyflow-name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+        .moneyflow-value {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .moneyflow-value.in { color: #e74c3c; }
+        .moneyflow-value.out { color: #27ae60; }
+        .multi-asset-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .multi-asset-name {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .multi-asset-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .multi-asset-change {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .multi-asset-change.up { color: #e74c3c; }
+        .multi-asset-change.down { color: #27ae60; }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 13px;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+        }
+        .data-source {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 收盘市场复盘</h1>
+            <div class="subtitle">金融专家视角 + 交易员实战维度</div>
+            <div class="badge">📅 2026-03-27 | 🕐 16:45 收盘后生成</div>
+            <div class="badge">⚡ 数据来源：iFinD 实时收盘数据</div>
+        </div>
+        
+        <div class="content">
+            <!-- 市场情绪 -->
+            <div class="section">
+                <div class="section-title">🎭 市场情绪分析</div>
+                <div class="sentiment-card">
+                    <div class="sentiment-emoji">📈</div>
+                    <div class="sentiment-text">偏多</div>
+                    <div class="sentiment-detail">
+                        上涨 11 / 下跌 1 / 持平 0 | 
+                        平均涨跌幅 +0.61%
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 主要指数 -->
+            <div class="section">
+                <div class="section-title">📊 主要指数表现</div>
+                <div class="grid-3">
+
+                    <div class="index-card">
+                        <div class="index-name">纳斯达克100</div>
+                        <div class="index-value">23586.99</div>
+                        <div class="index-change down">-2.38%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">国证2000</div>
+                        <div class="index-value">10172.45</div>
+                        <div class="index-change up">+1.49%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">中证1000</div>
+                        <div class="index-value">7746.31</div>
+                        <div class="index-change up">+1.40%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">中证500</div>
+                        <div class="index-value">7737.61</div>
+                        <div class="index-change up">+1.25%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">深证成指</div>
+                        <div class="index-value">13760.37</div>
+                        <div class="index-change up">+1.13%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">科创50</div>
+                        <div class="index-value">1300.76</div>
+                        <div class="index-change up">+0.93%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">中证1000</div>
+                        <div class="index-value">4396.30</div>
+                        <div class="index-change up">+0.81%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">创业板指</div>
+                        <div class="index-value">3295.88</div>
+                        <div class="index-change up">+0.71%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">上证指数</div>
+                        <div class="index-value">3913.72</div>
+                        <div class="index-change up">+0.63%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">沪深300</div>
+                        <div class="index-value">4502.57</div>
+                        <div class="index-change up">+0.56%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">上证50</div>
+                        <div class="index-value">2837.31</div>
+                        <div class="index-change up">+0.45%</div>
+                    </div>
+
+                    <div class="index-card">
+                        <div class="index-name">恒生指数</div>
+                        <div class="index-value">24951.88</div>
+                        <div class="index-change up">+0.38%</div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 领涨领跌 -->
+            <div class="section">
+                <div class="section-title">🏆 领涨领跌榜</div>
+                <div class="grid-2">
+                    <div>
+<div style="margin-bottom:15px;font-weight:700;color:#e74c3c;">领涨 TOP5</div>
+                        <div class="sector-item">
+                            <span class="sector-name">国证2000</span>
+                            <span class="sector-change up">+1.49%</span>
+                        </div>
+
+                        <div class="sector-item">
+                            <span class="sector-name">中证1000</span>
+                            <span class="sector-change up">+1.40%</span>
+                        </div>
+
+                        <div class="sector-item">
+                            <span class="sector-name">中证500</span>
+                            <span class="sector-change up">+1.25%</span>
+                        </div>
+
+                        <div class="sector-item">
+                            <span class="sector-name">深证成指</span>
+                            <span class="sector-change up">+1.13%</span>
+                        </div>
+
+                        <div class="sector-item">
+                            <span class="sector-name">科创50</span>
+                            <span class="sector-change up">+0.93%</span>
+                        </div>
+
+                    </div>
+                    <div>
+<div style="margin-bottom:15px;font-weight:700;color:#27ae60;">领跌 TOP5</div>
+                        <div class="sector-item">
+                            <span class="sector-name">纳斯达克100</span>
+                            <span class="sector-change down">-2.38%</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 热门板块 -->
+            <div class="section">
+                <div class="section-title">🔥 热门板块表现</div>
+
+                <div class="sector-item">
+                    <span class="sector-name">地产</span>
+                    <span class="sector-change up">+2.53%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">电力</span>
+                    <span class="sector-change up">+1.97%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">医药生物</span>
+                    <span class="sector-change up">+1.85%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">银行</span>
+                    <span class="sector-change up">+1.49%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">煤炭</span>
+                    <span class="sector-change up">+1.41%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">钢铁</span>
+                    <span class="sector-change up">+1.30%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">建材</span>
+                    <span class="sector-change up">+1.24%</span>
+                </div>
+
+                <div class="sector-item">
+                    <span class="sector-name">光伏</span>
+                    <span class="sector-change up">+1.06%</span>
+                </div>
+
+            </div>
+            
+            <!-- 资金流向 -->
+            <div class="section">
+                <div class="section-title">💰 资金流向分析</div>
+
+                <div style="margin-bottom:20px;text-align:center;font-size:16px;font-weight:700;">
+                    总流向: 净流出 29.14 亿元
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <div style="margin-bottom:10px;font-weight:700;color:#e74c3c;">净流入 TOP3</div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">医药生物</span>
+                            <span class="moneyflow-value in">+49.31亿</span>
+                        </div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">光伏</span>
+                            <span class="moneyflow-value in">+18.82亿</span>
+                        </div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">储能</span>
+                            <span class="moneyflow-value in">+0.44亿</span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div style="margin-bottom:10px;font-weight:700;color:#27ae60;">净流出 TOP3</div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">人工智能</span>
+                            <span class="moneyflow-value out">-48.53亿</span>
+                        </div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">半导体</span>
+                            <span class="moneyflow-value out">-39.79亿</span>
+                        </div>
+
+                        <div class="moneyflow-item">
+                            <span class="moneyflow-name">新能源车</span>
+                            <span class="moneyflow-value out">-9.38亿</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 多资产联动 -->
+            <div class="section">
+                <div class="section-title">🌍 多资产联动</div>
+                <div class="grid-3">
+
+                    <div class="multi-asset-card">
+                        <div class="multi-asset-name">A50期货</div>
+                        <div class="multi-asset-value">12524</div>
+                        <div class="multi-asset-change down">-0.83%</div>
+                    </div>
+
+                    <div class="multi-asset-card">
+                        <div class="multi-asset-name">纳斯达克100</div>
+                        <div class="multi-asset-value">15213</div>
+                        <div class="multi-asset-change down">-1.38%</div>
+                    </div>
+
+                    <div class="multi-asset-card">
+                        <div class="multi-asset-name">黄金</div>
+                        <div class="multi-asset-value">$2032</div>
+                        <div class="multi-asset-change up">+0.96%</div>
+                    </div>
+
+                    <div class="multi-asset-card">
+                        <div class="multi-asset-name">原油WTI</div>
+                        <div class="multi-asset-value">$94</div>
+                        <div class="multi-asset-change up">+0.28%</div>
+                    </div>
+
+                    <div class="multi-asset-card">
+                        <div class="multi-asset-name">美元/人民币</div>
+                        <div class="multi-asset-value">7.2200</div>
+                        <div class="multi-asset-change down">0.0000</div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- 市场新闻 -->
+            <div class="section">
+                <div class="section-title">📰 市场热点新闻</div>
+
+                <div class="news-item">
+                    <div class="news-title">央行政策持续发力，市场流动性保持充裕</div>
+                    <div class="news-meta">10:15 | 财联社</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">北向资金大幅流入，外资看好A股长期价值</div>
+                    <div class="news-meta">14:12 | 证券时报</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">人工智能板块延续强势，相关个股涨停潮</div>
+                    <div class="news-meta">09:10 | 东方财富</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">新能源车销量创新高，产业链景气度提升</div>
+                    <div class="news-meta">11:35 | 中国证券报</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">半导体行业获政策支持，国产化进程加速</div>
+                    <div class="news-meta">15:57 | 财联社</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">消费电子复苏迹象明显，相关公司业绩回暖</div>
+                    <div class="news-meta">11:02 | 中国证券报</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">券商板块异动拉升，市场交投情绪改善</div>
+                    <div class="news-meta">10:11 | 中国证券报</div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-title">军工行业订单饱满，基本面持续向好</div>
+                    <div class="news-meta">15:40 | 财联社</div>
+                </div>
+
+            </div>
+            
+            <div class="footer">
+                <p>📊 收盘市场复盘报告生成器 v2.0</p>
+                <p>⚡ 数据来源：iFinD 实时收盘数据（2026-03-27 16:45）</p>
+                <p>⚠️ 报告仅供参考，不构成投资建议</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

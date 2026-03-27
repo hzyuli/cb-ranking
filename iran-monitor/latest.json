@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-27T11:01:00+08:00",
-  "wii": 30.5,
+  "timestamp": "2026-03-27T12:34:00+08:00",
+  "wii": 30.1,
   "level": "极强",
   "level_color": "red",
   "markets": {
@@ -8,39 +8,39 @@
       "label": "US forces enter Iran by March 31",
       "yes": 15.5,
       "no": 84.5,
-      "volume_24h": 2068143,
-      "total_volume": 23554847
+      "volume_24h": 2207590,
+      "total_volume": 23786632
     },
     "us_enter_iran_april30": {
       "label": "US forces enter Iran by April 30",
       "yes": 62.5,
       "no": 37.5,
-      "volume_24h": 652443,
-      "total_volume": 4409558
+      "volume_24h": 666895,
+      "total_volume": 4430876
     },
     "ceasefire_march31": {
       "label": "US x Iran ceasefire by March 31",
       "yes": 4.5,
       "no": 95.5,
-      "volume_24h": 2381373,
-      "total_volume": 32839657
+      "volume_24h": 2263130,
+      "total_volume": 32913467
     },
     "kharg_island_march31": {
       "label": "Kharg Island no longer under Iranian control by March 31",
-      "yes": 6.5,
-      "no": 93.5,
-      "volume_24h": 647350,
-      "total_volume": 5708156
+      "yes": 4.5,
+      "no": 95.5,
+      "volume_24h": 684356,
+      "total_volume": 5757968
     }
   },
   "changes_since_last": {
     "us_enter_iran_march31": -0.3,
     "us_enter_iran_april30": -0.3,
     "ceasefire_march31": 0.3,
-    "kharg_island_march31": 1.2
+    "kharg_island_march31": -0.8
   },
   "anomaly": false,
-  "anomaly_detail": "无异常信号。所有核心指标1小时内变化均小于5%阈值。WII从31.0%降至30.5%，维持极强级别。",
+  "anomaly_detail": "无异常信号。所有核心指标1小时内变化均小于5%阈值。WII从31.0%降至30.1%,维持极强级别。",
   "history": [
     {
       "timestamp": "2026-03-26T11:15:00+08:00",
@@ -139,6 +139,17 @@
         "us_enter_iran_april30": 62.8,
         "ceasefire_march31": 4.2,
         "kharg_island_march31": 5.3
+      }
+    },
+    {
+      "timestamp": "2026-03-27T11:01:00+08:00",
+      "wii": 30.5,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 15.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 4.5,
+        "kharg_island_march31": 6.5
       }
     }
   ]

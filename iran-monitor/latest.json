@@ -1,70 +1,70 @@
 {
-  "timestamp": "2026-03-26T16:47:16.893725+08:00",
-  "wii": 31.0,
+  "timestamp": "2026-03-27T08:44:00",
+  "wii": 31.63,
   "level": "极强",
   "level_color": "red",
   "markets": {
     "us_enter_iran_march31": {
       "label": "US forces enter Iran by March 31",
-      "yes": 21.5,
-      "no": 78.5,
-      "volume_24h": 1519865,
-      "total_volume": 21748599
+      "yes": 17.5,
+      "no": 82.5,
+      "volume_24h": 2050855,
+      "total_volume": 23479466
     },
     "us_enter_iran_april30": {
       "label": "US forces enter Iran by April 30",
-      "yes": 60.5,
-      "no": 39.5,
-      "volume_24h": 578175,
-      "total_volume": 3855511
+      "yes": 62.5,
+      "no": 37.5,
+      "volume_24h": 660811,
+      "total_volume": 4390693
     },
     "ceasefire_march31": {
       "label": "US x Iran ceasefire by March 31",
-      "yes": 11.5,
-      "no": 88.5,
-      "volume_24h": 3816385,
-      "total_volume": 30807510
+      "yes": 5.5,
+      "no": 94.5,
+      "volume_24h": 2324191,
+      "total_volume": 32621400
     },
     "ceasefire_april15": {
       "label": "US x Iran ceasefire by April 15",
-      "yes": 31.5,
-      "no": 68.5,
-      "volume_24h": 437626,
-      "total_volume": 4598866
+      "yes": 30.5,
+      "no": 69.5,
+      "volume_24h": 349495,
+      "total_volume": 4876434
     },
     "ceasefire_april30": {
       "label": "US x Iran ceasefire by April 30",
-      "yes": 43.5,
-      "no": 56.5,
-      "volume_24h": 500435,
-      "total_volume": 5342255
+      "yes": 42.5,
+      "no": 57.5,
+      "volume_24h": 519096,
+      "total_volume": 5701880
     },
     "kharg_island_march31": {
       "label": "Kharg Island no longer under Iranian control by March 31",
-      "yes": 7.5,
-      "no": 92.5,
-      "volume_24h": 475031,
-      "total_volume": 5096239
+      "yes": 6.5,
+      "no": 93.5,
+      "volume_24h": 666611,
+      "total_volume": 5693797
     },
     "iranian_regime_fall_march31": {
       "label": "Will the Iranian regime fall by March 31",
-      "yes": 0.5,
-      "no": 99.5,
-      "volume_24h": 1566861,
-      "total_volume": 49418116
+      "yes": 0.8,
+      "no": 99.2,
+      "volume_24h": 2361079,
+      "total_volume": 50979191
     }
   },
   "changes_since_last": {
     "us_enter_iran_march31": 0.0,
-    "us_enter_iran_april30": 1.0,
+    "us_enter_iran_april30": 0.0,
     "ceasefire_march31": 0.0,
-    "ceasefire_april15": -0.5,
-    "ceasefire_april30": 0.0,
+    "ceasefire_april15": -1.0,
+    "ceasefire_april30": -1.0,
     "kharg_island_march31": 0.0,
-    "iranian_regime_fall_march31": -0.2
+    "iranian_regime_fall_march31": 0.0
   },
   "anomaly": false,
-  "anomaly_detail": "无超5%异常。变化: us_enter_iran_april30: +1.0%, ceasefire_april15: -0.5%。WII=31.0%, 极强级。",
+  "anomaly_detail": "无异常。最大变化：ceasefire_april15 -1.0%（30.5%←31.5%），ceasefire_april30 -1.0%（42.5%←43.5%）。WII=31.63%，极强级别维持稳定（与上次31.0%基本持平）。",
   "alerts": [],
   "history": [
     {
@@ -124,35 +124,7 @@
       }
     },
     {
-      "timestamp": "2026-03-26T15:27:00+08:00",
-      "wii": 29.5,
-      "level": "高",
-      "markets": {
-        "us_enter_iran_march31": 19.5,
-        "us_enter_iran_april30": 58.5,
-        "ceasefire_march31": 12.5,
-        "ceasefire_april15": 32.0,
-        "ceasefire_april30": 43.5,
-        "kharg_island_march31": 7.5,
-        "iranian_regime_fall_march31": 0.4
-      }
-    },
-    {
-      "timestamp": "2026-03-26T16:27:00+08:00",
-      "wii": 30.2,
-      "level": "极高",
-      "markets": {
-        "us_enter_iran_march31": 22.5,
-        "us_enter_iran_april30": 59.5,
-        "ceasefire_march31": 12.5,
-        "ceasefire_april15": 32.5,
-        "ceasefire_april30": 43.5,
-        "kharg_island_march31": 7.5,
-        "iranian_regime_fall_march31": 0.7
-      }
-    },
-    {
-      "timestamp": "2026-03-26T16:35:50.263299+08:00",
+      "timestamp": "2026-03-26T16:35:50+08:00",
       "wii": 30.6,
       "level": "极强",
       "markets": {
@@ -166,31 +138,45 @@
       }
     },
     {
-      "timestamp": "2026-03-26T16:45:39.441163+08:00",
-      "wii": 30.6,
+      "timestamp": "2026-03-26T17:36:27+08:00",
+      "wii": 33.0,
       "level": "极强",
       "markets": {
-        "us_enter_iran_march31": 21.5,
-        "us_enter_iran_april30": 59.5,
-        "ceasefire_march31": 11.5,
-        "ceasefire_april15": 32.0,
+        "us_enter_iran_march31": 23.5,
+        "us_enter_iran_april30": 60.5,
+        "ceasefire_march31": 12.5,
+        "ceasefire_april15": 31.5,
         "ceasefire_april30": 43.5,
-        "kharg_island_march31": 7.5,
-        "iranian_regime_fall_march31": 0.7
+        "kharg_island_march31": 8.5,
+        "iranian_regime_fall_march31": 0.5
       }
     },
     {
-      "timestamp": "2026-03-26T16:47:16.893725+08:00",
+      "timestamp": "2026-03-27T08:39:00",
       "wii": 31.0,
       "level": "极强",
       "markets": {
-        "us_enter_iran_march31": 21.5,
-        "us_enter_iran_april30": 60.5,
-        "ceasefire_march31": 11.5,
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
         "ceasefire_april15": 31.5,
         "ceasefire_april30": 43.5,
-        "kharg_island_march31": 7.5,
-        "iranian_regime_fall_march31": 0.5
+        "kharg_island_march31": 6.5,
+        "iranian_regime_fall_march31": 0.8
+      }
+    },
+    {
+      "timestamp": "2026-03-27T08:44:00",
+      "wii": 31.63,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
+        "ceasefire_april15": 30.5,
+        "ceasefire_april30": 42.5,
+        "kharg_island_march31": 6.5,
+        "iranian_regime_fall_march31": 0.8
       }
     }
   ]

@@ -1,46 +1,70 @@
 {
-  "timestamp": "2026-03-27T12:34:00+08:00",
-  "wii": 30.1,
-  "level": "极强",
-  "level_color": "red",
+  "timestamp": "2026-04-01T10:51:16.349634+08:00",
+  "wii": 29.3,
+  "level": "中",
+  "level_color": "yellow",
   "markets": {
     "us_enter_iran_march31": {
-      "label": "US forces enter Iran by March 31",
-      "yes": 15.5,
-      "no": 84.5,
-      "volume_24h": 2207590,
-      "total_volume": 23786632
+      "label": "US forces enter Iran by March 31 [RESOLVED: NO]",
+      "yes": 1,
+      "no": 99,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
     },
     "us_enter_iran_april30": {
       "label": "US forces enter Iran by April 30",
-      "yes": 62.5,
-      "no": 37.5,
-      "volume_24h": 666895,
-      "total_volume": 4430876
+      "yes": 56,
+      "no": 44,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
     },
     "ceasefire_march31": {
-      "label": "US x Iran ceasefire by March 31",
-      "yes": 4.5,
-      "no": 95.5,
-      "volume_24h": 2263130,
-      "total_volume": 32913467
+      "label": "US x Iran ceasefire by March 31 [RESOLVED: NO]",
+      "yes": 0,
+      "no": 100,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
+    },
+    "ceasefire_april15": {
+      "label": "US x Iran ceasefire by April 15",
+      "yes": 19,
+      "no": 81,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
+    },
+    "ceasefire_april30": {
+      "label": "US x Iran ceasefire by April 30",
+      "yes": 37,
+      "no": 63,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
     },
     "kharg_island_march31": {
-      "label": "Kharg Island no longer under Iranian control by March 31",
-      "yes": 4.5,
-      "no": 95.5,
-      "volume_24h": 684356,
-      "total_volume": 5757968
+      "label": "Kharg Island no longer under Iranian control by April 30",
+      "yes": 33,
+      "no": 67,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
+    },
+    "iranian_regime_fall_march31": {
+      "label": "Will the Iranian regime fall by March 31 [RESOLVED: NO]",
+      "yes": 0,
+      "no": 100,
+      "volume_24h": 0,
+      "total_volume": 0,
+      "source": "frenflow"
     }
   },
-  "changes_since_last": {
-    "us_enter_iran_march31": -0.3,
-    "us_enter_iran_april30": -0.3,
-    "ceasefire_march31": 0.3,
-    "kharg_island_march31": -0.8
-  },
+  "changes_since_last": {},
   "anomaly": false,
-  "anomaly_detail": "无异常信号。所有核心指标1小时内变化均小于5%阈值。WII从31.0%降至30.1%,维持极强级别。",
+  "anomaly_detail": "无显著变化。",
+  "alerts": [],
   "history": [
     {
       "timestamp": "2026-03-26T11:15:00+08:00",
@@ -150,6 +174,62 @@
         "us_enter_iran_april30": 62.5,
         "ceasefire_march31": 4.5,
         "kharg_island_march31": 6.5
+      }
+    },
+    {
+      "timestamp": "2026-04-01T09:17:30.789216+08:00",
+      "wii": 31.0,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 15.8,
+        "us_enter_iran_april30": 62.8,
+        "ceasefire_march31": 4.2,
+        "ceasefire_april15": 28.2,
+        "ceasefire_april30": 42.8,
+        "kharg_island_march31": 5.3,
+        "iranian_regime_fall_march31": 0.8
+      }
+    },
+    {
+      "timestamp": "2026-04-01T09:47:45.533004+08:00",
+      "wii": 0.0,
+      "level": "低",
+      "markets": {
+        "us_enter_iran_march31": null,
+        "us_enter_iran_april30": 0,
+        "ceasefire_march31": null,
+        "ceasefire_april15": 0,
+        "ceasefire_april30": 0,
+        "kharg_island_march31": 0,
+        "iranian_regime_fall_march31": null
+      }
+    },
+    {
+      "timestamp": "2026-04-01T09:48:33.218899+08:00",
+      "wii": 29.3,
+      "level": "中",
+      "markets": {
+        "us_enter_iran_march31": 1,
+        "us_enter_iran_april30": 56,
+        "ceasefire_march31": 0,
+        "ceasefire_april15": 19,
+        "ceasefire_april30": 37,
+        "kharg_island_march31": 33,
+        "iranian_regime_fall_march31": 0
+      }
+    },
+    {
+      "timestamp": "2026-04-01T10:51:16.349634+08:00",
+      "wii": 29.3,
+      "level": "中",
+      "markets": {
+        "us_enter_iran_march31": 1,
+        "us_enter_iran_april30": 56,
+        "ceasefire_march31": 0,
+        "ceasefire_april15": 19,
+        "ceasefire_april30": 37,
+        "kharg_island_march31": 33,
+        "iranian_regime_fall_march31": 0
       }
     }
   ]

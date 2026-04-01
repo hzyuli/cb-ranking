@@ -282,16 +282,85 @@
             background: rgba(255,255,255,0.03);
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.2s ease;
+        }
+        .news-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.1);
+        }
+        .news-link {
+            text-decoration: none;
+            display: block;
         }
         .news-title {
             font-weight: 600;
             margin-bottom: 6px;
-            color: #e2e8f0;
+            color: #60a5fa;
+            transition: color 0.2s ease;
+        }
+        .news-link:hover .news-title {
+            color: #93c5fd;
         }
         .news-snippet {
             font-size: 13px;
             color: #94a3b8;
             line-height: 1.5;
+        }
+        .news-empty {
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        /* Top List */
+        .toplist-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toplist-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 14px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .toplist-name {
+            flex: 1;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .toplist-count {
+            padding: 2px 8px;
+            background: rgba(245,158,11,0.2);
+            color: #fbbf24;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .toplist-reason {
+            font-size: 12px;
+            color: #94a3b8;
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .toplist-empty {
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+        }
+        .tag-small {
+            font-size: 11px;
+            padding: 2px 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-left: 8px;
+            color: #94a3b8;
         }
         
         /* Conclusion */
@@ -399,56 +468,56 @@
             <div class="index-code">000001.SH</div>
             <div class="index-price">3891.86</div>
             <div class="index-change">▼ 0.80%</div>
-            <div class="index-tech">MACD:金叉 RSI:47.4(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:59.8(中性)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">399001.SZ</div>
             <div class="index-code">399001.SZ</div>
             <div class="index-price">13478.06</div>
             <div class="index-change">▼ 1.81%</div>
-            <div class="index-tech">MACD:金叉 RSI:53.8(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:59.5(中性)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">399006.SZ</div>
             <div class="index-code">399006.SZ</div>
             <div class="index-price">3184.95</div>
             <div class="index-change">▼ 2.70%</div>
-            <div class="index-tech">MACD:金叉 RSI:16.0(超卖)</div>
+            <div class="index-tech">MACD:金叉 RSI:19.3(超卖)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">000300.SH</div>
             <div class="index-code">000300.SH</div>
             <div class="index-price">4450.05</div>
             <div class="index-change">▼ 0.93%</div>
-            <div class="index-tech">MACD:金叉 RSI:44.8(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:57.3(中性)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">000016.SH</div>
             <div class="index-code">000016.SH</div>
             <div class="index-price">2826.12</div>
             <div class="index-change">▼ 0.25%</div>
-            <div class="index-tech">MACD:金叉 RSI:44.5(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:59.1(中性)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">000688.SH</div>
             <div class="index-code">000688.SH</div>
             <div class="index-price">1256.33</div>
             <div class="index-change">▼ 2.59%</div>
-            <div class="index-tech">MACD:金叉 RSI:26.6(超卖)</div>
+            <div class="index-tech">MACD:金叉 RSI:25.3(超卖)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">000852.SH</div>
             <div class="index-code">000852.SH</div>
             <div class="index-price">7619.85</div>
             <div class="index-change">▼ 1.91%</div>
-            <div class="index-tech">MACD:金叉 RSI:51.4(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:49.3(中性)</div>
         </div>
         <div class="index-card negative">
             <div class="index-name">000905.SH</div>
             <div class="index-code">000905.SH</div>
             <div class="index-price">7617.33</div>
             <div class="index-change">▼ 1.76%</div>
-            <div class="index-tech">MACD:金叉 RSI:44.0(中性)</div>
+            <div class="index-tech">MACD:金叉 RSI:40.6(中性)</div>
         </div>
             </div>
         </div>
@@ -463,52 +532,52 @@
                 <div class="sector-list">
                     
         <div class="sector-item positive">
-            <div class="sector-name">低空经济</div>
-            <div class="sector-change">▲ 3.52%</div>
-            <div class="sector-amount">成交:1340.90亿</div>
+            <div class="sector-name">医药</div>
+            <div class="sector-change">▲ 4.82%</div>
+            <div class="sector-amount">成交:1739.36亿</div>
             <div class="sector-badge positive">强</div>
-        </div>
-        <div class="sector-item positive">
-            <div class="sector-name">新能源</div>
-            <div class="sector-change">▲ 3.49%</div>
-            <div class="sector-amount">成交:2618.55亿</div>
-            <div class="sector-badge positive">强</div>
-        </div>
-        <div class="sector-item positive">
-            <div class="sector-name">半导体</div>
-            <div class="sector-change">▲ 3.18%</div>
-            <div class="sector-amount">成交:897.67亿</div>
-            <div class="sector-badge positive">强</div>
-        </div>
-        <div class="sector-item positive">
-            <div class="sector-name">人工智能</div>
-            <div class="sector-change">▲ 2.77%</div>
-            <div class="sector-amount">成交:1155.64亿</div>
-            <div class="sector-badge positive">中</div>
         </div>
         <div class="sector-item positive">
             <div class="sector-name">医疗器械</div>
-            <div class="sector-change">▲ 0.21%</div>
-            <div class="sector-amount">成交:2154.21亿</div>
+            <div class="sector-change">▲ 2.57%</div>
+            <div class="sector-amount">成交:1848.05亿</div>
+            <div class="sector-badge positive">中</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">低空经济</div>
+            <div class="sector-change">▲ 2.01%</div>
+            <div class="sector-amount">成交:1784.07亿</div>
+            <div class="sector-badge positive">中</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">半导体</div>
+            <div class="sector-change">▲ 1.86%</div>
+            <div class="sector-amount">成交:1677.89亿</div>
+            <div class="sector-badge positive">中</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">人工智能</div>
+            <div class="sector-change">▲ 1.75%</div>
+            <div class="sector-amount">成交:1194.26亿</div>
+            <div class="sector-badge positive">中</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">新能源</div>
+            <div class="sector-change">▲ 1.64%</div>
+            <div class="sector-amount">成交:1596.07亿</div>
+            <div class="sector-badge positive">中</div>
+        </div>
+        <div class="sector-item positive">
+            <div class="sector-name">国企改革</div>
+            <div class="sector-change">▲ 0.52%</div>
+            <div class="sector-amount">成交:2108.00亿</div>
             <div class="sector-badge positive">弱</div>
         </div>
         <div class="sector-item negative">
-            <div class="sector-name">消费电子</div>
-            <div class="sector-change">▼ 1.03%</div>
-            <div class="sector-amount">成交:2015.88亿</div>
-            <div class="sector-badge negative">中</div>
-        </div>
-        <div class="sector-item negative">
-            <div class="sector-name">国企改革</div>
-            <div class="sector-change">▼ 1.31%</div>
-            <div class="sector-amount">成交:2191.22亿</div>
-            <div class="sector-badge negative">中</div>
-        </div>
-        <div class="sector-item negative">
             <div class="sector-name">房地产</div>
-            <div class="sector-change">▼ 1.58%</div>
-            <div class="sector-amount">成交:1801.13亿</div>
-            <div class="sector-badge negative">中</div>
+            <div class="sector-change">▼ 0.77%</div>
+            <div class="sector-amount">成交:2083.04亿</div>
+            <div class="sector-badge negative">弱</div>
         </div>
                 </div>
             </div>
@@ -522,28 +591,28 @@
                 <div class="flow-list">
                     
         <div class="flow-item positive">
-            <span class="flow-name">人工智能</span>
-            <span class="flow-value">+24.67亿</span>
+            <span class="flow-name">消费电子</span>
+            <span class="flow-value">+25.38亿</span>
         </div>
         <div class="flow-item positive">
-            <span class="flow-name">半导体</span>
-            <span class="flow-value">+19.53亿</span>
+            <span class="flow-name">新能源</span>
+            <span class="flow-value">+19.93亿</span>
         </div>
         <div class="flow-item positive">
             <span class="flow-name">医疗器械</span>
-            <span class="flow-value">+17.65亿</span>
+            <span class="flow-value">+9.06亿</span>
         </div>
         <div class="flow-item negative">
-            <span class="flow-name">新能源</span>
-            <span class="flow-value">-3871万</span>
+            <span class="flow-name">人工智能</span>
+            <span class="flow-value">-4310万</span>
         </div>
         <div class="flow-item negative">
-            <span class="flow-name">消费电子</span>
-            <span class="flow-value">-3265万</span>
+            <span class="flow-name">半导体</span>
+            <span class="flow-value">-2586万</span>
         </div>
         <div class="flow-item negative">
             <span class="flow-name">医药</span>
-            <span class="flow-value">-830万</span>
+            <span class="flow-value">2.23亿</span>
         </div>
                 </div>
             </div>
@@ -560,39 +629,51 @@
                     
     <div class="asset-row">
         <span class="asset-name">A50期货</span>
-        <span class="asset-value">12474</span>
+        <span class="asset-value">12353</span>
         <span class="asset-change positive">
-            +0.38%
+            +0.30%
         </span>
     </div>
     <div class="asset-row">
         <span class="asset-name">纳斯达克期货</span>
-        <span class="asset-value">15469</span>
-        <span class="asset-change positive">
-            +0.72%
+        <span class="asset-value">15562</span>
+        <span class="asset-change negative">
+            -1.27%
         </span>
     </div>
     <div class="asset-row">
         <span class="asset-name">黄金</span>
-        <span class="asset-value">$1944</span>
+        <span class="asset-value">$1993</span>
         <span class="asset-change positive">
-            +0.76%
+            +0.85%
         </span>
     </div>
     <div class="asset-row">
         <span class="asset-name">WTI原油</span>
-        <span class="asset-value">$84</span>
-        <span class="asset-change positive">
-            +0.19%
+        <span class="asset-value">$82</span>
+        <span class="asset-change negative">
+            -1.75%
         </span>
     </div>
     <div class="asset-row">
         <span class="asset-name">美元/人民币</span>
-        <span class="asset-value">7.180</span>
-        <span class="asset-change negative">
-            -0.070
+        <span class="asset-value">7.210</span>
+        <span class="asset-change positive">
+            +0.010
         </span>
     </div>
+                </div>
+            </div>
+            
+            <!-- Top List -->
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon">🔥</span>
+                    龙虎榜数据
+                    <span class="tag-small">暂无龙虎榜数据</span>
+                </div>
+                <div class="toplist-grid">
+                    <div class="toplist-empty">暂无龙虎榜数据</div>
                 </div>
             </div>
             
@@ -603,7 +684,7 @@
                     市场热点新闻
                 </div>
                 <div class="news-list">
-                    
+                    <div class="news-empty">暂无新闻数据</div>
                 </div>
             </div>
         </div>
@@ -617,8 +698,8 @@
             <div class="conclusion">
                 <h4>核心观点</h4>
                 <p><strong>市场状态：</strong>极度恐慌（😱 上涨0家 / 下跌7家）</p>
-                <p><strong>热点板块：</strong>低空经济, 新能源, 半导体等板块领涨</p>
-                <p><strong>资金面：</strong>主力净流出17.81亿</p>
+                <p><strong>热点板块：</strong>医药, 医疗器械, 低空经济等板块领涨</p>
+                <p><strong>资金面：</strong>主力净流出12.37亿</p>
                 <p><strong>操作建议：</strong>
                     谨慎观望，控制仓位
                 </p>
@@ -630,7 +711,7 @@
         
         <!-- Footer -->
         <div class="footer">
-            <p>报告生成时间: 2026-04-01 11:45:54</p>
+            <p>报告生成时间: 2026-04-01 12:40:13</p>
             <p>数据来源: ⚡ iFinD 真实数据 | Web Search | AI分析助手生成（无模拟数据）</p>
             <p>🌐 在线查看: <a href="https://hzyuli.github.io/cb-ranking/midday-report/">https://hzyuli.github.io/cb-ranking/midday-report/</a></p>
         </div>

@@ -87,7 +87,8 @@
       "Egypt says it is ready to host Iran de-escalation talks",
       "Iranian foreign minister rejects talks with US"
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "军事行动↑15.0 (iran war(×1))；代理人冲突↑6.0 (lebanon(×1))；媒体报道↑10.0 (新闻20条)；市场反应↑0.8 (概率15.0%)"
   },
   {
     "time": "2026-03-26 11:20",
@@ -154,7 +155,8 @@
       "Egypt says it is ready to host Iran de-escalation talks",
       "Iranian foreign minister rejects talks with US"
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "无显著变化"
   },
   {
     "time": "2026-03-26 13:59",
@@ -238,7 +240,8 @@
       "Russia slams second US-Israeli strike at Iran’s Bushehr nuclear reactor",
       "Australia bans visitors from Iran amid war in the Middle East"
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "军事行动↑10.0 (iran war(×2))；代理人冲突↑4.0 (lebanon(×2))；言辞对抗↑10.0 (obliterate(×1))；媒体报道↓5.0 (新闻20条)"
   },
   {
     "time": "2026-03-26 14:23",
@@ -320,7 +323,8 @@
       "US-Israel war on Iran: What’s happening on day 26 of attacks? - Al Jazeera",
       "Iran war: Tehran sets own terms to end war, rejects US plan - DW.com"
     ],
-    "news_count": 17
+    "news_count": 17,
+    "change_reason": "代理人冲突↓10.0；媒体报道↓0.8 (新闻17条)"
   },
   {
     "time": "2026-03-26 15:47",
@@ -424,7 +428,8 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "军事行动↓10.0 (iran war(×1))；油价影响↑4.1 (WTI $93.06 / Brent $99.76, 日均变动 +2.71%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)；代理人冲突↑6.0 (lebanon(×1))；媒体报道↑0.8 (新闻20条)"
   },
   {
     "time": "2026-03-26 16:42",
@@ -527,7 +532,8 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "军事行动↑10.0 (iran war(×2))；油价影响↑0.9 (WTI $93.60 / Brent $100.35, 日均变动 +3.31%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)"
   },
   {
     "time": "2026-03-26 17:30",
@@ -630,7 +636,8 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "油价影响↑0.3 (WTI $93.81 / Brent $100.48, 日均变动 +3.50%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)"
   },
   {
     "time": "2026-03-27 08:39",
@@ -732,7 +739,8 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "外交动态↑2.0 (red line(×1), deal(×1), talks(×1))；油价影响↑0.2 (WTI $93.58 / Brent $101.08, 日均变动 +3.66%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)；代理人冲突↓6.0"
   },
   {
     "time": "2026-03-27 09:49",
@@ -833,7 +841,8 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "油价影响↓0.5 (WTI $93.36 / Brent $100.69, 日均变动 +3.34%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)"
   },
   {
     "time": "2026-03-27 14:15",
@@ -933,6 +942,7 @@
         "source": "Al Jazeera"
       }
     ],
-    "news_count": 20
+    "news_count": 20,
+    "change_reason": "外交动态↓2.0 (deal(×1))；油价影响↑1.4 (WTI $94.13 / Brent $101.70, 日均变动 +4.29%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)"
   }
 ]

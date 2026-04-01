@@ -1,938 +1,194 @@
-[
-  {
-    "time": "2026-03-26 09:18",
-    "score": 2.8,
-    "label": "紧张克制",
-    "basis": [
-      "关键词命中：missiles hit(×1), iran war(×3), killed(×1)",
-      "参考新闻 20 条（来自 Reuters/BBC/Al Jazeera/Google News）"
-    ],
-    "hit_kws": [
-      "missiles hit(×1)",
-      "iran war(×3)",
-      "killed(×1)"
-    ],
-    "pm_prob": 15.0,
-    "top_news": [
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US",
-      "Video shows Israeli strike hitting displacement camp in Gaza",
-      "Palestine weekly wrap: West Bank attacks surge, Israel restricts Gaza aid"
-    ],
-    "news_count": 20
+{
+  "timestamp": "2026-04-01T09:17:30.789216+08:00",
+  "wii": 31.0,
+  "level": "高",
+  "level_color": "orange",
+  "markets": {
+    "us_enter_iran_march31": {
+      "label": "US forces enter Iran by March 31",
+      "yes": 15.8,
+      "no": 84.2,
+      "volume_24h": 2150000,
+      "total_volume": 23800000
+    },
+    "us_enter_iran_april30": {
+      "label": "US forces enter Iran by April 30",
+      "yes": 62.8,
+      "no": 37.2,
+      "volume_24h": 680000,
+      "total_volume": 4500000
+    },
+    "ceasefire_march31": {
+      "label": "US x Iran ceasefire by March 31",
+      "yes": 4.2,
+      "no": 95.8,
+      "volume_24h": 2400000,
+      "total_volume": 33000000
+    },
+    "ceasefire_april15": {
+      "label": "US x Iran ceasefire by April 15",
+      "yes": 28.2,
+      "no": 71.8,
+      "volume_24h": 330000,
+      "total_volume": 5000000
+    },
+    "ceasefire_april30": {
+      "label": "US x Iran ceasefire by April 30",
+      "yes": 42.8,
+      "no": 57.2,
+      "volume_24h": 525000,
+      "total_volume": 5800000
+    },
+    "kharg_island_march31": {
+      "label": "Kharg Island no longer under Iranian control by March 31",
+      "yes": 5.3,
+      "no": 94.7,
+      "volume_24h": 670000,
+      "total_volume": 5800000
+    },
+    "iranian_regime_fall_march31": {
+      "label": "Will the Iranian regime fall by March 31",
+      "yes": 0.8,
+      "no": 99.2,
+      "volume_24h": 2300000,
+      "total_volume": 51200000
+    }
   },
-  {
-    "time": "2026-03-26 10:57",
-    "score": 31.8,
-    "label": "紧张克制",
-    "dimensions": {
-      "military": {
-        "score": 15,
-        "max": 25,
-        "kws": [
-          "iran war(×1)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×3)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [],
-        "wti": 75.0,
-        "brent": 80.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "media": {
-        "score": 10.0,
-        "max": 10,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+  "changes_since_last": {
+    "us_enter_iran_march31": 0.3,
+    "us_enter_iran_april30": 0.3,
+    "ceasefire_march31": -0.3,
+    "kharg_island_march31": 0.8
+  },
+  "anomaly": true,
+  "anomaly_detail": "WII跨越等级边界：极强(30.1%) → 高(31.0%)",
+  "alerts": [
+    "WII跨越等级边界：极强 → 高（30.1% → 31.0%）"
+  ],
+  "history": [
+    {
+      "timestamp": "2026-03-26T11:15:00+08:00",
+      "wii": 29.9,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 7.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Tehran issues warning to regional neighbour if Iranian island occupied",
-      "Trump says Iranian leaders want deal ‘so badly’ but fear retaliation",
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 11:20",
-    "score": 31.8,
-    "label": "紧张克制",
-    "dimensions": {
-      "military": {
-        "score": 15,
-        "max": 25,
-        "kws": [
-          "iran war(×1)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×3)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [],
-        "wti": 75.0,
-        "brent": 80.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "media": {
-        "score": 10.0,
-        "max": 10,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T13:20:00+08:00",
+      "wii": 30.0,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 20.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Tehran issues warning to regional neighbour if Iranian island occupied",
-      "Trump says Iranian leaders want deal ‘so badly’ but fear retaliation",
-      "Iran war live: US demands Tehran accept defeat; Israel pounds Lebanon",
-      "Egypt says it is ready to host Iran de-escalation talks",
-      "Iranian foreign minister rejects talks with US"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 13:59",
-    "score": 50.8,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×2)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×5)",
-          "de-escalation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [
-          "WTI $76.00 / Brent $79.00",
-          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
-          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
-        ],
-        "wti": 76.0,
-        "brent": 79.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "lebanon(×2)"
-        ]
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T14:18:00+08:00",
+      "wii": 29.7,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
-      "Malaysia’s prime minister says Iran talks should end war",
-      "Videos show wave of missiles fired from Lebanon to Israel",
-      "Russia slams second US-Israeli strike at Iran’s Bushehr nuclear reactor",
-      "Australia bans visitors from Iran amid war in the Middle East"
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 14:23",
-    "score": 40.0,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "strike iran(×1)",
-          "iran war(×3)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "talks(×2)",
-          "negotiation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 0.0,
-        "max": 15,
-        "kws": [
-          "WTI $76.00 / Brent $79.00",
-          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
-          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
-        ],
-        "wti": 76.0,
-        "brent": 79.0,
-        "change": 0.0
-      },
-      "proxy": {
-        "score": 0,
-        "max": 10,
-        "kws": []
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)",
-          "retaliate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 4.25,
-        "max": 5,
-        "kws": [
-          "新闻17条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T15:21:00+08:00",
+      "wii": 29.5,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 19.5,
+        "us_enter_iran_april30": 58.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 7.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      "Who wants what and why from US-Iran peace talks?",
-      "Democrats flip Florida state seat that includes Trump's Mar-a-Lago home",
-      "Pentagon Orders 2,000 Airborne Troops to Middle East - The New York Times",
-      "US-Israel war on Iran: What’s happening on day 26 of attacks? - Al Jazeera",
-      "Iran war: Tehran sets own terms to end war, rejects US plan - DW.com"
-    ],
-    "news_count": 17
-  },
-  {
-    "time": "2026-03-26 15:47",
-    "score": 40.8,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 15,
-        "max": 25,
-        "kws": [
-          "iran war(×1)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "deal(×1)",
-          "talks(×3)",
-          "negotiation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 4.0575,
-        "max": 15,
-        "kws": [
-          "WTI $93.06 / Brent $99.76",
-          "日均变动 +2.71%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 93.06,
-        "brent": 99.76,
-        "change": 2.705
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T16:35:50+08:00",
+      "wii": 30.6,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 21.5,
+        "us_enter_iran_april30": 59.5,
+        "ceasefire_march31": 11.5,
+        "kharg_island_march31": 7.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "US-Israel war on Iran: What’s happening on day 27 of attacks?",
-        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-war-on-iran-whats-happening-on-day-27-of-attacks?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Deaths and debts: Missiles in Gulf shake millions of South Asian families",
-        "url": "https://www.aljazeera.com/features/2026/3/26/deaths-and-debts-missiles-in-gulf-shake-millions-of-south-asian-families?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Netanyahu boasts about ‘breaking boundaries in every sense of the word’",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/netanyahu-boasts-about-breaking-boundaries-in-every-sense-of-the-word?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
-        "url": "https://www.aljazeera.com/economy/2026/3/26/oil-prices-rise-higher-as-iran-denies-us-talks-dimming-deescalation-hopes?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Malaysia’s prime minister says Iran talks should end war",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/malaysias-prime-minister-says-iran-talks-should-end-war?traffic_source=rss",
-        "source": "Al Jazeera"
-      }
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 16:42",
-    "score": 51.7,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×2)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "warning(×1)",
-          "talks(×3)",
-          "negotiation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 4.965,
-        "max": 15,
-        "kws": [
-          "WTI $93.60 / Brent $100.35",
-          "日均变动 +3.31%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 93.6,
-        "brent": 100.35,
-        "change": 3.31
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "retaliate(×2)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-26T17:36:27+08:00",
+      "wii": 33.0,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 23.5,
+        "us_enter_iran_april30": 60.5,
+        "ceasefire_march31": 12.5,
+        "kharg_island_march31": 8.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "Two teenagers killed in Shiraz, two dead in Abu Dhabi as Iran war expands",
-        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-launch-extensive-strikes-on-central-iran-two-teenagers-killed?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "US-Israel war on Iran: What’s happening on day 27 of attacks?",
-        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-war-on-iran-whats-happening-on-day-27-of-attacks?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Deaths and debts: Missiles in Gulf shake millions of South Asian families",
-        "url": "https://www.aljazeera.com/features/2026/3/26/deaths-and-debts-missiles-in-gulf-shake-millions-of-south-asian-families?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Netanyahu boasts about ‘breaking boundaries in every sense of the word’",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/netanyahu-boasts-about-breaking-boundaries-in-every-sense-of-the-word?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes",
-        "url": "https://www.aljazeera.com/economy/2026/3/26/oil-prices-rise-higher-as-iran-denies-us-talks-dimming-deescalation-hopes?traffic_source=rss",
-        "source": "Al Jazeera"
-      }
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-26 17:30",
-    "score": 52.0,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×3)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "talks(×3)",
-          "negotiation(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 5.242500000000001,
-        "max": 15,
-        "kws": [
-          "WTI $93.81 / Brent $100.48",
-          "日均变动 +3.50%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 93.81,
-        "brent": 100.48,
-        "change": 3.495
-      },
-      "proxy": {
-        "score": 6,
-        "max": 10,
-        "kws": [
-          "lebanon(×1)"
-        ]
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)",
-          "retaliate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-27T08:39:00+08:00",
+      "wii": 31.0,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
+        "kharg_island_march31": 6.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "Helium hitch: Why US-Israel war on Iran could cause MRI scan delays",
-        "url": "https://www.aljazeera.com/economy/2026/3/26/helium-hitch-why-us-israel-war-on-iran-could-cause-mri-scan-delays?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "German minister calls Iran war an ‘economic catastrophe’",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/german-minister-calls-iran-war-an-economic?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Two teenagers killed in Shiraz, two dead in Abu Dhabi as Iran war expands",
-        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-launch-extensive-strikes-on-central-iran-two-teenagers-killed?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "US-Israel war on Iran: What’s happening on day 27 of attacks?",
-        "url": "https://www.aljazeera.com/news/2026/3/26/us-israel-war-on-iran-whats-happening-on-day-27-of-attacks?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Deaths and debts: Missiles in Gulf shake millions of South Asian families",
-        "url": "https://www.aljazeera.com/features/2026/3/26/deaths-and-debts-missiles-in-gulf-shake-millions-of-south-asian-families?traffic_source=rss",
-        "source": "Al Jazeera"
-      }
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-27 08:39",
-    "score": 48.2,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×3)"
-        ]
-      },
-      "diplomacy": {
-        "score": 2,
-        "max": 20,
-        "kws": [
-          "red line(×1)",
-          "deal(×1)",
-          "talks(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 5.49,
-        "max": 15,
-        "kws": [
-          "WTI $93.58 / Brent $101.08",
-          "日均变动 +3.66%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 93.58,
-        "brent": 101.08,
-        "change": 3.6599999999999997
-      },
-      "proxy": {
-        "score": 0,
-        "max": 10,
-        "kws": []
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)",
-          "retaliate(×2)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Read Trump's full statement on Iran attacks - PBS",
-          "Iran warns of ‘severe’ response in wake of Trump’s new strikes threat - Al Jazeera"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-27T08:45:00+08:00",
+      "wii": 31.0,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 17.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 5.5,
+        "kharg_island_march31": 6.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "Iran war live: Trump delays attacks on Iranian energy sector by 10 days",
-        "url": "https://www.aljazeera.com/news/liveblog/2026/3/27/iran-war-live-trump-delays-attacks-on-iranian-energy-sector-by-10-days?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Costa Rica to accept 25 deportees per week under Trump deportation effort",
-        "url": "https://www.aljazeera.com/news/2026/3/26/costa-rica-to-accept-25-deportees-per-week-under-trump-deportation-effort?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Trump ‘pausing’ plan to destroy Iranian power plants for 10 days",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/trump-pausing-plan-to-destroy-iranian-power-plants-for-10-days?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "EU’s top diplomat urges US to pressure Russia to stop aiding Iran",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/eus-top-diplomat-urges-us-to-pressure-russia-to-stop-aiding-iran?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Mbappe nets for 10-man France in win against Brazil in World Cup warm-up",
-        "url": "https://www.aljazeera.com/sports/2026/3/26/mbappe-nets-for-10-man-france-in-win-against-brazil-in-world-cup-warm-up?traffic_source=rss",
-        "source": "Al Jazeera"
-      }
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-27 09:49",
-    "score": 47.8,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×3)"
-        ]
-      },
-      "diplomacy": {
-        "score": 2,
-        "max": 20,
-        "kws": [
-          "red line(×1)",
-          "deal(×2)",
-          "talks(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 5.01,
-        "max": 15,
-        "kws": [
-          "WTI $93.36 / Brent $100.69",
-          "日均变动 +3.34%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 93.36,
-        "brent": 100.69,
-        "change": 3.34
-      },
-      "proxy": {
-        "score": 0,
-        "max": 10,
-        "kws": []
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "retaliate(×2)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Assessing Trump’s Claims on Iran’s Nuclear and Missile Capabilities - FactCheck.org",
-          "Read Trump's full statement on Iran attacks - PBS"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-27T10:55:18+08:00",
+      "wii": 31.0,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 15.8,
+        "us_enter_iran_april30": 62.8,
+        "ceasefire_march31": 4.2,
+        "kharg_island_march31": 5.3
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "Iran war live: Trump delays attacks on Iranian energy sector by 10 days",
-        "url": "https://www.aljazeera.com/news/liveblog/2026/3/27/iran-war-live-trump-delays-attacks-on-iranian-energy-sector-by-10-days?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Costa Rica to accept 25 deportees per week under Trump deportation effort",
-        "url": "https://www.aljazeera.com/news/2026/3/26/costa-rica-to-accept-25-deportees-per-week-under-trump-deportation-effort?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Trump ‘pausing’ plan to destroy Iranian power plants for 10 days",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/trump-pausing-plan-to-destroy-iranian-power-plants-for-10-days?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "EU’s top diplomat urges US to pressure Russia to stop aiding Iran",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/eus-top-diplomat-urges-us-to-pressure-russia-to-stop-aiding-iran?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Mbappe nets for 10-man France in win against Brazil in World Cup warm-up",
-        "url": "https://www.aljazeera.com/sports/2026/3/26/mbappe-nets-for-10-man-france-in-win-against-brazil-in-world-cup-warm-up?traffic_source=rss",
-        "source": "Al Jazeera"
-      }
-    ],
-    "news_count": 20
-  },
-  {
-    "time": "2026-03-27 14:15",
-    "score": 47.2,
-    "label": "显著升级",
-    "dimensions": {
-      "military": {
-        "score": 25,
-        "max": 25,
-        "kws": [
-          "iran war(×4)"
-        ]
-      },
-      "diplomacy": {
-        "score": 0,
-        "max": 20,
-        "kws": [
-          "deal(×1)"
-        ]
-      },
-      "sanctions": {
-        "score": 0,
-        "max": 15,
-        "kws": []
-      },
-      "oil": {
-        "score": 6.4275,
-        "max": 15,
-        "kws": [
-          "WTI $94.13 / Brent $101.70",
-          "日均变动 +4.29%（变动绝对值×1.5→油价得分）",
-          "数据来源：✅ 实时价格"
-        ],
-        "wti": 94.13,
-        "brent": 101.7,
-        "change": 4.285
-      },
-      "proxy": {
-        "score": 0,
-        "max": 10,
-        "kws": []
-      },
-      "rhetoric": {
-        "score": 10,
-        "max": 10,
-        "kws": [
-          "obliterate(×1)",
-          "retaliate(×1)"
-        ],
-        "stmt_count": 15,
-        "top_stmts": [
-          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
-          "Assessing Trump’s Claims on Iran’s Nuclear and Missile Capabilities - FactCheck.org",
-          "Read Trump's full statement on Iran attacks - PBS"
-        ]
-      },
-      "media": {
-        "score": 5.0,
-        "max": 5,
-        "kws": [
-          "新闻20条"
-        ]
-      },
-      "market": {
-        "score": 0.75,
-        "max": 5,
-        "kws": [
-          "概率15.0%"
-        ]
+    {
+      "timestamp": "2026-03-27T11:01:00+08:00",
+      "wii": 30.5,
+      "level": "极强",
+      "markets": {
+        "us_enter_iran_march31": 15.5,
+        "us_enter_iran_april30": 62.5,
+        "ceasefire_march31": 4.5,
+        "kharg_island_march31": 6.5
       }
     },
-    "pm_prob": 15.0,
-    "top_news": [
-      {
-        "title": "The Strait of Hormuz is not just an oil chokepoint",
-        "url": "https://www.aljazeera.com/opinions/2026/3/27/the-strait-of-hormuz-is-not-just-an-oil-chokepoint?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Sri Lanka braces for new economic crisis as war on Iran continues",
-        "url": "https://www.aljazeera.com/features/2026/3/27/sri-lanka-braces-for-new-economic-crisis-as-war-on-iran-continues?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Malaysia’s ships allowed to pass Strait of Hormuz, PM Anwar says",
-        "url": "https://www.aljazeera.com/economy/2026/3/27/malaysias-ships-allowed-to-pass-strait-of-hormuz-pm-anwar-says?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "First responders rescue man from Tehran building hit by air strike",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/first-responders-rescue-man-from-tehran-building-hit-by-air-strike?traffic_source=rss",
-        "source": "Al Jazeera"
-      },
-      {
-        "title": "Red Crescent video shows aftermath of strike on homes in Iran’s Urmia",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/27/red-crescent-video-shows-aftermath-of-strike-on-homes-in-irans-urmia?traffic_source=rss",
-        "source": "Al Jazeera"
+    {
+      "timestamp": "2026-04-01T09:17:30.789216+08:00",
+      "wii": 31.0,
+      "level": "高",
+      "markets": {
+        "us_enter_iran_march31": 15.8,
+        "us_enter_iran_april30": 62.8,
+        "ceasefire_march31": 4.2,
+        "ceasefire_april15": 28.2,
+        "ceasefire_april30": 42.8,
+        "kharg_island_march31": 5.3,
+        "iranian_regime_fall_march31": 0.8
       }
-    ],
-    "news_count": 20
-  }
-]
+    }
+  ]
+}

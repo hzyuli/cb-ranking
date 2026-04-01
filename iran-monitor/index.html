@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美伊战争烈度监控</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <title>美伊战争烈度监控 - Polymarket WII</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -49,15 +48,10 @@
         .wii-container { display: flex; align-items: center; justify-content: space-between; }
         .wii-value { font-size: 48px; font-weight: bold; }
         .level-badge { padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
-        .level-low { background: rgba(34,197,94,0.2); color: #22c55e; border: 1px solid #22c55e; }
-        .level-medium { background: rgba(234,179,8,0.2); color: #eab308; border: 1px solid #eab308; }
-        .level-high { background: rgba(249,115,22,0.2); color: #f97316; border: 1px solid #f97316; }
         .level-red { background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444; }
         .level-orange { background: rgba(249,115,22,0.2); color: #f97316; border: 1px solid #f97316; }
         .level-yellow { background: rgba(234,179,8,0.2); color: #eab308; border: 1px solid #eab308; }
         .level-green { background: rgba(34,197,94,0.2); color: #22c55e; border: 1px solid #22c55e; }
-        .level-extreme { background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444; animation: pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
 
         /* Section */
         .section {
@@ -75,71 +69,44 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* 维度卡片 */
-        .dim-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .dim-card { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 15px; border: 1px solid rgba(255,255,255,0.08); }
-        .dim-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .dim-label { font-size: 14px; font-weight: 600; }
-        .dim-score { font-size: 14px; color: #8892b0; }
-        .dim-bar-container { height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
-        .dim-bar { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
-        .dim-bar.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
-        .dim-bar.orange { background: linear-gradient(90deg, #f97316, #ea580c); }
-        .dim-bar.yellow { background: linear-gradient(90deg, #eab308, #ca8a04); }
-        .dim-bar.green { background: linear-gradient(90deg, #22c55e, #16a34a); }
-        .dim-kw { font-size: 11px; color: #8892b0; line-height: 1.4; }
-
-        /* 图表 */
-        .chart-container { position: relative; height: 350px; margin: 20px 0; }
-        .chart-container canvas { max-height: 350px; }
-
-        /* Polymarket */
-        .pm-summary { margin-bottom: 20px; padding: 15px; background: rgba(239,68,68,0.1); border-radius: 8px; border-left: 4px solid #ef4444; font-size: 16px; }
+        /* 市场条形图 */
         .market-bars { display: flex; flex-direction: column; gap: 15px; }
         .market-row { display: flex; align-items: center; gap: 15px; }
         .market-label { flex: 0 0 420px; font-size: 13px; color: #e0e0e0; }
         .bar-container { flex: 1; height: 36px; background: rgba(0,0,0,0.3); border-radius: 6px; overflow: hidden; }
         .bar { height: 100%; display: flex; align-items: center; padding-left: 10px; color: white; font-weight: bold; font-size: 13px; border-radius: 6px; }
+        .bar.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
+        .bar.orange { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .bar.yellow { background: linear-gradient(90deg, #eab308, #ca8a04); }
+        .bar.green { background: linear-gradient(90deg, #22c55e, #16a34a); }
         .change { flex: 0 0 80px; font-size: 13px; text-align: right; font-weight: bold; }
         .change.up { color: #22c55e; }
         .change.down { color: #ef4444; }
-        .change.neutral { color: #8892b0; }
+        .change.neutral { color: #64748b; }
 
         /* 表格 */
         table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 12px; }
-        th { background: rgba(0,0,0,0.2); font-weight: 600; color: #8892b0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+        th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
+        th { background: rgba(0,0,0,0.2); font-weight: 600; color: #8892b0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
         tr:hover { background: rgba(255,255,255,0.05); }
-        .change-reason-cell { max-width: 200px; font-size: 11px; color: #8892b0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-        /* 新闻 */
-        .news-item { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: baseline; }
-        .news-link { color: #60a5fa; text-decoration: none; font-size: 14px; flex: 1; transition: color 0.2s; }
-        .news-link:hover { text-decoration: underline; color: #93c5fd; }
-        .news-title { color: #e0e0e0; font-size: 14px; flex: 1; }
-        .news-source { color: #64748b; font-size: 12px; margin-left: 8px; white-space: nowrap; }
-        .news-meta { margin-top: 10px; font-size: 12px; color: #64748b; }
+        /* 历史表格 */
+        .history-table th, .history-table td { font-size: 13px; padding: 10px; }
 
-        /* 边际变化 */
-        .change-entry { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-        .change-entry:last-child { border-bottom: none; }
-        .change-header { display: flex; align-items: center; gap: 15px; margin-bottom: 8px; }
-        .change-time { font-size: 13px; color: #8892b0; min-width: 130px; }
-        .change-score { font-size: 14px; font-weight: bold; color: #e0e0e0; }
-        .change-diff { font-size: 16px; font-weight: bold; }
-        .change-reasons { margin-left: 145px; }
-        .change-reason-item { font-size: 12px; color: #94a3b8; padding: 2px 0; }
-        .change-reason-item::before { content: "→ "; color: #64748b; }
+        /* 警报 */
+        .alert-box {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .alert-box h3 { color: #ef4444; margin-bottom: 10px; }
+        .alert-box ul { margin-left: 20px; }
+        .alert-box li { color: #e0e0e0; margin: 5px 0; }
 
-        /* 航运 */
-        .shipping-section { border-left: 4px solid #00d4ff; }
-        .shipping-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .shipping-card { background: rgba(0,212,255,0.1); border-radius: 8px; padding: 20px; border: 1px solid rgba(0,212,255,0.2); text-align: center; }
-        .shipping-label { font-size: 12px; color: #8892b0; margin-bottom: 10px; text-transform: uppercase; }
-        .shipping-value { font-size: 28px; font-weight: bold; margin-bottom: 5px; }
-        .shipping-level { font-size: 14px; color: #8892b0; }
-        .shipping-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .shipping-stat { font-size: 14px; color: #e0e0e0; }
+        /* SVG 图表 */
+        .chart-container { margin: 20px 0; border-radius: 8px; overflow: hidden; }
 
         .footer {
             text-align: center;
@@ -153,9 +120,6 @@
         @media (max-width: 768px) {
             .market-label { flex: 0 0 180px; }
             .market-row { flex-wrap: wrap; }
-            .dim-grid { grid-template-columns: 1fr; }
-            .change-reasons { margin-left: 0; }
-            .change-header { flex-wrap: wrap; }
         }
     </style>
 </head>
@@ -163,215 +127,65 @@
     <div class="container">
         <div class="header">
             <h1>美伊战争烈度监控</h1>
-            <p class="sub">多维度评估 + Polymarket 预测市场 + 霍尔木兹海峡航运 | 最后更新: 2026-03-27 14:15</p>
+            <p class="sub">Polymarket 预测市场 WII 指数 | 最后更新: 2026-04-01T11:14:51</p>
         </div>
+
+        
 
         <!-- 顶部仪表盘 -->
         <div class="dashboard">
             <div class="card">
                 <h3>战争烈度指数 (WII)</h3>
                 <div class="wii-container">
-                    <div class="wii-value" style="color: #f97316;">47.2</div>
-                    <span class="level-badge level-orange">显著升级</span>
+                    <div class="wii-value" style="color: #eab308;">29.7%</div>
+                    <span class="level-badge level-yellow">中</span>
                 </div>
-                <div class="sub">满分 105 · 多维度加权</div>
+                <div class="sub">基于 Polymarket 预测市场加权计算</div>
             </div>
             <div class="card">
-                <h3>Polymarket 概率</h3>
-                <div class="value" style="color: #ef4444;">15.0%</div>
-                <div class="sub">美军入伊朗(March 31)</div>
+                <h3>美军入伊朗 (4/30)</h3>
+                <div class="value" style="color: #ef4444;">57.0%</div>
+                <div class="sub">最高权重市场 (40%)</div>
             </div>
             <div class="card">
-                <h3>新闻热度</h3>
-                <div class="value">20</div>
-                <div class="sub">相关新闻条数</div>
+                <h3>霍尔格岛控制</h3>
+                <div class="value" style="color: #f97316;">33.0%</div>
+                <div class="sub">权重 20%</div>
             </div>
             <div class="card">
-                <h3>最后更新</h3>
-                <div class="value" style="font-size: 24px;">2026-03-27 14:15</div>
-                <div class="sub">多维度 + FrenFlow 真实数据</div>
+                <h3>数据状态</h3>
+                <div class="value" style="font-size: 24px; color: #22c55e;">正常</div>
+                <div class="sub">FrenFlow 实时数据</div>
             </div>
         </div>
 
-        <!-- 多维度折线图 -->
+        <!-- WII 趋势图 -->
         <div class="section">
-            <h2>多维度烈度趋势（折线图）</h2>
-            <div class="chart-container"><canvas id="dimChart"></canvas></div>
-            <div class="chart-container" style="height: 250px;"><canvas id="totalChart"></canvas></div>
+            <h2>WII 历史趋势</h2>
+            <div class="chart-container">
+                <svg viewBox="0 0 800 200" style="width: 100%; height: 200px;">
+            <rect width="100%" height="100%" fill="rgba(0,0,0,0.2)"/>
+            <polyline points="40.0,51.3 91.4,50.9 142.9,52.0 194.3,52.7 245.7,48.7 297.1,40.0 348.6,47.3 400.0,47.3 451.4,47.3 502.9,49.1 554.3,47.3 605.7,160.0 657.1,53.5 708.6,53.5 760.0,52.0" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <circle cx='40.0' cy='51.3' r='3' fill='#ef4444'/> <circle cx='91.4' cy='50.9' r='3' fill='#ef4444'/> <circle cx='142.9' cy='52.0' r='3' fill='#ef4444'/> <circle cx='194.3' cy='52.7' r='3' fill='#ef4444'/> <circle cx='245.7' cy='48.7' r='3' fill='#ef4444'/> <circle cx='297.1' cy='40.0' r='3' fill='#ef4444'/> <circle cx='348.6' cy='47.3' r='3' fill='#ef4444'/> <circle cx='400.0' cy='47.3' r='3' fill='#ef4444'/> <circle cx='451.4' cy='47.3' r='3' fill='#ef4444'/> <circle cx='502.9' cy='49.1' r='3' fill='#ef4444'/> <circle cx='554.3' cy='47.3' r='3' fill='#ef4444'/> <circle cx='605.7' cy='160.0' r='3' fill='#ef4444'/> <circle cx='657.1' cy='53.5' r='3' fill='#ef4444'/> <circle cx='708.6' cy='53.5' r='3' fill='#ef4444'/> <circle cx='760.0' cy='52.0' r='3' fill='#ef4444'/>
+            <text x="40" y="190" fill="#64748b" font-size="10">03-26T11:15</text>
+            <text x="700" y="190" fill="#64748b" font-size="10">04-01T11:14</text>
+        </svg>
+            </div>
         </div>
 
-        <!-- 当前维度详情 -->
+        <!-- Polymarket 市场条形图 -->
         <div class="section">
-            <h2>当前维度详情（2026-03-27 14:15）</h2>
-            <div class="dim-grid"><div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #ef4444;">军事行动</span>
-    <span class="dim-score">25/25</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar red" style="width: 100.0%;"></div>
-  </div>
-  <div class="dim-kw">iran war(×4)</div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #3b82f6;">外交动态</span>
-    <span class="dim-score">0/20</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar green" style="width: 0.0%;"></div>
-  </div>
-  <div class="dim-kw">deal(×1)</div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #a855f7;">制裁措施</span>
-    <span class="dim-score">0/15</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar green" style="width: 0.0%;"></div>
-  </div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #eab308;">油价影响</span>
-    <span class="dim-score">6.4275/15</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar orange" style="width: 42.9%;"></div>
-  </div>
-  <div class="dim-kw">WTI $94.13 / Brent $101.70 / 日均变动 +4.29%（变动绝对值×1.5→油价得分） / 数据来源：✅ 实时价格</div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #f97316;">代理人冲突</span>
-    <span class="dim-score">0/10</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar green" style="width: 0.0%;"></div>
-  </div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #ec4899;">言辞对抗</span>
-    <span class="dim-score">10/10</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar red" style="width: 100.0%;"></div>
-  </div>
-  <div class="dim-kw">obliterate(×1) / retaliate(×1)</div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #06b6d4;">媒体报道</span>
-    <span class="dim-score">5.0/5</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar red" style="width: 100.0%;"></div>
-  </div>
-  <div class="dim-kw">新闻20条</div>
-</div>
-<div class="dim-card">
-  <div class="dim-header">
-    <span class="dim-label" style="color: #22c55e;">市场反应</span>
-    <span class="dim-score">0.75/5</span>
-  </div>
-  <div class="dim-bar-container">
-    <div class="dim-bar yellow" style="width: 15.0%;"></div>
-  </div>
-  <div class="dim-kw">概率15.0%</div>
-</div>
-</div>
-        </div>
-
-        <!-- 边际变化 -->
-        <div class="section">
-            <h2>边际变化（烈度变动原因及注解）</h2>
-            <div class="change-entry">
-  <div class="change-header">
-    <span class="change-time">2026-03-27 14:15</span>
-    <span class="change-score">WII 47.2</span>
-    <span class="change-diff" style="color: #22c55e;">-0.6</span>
-  </div>
-  <div class="change-reasons">
-    <div class="change-reason-item">外交动态↓2.0 (deal(×1))</div>
-    <div class="change-reason-item">油价影响↑1.4 (WTI $94.13 / Brent $101.70, 日均变动 +4.29%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</div>
-  </div>
-</div>
-<div class="change-entry">
-  <div class="change-header">
-    <span class="change-time">2026-03-27 09:49</span>
-    <span class="change-score">WII 47.8</span>
-    <span class="change-diff" style="color: #22c55e;">-0.4</span>
-  </div>
-  <div class="change-reasons">
-    <div class="change-reason-item">油价影响↓0.5 (WTI $93.36 / Brent $100.69, 日均变动 +3.34%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</div>
-  </div>
-</div>
-<div class="change-entry">
-  <div class="change-header">
-    <span class="change-time">2026-03-27 08:39</span>
-    <span class="change-score">WII 48.2</span>
-    <span class="change-diff" style="color: #22c55e;">-3.8</span>
-  </div>
-  <div class="change-reasons">
-    <div class="change-reason-item">外交动态↑2.0 (red line(×1), deal(×1), talks(×1))</div>
-    <div class="change-reason-item">油价影响↑0.2 (WTI $93.58 / Brent $101.08, 日均变动 +3.66%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</div>
-    <div class="change-reason-item">代理人冲突↓6.0</div>
-  </div>
-</div>
-<div class="change-entry">
-  <div class="change-header">
-    <span class="change-time">2026-03-26 17:30</span>
-    <span class="change-score">WII 52.0</span>
-    <span class="change-diff" style="color: #ef4444;">+0.3</span>
-  </div>
-  <div class="change-reasons">
-    <div class="change-reason-item">油价影响↑0.3 (WTI $93.81 / Brent $100.48, 日均变动 +3.50%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</div>
-  </div>
-</div>
-<div class="change-entry">
-  <div class="change-header">
-    <span class="change-time">2026-03-26 16:42</span>
-    <span class="change-score">WII 51.7</span>
-    <span class="change-diff" style="color: #ef4444;">+10.9</span>
-  </div>
-  <div class="change-reasons">
-    <div class="change-reason-item">军事行动↑10.0 (iran war(×2))</div>
-    <div class="change-reason-item">油价影响↑0.9 (WTI $93.60 / Brent $100.35, 日均变动 +3.31%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</div>
-  </div>
-</div>
-
-        </div>
-
-        <!-- 相关新闻 -->
-        <div class="section">
-            <h2>相关新闻</h2>
-            <div class="news-list"><div class="news-item"><a href="https://www.aljazeera.com/opinions/2026/3/27/the-strait-of-hormuz-is-not-just-an-oil-chokepoint?traffic_source=rss" target="_blank" rel="noopener" class="news-link">The Strait of Hormuz is not just an oil chokepoint</a><span class="news-source">- Al Jazeera</span></div>
-<div class="news-item"><a href="https://www.aljazeera.com/features/2026/3/27/sri-lanka-braces-for-new-economic-crisis-as-war-on-iran-continues?traffic_source=rss" target="_blank" rel="noopener" class="news-link">Sri Lanka braces for new economic crisis as war on Iran continues</a><span class="news-source">- Al Jazeera</span></div>
-<div class="news-item"><a href="https://www.aljazeera.com/economy/2026/3/27/malaysias-ships-allowed-to-pass-strait-of-hormuz-pm-anwar-says?traffic_source=rss" target="_blank" rel="noopener" class="news-link">Malaysia’s ships allowed to pass Strait of Hormuz, PM Anwar says</a><span class="news-source">- Al Jazeera</span></div>
-<div class="news-item"><a href="https://www.aljazeera.com/video/newsfeed/2026/3/27/first-responders-rescue-man-from-tehran-building-hit-by-air-strike?traffic_source=rss" target="_blank" rel="noopener" class="news-link">First responders rescue man from Tehran building hit by air strike</a><span class="news-source">- Al Jazeera</span></div>
-<div class="news-item"><a href="https://www.aljazeera.com/video/newsfeed/2026/3/27/red-crescent-video-shows-aftermath-of-strike-on-homes-in-irans-urmia?traffic_source=rss" target="_blank" rel="noopener" class="news-link">Red Crescent video shows aftermath of strike on homes in Iran’s Urmia</a><span class="news-source">- Al Jazeera</span></div>
-</div>
-<div class="news-meta">共检索 20 条相关新闻，显示最新 5 条</div>
-        </div>
-
-        <!-- Polymarket -->
-        <div class="section">
-  <h2>Polymarket 预测市场</h2>
-  <div class="pm-summary">
-    <div class="pm-wii">WII (Polymarket): <strong style="color: #ef4444;">29.3%</strong> <span class="level-badge level-yellow">中</span></div>
-  </div>
-  <div class="market-bars">
-<div class="market-row">
+            <h2>Polymarket 预测市场 (Yes 概率)</h2>
+            <div class="market-bars">
+                <div class="market-row">
   <div class="market-label">US forces enter Iran by March 31</div>
   <div class="bar-container"><div class="bar green" style="width: 2.0%;">1.0%</div></div>
   <div class="change neutral">RESOLVED</div>
 </div>
 <div class="market-row">
   <div class="market-label">US forces enter Iran by April 30</div>
-  <div class="bar-container"><div class="bar red" style="width: 56.0%;">56.0%</div></div>
-  <div class="change up">+56.0%</div>
+  <div class="bar-container"><div class="bar red" style="width: 57.0%;">57.0%</div></div>
+  <div class="change up">+1.0%</div>
 </div>
 <div class="market-row">
   <div class="market-label">US x Iran ceasefire by March 31</div>
@@ -381,176 +195,79 @@
 <div class="market-row">
   <div class="market-label">US x Iran ceasefire by April 15</div>
   <div class="bar-container"><div class="bar yellow" style="width: 19.0%;">19.0%</div></div>
-  <div class="change up">+19.0%</div>
+  <div class="change neutral">0.0%</div>
 </div>
 <div class="market-row">
   <div class="market-label">US x Iran ceasefire by April 30</div>
-  <div class="bar-container"><div class="bar orange" style="width: 37.0%;">37.0%</div></div>
-  <div class="change up">+37.0%</div>
+  <div class="bar-container"><div class="bar orange" style="width: 36.0%;">36.0%</div></div>
+  <div class="change down">-1.0%</div>
+</div>
+<div class="market-row">
+  <div class="market-label">Kharg Island no longer under Iranian control by April 30</div>
+  <div class="bar-container"><div class="bar orange" style="width: 33.0%;">33.0%</div></div>
+  <div class="change neutral">0.0%</div>
 </div>
 <div class="market-row">
   <div class="market-label">Will the Iranian regime fall by March 31</div>
   <div class="bar-container"><div class="bar green" style="width: 2.0%;">0.0%</div></div>
   <div class="change neutral">RESOLVED</div>
 </div>
-  </div>
-</div>
 
-        <!-- 历史趋势表格 -->
-        <div class="section">
-            <h2>历史趋势（最近记录）</h2>
-            <div style="overflow-x: auto;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>时间</th><th>总分</th><th>等级</th>
-                        <th>军事</th><th>外交</th><th>制裁</th><th>油价</th><th>代理人</th><th>言辞</th><th>媒体</th><th>市场</th><th>PM%</th>
-                        <th>变化原因</th>
-                    </tr>
-                </thead>
-                <tbody><tr>
-  <td>2026-03-27 14:15</td>
-  <td style="color: #f97316; font-weight: bold;">47.2</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>0</td><td>0</td><td>6.4</td><td>0</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">外交动态↓2.0 (deal(×1))；油价影响↑1.4 (WTI $94.13 / Brent $101.70, 日均变动 +4.29%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</td>
-</tr>
-<tr>
-  <td>2026-03-27 09:49</td>
-  <td style="color: #f97316; font-weight: bold;">47.8</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>2</td><td>0</td><td>5.0</td><td>0</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">油价影响↓0.5 (WTI $93.36 / Brent $100.69, 日均变动 +3.34%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</td>
-</tr>
-<tr>
-  <td>2026-03-27 08:39</td>
-  <td style="color: #f97316; font-weight: bold;">48.2</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>2</td><td>0</td><td>5.5</td><td>0</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">外交动态↑2.0 (red line(×1), deal(×1), talks(×1))；油价影响↑0.2 (WTI $93.58 / Brent $101.08, 日均变动 +3.66%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)；代理人冲突↓6.0</td>
-</tr>
-<tr>
-  <td>2026-03-26 17:30</td>
-  <td style="color: #f97316; font-weight: bold;">52.0</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>0</td><td>0</td><td>5.2</td><td>6</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">油价影响↑0.3 (WTI $93.81 / Brent $100.48, 日均变动 +3.50%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</td>
-</tr>
-<tr>
-  <td>2026-03-26 16:42</td>
-  <td style="color: #f97316; font-weight: bold;">51.7</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>0</td><td>0</td><td>5.0</td><td>6</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">军事行动↑10.0 (iran war(×2))；油价影响↑0.9 (WTI $93.60 / Brent $100.35, 日均变动 +3.31%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)</td>
-</tr>
-<tr>
-  <td>2026-03-26 15:47</td>
-  <td style="color: #f97316; font-weight: bold;">40.8</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>15</td><td>0</td><td>0</td><td>4.1</td><td>6</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">军事行动↓10.0 (iran war(×1))；油价影响↑4.1 (WTI $93.06 / Brent $99.76, 日均变动 +2.71%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)；代理人冲突↑6.0 (lebanon(×1))；媒体报道↑0.8 (新闻20条)</td>
-</tr>
-<tr>
-  <td>2026-03-26 14:23</td>
-  <td style="color: #f97316; font-weight: bold;">40.0</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>0</td><td>0</td><td>0.0</td><td>0</td><td>10</td><td>4</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">代理人冲突↓10.0；媒体报道↓0.8 (新闻17条)</td>
-</tr>
-<tr>
-  <td>2026-03-26 13:59</td>
-  <td style="color: #f97316; font-weight: bold;">50.8</td>
-  <td style="color: #f97316;">显著升级</td>
-  <td>25</td><td>0</td><td>0</td><td>0.0</td><td>10</td><td>10</td><td>5</td><td>0.8</td>
-  <td>15.0%</td>
-  <td class="change-reason-cell">军事行动↑10.0 (iran war(×2))；代理人冲突↑4.0 (lebanon(×2))；言辞对抗↑10.0 (obliterate(×1))；媒体报道↓5.0 (新闻20条)</td>
-</tr>
-</tbody>
-            </table>
             </div>
         </div>
 
-        <!-- 航运 -->
-        <div class="section shipping-section">
-  <h2>霍尔木兹海峡航运监控</h2>
-  <div class="shipping-dashboard">
-    <div class="shipping-card"><div class="shipping-label">当前通行</div><div class="shipping-value">N/A</div></div>
-    <div class="shipping-card"><div class="shipping-label">阿曼湾船只</div><div class="shipping-value">N/A</div></div>
-    <div class="shipping-card"><div class="shipping-label">波斯湾船只</div><div class="shipping-value">N/A</div></div>
-    <div class="shipping-card"><div class="shipping-label">压力指数</div><div class="shipping-value" style="color: #94a3b8;">N/A</div></div>
-  </div>
-</div>
+        <!-- 数据表格 -->
+        <div class="section">
+            <h2>市场数据详情</h2>
+            <table>
+                <thead>
+                    <tr><th>市场名称</th><th>Yes 概率</th><th>与上次变化</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>US forces enter Iran by March 31</td><td>1.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+<tr><td>US forces enter Iran by April 30</td><td>57.0%</td><td style="color: #22c55e;">+1.0%</td></tr>
+<tr><td>US x Iran ceasefire by March 31</td><td>0.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+<tr><td>US x Iran ceasefire by April 15</td><td>19.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>US x Iran ceasefire by April 30</td><td>36.0%</td><td style="color: #ef4444;">-1.0%</td></tr>
+<tr><td>Kharg Island no longer under Iranian control by April 30</td><td>33.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>Will the Iranian regime fall by March 31</td><td>0.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 历史趋势表格 -->
+        <div class="section">
+            <h2>历史记录 (最近20条)</h2>
+            <table class="history-table">
+                <thead>
+                    <tr><th>时间</th><th>WII</th><th>等级</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2026-04-01T11:14:51</td><td style="color: #eab308; font-weight: bold;">29.7%</td><td style="color: #eab308;">中</td></tr>
+<tr><td>2026-04-01T10:51:16</td><td style="color: #eab308; font-weight: bold;">29.3%</td><td style="color: #eab308;">中</td></tr>
+<tr><td>2026-04-01T09:48:33</td><td style="color: #eab308; font-weight: bold;">29.3%</td><td style="color: #eab308;">中</td></tr>
+<tr><td>2026-04-01T09:47:45</td><td style="color: #22c55e; font-weight: bold;">0.0%</td><td style="color: #22c55e;">低</td></tr>
+<tr><td>2026-04-01T09:17:30</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">高</td></tr>
+<tr><td>2026-03-27T11:01:00</td><td style="color: #f97316; font-weight: bold;">30.5%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-27T10:55:18</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">高</td></tr>
+<tr><td>2026-03-27T08:45:00</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-27T08:39:00</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T17:36:27</td><td style="color: #f97316; font-weight: bold;">33.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T16:35:50</td><td style="color: #f97316; font-weight: bold;">30.6%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T15:21:00</td><td style="color: #eab308; font-weight: bold;">29.5%</td><td style="color: #eab308;">高</td></tr>
+<tr><td>2026-03-26T14:18:00</td><td style="color: #eab308; font-weight: bold;">29.7%</td><td style="color: #eab308;">高</td></tr>
+<tr><td>2026-03-26T13:20:00</td><td style="color: #f97316; font-weight: bold;">30.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T11:15:00</td><td style="color: #eab308; font-weight: bold;">29.9%</td><td style="color: #eab308;">高</td></tr>
+
+                </tbody>
+            </table>
+        </div>
 
         <div class="footer">
-            <p>数据来源: 多维度新闻分析 + Polymarket（FrenFlow） + 航运数据（金十/手动） | 更新频率: 实时</p>
-            <p>免责声明: 本报告仅基于公开数据和预测市场，不构成投资或决策建议</p>
+            <p>数据来源: Polymarket 预测市场 (via FrenFlow) | WII 公式: enter_april×0.4 + enter_march×0.3 + kharg×0.2 + regime×0.1</p>
+            <p>烈度等级: 低(&lt;20%) 中(20-30%) 高(30-40%) 极强(≥40%) | 免责声明: 本报告仅基于预测市场数据，不构成投资或决策建议</p>
         </div>
     </div>
-
-    <script>
-        // 多维度折线图
-        const dimChartData = {"labels": ["2026-03-26 10:57", "2026-03-26 11:20", "2026-03-26 13:59", "2026-03-26 14:23", "2026-03-26 15:47", "2026-03-26 16:42", "2026-03-26 17:30", "2026-03-27 08:39", "2026-03-27 09:49", "2026-03-27 14:15"], "datasets": [{"label": "军事行动", "data": [null, 15, 15, 25, 25, 15, 25, 25, 25, 25, 25], "borderColor": "#ef4444", "backgroundColor": "#ef444420", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "外交动态", "data": [null, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0], "borderColor": "#3b82f6", "backgroundColor": "#3b82f620", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "制裁措施", "data": [null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "borderColor": "#a855f7", "backgroundColor": "#a855f720", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "油价影响", "data": [null, 0.0, 0.0, 0.0, 0.0, 4.0575, 4.965, 5.242500000000001, 5.49, 5.01, 6.4275], "borderColor": "#eab308", "backgroundColor": "#eab30820", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "代理人冲突", "data": [null, 6, 6, 10, 0, 6, 6, 6, 0, 0, 0], "borderColor": "#f97316", "backgroundColor": "#f9731620", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "言辞对抗", "data": [null, null, null, 10, 10, 10, 10, 10, 10, 10, 10], "borderColor": "#ec4899", "backgroundColor": "#ec489920", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "媒体报道", "data": [null, 10.0, 10.0, 5.0, 4.25, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0], "borderColor": "#06b6d4", "backgroundColor": "#06b6d420", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}, {"label": "市场反应", "data": [null, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75], "borderColor": "#22c55e", "backgroundColor": "#22c55e20", "fill": false, "tension": 0.3, "pointRadius": 4, "pointHoverRadius": 6, "borderWidth": 2}]};
-        const dimCtx = document.getElementById('dimChart').getContext('2d');
-        new Chart(dimCtx, {
-            type: 'line',
-            data: {
-                labels: dimChartData.labels,
-                datasets: dimChartData.datasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                interaction: { mode: 'index', intersect: false },
-                plugins: {
-                    legend: { labels: { color: '#e0e0e0', font: { size: 12 } } },
-                    tooltip: { backgroundColor: 'rgba(0,0,0,0.8)' }
-                },
-                scales: {
-                    x: { ticks: { color: '#8892b0', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                    y: { ticks: { color: '#8892b0' }, grid: { color: 'rgba(255,255,255,0.05)' }, title: { display: true, text: '维度分数', color: '#8892b0' } }
-                }
-            }
-        });
-
-        // 总分折线图
-        const totalData = {"labels": ["2026-03-26 10:57", "2026-03-26 11:20", "2026-03-26 13:59", "2026-03-26 14:23", "2026-03-26 15:47", "2026-03-26 16:42", "2026-03-26 17:30", "2026-03-27 08:39", "2026-03-27 09:49", "2026-03-27 14:15"], "scores": [31.8, 31.8, 50.8, 40.0, 40.8, 51.7, 52.0, 48.2, 47.8, 47.2]};
-        const totalCtx = document.getElementById('totalChart').getContext('2d');
-        new Chart(totalCtx, {
-            type: 'line',
-            data: {
-                labels: totalData.labels,
-                datasets: [{
-                    label: 'WII 总分',
-                    data: totalData.scores,
-                    borderColor: '#ff6b6b',
-                    backgroundColor: 'rgba(255, 107, 107, 0.1)',
-                    fill: true,
-                    tension: 0.3,
-                    pointRadius: 5,
-                    pointHoverRadius: 7,
-                    borderWidth: 3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { labels: { color: '#e0e0e0' } },
-                    tooltip: { backgroundColor: 'rgba(0,0,0,0.8)' }
-                },
-                scales: {
-                    x: { ticks: { color: '#8892b0', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
-                    y: { ticks: { color: '#8892b0' }, grid: { color: 'rgba(255,255,255,0.05)' }, title: { display: true, text: '总分', color: '#8892b0' } }
-                }
-            }
-        });
-    </script>
 </body>
 </html>

@@ -944,5 +944,107 @@
     ],
     "news_count": 20,
     "change_reason": "外交动态↓2.0 (deal(×1))；油价影响↑1.4 (WTI $94.13 / Brent $101.70, 日均变动 +4.29%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格)"
+  },
+  {
+    "time": "2026-04-01 12:57",
+    "score": 53.2,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "airstrike(×1)",
+          "iran war(×4)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": []
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 2.4375,
+        "max": 15,
+        "kws": [
+          "WTI $102.92 / Brent $105.21",
+          "日均变动 -1.62%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 102.92,
+        "brent": 105.21,
+        "change": -1.625
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×1)",
+          "lebanon(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Tulsi Gabbard Contradicts Trump on Key Claims About Iran War - Time Magazine",
+          "Assessing Trump’s Claims on Iran’s Nuclear and Missile Capabilities - FactCheck.org"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Judge halts Trump ballroom project; Trump says work can go on",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/judge-halts-trump-ballroom-project-trump-says-work-can-go-on?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Al-Sharaa says Syria to stay out of war on Iran unless attacked",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/al-sharaa-says-syria-to-stay-out-of-war-on-iran-unless-attacked?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Emergency workers search for victims of Israeli airstrikes on Beirut",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/emergency-workers-search-for-victims-of-israeli-airstrikes-on-beirut?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Judge temporarily halts Trump’s $400m White House ballroom project",
+        "url": "https://www.aljazeera.com/news/2026/4/1/judge-temporarily-halts-trumps-400m-white-house-ballroom-project?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump tells allies ‘get your own oil’, says Iran war could end in 2-3 weeks",
+        "url": "https://www.aljazeera.com/news/2026/4/1/trump-tells-allies-get-your-own-oil-says-iran-war-could-end-in-2-3-weeks?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

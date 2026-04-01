@@ -3,577 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美伊战争强度监控 - 实时仪表盘</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>美伊战争烈度监控 - Polymarket WII</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e0e0e0;
             padding: 20px;
+            line-height: 1.6;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .header {
             text-align: center;
             margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .last-update {
-            color: #8892b0;
-            font-size: 0.9em;
-        }
-        .anomaly-banner {
-            display: none;
-            background: linear-gradient(90deg, #ff416c, #ff4b2b);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .card-title {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #feca57;
-        }
-        .wii-display {
-            text-align: center;
             padding: 30px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        .wii-value {
-            font-size: 4em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .wii-value.extreme { color: #ff416c; }
-        .wii-value.high { color: #ff6b6b; }
-        .wii-value.medium { color: #feca57; }
-        .wii-value.low { color: #4ade80; }
-        .wii-level {
-            font-size: 1.5em;
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            font-weight: bold;
-        }
-        .wii-level.extreme {
-            background: #ff416c;
-        }
-        .wii-level.high {
-            background: #ff6b6b;
-        }
-        .wii-level.medium {
-            background: #feca57;
-            color: #1a1a2e;
-        }
-        .wii-level.low {
-            background: #4ade80;
-            color: #1a1a2e;
-        }
-        .market-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
-        }
-        .market-label {
-            font-size: 0.9em;
-            color: #8892b0;
-            margin-bottom: 8px;
-        }
-        .market-probability {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .prob-bar {
-            flex-grow: 1;
-            height: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-            margin-right: 10px;
-        }
-        .prob-fill {
-            height: 100%;
-            border-radius: 5px;
-            transition: width 0.5s ease;
-        }
-        .prob-fill.high { background: linear-gradient(90deg, #ff416c, #ff4b2b); }
-        .prob-fill.medium { background: linear-gradient(90deg, #feca57, #ff6b6b); }
-        .prob-fill.low { background: linear-gradient(90deg, #4ade80, #22c55e); }
-        .prob-value {
-            font-size: 1.2em;
-            font-weight: bold;
-            min-width: 60px;
-            text-align: right;
-        }
-        .change-indicator {
-            font-size: 0.85em;
-            margin-left: 10px;
-        }
-        .change-up { color: #ff416c; }
-        .change-down { color: #4ade80; }
-        .change-neutral { color: #8892b0; }
-        .chart-container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 30px;
         }
-        .chart-title {
-            font-size: 1.3em;
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header .sub { color: #8892b0; font-size: 14px; }
+
+        /* 仪表盘 */
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-2px); }
+        .card h3 { font-size: 13px; color: #8892b0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .card .value { font-size: 36px; font-weight: bold; margin-bottom: 5px; }
+        .card .sub { font-size: 12px; color: #8892b0; }
+        .wii-container { display: flex; align-items: center; justify-content: space-between; }
+        .wii-value { font-size: 48px; font-weight: bold; }
+        .level-badge { padding: 8px 16px; border-radius: 20px; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+        .level-red { background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444; }
+        .level-orange { background: rgba(249,115,22,0.2); color: #f97316; border: 1px solid #f97316; }
+        .level-yellow { background: rgba(234,179,8,0.2); color: #eab308; border: 1px solid #eab308; }
+        .level-green { background: rgba(34,197,94,0.2); color: #22c55e; border: 1px solid #22c55e; }
+
+        /* Section */
+        .section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
             margin-bottom: 20px;
-            color: #feca57;
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .formula {
-            background: rgba(255, 255, 255, 0.03);
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 市场条形图 */
+        .market-bars { display: flex; flex-direction: column; gap: 15px; }
+        .market-row { display: flex; align-items: center; gap: 15px; }
+        .market-label { flex: 0 0 420px; font-size: 13px; color: #e0e0e0; }
+        .bar-container { flex: 1; height: 36px; background: rgba(0,0,0,0.3); border-radius: 6px; overflow: hidden; }
+        .bar { height: 100%; display: flex; align-items: center; padding-left: 10px; color: white; font-weight: bold; font-size: 13px; border-radius: 6px; }
+        .bar.red { background: linear-gradient(90deg, #ef4444, #dc2626); }
+        .bar.orange { background: linear-gradient(90deg, #f97316, #ea580c); }
+        .bar.yellow { background: linear-gradient(90deg, #eab308, #ca8a04); }
+        .bar.green { background: linear-gradient(90deg, #22c55e, #16a34a); }
+        .change { flex: 0 0 80px; font-size: 13px; text-align: right; font-weight: bold; }
+        .change.up { color: #22c55e; }
+        .change.down { color: #ef4444; }
+        .change.neutral { color: #64748b; }
+
+        /* 表格 */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 14px; }
+        th { background: rgba(0,0,0,0.2); font-weight: 600; color: #8892b0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        tr:hover { background: rgba(255,255,255,0.05); }
+
+        /* 历史表格 */
+        .history-table th, .history-table td { font-size: 13px; padding: 10px; }
+
+        /* 警报 */
+        .alert-box {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 8px;
             padding: 15px;
-            border-radius: 8px;
-            font-size: 0.9em;
-            color: #8892b0;
-            margin-top: 15px;
-        }
-        .status-normal {
-            background: rgba(74, 222, 128, 0.2);
-            color: #4ade80;
-            padding: 10px;
-            border-radius: 8px;
             margin-bottom: 20px;
+        }
+        .alert-box h3 { color: #ef4444; margin-bottom: 10px; }
+        .alert-box ul { margin-left: 20px; }
+        .alert-box li { color: #e0e0e0; margin: 5px 0; }
+
+        /* SVG 图表 */
+        .chart-container { margin: 20px 0; border-radius: 8px; overflow: hidden; }
+
+        .footer {
             text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            color: #8892b0;
+            font-size: 12px;
+        }
+        @media (max-width: 768px) {
+            .market-label { flex: 0 0 180px; }
+            .market-row { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 美伊战争强度监控</h1>
-            <p class="last-update">最后更新: <span id="updateTime"></span></p>
+            <h1>美伊战争烈度监控</h1>
+            <p class="sub">Polymarket 预测市场 WII 指数 | 最后更新: 2026-04-01T10:51:16</p>
         </div>
 
-        <div id="anomalyBanner" class="anomaly-banner">
-            ⚠️ 异常信号警告: <span id="anomalyDetail"></span>
-        </div>
+        
 
-        <div id="statusNormal" class="status-normal">
-            ✅ 系统正常 - 无异常信号
-        </div>
-
-        <div class="dashboard-grid">
-            <div class="card wii-display">
-                <div class="card-title">综合战争烈度指数 (WII)</div>
-                <div class="wii-value extreme" id="wiiValue">30.1%</div>
-                <div class="wii-level extreme" id="wiiLevel">极强</div>
-                <div class="formula">
-                    WII = P_april×0.4 + P_march×0.3 + P_kharg×0.2 - P_ceasefire×0.1
-                </div>
-            </div>
-
+        <!-- 顶部仪表盘 -->
+        <div class="dashboard">
             <div class="card">
-                <div class="card-title">关键市场概率</div>
-                <div id="marketsContainer"></div>
+                <h3>战争烈度指数 (WII)</h3>
+                <div class="wii-container">
+                    <div class="wii-value" style="color: #eab308;">29.3%</div>
+                    <span class="level-badge level-yellow">中</span>
+                </div>
+                <div class="sub">基于 Polymarket 预测市场加权计算</div>
+            </div>
+            <div class="card">
+                <h3>美军入伊朗 (4/30)</h3>
+                <div class="value" style="color: #ef4444;">56.0%</div>
+                <div class="sub">最高权重市场 (40%)</div>
+            </div>
+            <div class="card">
+                <h3>霍尔格岛控制</h3>
+                <div class="value" style="color: #f97316;">33.0%</div>
+                <div class="sub">权重 20%</div>
+            </div>
+            <div class="card">
+                <h3>数据状态</h3>
+                <div class="value" style="font-size: 24px; color: #22c55e;">正常</div>
+                <div class="sub">FrenFlow 实时数据</div>
             </div>
         </div>
 
-        <div class="chart-container">
-            <div class="chart-title">📊 24小时 WII 趋势</div>
-            <canvas id="wiiChart"></canvas>
+        <!-- WII 趋势图 -->
+        <div class="section">
+            <h2>WII 历史趋势</h2>
+            <div class="chart-container">
+                <svg viewBox="0 0 800 200" style="width: 100%; height: 200px;">
+            <rect width="100%" height="100%" fill="rgba(0,0,0,0.2)"/>
+            <polyline points="40.0,51.3 95.4,50.9 150.8,52.0 206.2,52.7 261.5,48.7 316.9,40.0 372.3,47.3 427.7,47.3 483.1,47.3 538.5,49.1 593.8,47.3 649.2,160.0 704.6,53.5 760.0,53.5" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <circle cx='40.0' cy='51.3' r='3' fill='#ef4444'/> <circle cx='95.4' cy='50.9' r='3' fill='#ef4444'/> <circle cx='150.8' cy='52.0' r='3' fill='#ef4444'/> <circle cx='206.2' cy='52.7' r='3' fill='#ef4444'/> <circle cx='261.5' cy='48.7' r='3' fill='#ef4444'/> <circle cx='316.9' cy='40.0' r='3' fill='#ef4444'/> <circle cx='372.3' cy='47.3' r='3' fill='#ef4444'/> <circle cx='427.7' cy='47.3' r='3' fill='#ef4444'/> <circle cx='483.1' cy='47.3' r='3' fill='#ef4444'/> <circle cx='538.5' cy='49.1' r='3' fill='#ef4444'/> <circle cx='593.8' cy='47.3' r='3' fill='#ef4444'/> <circle cx='649.2' cy='160.0' r='3' fill='#ef4444'/> <circle cx='704.6' cy='53.5' r='3' fill='#ef4444'/> <circle cx='760.0' cy='53.5' r='3' fill='#ef4444'/>
+            <text x="40" y="190" fill="#64748b" font-size="10">03-26T11:15</text>
+            <text x="700" y="190" fill="#64748b" font-size="10">04-01T10:51</text>
+        </svg>
+            </div>
         </div>
 
-        <div class="chart-container">
-            <div class="chart-title">📊 关键市场概率趋势</div>
-            <canvas id="marketChart"></canvas>
+        <!-- Polymarket 市场条形图 -->
+        <div class="section">
+            <h2>Polymarket 预测市场 (Yes 概率)</h2>
+            <div class="market-bars">
+                <div class="market-row">
+  <div class="market-label">US forces enter Iran by March 31</div>
+  <div class="bar-container"><div class="bar green" style="width: 2.0%;">1.0%</div></div>
+  <div class="change neutral">RESOLVED</div>
+</div>
+<div class="market-row">
+  <div class="market-label">US forces enter Iran by April 30</div>
+  <div class="bar-container"><div class="bar red" style="width: 56.0%;">56.0%</div></div>
+  <div class="change neutral">0.0%</div>
+</div>
+<div class="market-row">
+  <div class="market-label">US x Iran ceasefire by March 31</div>
+  <div class="bar-container"><div class="bar green" style="width: 2.0%;">0.0%</div></div>
+  <div class="change neutral">RESOLVED</div>
+</div>
+<div class="market-row">
+  <div class="market-label">US x Iran ceasefire by April 15</div>
+  <div class="bar-container"><div class="bar yellow" style="width: 19.0%;">19.0%</div></div>
+  <div class="change neutral">0.0%</div>
+</div>
+<div class="market-row">
+  <div class="market-label">US x Iran ceasefire by April 30</div>
+  <div class="bar-container"><div class="bar orange" style="width: 37.0%;">37.0%</div></div>
+  <div class="change neutral">0.0%</div>
+</div>
+<div class="market-row">
+  <div class="market-label">Kharg Island no longer under Iranian control by April 30</div>
+  <div class="bar-container"><div class="bar orange" style="width: 33.0%;">33.0%</div></div>
+  <div class="change neutral">0.0%</div>
+</div>
+<div class="market-row">
+  <div class="market-label">Will the Iranian regime fall by March 31</div>
+  <div class="bar-container"><div class="bar green" style="width: 2.0%;">0.0%</div></div>
+  <div class="change neutral">RESOLVED</div>
+</div>
+
+            </div>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="section">
+            <h2>市场数据详情</h2>
+            <table>
+                <thead>
+                    <tr><th>市场名称</th><th>Yes 概率</th><th>与上次变化</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>US forces enter Iran by March 31</td><td>1.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+<tr><td>US forces enter Iran by April 30</td><td>56.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>US x Iran ceasefire by March 31</td><td>0.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+<tr><td>US x Iran ceasefire by April 15</td><td>19.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>US x Iran ceasefire by April 30</td><td>37.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>Kharg Island no longer under Iranian control by April 30</td><td>33.0%</td><td style="color: #64748b;">0.0%</td></tr>
+<tr><td>Will the Iranian regime fall by March 31</td><td>0.0%</td><td style="color: #64748b;">RESOLVED</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 历史趋势表格 -->
+        <div class="section">
+            <h2>历史记录 (最近20条)</h2>
+            <table class="history-table">
+                <thead>
+                    <tr><th>时间</th><th>WII</th><th>等级</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2026-04-01T10:51:16</td><td style="color: #eab308; font-weight: bold;">29.3%</td><td style="color: #eab308;">中</td></tr>
+<tr><td>2026-04-01T09:48:33</td><td style="color: #eab308; font-weight: bold;">29.3%</td><td style="color: #eab308;">中</td></tr>
+<tr><td>2026-04-01T09:47:45</td><td style="color: #22c55e; font-weight: bold;">0.0%</td><td style="color: #22c55e;">低</td></tr>
+<tr><td>2026-04-01T09:17:30</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">高</td></tr>
+<tr><td>2026-03-27T11:01:00</td><td style="color: #f97316; font-weight: bold;">30.5%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-27T10:55:18</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">高</td></tr>
+<tr><td>2026-03-27T08:45:00</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-27T08:39:00</td><td style="color: #f97316; font-weight: bold;">31.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T17:36:27</td><td style="color: #f97316; font-weight: bold;">33.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T16:35:50</td><td style="color: #f97316; font-weight: bold;">30.6%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T15:21:00</td><td style="color: #eab308; font-weight: bold;">29.5%</td><td style="color: #eab308;">高</td></tr>
+<tr><td>2026-03-26T14:18:00</td><td style="color: #eab308; font-weight: bold;">29.7%</td><td style="color: #eab308;">高</td></tr>
+<tr><td>2026-03-26T13:20:00</td><td style="color: #f97316; font-weight: bold;">30.0%</td><td style="color: #f97316;">极强</td></tr>
+<tr><td>2026-03-26T11:15:00</td><td style="color: #eab308; font-weight: bold;">29.9%</td><td style="color: #eab308;">高</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>数据来源: Polymarket 预测市场 (via FrenFlow) | WII 公式: enter_april×0.4 + enter_march×0.3 + kharg×0.2 + regime×0.1</p>
+            <p>烈度等级: 低(&lt;20%) 中(20-30%) 高(30-40%) 极强(≥40%) | 免责声明: 本报告仅基于预测市场数据，不构成投资或决策建议</p>
         </div>
     </div>
-
-    <script>
-        const data = {
-            timestamp: "2026-03-27T12:34:00+08:00",
-            wii: 30.1,
-            level: "极强",
-            level_color: "red",
-            markets: {
-                "us_enter_iran_march31": {
-                    label: "US forces enter Iran by March 31",
-                    yes: 15.5,
-                    no: 84.5
-                },
-                "us_enter_iran_april30": {
-                    label: "US forces enter Iran by April 30",
-                    yes: 62.5,
-                    no: 37.5
-                },
-                "ceasefire_march31": {
-                    label: "US x Iran ceasefire by March 31",
-                    yes: 4.5,
-                    no: 95.5
-                },
-                "kharg_island_march31": {
-                    label: "Kharg Island no longer under Iranian control by March 31",
-                    yes: 4.5,
-                    no: 95.5
-                }
-            },
-            changes_since_last: {
-                "us_enter_iran_march31": -0.3,
-                "us_enter_iran_april30": -0.3,
-                "ceasefire_march31": 0.3,
-                "kharg_island_march31": -0.8
-            },
-            anomaly: false,
-            anomaly_detail: "无异常信号。所有核心指标1小时内变化均小于5%阈值。WII从31.0%降至30.1%,维持极强级别。",
-            history: [
-                {
-                    timestamp: "2026-03-26T11:15:00+08:00",
-                    wii: 29.9,
-                    level: "高",
-                    markets: {
-                        us_enter_iran_march31: 19.5,
-                        us_enter_iran_april30: 59.5,
-                        ceasefire_march31: 12.5,
-                        kharg_island_march31: 7.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-26T13:20:00+08:00",
-                    wii: 30.0,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 20.5,
-                        us_enter_iran_april30: 58.5,
-                        ceasefire_march31: 12.5,
-                        kharg_island_march31: 8.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-26T14:18:00+08:00",
-                    wii: 29.7,
-                    level: "高",
-                    markets: {
-                        us_enter_iran_march31: 19.5,
-                        us_enter_iran_april30: 58.5,
-                        ceasefire_march31: 12.5,
-                        kharg_island_march31: 8.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-26T15:21:00+08:00",
-                    wii: 29.5,
-                    level: "高",
-                    markets: {
-                        us_enter_iran_march31: 19.5,
-                        us_enter_iran_april30: 58.5,
-                        ceasefire_march31: 12.5,
-                        kharg_island_march31: 7.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-26T16:35:50+08:00",
-                    wii: 30.6,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 21.5,
-                        us_enter_iran_april30: 59.5,
-                        ceasefire_march31: 11.5,
-                        kharg_island_march31: 7.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-26T17:36:27+08:00",
-                    wii: 33.0,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 23.5,
-                        us_enter_iran_april30: 60.5,
-                        ceasefire_march31: 12.5,
-                        kharg_island_march31: 8.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-27T08:39:00+08:00",
-                    wii: 31.0,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 17.5,
-                        us_enter_iran_april30: 62.5,
-                        ceasefire_march31: 5.5,
-                        kharg_island_march31: 6.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-27T08:45:00+08:00",
-                    wii: 31.0,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 17.5,
-                        us_enter_iran_april30: 62.5,
-                        ceasefire_march31: 5.5,
-                        kharg_island_march31: 6.5
-                    }
-                },
-                {
-                    timestamp: "2026-03-27T10:55:18+08:00",
-                    wii: 31.0,
-                    level: "高",
-                    markets: {
-                        us_enter_iran_march31: 15.8,
-                        us_enter_iran_april30: 62.8,
-                        ceasefire_march31: 4.2,
-                        kharg_island_march31: 5.3
-                    }
-                },
-                {
-                    timestamp: "2026-03-27T11:01:00+08:00",
-                    wii: 30.5,
-                    level: "极强",
-                    markets: {
-                        us_enter_iran_march31: 15.5,
-                        us_enter_iran_april30: 62.5,
-                        ceasefire_march31: 4.5,
-                        kharg_island_march31: 6.5
-                    }
-                }
-            ]
-        };
-
-        const marketLabels = {
-            "us_enter_iran_march31": "🎯 3月底美军进入伊朗",
-            "us_enter_iran_april30": "🎯 4月底美军进入伊朗",
-            "ceasefire_march31": "🕊️ 3月底停火",
-            "kharg_island_march31": "🏝️ 哈尔格岛失控"
-        };
-
-        function formatTime(isoString) {
-            const date = new Date(isoString);
-            return date.toLocaleString('zh-CN', {
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-        }
-
-        function getLevelClass(level) {
-            const levelMap = {
-                '极强': 'extreme',
-                '高': 'high',
-                '中': 'medium',
-                '低': 'low'
-            };
-            return levelMap[level] || 'medium';
-        }
-
-        function getProbClass(prob) {
-            if (prob >= 50) return 'high';
-            if (prob >= 20) return 'medium';
-            return 'low';
-        }
-
-        document.getElementById('updateTime').textContent = formatTime(data.timestamp);
-        document.getElementById('wiiValue').textContent = data.wii.toFixed(1) + '%';
-        document.getElementById('wiiValue').className = 'wii-value ' + getLevelClass(data.level);
-        document.getElementById('wiiLevel').textContent = data.level;
-        document.getElementById('wiiLevel').className = 'wii-level ' + getLevelClass(data.level);
-
-        if (data.anomaly) {
-            document.getElementById('anomalyBanner').style.display = 'block';
-            document.getElementById('anomalyDetail').textContent = data.anomaly_detail;
-            document.getElementById('statusNormal').style.display = 'none';
-        }
-
-        const marketsContainer = document.getElementById('marketsContainer');
-        for (const [key, change] of Object.entries(data.changes_since_last)) {
-            const market = data.markets[key];
-            const label = marketLabels[key] || market.label;
-            const prob = market.yes;
-            const probClass = getProbClass(prob);
-
-            let changeClass = 'change-neutral';
-            let changeText = '→ ' + Math.abs(change).toFixed(1) + '%';
-            if (change > 0) {
-                changeClass = 'change-up';
-                changeText = '↑ ' + change.toFixed(1) + '%';
-            } else if (change < 0) {
-                changeClass = 'change-down';
-                changeText = '↓ ' + change.toFixed(1) + '%';
-            }
-
-            marketsContainer.innerHTML += `
-                <div class="market-item">
-                    <div class="market-label">${label}</div>
-                    <div class="market-probability">
-                        <div class="prob-bar">
-                            <div class="prob-fill ${probClass}" style="width: ${prob}%"></div>
-                        </div>
-                        <div class="prob-value">${prob.toFixed(1)}%</div>
-                        <div class="change-indicator ${changeClass}">${changeText}</div>
-                    </div>
-                </div>
-            `;
-        }
-
-        const timestamps = data.history.map(h => formatTime(h.timestamp));
-        timestamps.push(formatTime(data.timestamp));
-
-        const wiiValues = data.history.map(h => h.wii);
-        wiiValues.push(data.wii);
-
-        const marchValues = data.history.map(h => h.markets.us_enter_iran_march31);
-        marchValues.push(data.markets.us_enter_iran_march31.yes);
-
-        const aprilValues = data.history.map(h => h.markets.us_enter_iran_april30);
-        aprilValues.push(data.markets.us_enter_iran_april30.yes);
-
-        const ceasefireValues = data.history.map(h => h.markets.ceasefire_march31);
-        ceasefireValues.push(data.markets.ceasefire_march31.yes);
-
-        const khargValues = data.history.map(h => h.markets.kharg_island_march31);
-        khargValues.push(data.markets.kharg_island_march31.yes);
-
-        const wiiCtx = document.getElementById('wiiChart').getContext('2d');
-        new Chart(wiiCtx, {
-            type: 'line',
-            data: {
-                labels: timestamps,
-                datasets: [{
-                    label: 'WII (战争烈度指数)',
-                    data: wiiValues,
-                    borderColor: '#ff416c',
-                    backgroundColor: 'rgba(255, 65, 108, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 4,
-                    pointHoverRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        labels: { color: '#fff' }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 40,
-                        ticks: { color: '#8892b0' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    },
-                    x: {
-                        ticks: { 
-                            color: '#8892b0',
-                            maxRotation: 45,
-                            minRotation: 45
-                        },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    }
-                }
-            }
-        });
-
-        const marketCtx = document.getElementById('marketChart').getContext('2d');
-        new Chart(marketCtx, {
-            type: 'line',
-            data: {
-                labels: timestamps,
-                datasets: [
-                    {
-                        label: '3月底美军进入',
-                        data: marchValues,
-                        borderColor: '#feca57',
-                        backgroundColor: 'rgba(254, 202, 87, 0.1)',
-                        fill: false,
-                        tension: 0.4
-                    },
-                    {
-                        label: '4月底美军进入',
-                        data: aprilValues,
-                        borderColor: '#ff416c',
-                        backgroundColor: 'rgba(255, 65, 108, 0.1)',
-                        fill: false,
-                        tension: 0.4
-                    },
-                    {
-                        label: '3月底停火',
-                        data: ceasefireValues,
-                        borderColor: '#4ade80',
-                        backgroundColor: 'rgba(74, 222, 128, 0.1)',
-                        fill: false,
-                        tension: 0.4
-                    },
-                    {
-                        label: '哈尔格岛失控',
-                        data: khargValues,
-                        borderColor: '#60a5fa',
-                        backgroundColor: 'rgba(96, 165, 250, 0.1)',
-                        fill: false,
-                        tension: 0.4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        labels: { color: '#fff' }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 70,
-                        ticks: { color: '#8892b0' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    },
-                    x: {
-                        ticks: { 
-                            color: '#8892b0',
-                            maxRotation: 45,
-                            minRotation: 45
-                        },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>

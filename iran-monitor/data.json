@@ -1151,5 +1151,68 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-02 13:57",
+    "score": 0.8,
+    "label": "和平/外交",
+    "dimensions": {
+      "military": {
+        "score": 0,
+        "max": 25,
+        "kws": []
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": []
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 0.0,
+        "max": 15,
+        "kws": [
+          "WTI $76.00 / Brent $79.00",
+          "日均变动 +0.00%（变动绝对值×1.5→油价得分）",
+          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
+        ],
+        "wti": 76.0,
+        "brent": 79.0,
+        "change": 0.0
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 0.0,
+        "max": 10,
+        "kws": [],
+        "stmt_count": 0,
+        "top_stmts": []
+      },
+      "media": {
+        "score": 0.0,
+        "max": 5,
+        "kws": [
+          "新闻0条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [],
+    "news_count": 0
   }
 ]

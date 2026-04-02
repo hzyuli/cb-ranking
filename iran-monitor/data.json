@@ -1214,5 +1214,109 @@
     "pm_prob": 15.0,
     "top_news": [],
     "news_count": 0
+  },
+  {
+    "time": "2026-04-02 15:53",
+    "score": 53.6,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×7)"
+        ]
+      },
+      "diplomacy": {
+        "score": 2,
+        "max": 20,
+        "kws": [
+          "warning(×1)",
+          "deal(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 0.8699999999999998,
+        "max": 15,
+        "kws": [
+          "WTI $106.33 / Brent $107.69",
+          "日均变动 -0.58%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 106.33,
+        "brent": 107.69,
+        "change": -0.5799999999999998
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×2)",
+          "lebanon(×2)"
+        ]
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Read Trump's full statement on Iran attacks - PBS",
+          "Tulsi Gabbard Contradicts Trump on Key Claims About Iran War - Time Magazine",
+          "Why is the U.S. at war with Iran? Here’s what the Trump administration says. - The Washington Post"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Trump’s primetime speech on Iran war: Key takeaways",
+        "url": "https://www.aljazeera.com/news/2026/4/2/trumps-primetime-speech-on-iran-war-key-takeaways?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump’s national address on Iran ’embarrassing, incoherent’",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/trumps-national-address-on-iran-embarrassing?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump claims ‘success’ in Iran in just 32 days compared to lengthy US wars",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/trump-claims-success-in-iran-in-just-32-days-compared-to-lengthy-us-wars?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump threatens to bring Iran ‘back to the Stone Ages’",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/trump-threatens-to-bring-iran-back-to-the-stone?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump urges countries ‘get involved’ in war on Iran if they can’t get fuel",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/trump-urges-countries-get-involved-in-war-on-iran-if-they-cant-get-fuel?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

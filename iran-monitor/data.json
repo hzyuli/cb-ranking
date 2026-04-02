@@ -1046,5 +1046,110 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-02 08:37",
+    "score": 60.3,
+    "label": "准军事冲突",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×4)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "warning(×1)",
+          "ceasefire(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 9.510000000000002,
+        "max": 15,
+        "kws": [
+          "WTI $98.34 / Brent $99.76",
+          "日均变动 -6.34%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 98.34,
+        "brent": 99.76,
+        "change": -6.340000000000001
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×2)",
+          "lebanon(×2)"
+        ]
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "obliterate(×1)",
+          "retaliate(×1)",
+          "ceasefire(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Tulsi Gabbard Contradicts Trump on Key Claims About Iran War - Time Magazine",
+          "Why is the U.S. at war with Iran? Here’s what the Trump administration says. - The Washington Post"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Iran war live: Trump to address nation; Tehran denies seeking ceasefire",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/4/2/iran-war-live-trump-to-address-nation-tehran-denies-seeking-ceasefire?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Magnitude 7.4 quake hits off Indonesia’s Ternate, tsunami warning triggered",
+        "url": "https://www.aljazeera.com/news/2026/4/1/magnitude-7-4-quake-hits-off-indonesias-ternate-tsunami-warning-triggered?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+        "url": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "NASA moon mission a ‘contrast’ to US war on Iran, says US senator",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/nasa-moon-mission-a-contrast-to-us-war-on-iran-says-us-senator?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Smoke and embers seen over Iran’s Isfahan after strike",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/smoke-and-embers-seen-over-irans-isfahan-after-strike?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

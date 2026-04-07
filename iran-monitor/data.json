@@ -1836,5 +1836,107 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-07 17:32",
+    "score": 51.5,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "strike iran(×1)",
+          "iran war(×4)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "ceasefire(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 14.745,
+        "max": 15,
+        "kws": [
+          "WTI $112.27 / Brent $108.77",
+          "日均变动 +9.83%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 112.27,
+        "brent": 108.77,
+        "change": 9.83
+      },
+      "proxy": {
+        "score": 6,
+        "max": 10,
+        "kws": [
+          "lebanon(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "ceasefire(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "USA striker Patrick Agyemang’s World Cup in doubt after stretcher exit",
+        "url": "https://www.aljazeera.com/sports/2026/4/7/usa-striker-patrick-agyemangs-world-cup-in-doubt-after-stretcher-exit?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump and Hegseth invoke God and religion in Iran war press conference",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/trump-and-hegseth-invoke-god-and-religion-in-iran-war-press-conference?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran releases on bail Japan national jailed amid antigovernment protests",
+        "url": "https://www.aljazeera.com/news/2026/4/7/japanese-detained-in-iran-believed-to-be-journalist-released-on-bail?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Synagogue in Tehran ‘completely destroyed’ in US-Israeli attack",
+        "url": "https://www.aljazeera.com/news/2026/4/7/synagogue-in-tehran-destroyed-in-us-israeli-strikes-on-iran?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Lebanese firefighters respond to aftermath of Israeli strike",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/lebanese-firefighters-respond-to-aftermath-of-israeli-strike?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

@@ -1631,5 +1631,106 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-07 15:26",
+    "score": 53.8,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×2)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "deal(×1)",
+          "ceasefire(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 15,
+        "max": 15,
+        "kws": [
+          "WTI $114.65 / Brent $111.04",
+          "日均变动 +12.14%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 114.65,
+        "brent": 111.04,
+        "change": 12.14
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 8,
+        "max": 10,
+        "kws": [
+          "bomb iran(×1)",
+          "ceasefire(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Little sign of breakthrough as Trump's Iran deadline nears ",
+        "url": "https://www.bbc.co.uk/news/world",
+        "source": "BBC"
+      },
+      {
+        "title": "Ten killed in Israeli strikes and clashes between Hamas and militia in Gaza, local sources say",
+        "url": "https://www.bbc.com/news/articles/cew7nqn5rqgo?at_medium=RSS&amp;at_campaign=rss",
+        "source": "BBC"
+      },
+      {
+        "title": "Trump endorses ex-UK political aide Steve Hilton for California governor",
+        "url": "https://www.bbc.com/news/articles/c04xqglg7xgo?at_medium=RSS&amp;at_campaign=rss",
+        "source": "BBC"
+      },
+      {
+        "title": "Locals dispute Nigerian army claim of 31 rescued after Easter attack",
+        "url": "https://www.bbc.com/news/articles/cge0213dyj5o?at_medium=RSS&amp;at_campaign=rss",
+        "source": "BBC"
+      },
+      {
+        "title": "How rescue of US airman in remote part of Iran unfolded",
+        "url": "https://www.bbc.com/news/articles/c145enxln0go?at_medium=RSS&amp;at_campaign=rss",
+        "source": "BBC"
+      }
+    ],
+    "news_count": 20
   }
 ]

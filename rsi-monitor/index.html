@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RSI(6) 策略监控日报 — 2026-04-02</title>
 <style>
-::root{
+:root{
   --bg:#0f1117;--card:#1a1d27;--border:#2a2d3e;
   --text:#e2e8f0;--muted:#8892a4;
   --buy-bg:#0a2016;--buy-b:#22c55e;--buy-t:#4ade80;
@@ -28,6 +28,11 @@ body{background:var(--bg);color:var(--text);
 .rule-box{background:var(--card);border:1px solid var(--border);border-radius:8px;
   padding:11px 18px;margin-bottom:14px;font-size:13px;color:var(--muted);line-height:2.1}
 .rule-box strong{color:var(--text)}
+
+/* data date banner */
+.data-date-banner{background:linear-gradient(135deg,#10b981 0%,#059669 100%);
+  color:#fff;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:bold;
+  margin-top:12px;display:inline-block;border-left:4px solid #fff}
 
 /* legend */
 .legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;font-size:13px;color:var(--muted);align-items:center}
@@ -91,15 +96,16 @@ tr:last-child td{border-bottom:none}
   <div>
     <h1>RSI(6) 交易策略监控日报</h1>
     <div class="sub">可转债 / 国债期货 / 沪深300 / 恒生科技 / 创业板指 &nbsp;—&nbsp; RSI(6) 超买超卖 × 成交金额缩量预警</div>
+    <div class="data-date-banner">📅 数据日期：2026-04-02（今日收盘数据）</div>
   </div>
   <div class="meta">
     <div>报告日期：<strong style="color:var(--text)">2026-04-02</strong></div>
-    <div>生成时间：2026-04-02 15:56:16</div>
+    <div>生成时间：2026-04-07 10:50:21</div>
     <div>数据来源：同花顺 iFinD</div>
   </div>
 </div>
 
-<div class="rule-box">
+<div class="rule-box"
   <strong>信号规则</strong>（RSI 周期 = 6）：&nbsp;
   <span style="color:var(--buy-t)">● 买入</span>：RSI(6) &lt; 20
   <strong>且</strong> 今日成交金额 &lt; 昨日（缩量）&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -154,15 +160,15 @@ tr:last-child td{border-bottom:none}
     </tr>
     <tr class="row-hold">
       <td><div class="nm">⚪ 中债10年期国债指数</div><div class="cd">CBA00652.CB</div></td>
-      <td class="pr">131.6593</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">131.5877</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-      <span class="rsi-val rsi-y">59.9</span>
+      <span class="rsi-val rsi-y">45.8</span>
       <div style="flex:1;min-width:80px">
         <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:59.94%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:45.79%;background:#fbbf24"></div>
       </div>
         <div class="bar-scale"><span>0</span><span>20</span><span style="margin-left:auto">80</span><span>100</span></div>
       </div>
@@ -276,8 +282,8 @@ tr:last-child td{border-bottom:none}
     <span style="font-size:13px;font-weight:400;color:var(--muted)">
       来源：本地知识库 score≥4 &nbsp;|&nbsp;
       共 45 只 &nbsp;|&nbsp;
-      <span style="color:#4ade80">买入机会 6</span> &nbsp;|&nbsp;
-      <span style="color:#60a5fa">关注候选 39</span>
+      <span style="color:#4ade80">买入机会 5</span> &nbsp;|&nbsp;
+      <span style="color:#60a5fa">关注候选 40</span>
     </span>
   </div>
   <div class="bond-sub">
@@ -310,266 +316,146 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">110.931</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">124.129</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">21.7</span>
+          <span class="rsi-val rsi-g">13.5</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:21.71%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:13.47%;background:#4ade80"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">64.75百万</div>
+          <div class="amt-main">16.84亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.234</span></td>
+      <td><span class="ratio-shrink">0.589</span></td>
       <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">亿纬锂能，储能电池全球第二（2024出货+37%），大圆柱电池首家量产，消费+动力+储能三线布局；AA+余额约50亿，基…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">亿纬锂能，储能电池全球第二（2024出货+37%），大圆柱电池首家量产，消费+动力+储能三线布局；AA+余额约50亿，基…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-buy">
       <td>
-        <div class="nm">银轮转债</div>
-        <div class="cd">热管理</div>
+        <div class="nm">精达转债</div>
+        <div class="cd">漆包线/特种导体</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">90.0</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">382.344</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">12.4</span>
+          <span class="rsi-val rsi-g">33.9</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:12.38%;background:#4ade80"></div>
+        <div class="mini-bar-fill" style="width:33.93%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">1.79亿</div>
+          <div class="amt-main">1.87亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.828</span></td>
+      <td><span class="ratio-shrink">0.399</span></td>
       <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">国内汽车热管理龙头，新能源热管理+AI数据中心液冷散热双轮驱动；2026年3月斩获国际大单，海外客户持续拓展，算力热管理…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">国内漆包线龙头，主业电磁线+新增特种导体（AI'铜连接'材料）；新能源车、工业电机、AI数据中心三线拉动；溢价率低但铜价…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-buy">
       <td>
-        <div class="nm">安克转债</div>
-        <div class="cd">消费电子/跨境电商</div>
+        <div class="nm">洋丰转债</div>
+        <div class="cd">磷复肥/农化</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">123.126</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">129.019</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">21.4</span>
+          <span class="rsi-val rsi-g">37.1</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:21.37%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:37.09%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">1.31亿</div>
+          <div class="amt-main">46.69百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.343</span></td>
+      <td><span class="ratio-shrink">0.616</span></td>
       <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">安克创新，亚马逊充电宝/音频耳机全球销量第一，2024年海外收入+25%；品牌出海护城河深，AI智能家居新品持续增长；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">新洋丰，磷复肥全国前三，磷矿石自给率约80%+；2024年业绩稳健，磷矿资源稀缺逻辑+粮食安全政策；AA评级，分红稳定，…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-buy">
       <td>
-        <div class="nm">顺博转债</div>
-        <div class="cd">再生铝</div>
+        <div class="nm">韦尔转债</div>
+        <div class="cd">半导体</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">123.251</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">114.423</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">28.8</span>
+          <span class="rsi-val rsi-g">39.0</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:28.84%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:38.95%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">45.99百万</div>
+          <div class="amt-main">52.31百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.138</span></td>
+      <td><span class="ratio-shrink">0.807</span></td>
       <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">新能源车轻量化需求强劲，绿色再生铝政策红利大，最新价122.946<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">车载CIS量价双升，汽车+AI双轮，华为车合作深化，最新价102.738<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-buy">
       <td>
-        <div class="nm">保隆转债</div>
-        <div class="cd">汽车零部件/空气悬架</div>
+        <div class="nm">冠宇转债</div>
+        <div class="cd">消费锂电</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">119.544</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">122.856</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">32.0</span>
+          <span class="rsi-val rsi-g">39.7</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:31.97%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:39.69%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">1.48亿</div>
+          <div class="amt-main">89.69百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.329</span></td>
+      <td><span class="ratio-shrink">0.485</span></td>
       <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">保隆科技，TPMS+空气悬架双核心，2024年空气悬架收入+50%，绑定理想/问界等主流新能源车；AA评级，空气悬架渗透…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-buy">
-      <td>
-        <div class="nm">中特转债</div>
-        <div class="cd">特钢</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">99.589</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">36.2</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:36.25%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.52亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.555</span></td>
-      <td><span class="badge-buy2">🟢 买入机会</span></td>
-      <td><div class="bond-logic">风电/军工/航空特钢订单强劲，高端制造国产替代明确，最新价117.27<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">牧原转债</div>
-        <div class="cd">生猪养殖</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s5"></span></span>
-        <span style="font-weight:700;font-family:monospace">5</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">113.763</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">11.2</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:11.23%;background:#4ade80"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">4.01亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">1.070</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">牧原股份，自繁自养生猪龙头，2024年净利+1169%（约125亿），成本全行业最低（约13元/kg）；AA+余额约50…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">立讯转债</div>
-        <div class="cd">消费电子</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s5"></span></span>
-        <span style="font-weight:700;font-family:monospace">5</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">138.812</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">15.9</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:15.94%;background:#4ade80"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">61.31百万</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">8.567</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益，最新价119.029<br><span style="color:var(--muted);font-size:11px">更新：2026-04-02</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">睿创转债</div>
-        <div class="cd">军工/红外</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s5"></span></span>
-        <span style="font-weight:700;font-family:monospace">5</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">121.077</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">51.6</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:51.64%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">57.44百万</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.308</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">非制冷红外探测器全产业链龙头，特种装备+民用双市场；2025Q3营收+29.7%，净利+46.2%；车载红外感知布局领先…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">AI PC/MR设备拉动消费电池，笔电换机周期开启，最新价116.815<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">天业转债</div>
@@ -580,26 +466,26 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">107.976</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">129.266</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">53.0</span>
+          <span class="rsi-val rsi-g">18.3</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:53.01%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:18.33%;background:#4ade80"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">18.72百万</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
+          <div class="amt-main">5.85亿</div>
+          <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.086</span></td>
+      <td><span class="ratio-expand">1.971</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">中东地缘推油价→乙烯法成本↑电石法套利空间打开，烧碱涨停，97万吨产能直接受益，出口中亚高增，最新价90.0<br><span style="color:var(--muted);font-size:11px">更新：2026-04-02</span></div></td>
+      <td><div class="bond-logic">中东地缘推油价→乙烯法成本↑电石法套利空间打开，烧碱涨停，97万吨产能直接受益，出口中亚高增，最新价90.0<br><span style="color:var(--muted);font-size:11px">更新：2026-04-07</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">金田转债</div>
@@ -610,236 +496,116 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">118.373</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">127.528</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">78.7</span>
+          <span class="rsi-val rsi-y">41.1</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:78.71%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:41.08%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">2.08亿</div>
+          <div class="amt-main">83.78百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.810</span></td>
+      <td><span class="ratio-shrink">0.775</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">液冷铜管导入全球头部算力服务器，H1收入+820%，2025前三季净利+104%，算力基建高景气确定性强，最新价140.…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">液冷铜管导入全球头部算力服务器，H1收入+820%，2025前三季净利+104%，算力基建高景气确定性强，最新价140.…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">杭氧转债</div>
-        <div class="cd">工业气体/空分设备</div>
+        <div class="nm">牧原转债</div>
+        <div class="cd">生猪养殖</div>
       </td>
       <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="font-size:13px"><span class="score-dot s5"></span></span>
+        <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">94.232</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">129.83</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">37.5</span>
+          <span class="rsi-val rsi-y">41.7</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:37.54%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:41.69%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.91亿</div>
+          <div class="amt-main">2.52亿</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">1.354</span></td>
+      <td><span class="ratio-expand">1.045</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">杭州氧气，国内空分设备+工业气体龙头，气体业务现金流稳定；AI/半导体大厂扩产拉动高纯气体需求，以气养设备双驱，AA+债…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">牧原股份，自繁自养生猪龙头，2024年净利+1169%（约125亿），成本全行业最低（约13元/kg）；AA+余额约50…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">宏川转债</div>
-        <div class="cd">石化仓储/物流</div>
+        <div class="nm">睿创转债</div>
+        <div class="cd">军工/红外</div>
       </td>
       <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="font-size:13px"><span class="score-dot s5"></span></span>
+        <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">111.463</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">260.651</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">38.5</span>
+          <span class="rsi-val rsi-y">43.5</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:38.48%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:43.52%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.59亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">19.263</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">今日公告启动公募REITs申报盘活码头储罐资产，仓储壁垒高，溢价低转股逻辑强，最新价158.572<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">精达转债</div>
-        <div class="cd">漆包线/特种导体</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">137.11</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">38.6</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:38.61%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">1.17亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">3.575</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">国内漆包线龙头，主业电磁线+新增特种导体（AI'铜连接'材料）；新能源车、工业电机、AI数据中心三线拉动；溢价率低但铜价…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">冠宇转债</div>
-        <div class="cd">消费锂电</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">110.152</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-g">39.6</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:39.58%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">4.68亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">3.773</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">AI PC/MR设备拉动消费电池，笔电换机周期开启，最新价116.815<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">华亚转债</div>
-        <div class="cd">半导体精密件/机器人</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">107.971</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">40.4</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:40.42%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">4.01亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">2.541</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">华亚智能，半导体精密结构件（石英件/陶瓷件）+机器人关节壳体双布局；半导体国产设备扩产受益，机器人量产带动精密件需求；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">重银转债</div>
-        <div class="cd">城商行</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">139.353</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">41.0</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:41.04%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.40亿</div>
+          <div class="amt-main">2.84亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.532</span></td>
+      <td><span class="ratio-shrink">0.877</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">重庆银行，成渝经济圈战略受益，2024年前三季净利+10.2%，总资产历史性破万亿；AAA评级余额约130亿，债底极强，…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">非制冷红外探测器全产业链龙头，特种装备+民用双市场；2025Q3营收+29.7%，净利+46.2%；车载红外感知布局领先…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">科沃转债</div>
-        <div class="cd">服务机器人</div>
+        <div class="nm">立讯转债</div>
+        <div class="cd">消费电子</div>
       </td>
       <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="font-size:13px"><span class="score-dot s5"></span></span>
+        <span style="font-weight:700;font-family:monospace">5</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">103.539</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">123.55</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">41.8</span>
+          <span class="rsi-val rsi-y">45.4</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:41.84%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:45.4%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.66亿</div>
+          <div class="amt-main">81.35百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.849</span></td>
+      <td><span class="ratio-shrink">0.419</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">AI具身机器人热潮，扫地机AI化+商用机器人双赛道，最新价131.329<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益，最新价119.029<br><span style="color:var(--muted);font-size:11px">更新：2026-04-07</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">恒逸转债</div>
@@ -850,26 +616,26 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">130.932</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">114.5</td>
+      <td class="dt">2026-03-24</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">42.1</span>
+          <span class="rsi-val rsi-g">21.2</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:42.14%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:21.2%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.11亿</div>
+          <div class="amt-main">0元</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">4.686</span></td>
+      <td><span class="ratio-expand">N/A</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">PTA期货涨停驱动，2150万吨PTA产能全国第一，全产业链炼化反转弹性大，文莱二期2026年启动，最新价122.373<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">PTA期货涨停驱动，2150万吨PTA产能全国第一，全产业链炼化反转弹性大，文莱二期2026年启动，最新价122.373<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">锋工转债</div>
@@ -880,206 +646,26 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">126.753</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">112.4</td>
+      <td class="dt">2026-03-30</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">44.1</span>
+          <span class="rsi-val rsi-g">26.1</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:44.12%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:26.1%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">8.81百万</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
+          <div class="amt-main">0元</div>
+          <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.089</span></td>
+      <td><span class="ratio-expand">N/A</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">溢价率-0.1%纯债底保护，机器人刀具已向10余家客户小批量供货，注意3月31日强赎，最新价112.602<br><span class="redeem-warn">⚠ 2026-03-31强赎，需在此前转股</span><br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">鸿路转债</div>
-        <div class="cd">钢结构/机器人部件</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">106.991</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">46.9</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:46.88%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">3.53亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.941</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">鸿路钢构，钢结构行业产能规模第一，绑定工业建筑+厂房需求；2025年向机器人结构件延伸（铝合金轻量化），基建复苏受益+机…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">立昂转债</div>
-        <div class="cd">半导体硅片</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">102.017</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">47.5</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:47.48%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.25亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.546</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">立昂技术，12英寸半导体硅片国内主要供应商，2024年Q3扭亏为盈；国内晶圆厂扩产驱动本土硅片需求，国产替代节奏明确；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">山路转债</div>
-        <div class="cd">基建施工</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">128.279</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">49.3</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:49.32%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">3.53亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.922</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">山东省重点基建+专业资质壁垒，十五五开局受益明确，最新价109.277<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">金诚转债</div>
-        <div class="cd">矿山服务/铜矿</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">118.509</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">50.8</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:50.76%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">1.99亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.633</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">国内矿服龙头，'矿服+资源'双轮驱动；刚果(金)Lonshi铜矿加速放量，2026-03-09首次覆盖目标价81.3元；…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">南航转债</div>
-        <div class="cd">航空出行</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">126.791</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">51.3</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:51.28%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">1.10亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.865</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">出境游复苏+暑运旺季预期，油价下行改善盈利，最新价118.877<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">爱玛转债</div>
-        <div class="cd">两轮电动车</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">141.167</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">51.9</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:51.87%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">3.67亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.962</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">大换电政策催化+出海加速，行业整合中份额持续提升，最新价119.92<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">溢价率-0.1%纯债底保护，机器人刀具已向10余家客户小批量供货，注意3月31日强赎，最新价112.602<br><span class="redeem-warn">⚠ 2026-03-31强赎，需在此前转股</span><br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">温氏转债</div>
@@ -1090,116 +676,56 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">153.927</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">126.0</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">52.5</span>
+          <span class="rsi-val rsi-g">34.7</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:52.51%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:34.67%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">2.44亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.710</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">温氏股份公司制养殖龙头，生猪+黄羽鸡双线，2024年净利约52亿（猪周期高位），成本持续优化（完全成本<14元/kg）；…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">三诺转债</div>
-        <div class="cd">体外诊断</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">104.09</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">53.0</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:52.99%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.05亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.609</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">CGM国产替代加速，医保扩容驱动CGM放量，政策催化明确，最新价127.516<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">长汽转债</div>
-        <div class="cd">汽车整车</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">150.2</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">55.8</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:55.8%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">3.17亿</div>
+          <div class="amt-main">2.63亿</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">1.990</span></td>
+      <td><span class="ratio-expand">1.150</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">坦克品牌越野细分强势+海外收入高增，智电转型加速，最新价123.248<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">温氏股份公司制养殖龙头，生猪+黄羽鸡双线，2024年净利约52亿（猪周期高位），成本持续优化（完全成本<14元/kg）；…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">鼎龙转债</div>
-        <div class="cd">半导体材料</div>
+        <div class="nm">鸿路转债</div>
+        <div class="cd">钢结构/机器人部件</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">124.479</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">123.88</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">59.1</span>
+          <span class="rsi-val rsi-g">37.6</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:59.11%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:37.61%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">4.12亿</div>
+          <div class="amt-main">96.96百万</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">1.141</span></td>
+      <td><span class="ratio-expand">1.216</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">CMP抛光垫国内龙头，国产替代加速；横向布局抛光液、光刻胶、先进封装材料，半导体材料平台型公司；2024年净利+134%…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">鸿路钢构，钢结构行业产能规模第一，绑定工业建筑+厂房需求；2025年向机器人结构件延伸（铝合金轻量化），基建复苏受益+机…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">应流转债</div>
@@ -1210,176 +736,86 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">113.358</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">249.383</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">59.7</span>
+          <span class="rsi-val rsi-y">40.3</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:59.74%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:40.32%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.57亿</div>
+          <div class="amt-main">4.56亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.836</span></td>
+      <td><span class="ratio-shrink">0.521</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">两机+核电铸件龙头，全球燃气轮机供应紧张算力缺电需求爆发，国投证券首推，募投产能2026年释放，最新价106.441<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">两机+核电铸件龙头，全球燃气轮机供应紧张算力缺电需求爆发，国投证券首推，募投产能2026年释放，最新价106.441<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">万凯转债</div>
-        <div class="cd">新材料</div>
+        <div class="nm">安克转债</div>
+        <div class="cd">消费电子/跨境电商</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">147.477</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">140.199</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">61.9</span>
+          <span class="rsi-val rsi-y">40.3</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:61.87%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:40.33%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.47亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">1.199</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">全球PET瓶级切片龙头（300万吨/年产能），单线产能全球最大；2026年公告不提前赎回，持续推进机器人'以塑代钢'轻量…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">天奈转债</div>
-        <div class="cd">碳纳米管</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">144.877</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">62.0</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:61.98%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.03亿</div>
+          <div class="amt-main">84.96百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.899</span></td>
+      <td><span class="ratio-shrink">0.710</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">固态电池导电剂绑定，储能市场爆发期，高增速确定，最新价123.06<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">安克创新，亚马逊充电宝/音频耳机全球销量第一，2024年海外收入+25%；品牌出海护城河深，AI智能家居新品持续增长；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">晶能转债</div>
-        <div class="cd">光伏组件</div>
+        <div class="nm">银轮转债</div>
+        <div class="cd">热管理</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">143.198</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">521.5</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">64.7</span>
+          <span class="rsi-val rsi-y">42.1</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:64.67%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:42.11%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">4.18亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">3.335</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">TOPCon全球出货第一，美国关税后欧洲市场受益，底部区域，最新价92.868<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">麒麟转债</div>
-        <div class="cd">轮胎/汽车零部件</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">108.703</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">66.3</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:66.28%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">8.19百万</div>
+          <div class="amt-main">2.77亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.018</span></td>
+      <td><span class="ratio-shrink">0.548</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">赛轮轮胎，摩洛哥工厂2024年放量（规避欧美关税），海外出口+本土量价双升；2024年净利+40%+，非公路+乘用车胎均…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">韦尔转债</div>
-        <div class="cd">半导体</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">120.018</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">67.4</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:67.39%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">4.54亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">1.088</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">车载CIS量价双升，汽车+AI双轮，华为车合作深化，最新价102.738<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">国内汽车热管理龙头，新能源热管理+AI数据中心液冷散热双轮驱动；2026年3月斩获国际大单，海外客户持续拓展，算力热管理…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">广核转债</div>
@@ -1390,176 +826,86 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">100.451</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">146.497</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">68.3</span>
+          <span class="rsi-val rsi-y">42.4</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:68.33%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:42.4%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.41亿</div>
+          <div class="amt-main">1.11亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.476</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">中广核电力A股旗下，核电运营+风光一体化布局；次新券债底保护好，核电高利用率（约90%）稳定现金流，AI用电需求带动核电…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">宏川转债</div>
+        <div class="cd">石化仓储/物流</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">122.97</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">43.3</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:43.32%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">39.50百万</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">6.148</span></td>
+      <td><span class="ratio-expand">1.141</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">中广核电力A股旗下，核电运营+风光一体化布局；次新券债底保护好，核电高利用率（约90%）稳定现金流，AI用电需求带动核电…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">今日公告启动公募REITs申报盘活码头储罐资产，仓储壁垒高，溢价低转股逻辑强，最新价158.572<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">希望转2</div>
-        <div class="cd">养殖/饲料</div>
+        <div class="nm">立昂转债</div>
+        <div class="cd">半导体硅片</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">121.49</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">134.124</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-y">69.7</span>
+          <span class="rsi-val rsi-y">43.9</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:69.66%;background:#fbbf24"></div>
+        <div class="mini-bar-fill" style="width:43.9%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">2.33亿</div>
+          <div class="amt-main">1.31亿</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.550</span></td>
+      <td><span class="ratio-shrink">0.695</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">猪价反转周期明确+大北农饲料协同，困境反转逻辑清晰，最新价104.192<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">珀莱转债</div>
-        <div class="cd">国货美妆</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">110.276</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">71.1</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:71.14%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">2.08亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
-        </div></td>
-      <td><span class="ratio-expand">3.571</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">大单品矩阵成熟，防晒+抗老系列高增，出海布局加速，最新价127.488<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">上银转债</div>
-        <div class="cd">城商行</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">157.539</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">71.4</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:71.38%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">1.16亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.331</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">上海区位优势，零售转型有成效，息差优于同业，最新价145.131<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">恒逸转2</div>
-        <div class="cd">PTA/石化化纤</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">145.344</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">73.4</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:73.43%;background:#fbbf24"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">1.82亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.426</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">同恒逸转债，油价高位支撑PTA成本，涨价周期弹性大，AA+债底保护强，最新价127.756<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
-    </tr>    <tr class="row-bond-watch">
-      <td>
-        <div class="nm">巨星转债</div>
-        <div class="cd">生猪养殖</div>
-      </td>
-      <td>
-        <span style="font-size:13px"><span class="score-dot s4"></span></span>
-        <span style="font-weight:700;font-family:monospace">4</span>
-        <span style="color:var(--muted);font-size:11px">/5</span>
-      </td>
-      <td class="pr">115.278</td>
-      <td class="dt">2026-04-01</td>
-      <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">80.0</span>
-          <div style="flex:1;min-width:70px">
-            <div class="mini-bar">
-        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
-        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:80.04%;background:#f87171"></div>
-      </div>
-            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
-          </div>
-        </div></td>
-      <td><div>
-          <div class="amt-main">3.45亿</div>
-          <div class="amt-sub v-down">▼ 缩量</div>
-        </div></td>
-      <td><span class="ratio-shrink">0.847</span></td>
-      <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">猪周期上行，成本控制改善，盈利修复弹性大，最新价142.575<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">立昂技术，12英寸半导体硅片国内主要供应商，2024年Q3扭亏为盈；国内晶圆厂扩产驱动本土硅片需求，国产替代节奏明确；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">通22转债</div>
@@ -1570,26 +916,536 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">130.63</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">122.591</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">82.1</span>
+          <span class="rsi-val rsi-y">44.0</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:82.1%;background:#f87171"></div>
+        <div class="mini-bar-fill" style="width:43.98%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.60亿</div>
+          <div class="amt-main">97.07百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.492</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">硅料价格触底反弹预期，组件一体化降本增效，困境反转，最新价106.693<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">保隆转债</div>
+        <div class="cd">汽车零部件/空气悬架</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">129.833</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">44.3</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:44.31%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">27.86百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.421</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">保隆科技，TPMS+空气悬架双核心，2024年空气悬架收入+50%，绑定理想/问界等主流新能源车；AA评级，空气悬架渗透…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">上银转债</div>
+        <div class="cd">城商行</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">124.109</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">44.4</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:44.41%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">2.64亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.868</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">上海区位优势，零售转型有成效，息差优于同业，最新价145.131<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">杭氧转债</div>
+        <div class="cd">工业气体/空分设备</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">143.719</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">44.6</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:44.58%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">63.96百万</div>
           <div class="amt-sub v-up">▲ 放量</div>
         </div></td>
-      <td><span class="ratio-expand">11.169</span></td>
+      <td><span class="ratio-expand">1.027</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">硅料价格触底反弹预期，组件一体化降本增效，困境反转，最新价106.693<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">杭州氧气，国内空分设备+工业气体龙头，气体业务现金流稳定；AI/半导体大厂扩产拉动高纯气体需求，以气养设备双驱，AA+债…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">珀莱转债</div>
+        <div class="cd">国货美妆</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">127.19</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">45.2</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:45.25%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">18.96百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.663</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">大单品矩阵成熟，防晒+抗老系列高增，出海布局加速，最新价127.488<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">科沃转债</div>
+        <div class="cd">服务机器人</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">119.481</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">45.5</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:45.49%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">18.43百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.614</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">AI具身机器人热潮，扫地机AI化+商用机器人双赛道，最新价131.329<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">天奈转债</div>
+        <div class="cd">碳纳米管</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">125.178</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">45.5</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:45.55%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">11.28百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.455</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">固态电池导电剂绑定，储能市场爆发期，高增速确定，最新价123.06<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">长汽转债</div>
+        <div class="cd">汽车整车</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">114.05</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">45.6</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:45.56%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">44.23百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.574</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">坦克品牌越野细分强势+海外收入高增，智电转型加速，最新价123.248<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">南航转债</div>
+        <div class="cd">航空出行</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">119.653</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">46.1</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:46.14%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">2.16亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.601</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">出境游复苏+暑运旺季预期，油价下行改善盈利，最新价118.877<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">金诚转债</div>
+        <div class="cd">矿山服务/铜矿</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">597.042</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">46.9</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:46.85%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">3.17亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.447</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">国内矿服龙头，'矿服+资源'双轮驱动；刚果(金)Lonshi铜矿加速放量，2026-03-09首次覆盖目标价81.3元；…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">巨星转债</div>
+        <div class="cd">生猪养殖</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">123.374</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">48.7</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:48.68%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">1.86亿</div>
+          <div class="amt-sub v-up">▲ 放量</div>
+        </div></td>
+      <td><span class="ratio-expand">5.540</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">猪周期上行，成本控制改善，盈利修复弹性大，最新价142.575<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">重银转债</div>
+        <div class="cd">城商行</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">127.813</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">49.2</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:49.2%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">1.90亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.735</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">重庆银行，成渝经济圈战略受益，2024年前三季净利+10.2%，总资产历史性破万亿；AAA评级余额约130亿，债底极强，…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">晶能转债</div>
+        <div class="cd">光伏组件</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">125.083</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">50.3</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:50.32%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">3.20亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.560</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">TOPCon全球出货第一，美国关税后欧洲市场受益，底部区域，最新价92.868<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">希望转2</div>
+        <div class="cd">养殖/饲料</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">116.364</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">51.3</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:51.29%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">1.82亿</div>
+          <div class="amt-sub v-up">▲ 放量</div>
+        </div></td>
+      <td><span class="ratio-expand">1.372</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">猪价反转周期明确+大北农饲料协同，困境反转逻辑清晰，最新价104.192<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">山路转债</div>
+        <div class="cd">基建施工</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">124.75</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">51.8</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:51.84%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">38.02百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.762</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">山东省重点基建+专业资质壁垒，十五五开局受益明确，最新价109.277<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">顺博转债</div>
+        <div class="cd">再生铝</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">124.6</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">52.1</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:52.06%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">23.59百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.818</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">新能源车轻量化需求强劲，绿色再生铝政策红利大，最新价122.946<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">恒逸转2</div>
+        <div class="cd">PTA/石化化纤</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">143.349</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">52.6</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:52.6%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">1.58亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.796</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">同恒逸转债，油价高位支撑PTA成本，涨价周期弹性大，AA+债底保护强，最新价127.756<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">爱玛转债</div>
+        <div class="cd">两轮电动车</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">128.951</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">53.1</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:53.07%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">93.19百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.715</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">大换电政策催化+出海加速，行业整合中份额持续提升，最新价119.92<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
         <div class="nm">禾丰转债</div>
@@ -1600,61 +1456,211 @@ tr:last-child td{border-bottom:none}
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">136.097</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">123.704</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">89.5</span>
+          <span class="rsi-val rsi-y">53.2</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:89.54%;background:#f87171"></div>
+        <div class="mini-bar-fill" style="width:53.22%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">4.48亿</div>
-          <div class="amt-sub v-up">▲ 放量</div>
+          <div class="amt-main">27.62百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-expand">1.580</span></td>
+      <td><span class="ratio-shrink">0.676</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">养殖景气回升带动饲料量价，动保高毛利产品放量，最新价114.057<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">养殖景气回升带动饲料量价，动保高毛利产品放量，最新价114.057<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>    <tr class="row-bond-watch">
       <td>
-        <div class="nm">洋丰转债</div>
-        <div class="cd">磷复肥/农化</div>
+        <div class="nm">三诺转债</div>
+        <div class="cd">体外诊断</div>
       </td>
       <td>
         <span style="font-size:13px"><span class="score-dot s4"></span></span>
         <span style="font-weight:700;font-family:monospace">4</span>
         <span style="color:var(--muted);font-size:11px">/5</span>
       </td>
-      <td class="pr">141.505</td>
-      <td class="dt">2026-04-01</td>
+      <td class="pr">114.415</td>
+      <td class="dt">2026-04-02</td>
       <td><div class="rsi-wrap">
-          <span class="rsi-val rsi-r">90.2</span>
+          <span class="rsi-val rsi-y">53.2</span>
           <div style="flex:1;min-width:70px">
             <div class="mini-bar">
         <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
         <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
-        <div class="mini-bar-fill" style="width:90.16%;background:#f87171"></div>
+        <div class="mini-bar-fill" style="width:53.23%;background:#fbbf24"></div>
       </div>
             <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
           </div>
         </div></td>
       <td><div>
-          <div class="amt-main">3.43亿</div>
+          <div class="amt-main">25.82百万</div>
           <div class="amt-sub v-down">▼ 缩量</div>
         </div></td>
-      <td><span class="ratio-shrink">0.750</span></td>
+      <td><span class="ratio-shrink">0.469</span></td>
       <td><span class="badge-watch">👀 关注候选</span></td>
-      <td><div class="bond-logic">新洋丰，磷复肥全国前三，磷矿石自给率约80%+；2024年业绩稳健，磷矿资源稀缺逻辑+粮食安全政策；AA评级，分红稳定，…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span></div></td>
+      <td><div class="bond-logic">CGM国产替代加速，医保扩容驱动CGM放量，政策催化明确，最新价127.516<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">中特转债</div>
+        <div class="cd">特钢</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">127.468</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">53.5</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:53.55%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">87.03百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.909</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">风电/军工/航空特钢订单强劲，高端制造国产替代明确，最新价117.27<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">鼎龙转债</div>
+        <div class="cd">半导体材料</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">230.004</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">54.7</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:54.74%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">2.64亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.613</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">CMP抛光垫国内龙头，国产替代加速；横向布局抛光液、光刻胶、先进封装材料，半导体材料平台型公司；2024年净利+134%…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">麒麟转债</div>
+        <div class="cd">轮胎/汽车零部件</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">133.99</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">55.2</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:55.21%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">84.65百万</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.563</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">赛轮轮胎，摩洛哥工厂2024年放量（规避欧美关税），海外出口+本土量价双升；2024年净利+40%+，非公路+乘用车胎均…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">万凯转债</div>
+        <div class="cd">新材料</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">262.205</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">59.0</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:59.05%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">3.14亿</div>
+          <div class="amt-sub v-down">▼ 缩量</div>
+        </div></td>
+      <td><span class="ratio-shrink">0.878</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">全球PET瓶级切片龙头（300万吨/年产能），单线产能全球最大；2026年公告不提前赎回，持续推进机器人'以塑代钢'轻量…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
+    </tr>    <tr class="row-bond-watch">
+      <td>
+        <div class="nm">华亚转债</div>
+        <div class="cd">半导体精密件/机器人</div>
+      </td>
+      <td>
+        <span style="font-size:13px"><span class="score-dot s4"></span></span>
+        <span style="font-weight:700;font-family:monospace">4</span>
+        <span style="color:var(--muted);font-size:11px">/5</span>
+      </td>
+      <td class="pr">207.082</td>
+      <td class="dt">2026-04-02</td>
+      <td><div class="rsi-wrap">
+          <span class="rsi-val rsi-y">62.1</span>
+          <div style="flex:1;min-width:70px">
+            <div class="mini-bar">
+        <div class="mini-bar-line" style="left:20%;background:rgba(34,197,94,.4)"></div>
+        <div class="mini-bar-line" style="left:80%;background:rgba(239,68,68,.4)"></div>
+        <div class="mini-bar-fill" style="width:62.08%;background:#fbbf24"></div>
+      </div>
+            <div class="bar-scale"><span>0</span><span>40</span><span style="margin-left:auto">70</span><span>100</span></div>
+          </div>
+        </div></td>
+      <td><div>
+          <div class="amt-main">1.38亿</div>
+          <div class="amt-sub v-up">▲ 放量</div>
+        </div></td>
+      <td><span class="ratio-expand">1.480</span></td>
+      <td><span class="badge-watch">👀 关注候选</span></td>
+      <td><div class="bond-logic">华亚智能，半导体精密结构件（石英件/陶瓷件）+机器人关节壳体双布局；半导体国产设备扩产受益，机器人量产带动精密件需求；A…<br><span style="color:var(--muted);font-size:11px">更新：2026-04-01</span><br><span style="color:#f59e0b;font-size:11px">⚡ 数据来源：集思录（iFinD 冻结降级）</span></div></td>
     </tr>
     </tbody>
   </table>
   <div style="margin-top:10px;font-size:11.5px;color:var(--muted)">
-    ⚠ 可转债价格来自同花顺 iFinD（需在 BOND_LOGIC 中配置转债代码）；未配置代码时使用模型估算。
+    ⚠ 数据优先来自同花顺 iFinD；若 iFinD 数据冻结/异常，自动降级到集思录（⚡ 标注）；无代码时使用模拟估算（🔲 标注）。
     逻辑评分基于研究日期，请结合最新公告自行判断。
   </div>
 </div>

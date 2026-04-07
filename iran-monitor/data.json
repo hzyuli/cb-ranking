@@ -1421,5 +1421,215 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-07 10:20",
+    "score": 58.3,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "bombing iran(×1)",
+          "iran war(×2)"
+        ]
+      },
+      "diplomacy": {
+        "score": 9,
+        "max": 20,
+        "kws": [
+          "ultimatum(×1)",
+          "deal(×2)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 5.5575,
+        "max": 15,
+        "kws": [
+          "WTI $115.13 / Brent $111.07",
+          "日均变动 +3.71%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 115.13,
+        "brent": 111.07,
+        "change": 3.705
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×1)",
+          "lebanon(×2)",
+          "yemen(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 3,
+        "max": 10,
+        "kws": [],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - pbs.org",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera",
+          "Why is the U.S. at war with Iran? Here’s what the Trump administration says. - The Washington Post"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Iran war live: Trump warns of attacks as Hormuz deal deadline nears",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/4/7/iran-war-live-trump-warns-of-devastating-attacks-as-deal-deadline-nears?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump says US could charge for Strait of Hormuz passage amid Iran war",
+        "url": "https://www.aljazeera.com/news/2026/4/6/trump-says-us-could-charge-for-strait-of-hormuz-passage-amid-iran-war?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Why is Iran’s Bushehr nuclear power plant being attacked?",
+        "url": "https://www.aljazeera.com/video/inside-story/2026/4/6/why-is-irans-bushehr-nuclear-power-plant-being?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Protesters swarm US embassy in Tel Aviv, demanding end of wars",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/6/protesters-swarm-us-embassy-in-tel-aviv-demanding-end-of-wars?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Israeli air strike kills at least 10 Palestinians near Gaza school",
+        "url": "https://www.aljazeera.com/news/2026/4/6/israeli-air-strike-kills-at-least-10-palestinians-near-gaza-school?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
+  },
+  {
+    "time": "2026-04-07 14:24",
+    "score": 55.8,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "bombing iran(×1)",
+          "strike iran(×1)",
+          "iran war(×2)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "ultimatum(×1)",
+          "deal(×1)",
+          "ceasefire(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 15,
+        "max": 15,
+        "kws": [
+          "WTI $115.26 / Brent $111.14",
+          "日均变动 +12.49%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 115.26,
+        "brent": 111.14,
+        "change": 12.495
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×1)",
+          "lebanon(×3)",
+          "yemen(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "ceasefire(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Iran says US-Israeli projectile has struck a synagogue in Tehran",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/iran-says-us-israeli-projectile-has-struck-a-synagogue-in-tehran?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump’s threat to strike Iran’s power plants looms",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/trumps-threat-to-strike-irans-power-plants-looms?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "‘Why would Iran agree to a ceasefire given US and Israeli track record?’",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/why-would-iran-agree-to-a-ceasefire-given-us-and-israeli-track?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "‘They want to create a rift’: Israeli attacks deepen Lebanon fissures",
+        "url": "https://www.aljazeera.com/features/2026/4/7/creating-rift-part-of-game-plan-israeli-attacks-deepen-lebanon-fissures?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran war live: Trump warns of attacks as Hormuz deal deadline nears",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/4/7/iran-war-live-trump-warns-of-devastating-attacks-as-deal-deadline-nears?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

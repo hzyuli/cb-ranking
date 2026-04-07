@@ -32,7 +32,7 @@
   }
   .score-big {
     font-size: 72px; font-weight: 900;
-    color: #f97316;
+    color: #f59e0b;
     line-height: 1;
     min-width: 110px;
     text-align: center;
@@ -79,17 +79,17 @@
 <body>
 <div class="header">
   <h1>🇺🇸🇮🇷 美伊战争烈度监控 <span class="badge">每小时更新</span></h1>
-  <div class="sub">数据来源：媒体 RSS（Reuters / BBC / Al Jazeera / Google News）+ Polymarket 市场概率 | 最后更新：2026-04-07 16:30</div>
+  <div class="sub">数据来源：媒体 RSS（Reuters / BBC / Al Jazeera / Google News）+ Polymarket 市场概率 | 最后更新：2026-04-07 17:32</div>
 </div>
 
 <div class="container">
 
   <!-- 当前分值卡片 -->
   <div class="score-card">
-    <div class="score-big">61.8</div>
+    <div class="score-big">51.5</div>
     <div class="score-info">
-      <div class="label">准军事冲突</div>
-      <div class="time">记录时间：2026-04-07 16:30</div>
+      <div class="label">显著升级</div>
+      <div class="time">记录时间：2026-04-07 17:32</div>
       <div class="pmbar">
         Polymarket 开战概率：<strong style="color:#f59e0b">15.0%</strong>
         &nbsp;<a href="https://polymarket.com/event/will-us-forces-enter-iran" target="_blank"
@@ -111,7 +111,7 @@
             style="background:#1e3a5f;border:1px solid #2563eb;padding:3px 8px;border-radius:6px;color:#93c5fd;text-decoration:none">
             📊 Polymarket 详细报告</a>
         </div>
-        <div style="font-size:12px;color:#94a3b8;margin-top:8px">WTI: $113.26 | Brent: $110.40 | <span style="color:#ef4444">↑11.12%</span></div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:8px">WTI: $112.27 | Brent: $108.77 | <span style="color:#ef4444">↑9.83%</span></div>
       </div>
       <div style="margin-top:16px;font-size:12px;color:#475569">
         <strong style="color:#94a3b8">评分说明：</strong>
@@ -232,7 +232,7 @@
 
   <!-- 折线图 -->
   <div class="chart-card">
-    <h2>历史烈度趋势（最近 20 个数据点）</h2>
+    <h2>历史烈度趋势（最近 21 个数据点）</h2>
     <div class="chart-wrap">
       <canvas id="lineChart"></canvas>
     </div>
@@ -250,7 +250,7 @@
           <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
             <div style="background:#ef4444;height:100%;width:100.0%;transition:width 0.3s"></div>
           </div>
-          <div style="font-size:11px;color:#64748b;margin-top:2px">strike iran(×1), iran war(×5)</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">strike iran(×1), iran war(×4)</div>
         </div>
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
@@ -260,7 +260,7 @@
           <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
             <div style="background:#22c55e;height:100%;width:0.0%;transition:width 0.3s"></div>
           </div>
-          <div style="font-size:11px;color:#64748b;margin-top:2px">deal(×1), ceasefire(×1)</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">ceasefire(×1)</div>
         </div>
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
@@ -275,12 +275,12 @@
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
             <span style="color:#e2e8f0;font-size:13px;font-weight:500">油价冲击</span>
-            <span style="color:#ef4444;font-size:13px;font-weight:600">15.0/15</span>
+            <span style="color:#ef4444;font-size:13px;font-weight:600">14.7/15</span>
           </div>
           <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
-            <div style="background:#ef4444;height:100%;width:100.0%;transition:width 0.3s"></div>
+            <div style="background:#ef4444;height:100%;width:98.3%;transition:width 0.3s"></div>
           </div>
-          <div style="font-size:11px;color:#64748b;margin-top:2px">WTI $113.26 / Brent $110.40, 日均变动 +11.12%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">WTI $112.27 / Brent $108.77, 日均变动 +9.83%（变动绝对值×1.5→油价得分）, 数据来源：✅ 实时价格</div>
         </div>
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
@@ -295,12 +295,12 @@
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
             <span style="color:#e2e8f0;font-size:13px;font-weight:500">官员言论</span>
-            <span style="color:#ef4444;font-size:13px;font-weight:600">10.0/10</span>
+            <span style="color:#22c55e;font-size:13px;font-weight:600">0.0/10</span>
           </div>
           <div style="background:#1e293b;border-radius:6px;height:8px;overflow:hidden">
-            <div style="background:#ef4444;height:100%;width:100.0%;transition:width 0.3s"></div>
+            <div style="background:#22c55e;height:100%;width:0.0%;transition:width 0.3s"></div>
           </div>
-          <div style="font-size:11px;color:#64748b;margin-top:2px">bomb iran(×2), ceasefire(×1)</div>
+          <div style="font-size:11px;color:#64748b;margin-top:2px">ceasefire(×1)</div>
         </div>
         <div style="margin-bottom:16px">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px">
@@ -325,7 +325,7 @@
     
     <div style="background:#0f172a;border:1px solid #334155;border-radius:10px;padding:16px 18px;margin-top:16px">
       <div style="font-size:13px;color:#64748b;margin-bottom:10px">
-        📈 维度变动说明（对比 2026-04-07 15:26 → 2026-04-07 16:30）
+        📈 维度变动说明（对比 2026-04-07 16:30 → 2026-04-07 17:32）
       </div>
       <table style="width:100%;border-collapse:collapse">
         <thead>
@@ -339,12 +339,12 @@
             <tr style="border-bottom:1px solid #1e293b">
               <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">军事对峙<br><span style="color:#475569;font-size:10px">25.0→25.0/25</span></td>
               <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#22c55e;font-weight:700">0.0</span></td>
-              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#fca5a5">新增：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">iran war</span> +3次 ≈ <b style="color:#ef4444">+30.0分</b>，<span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">strike iran</span> +1次 ≈ <b style="color:#ef4444">+18.0分</b></td>
+              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#86efac">消失：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">iran war</span> -1次 ≈ <b style="color:#22c55e">-15.0分</b></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
               <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">外交博弈<br><span style="color:#475569;font-size:10px">0.0→0.0/20</span></td>
-              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#475569">±0</span></td>
-              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#475569">无变化</span></td>
+              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#22c55e;font-weight:700">0.0</span></td>
+              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#86efac">消失：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">deal</span> -1次 ≈ <b style="color:#ef4444">+3.0分</b></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
               <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">经济制裁<br><span style="color:#475569;font-size:10px">0.0→0.0/15</span></td>
@@ -352,19 +352,19 @@
               <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#475569">无变化</span></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
-              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">油价冲击<br><span style="color:#475569;font-size:10px">15.0→15.0/15</span></td>
-              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#22c55e;font-weight:700">0.0</span></td>
-              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#94a3b8">WTI $113.26 / Brent $110.40；日均变动 +11.12%（变动绝对值×1.5→油价得分）；数据来源：✅ 实时价格</span></td>
+              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">油价冲击<br><span style="color:#475569;font-size:10px">15.0→14.7/15</span></td>
+              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#22c55e;font-weight:700">-0.3</span></td>
+              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#94a3b8">WTI $112.27 / Brent $108.77；日均变动 +9.83%（变动绝对值×1.5→油价得分）；数据来源：✅ 实时价格</span></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
-              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">地区代理<br><span style="color:#475569;font-size:10px">0.0→6.0/10</span></td>
-              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#ef4444;font-weight:700">+6.0</span></td>
-              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#fca5a5">新增：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">lebanon</span> +1次 ≈ <b style="color:#ef4444">+6.0分</b></td>
+              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">地区代理<br><span style="color:#475569;font-size:10px">6.0→6.0/10</span></td>
+              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#475569">±0</span></td>
+              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#475569">无变化</span></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
-              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">官员言论<br><span style="color:#475569;font-size:10px">8.0→10.0/10</span></td>
-              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#ef4444;font-weight:700">+2.0</span></td>
-              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#fca5a5">新增：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">bomb iran</span> +1次 ≈ <b style="color:#ef4444">+10.0分</b></td>
+              <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">官员言论<br><span style="color:#475569;font-size:10px">10.0→0.0/10</span></td>
+              <td style="padding:6px 10px;text-align:center;font-size:13px;white-space:nowrap"><span style="color:#22c55e;font-weight:700">-10.0</span></td>
+              <td style="padding:6px 10px;font-size:11px;line-height:1.7"><span style="color:#86efac">消失：</span><span style="font-family:monospace;background:#0f172a;padding:1px 4px;border-radius:3px">bomb iran</span> -2次 ≈ <b style="color:#22c55e">-20.0分</b></td>
             </tr>
             <tr style="border-bottom:1px solid #1e293b">
               <td style="padding:6px 10px;color:#cbd5e1;font-size:12px;white-space:nowrap">媒体热度<br><span style="color:#475569;font-size:10px">5.0→5.0/5</span></td>
@@ -383,7 +383,7 @@
   <!-- 新闻列表 -->
   <div class="panel">
     <h3>📰 最新相关新闻（前 5 条）</h3>
-    <ul><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/features/2026/4/7/how-pakistans-solar-boom-is-shielding-it-from-worst-of-iran-war-crisis?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">How Pakistan’s solar boom is shielding it from worst of Iran war crisis</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/news/2026/4/7/iran-war-what-is-happening-on-day-39-of-us-israeli-attacks?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Iran war: What is happening on day 39 of US-Israeli attacks?</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/news/2026/4/7/israel-warns-iranians-to-avoid-trains-as-trump-deadline-approaches?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Israel threatens Iran’s trains, railways before Trump’s deadline expires</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/news/2026/4/7/australian-soldier-ben-roberts-smith-arrested-over-alleged-war-crimes?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Australia arrests ex-soldier Roberts-Smith over alleged Afghan war crimes</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/video/newsfeed/2026/4/7/iran-says-us-israeli-projectile-has-struck-a-synagogue-in-tehran?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Iran says US-Israeli projectile has struck a synagogue in Tehran</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li></ul>
+    <ul><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/sports/2026/4/7/usa-striker-patrick-agyemangs-world-cup-in-doubt-after-stretcher-exit?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">USA striker Patrick Agyemang’s World Cup in doubt after stretcher exit</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/video/newsfeed/2026/4/7/trump-and-hegseth-invoke-god-and-religion-in-iran-war-press-conference?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Trump and Hegseth invoke God and religion in Iran war press conference</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/news/2026/4/7/japanese-detained-in-iran-believed-to-be-journalist-released-on-bail?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Iran releases on bail Japan national jailed amid antigovernment protests</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/news/2026/4/7/synagogue-in-tehran-destroyed-in-us-israeli-strikes-on-iran?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Synagogue in Tehran ‘completely destroyed’ in US-Israeli attack</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li><li style="margin:5px 0;line-height:1.6"><a href="https://www.aljazeera.com/video/newsfeed/2026/4/7/lebanese-firefighters-respond-to-aftermath-of-israeli-strike?traffic_source=rss" target="_blank" style="color:#93c5fd;text-decoration:none;font-size:13px" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Lebanese firefighters respond to aftermath of Israeli strike</a> <span style="color:#475569;font-size:10px">[Al Jazeera]</span></li></ul>
   </div>
 
   <!-- 历史表格 -->
@@ -398,7 +398,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 16:30</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f97316">61.8</td><td style="padding:6px 10px;color:#cbd5e1">准军事冲突</td></tr>
+        <tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 17:32</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f59e0b">51.5</td><td style="padding:6px 10px;color:#cbd5e1">显著升级</td></tr>
+<tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 16:30</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f97316">61.8</td><td style="padding:6px 10px;color:#cbd5e1">准军事冲突</td></tr>
 <tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 15:26</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f59e0b">53.8</td><td style="padding:6px 10px;color:#cbd5e1">显著升级</td></tr>
 <tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 14:24</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f59e0b">55.8</td><td style="padding:6px 10px;color:#cbd5e1">显著升级</td></tr>
 <tr><td style="padding:6px 10px;color:#94a3b8">2026-04-07 10:20</td><td style="padding:6px 10px;text-align:center;font-weight:700;color:#f59e0b">58.3</td><td style="padding:6px 10px;color:#cbd5e1">显著升级</td></tr>
@@ -429,8 +430,8 @@
 </div>
 
 <script>
-const labels = ["2026-03-26 09:18", "2026-03-26 10:57", "2026-03-26 11:20", "2026-03-26 13:59", "2026-03-26 14:23", "2026-03-26 15:47", "2026-03-26 16:42", "2026-03-26 17:30", "2026-03-27 08:39", "2026-03-27 09:49", "2026-03-27 14:15", "2026-04-01 12:57", "2026-04-02 08:37", "2026-04-02 13:57", "2026-04-02 15:53", "2026-04-02 16:55", "2026-04-07 10:20", "2026-04-07 14:24", "2026-04-07 15:26", "2026-04-07 16:30"];
-const scores = [2.8, 31.8, 31.8, 50.8, 40.0, 40.8, 51.7, 52.0, 48.2, 47.8, 47.2, 53.2, 60.3, 0.8, 53.6, 59.1, 58.3, 55.8, 53.8, 61.8];
+const labels = ["2026-03-26 09:18", "2026-03-26 10:57", "2026-03-26 11:20", "2026-03-26 13:59", "2026-03-26 14:23", "2026-03-26 15:47", "2026-03-26 16:42", "2026-03-26 17:30", "2026-03-27 08:39", "2026-03-27 09:49", "2026-03-27 14:15", "2026-04-01 12:57", "2026-04-02 08:37", "2026-04-02 13:57", "2026-04-02 15:53", "2026-04-02 16:55", "2026-04-07 10:20", "2026-04-07 14:24", "2026-04-07 15:26", "2026-04-07 16:30", "2026-04-07 17:32"];
+const scores = [2.8, 31.8, 31.8, 50.8, 40.0, 40.8, 51.7, 52.0, 48.2, 47.8, 47.2, 53.2, 60.3, 0.8, 53.6, 59.1, 58.3, 55.8, 53.8, 61.8, 51.5];
 
 const ctx = document.getElementById('lineChart').getContext('2d');
 

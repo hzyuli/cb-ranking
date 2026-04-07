@@ -1732,5 +1732,109 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-07 16:30",
+    "score": 61.8,
+    "label": "准军事冲突",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "strike iran(×1)",
+          "iran war(×5)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "deal(×1)",
+          "ceasefire(×1)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 15,
+        "max": 15,
+        "kws": [
+          "WTI $113.26 / Brent $110.40",
+          "日均变动 +11.12%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 113.26,
+        "brent": 110.4,
+        "change": 11.125
+      },
+      "proxy": {
+        "score": 6,
+        "max": 10,
+        "kws": [
+          "lebanon(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "bomb iran(×2)",
+          "ceasefire(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "How Pakistan’s solar boom is shielding it from worst of Iran war crisis",
+        "url": "https://www.aljazeera.com/features/2026/4/7/how-pakistans-solar-boom-is-shielding-it-from-worst-of-iran-war-crisis?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran war: What is happening on day 39 of US-Israeli attacks?",
+        "url": "https://www.aljazeera.com/news/2026/4/7/iran-war-what-is-happening-on-day-39-of-us-israeli-attacks?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Israel threatens Iran’s trains, railways before Trump’s deadline expires",
+        "url": "https://www.aljazeera.com/news/2026/4/7/israel-warns-iranians-to-avoid-trains-as-trump-deadline-approaches?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Australia arrests ex-soldier Roberts-Smith over alleged Afghan war crimes",
+        "url": "https://www.aljazeera.com/news/2026/4/7/australian-soldier-ben-roberts-smith-arrested-over-alleged-war-crimes?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran says US-Israeli projectile has struck a synagogue in Tehran",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/iran-says-us-israeli-projectile-has-struck-a-synagogue-in-tehran?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

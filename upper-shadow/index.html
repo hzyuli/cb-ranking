@@ -12,6 +12,7 @@
         .header h1 { color: #4a5568; font-size: 2.5rem; margin-bottom: 10px; }
         .header .subtitle { color: #718096; font-size: 1.2rem; margin-bottom: 20px; }
         .data-date { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 15px 30px; border-radius: 10px; font-size: 1.1rem; font-weight: bold; margin: 15px 0; display: inline-block; }
+        .data-note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 10px 15px; margin: 10px 0; border-radius: 5px; font-size: 0.9rem; }
         .stats { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
         .stat-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; min-width: 150px; }
         .stat-card .number { font-size: 2.5rem; font-weight: bold; }
@@ -23,7 +24,7 @@
         .strategy-logic li:last-child { border-bottom: none; }
         .signal-section { margin-bottom: 30px; }
         .section-title { color: white; font-size: 1.5rem; margin-bottom: 20px; padding: 10px 20px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: inline-block; }
-        .signal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .signal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
         .signal-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease; }
         .signal-card:hover { transform: translateY(-5px); }
         .signal-card.buy { border-left: 5px solid #10b981; }
@@ -50,7 +51,6 @@
         .logic-content { font-size: 0.9rem; color: #075985; line-height: 1.5; }
         .footer { text-align: center; margin-top: 40px; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
         .footer a { color: white; text-decoration: none; }
-        .data-note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 10px 15px; margin: 10px 0; border-radius: 5px; font-size: 0.9rem; }
         @media (max-width: 768px) {
             .signal-grid { grid-template-columns: 1fr; }
             .stats { flex-direction: column; align-items: center; }
@@ -62,7 +62,7 @@
     <div class="container">
         <div class="header">
             <h1>📈 长上引线交易策略报告</h1>
-            <div class="subtitle">基于真实市场数据的专业分析</div>
+            <div class="subtitle">基于真实市场数据的专业分析（含自动投资逻辑）</div>
             <div class="data-date">📅 数据日期：2026-04-02 (今日收盘)</div>
             <div class="data-note">⚠️ 本报告使用真实数据。如数据日期显示"昨日收盘"，表示今日收盘数据尚未发布。</div>
             <div class="stats">
@@ -93,6 +93,9 @@
                 <li><strong>最低成交额 ≥ 50万元</strong>：确保基本流动性</li>
                 <li><strong>买入条件</strong>：核心2条必须全满足 + 7项评分 ≥ 4</li>
             </ul>
+            <p style="margin-top: 15px; padding: 10px; background: #f0f9ff; border-radius: 8px; font-size: 0.9rem; color: #0369a1;">
+                <strong>💡 投资逻辑说明：</strong>💡 表示知识库已有研究逻辑；🔍 表示基于行业特征自动匹配，建议结合正股基本面深入分析
+            </p>
         </div>
         
         <div class="signal-section"><h2 class="section-title">✅ 买入信号 (1只)</h2><div class="signal-grid">
@@ -109,6 +112,11 @@
         </div>
 
         
+        
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[汽车] 智能化升级，出口高增，自主品牌崛起（基于行业特征自动匹配，建议结合正股基本面深入分析）</div>
+        </div>
         
 
         <div class="metrics-grid">
@@ -171,6 +179,11 @@
 
         
         
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
+        
 
         <div class="metrics-grid">
             <div class="metric-item">
@@ -229,6 +242,11 @@
         </div>
 
         
+        
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
         
 
         <div class="metrics-grid">
@@ -289,6 +307,11 @@
 
         
         
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
+        
 
         <div class="metrics-grid">
             <div class="metric-item">
@@ -347,6 +370,11 @@
         </div>
 
         
+        
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
         
 
         <div class="metrics-grid">
@@ -407,6 +435,11 @@
 
         
         
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
+        
 
         <div class="metrics-grid">
             <div class="metric-item">
@@ -465,6 +498,11 @@
         </div>
 
         
+        
+        <div class="industry-logic" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left-color: #f59e0b;">
+            <div class="logic-label">🔍 投资逻辑（自动匹配）</div>
+            <div class="logic-content">[待研究] 该转债暂无详细研究逻辑，建议关注：1)正股基本面 2)行业景气度 3)转债估值水平</div>
+        </div>
         
 
         <div class="metrics-grid">
@@ -525,8 +563,8 @@
 
         
         
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
+        <div class="industry-logic" style="">
+            <div class="logic-label">💡 投资逻辑</div>
             <div class="logic-content">[PVC/氯碱化工] 中东地缘推油价→乙烯法成本↑电石法套利空间打开，烧碱涨停，97万吨产能直接受益，出口中亚高增</div>
         </div>
         
@@ -589,8 +627,8 @@
 
         
         
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
+        <div class="industry-logic" style="">
+            <div class="logic-label">💡 投资逻辑</div>
             <div class="logic-content">[消费电子] 苹果AI眼镜核心代工，iPhone18备货旺盛，果链核心受益</div>
         </div>
         
@@ -653,8 +691,8 @@
 
         
         
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
+        <div class="industry-logic" style="">
+            <div class="logic-label">💡 投资逻辑</div>
             <div class="logic-content">[半导体] 车载CIS量价双升，汽车+AI双轮，华为车合作深化</div>
         </div>
         
@@ -717,8 +755,8 @@
 
         
         
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
+        <div class="industry-logic" style="">
+            <div class="logic-label">💡 投资逻辑</div>
             <div class="logic-content">[混凝土外加剂] 基建稳增但回款压力大，政府债化解风险中</div>
         </div>
         
@@ -781,8 +819,8 @@
 
         
         
-        <div class="industry-logic">
-            <div class="logic-label">💡 行业逻辑</div>
+        <div class="industry-logic" style="">
+            <div class="logic-label">💡 投资逻辑</div>
             <div class="logic-content">[光伏电站/EPC] 晶科电力（非晶科能源），光伏电站投资运营，2024年净利+76%；电站资产稳定现金流，AA评级，但正股估值偏高，电站运营弹性有限</div>
         </div>
         
@@ -833,7 +871,7 @@
     </div></div>
         
         <div class="footer">
-            <p>📊 长上引线交易策略 | 生成时间：2026-04-02 16:16:12</p>
+            <p>📊 长上引线交易策略 | 生成时间：2026-04-07 14:23:55</p>
             <p>📅 数据来源：finance-data API | ⚠️ 免责声明：本报告仅供参考，不构成投资建议</p>
         </div>
     </div>

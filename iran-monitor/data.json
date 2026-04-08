@@ -2041,5 +2041,108 @@
       }
     ],
     "news_count": 15
+  },
+  {
+    "time": "2026-04-08 10:15",
+    "score": 38.0,
+    "label": "紧张克制",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×2)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "ultimatum(×1)",
+          "deal(×2)",
+          "talks(×1)",
+          "ceasefire(×5)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 7.2524999999999995,
+        "max": 15,
+        "kws": [
+          "WTI $96.55 / Brent $94.99",
+          "日均变动 -4.83%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 96.55,
+        "brent": 94.99,
+        "change": -4.835
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "ceasefire(×6)",
+          "iran agrees(×3)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Oil prices slide, stocks surge as Trump announces two-week Iran ceasefire",
+        "url": "https://www.aljazeera.com/news/2026/4/8/oil-prices-slide-stocks-surge-as-trump-announces-two-week-iran-ceasefire?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran says talks with US will begin in Pakistan’s Islamabad on Friday",
+        "url": "https://www.aljazeera.com/news/2026/4/8/iran-says-talks-with-us-will-begin-in-pakistans-islamabad-on-friday?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran agrees to open Strait of Hormuz for two-week US ceasefire",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/iran-agrees-to-open-strait-of-hormuz-for-two-week-us-ceasefire?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "White House confirms two-week suspension of strikes on Iran",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/white-house-confirms-two-week-suspension-of-strikes-on-iran?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Trump agrees to pause attacks on Iran if Strait of Hormuz opens",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/7/trump-agrees-to-pause-attacks-on-iran-if-strait-of-hormuz-opens?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

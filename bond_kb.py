@@ -504,6 +504,12 @@ BOND_LOGIC = {
 
 }
 
+    "睿创转债（军工/红外）":  {"score": 3, "industry": "军工", "logic": "国防预算增长，装备更新换代，军贸出口突破", "updated": "2026-04-08"},
+
+    "天业转债（PVC/氯碱化工）":  {"score": 3, "industry": "军工", "logic": "国防预算增长，装备更新换代，军贸出口突破", "updated": "2026-04-08"},
+
+    "亿纬转债（锂电池/储能）":  {"score": 3, "industry": "新能源", "logic": "双碳目标推进，储能需求爆发，光伏产业链价格企稳", "updated": "2026-04-08"},
+
 # 已赎回/停止交易的转债集合（自动生成，无需手动维护）
 REDEEMED = {k for k, v in BOND_LOGIC.items() if v.get("redeemed")}
 

@@ -1938,5 +1938,108 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-08 09:13",
+    "score": 33.8,
+    "label": "紧张克制",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×3)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "ultimatum(×1)",
+          "deal(×1)",
+          "ceasefire(×3)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 4.2675,
+        "max": 15,
+        "kws": [
+          "WTI $76.00 / Brent $95.40",
+          "日均变动 -2.85%（变动绝对值×1.5→油价得分）",
+          "数据来源：⚠️ 默认估计值，oilprice.com/Yahoo均不可达"
+        ],
+        "wti": 76.0,
+        "brent": 95.4,
+        "change": -2.845
+      },
+      "proxy": {
+        "score": 0,
+        "max": 10,
+        "kws": []
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "annihilate iran(×1)",
+          "ceasefire(×4)",
+          "iran agrees(×2)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 3.75,
+        "max": 5,
+        "kws": [
+          "新闻15条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Iran war: What is happening on day 39 of US-Israeli attacks? - Al Jazeera",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVkF1ME9lUTZQTkJOa0dPTTBmeXZza21RanBxZE9aaVlNemsxRmFSWVFIeXhmVTF0cUN5LWNqeWltekwxVW5GMGpNU1NLT21jWnJIRndzaTVxYW11ZzhsMXJMNHFvYU1vQ0d6Z2RVZ0ItclVRTTNhazVQVUY1aVNocHFaZjlOWWtwSndhVklaTGdKODhQMnV1TkF3aFAwWXPSAaQBQVVfeXFMUDJuXzFJaWZQcHVQM0F6YzFSRUVMOFR3MjN1a2NFUE4xZHVLd3ptZmNDcnMtSk1weUtkdjNyVUlleU9ibUxhTng1V0dUa0d2TEo2VHFURDdvNWMzY3NtU0RNUTlzaXhPWXB6OVFTVkt1dUVmdTNQTTU1OGVLcXFSSTZaSmkyVTM0dS15TEphZU1fNTVldE9YSHRnTy1nT1RUek1pTnA?oc=5",
+        "source": "Google News"
+      },
+      {
+        "title": "What the US military could do if Iran fails to meet Trump's ultimatum - BBC",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBZQzREU25NWFVrSkpBZE9hRDhXUUFKYjF3VlY3cDFOSWJGdEJxbFZvejMtQVZlWFZlWFJUcHBWMkNWd2VpMzI3R3hNR3V1YmNYRnByblJLSW9JZw?oc=5",
+        "source": "Google News"
+      },
+      {
+        "title": "Trump warns a 'whole civilization will die tonight' if a deal with Iran isn't reached - PBS",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRmlKTnBkbG5iOGs1Z250OVgxUkxPWWFvcnVPUE01dXpEVmpKWDN6VXFDcEdQWDNGWWhtSzJZLXhMdEpaLVhLWmZmem9CQ0ZnS1RUV2dWV05iUm90N2o2dDBjUjhrUFFtajZvRXhRUW10Y1BRX1Z2X3U5WWs3V1RJV29sTGJrVm5iZHluRTJsZ1FxSnlfN0hVeFFXaldtaVpKWjNNRi1PWGdORFlPX3Q2MjYtWkxmd0pO0gG-AUFVX3lxTE53WW9TRkNYUzBsVnp2aFY0WHZoQl84emhLZlRBZHJqMkIzOE5hREMtdkRuVThYNmxfTGNxSXk3dFZfTTlFblJ4Y0lPb19fbExxbVFoQV9jWUxTQzhobjlORnM0UWtDY1BVdU8zcVdQbGs0WjRlLVpSTDdBSllIbFpUbEJlZVNGNGtCWU8xb2s0SUZ1TmwwOUhRbmplVGd4ZHQ5eDNjUEh6bkRFV3lJNzFja19JRGRJcHllQVNRQ0E?oc=5",
+        "source": "Google News"
+      },
+      {
+        "title": "Would Trump’s Threatened Attacks on Iran’s Infrastructure Be a War Crime? - Time Magazine",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9kOHk0NUlpNXZvR2stVWtRZW5IcVdySW1qeDI0VGRlYmQ3dzlIYTlmWGdLX3BxZFFfOEVqNFE2eFNHU2tHNktub1laSnZEODRYX1pPOEZtenZrRUNsR3ZxMERDRUpaQ1l1cUFkcjN5TFZvMlJR?oc=5",
+        "source": "Google News"
+      },
+      {
+        "title": "Iran: President Trump’s apocalyptic threats of large-scale civilian devastation demand urgent global action to prevent atrocity crimes - Amnesty International",
+        "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxPVlVXeEZ5T1JSclU5VEplelVJc0NpaTFwTHRmX1lXSHJ6LWhpcU5kMDR2dmIwS3JyRVlDeENsZGFHa25QLWR6WFBXOGxjc3BZMlZEa0pRVTduX21ZR1lGZ1J3WEZyWkQtU1RESWdsT3RpQlZHV1o5S2VvRXBjUDdaX2M1VUFNZWxvQzRGSENTR3RGbjd5M2dkN2NyR0tfcjN0eXNQVHc3eE0wWDg0LWNwQjhfQnRqY2loaTZMWFJzVVU4Um5tUVZMd3hYY3NMaGUxZWFWUFlfaTNONU5aOVBzLWpGaTdyOVVZemx2SlhnOE9vV25kSlhGUjJFbG1fTkVhUjVqT3B0UzZRZEUw?oc=5",
+        "source": "Google News"
+      }
+    ],
+    "news_count": 15
   }
 ]

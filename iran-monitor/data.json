@@ -2352,5 +2352,109 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-08 13:20",
+    "score": 41.8,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 15,
+        "max": 25,
+        "kws": [
+          "iran war(×1)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "deal(×2)",
+          "talks(×1)",
+          "ceasefire(×10)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 15,
+        "max": 15,
+        "kws": [
+          "WTI $96.69 / Brent $95.06",
+          "日均变动 -13.06%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 96.69,
+        "brent": 95.06,
+        "change": -13.06
+      },
+      "proxy": {
+        "score": 6,
+        "max": 10,
+        "kws": [
+          "lebanon(×1)"
+        ]
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "ceasefire(×11)",
+          "iran agrees(×3)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Trump vows to 'rescue' Iran's protesters. Iran warns the U.S. to stay out of it - NPR",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "Caution, relief as US politicians respond to Trump’s ceasefire with Iran",
+        "url": "https://www.aljazeera.com/news/2026/4/8/caution-relief-as-us-politicians-respond-to-trumps-ceasefire-with-iran?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iranians commemorate victims of Minab school strike",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/iranians-commemorate-victims-of-minab-school-strike?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "World welcomes US-Iran ceasefire, urges lasting peace in the Middle East",
+        "url": "https://www.aljazeera.com/news/2026/4/8/world-welcomes-us-iran-ceasefire-urges-lasting-peace-in-the-middle-east?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Netanyahu says US-Iran ceasefire ‘does not include Lebanon’",
+        "url": "https://www.aljazeera.com/news/2026/4/8/netanyahu-says-us-iran-ceasefire-does-not-include-lebanon?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iraqis celebrates US-Iran ceasefire as two-week halt in war begins",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/iraqis-celebrates-us-iran-ceasefire-as-two-week-halt-in-war-begins?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

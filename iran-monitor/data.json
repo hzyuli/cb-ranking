@@ -2666,5 +2666,111 @@
       }
     ],
     "news_count": 20
+  },
+  {
+    "time": "2026-04-09 09:11",
+    "score": 55.8,
+    "label": "显著升级",
+    "dimensions": {
+      "military": {
+        "score": 25,
+        "max": 25,
+        "kws": [
+          "iran war(×3)"
+        ]
+      },
+      "diplomacy": {
+        "score": 0,
+        "max": 20,
+        "kws": [
+          "warning(×1)",
+          "deal(×1)",
+          "talks(×1)",
+          "ceasefire(×8)"
+        ]
+      },
+      "sanctions": {
+        "score": 0,
+        "max": 15,
+        "kws": []
+      },
+      "oil": {
+        "score": 15,
+        "max": 15,
+        "kws": [
+          "WTI $97.52 / Brent $97.48",
+          "日均变动 -11.58%（变动绝对值×1.5→油价得分）",
+          "数据来源：✅ 实时价格"
+        ],
+        "wti": 97.52,
+        "brent": 97.48,
+        "change": -11.58
+      },
+      "proxy": {
+        "score": 10,
+        "max": 10,
+        "kws": [
+          "hezbollah(×1)",
+          "lebanon(×6)"
+        ]
+      },
+      "rhetoric": {
+        "score": 0,
+        "max": 10,
+        "kws": [
+          "ceasefire(×9)",
+          "iran agrees(×1)"
+        ],
+        "stmt_count": 15,
+        "top_stmts": [
+          "Fact-checking statements made by Trump to justify U.S. strikes on Iran - PBS",
+          "Why is the U.S. at war with Iran? Here’s what the Trump administration says. - The Washington Post",
+          "Trump threatens Hamas, warns Iran of more strikes after Netanyahu talks - Al Jazeera"
+        ]
+      },
+      "media": {
+        "score": 5.0,
+        "max": 5,
+        "kws": [
+          "新闻20条"
+        ]
+      },
+      "market": {
+        "score": 0.75,
+        "max": 5,
+        "kws": [
+          "概率15.0%"
+        ]
+      }
+    },
+    "pm_prob": 15.0,
+    "top_news": [
+      {
+        "title": "US VP JD Vance says Lebanon is not part of the US-Iran ceasefire",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/9/us-vp-jd-vance-says-lebanon-is-not-part-of-the-us-iran-ceasefire?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Iran war live: Lebanon mourns as Israel raids shake Trump, Tehran ceasefire",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/4/9/iran-war-live-israel-kills-254-in-lebanon-shaking-trump-tehran-ceasefire?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "‘Israel must be restrained for US-Iran ceasefire to hold’",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/israel-must-be-restrained-for-us-iran-ceasefire-to?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "Americans question Trump’s instinct on Iran war",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/8/americans-question-trumps-instinct-on-iran-war?traffic_source=rss",
+        "source": "Al Jazeera"
+      },
+      {
+        "title": "JD Vance says Iran would be ‘dumb’ to let talks collapse over Lebanon",
+        "url": "https://www.aljazeera.com/news/2026/4/8/jd-vance-says-iran-would-be-dumb-to-let-talks-collapse-over-lebanon?traffic_source=rss",
+        "source": "Al Jazeera"
+      }
+    ],
+    "news_count": 20
   }
 ]

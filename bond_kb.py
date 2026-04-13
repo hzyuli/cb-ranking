@@ -509,6 +509,12 @@ BOND_LOGIC = {
 
     "博士转债":  {"score": 3, "industry": "通用", "logic": "行业景气度回升，公司经营改善，估值处于低位", "updated": "2026-04-13", "code": "123266"},
 
+    "长高转债":  {"score": 3, "industry": "特高压/智能电网", "logic": "新能源建设提速，特高压投资加速，估值处于历史低位", "updated": "2026-04-13", "code": "127113.SZ"},
+
+    "统联转债":  {"score": 3, "industry": "精密制造/消费电子", "logic": "精密制造龙头，消费电子需求回暖，估值处于历史低位", "updated": "2026-04-13", "code": "118066.SH"},
+
+    "祥和转债":  {"score": 3, "industry": "高铁轨交/无人机配套", "logic": "轨交投资稳增，无人机配套新赛道，估值处于历史低位", "updated": "2026-04-13", "code": "113701.SH"},
+
 # 已赎回/停止交易的转债集合（自动生成，无需手动维护）
 REDEEMED = {k for k, v in BOND_LOGIC.items() if v.get("redeemed")}
 

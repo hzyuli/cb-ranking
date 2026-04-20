@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可转债每日推荐 2026-04-20</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #e8e8e8; line-height: 1.8; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
+        .header { text-align: center; padding: 40px 20px; background: rgba(255,255,255,0.05); border-radius: 20px; margin-bottom: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .header h1 { color: #ffd700; font-size: 2.2rem; margin-bottom: 8px; }
+        .header .subtitle { color: #a0aec0; font-size: 1rem; margin-bottom: 20px; }
+        .date-badge { display: inline-block; background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); color: white; padding: 8px 24px; border-radius: 20px; font-weight: bold; font-size: 1.1rem; }
+        .warning-bar { background: rgba(245, 158, 11, 0.15); border: 1px solid #f59e0b; border-radius: 12px; padding: 14px 20px; margin-bottom: 25px; color: #fbbf24; font-size: 0.95rem; }
+        .market-bar { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: 12px; padding: 14px 20px; margin-bottom: 25px; color: #6ee7b7; font-size: 0.9rem; }
+        .top3-section { margin-bottom: 30px; }
+        .top3-title { color: #ffd700; font-size: 1.3rem; margin-bottom: 18px; padding: 8px 16px; background: rgba(255, 215, 0, 0.08); border-radius: 8px; border-left: 4px solid #ffd700; }
+        .bond-card { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .bond-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(233, 69, 96, 0.2); border-color: rgba(233, 69, 96, 0.4); }
+        .bond-card.rank1 { border-left: 5px solid #ffd700; }
+        .bond-card.rank2 { border-left: 5px solid #c0c0c0; }
+        .bond-card.rank3 { border-left: 5px solid #cd7f32; }
+        .bond-header { display: flex; align-items: center; gap: 15px; margin-bottom: 16px; flex-wrap: wrap; }
+        .rank-badge { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0; }
+        .rank1 .rank-badge { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #1a1a2e; }
+        .rank2 .rank-badge { background: linear-gradient(135deg, #c0c0c0, #a0a0a0); color: #1a1a2e; }
+        .rank3 .rank-badge { background: linear-gradient(135deg, #cd7f32, #b8860b); color: white; }
+        .bond-title-group { flex: 1; }
+        .bond-name { font-size: 1.5rem; font-weight: bold; color: #fff; }
+        .bond-meta { font-size: 0.85rem; color: #a0aec0; margin-top: 2px; }
+        .score-badge { background: linear-gradient(135deg, #e94560, #ff6b6b); color: white; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
+        .bond-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .logic-block { background: rgba(16, 185, 129, 0.08); border-radius: 10px; padding: 14px 16px; border-left: 3px solid #10b981; }
+        .logic-label { color: #10b981; font-weight: bold; font-size: 0.85rem; margin-bottom: 6px; }
+        .logic-content { color: #d1fae5; font-size: 0.92rem; line-height: 1.6; }
+        .signal-block { background: rgba(102, 126, 234, 0.1); border-radius: 10px; padding: 14px 16px; border-left: 3px solid #667eea; }
+        .signal-label { color: #a5b4fc; font-weight: bold; font-size: 0.85rem; margin-bottom: 6px; }
+        .signal-content { color: #e0e7ff; font-size: 0.92rem; line-height: 1.6; }
+        .theme-block { background: rgba(245, 158, 11, 0.1); border-radius: 10px; padding: 10px 16px; border-left: 3px solid #f59e0b; margin-top: 14px; }
+        .theme-label { color: #fbbf24; font-weight: bold; font-size: 0.85rem; margin-bottom: 4px; }
+        .theme-content { color: #fef3c7; font-size: 0.9rem; }
+        .excluded-section { margin-top: 30px; background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 20px 24px; }
+        .excluded-title { color: #fca5a5; font-size: 1rem; margin-bottom: 10px; }
+        .excluded-bonds { color: #fecaca; font-size: 0.88rem; line-height: 1.8; }
+        .footer { text-align: center; margin-top: 40px; padding: 20px; color: rgba(160, 174, 192, 0.6); font-size: 0.8rem; }
+        .note { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 8px; padding: 10px 16px; margin-bottom: 20px; color: #fbbf24; font-size: 0.85rem; }
+        @media (max-width: 640px) { .bond-body { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>📊 可转债每日推荐</h1>
+    <div class="subtitle">兵部·情报分析司 | 三省六部制可转债监控系统</div>
+    <div class="date-badge">📅 2026-04-20（周一）</div>
+</div>
+
+<div class="warning-bar">
+    ⚠️ <strong>重要提示</strong>：亿纬转债(123254)今日(4月20日)为最后交易日，赎回价100.034元，当前持仓务必在今日收盘前卖出或转股，否则将面临每张约36元的巨额亏损！
+</div>
+
+<div class="market-bar">
+    📈 <strong>今日市场背景</strong>：A股早盘三大指数集体收涨，深强沪弱格局；上证指数围绕4000点震荡整固，创业板指创逾4年新高；AI算力、半导体、汽车智能化为主线热点；美中关税谈判持续，全球市场情绪谨慎偏乐观
+</div>
+
+<div class="note">
+    ⚠️ 数据时效说明：RSI数据为2026-04-01（上引线数据为2026-04-02），bond_kb知识库为2026-04-13；强赎排除综合集思录实时数据。实时价格参考集思录当日行情。
+</div>
+
+<div class="top3-section">
+    <div class="top3-title">🏆 TOP 3 最值得买入转债</div>
+
+    <!-- TOP 1 -->
+    <div class="bond-card rank1">
+        <div class="bond-header">
+            <div class="rank-badge">🥇</div>
+            <div class="bond-title-group">
+                <div class="bond-name">天业转债</div>
+                <div class="bond-meta">110087.SH | PVC/氯碱化工</div>
+            </div>
+            <div class="score-badge">48.5</div>
+        </div>
+        <div class="bond-body">
+            <div class="logic-block">
+                <div class="logic-label">🔬 核心逻辑</div>
+                <div class="logic-content">中东地缘推涨油价→乙烯法成本↑→电石法套利空间打开；烧碱价格强势，97万吨PVC/氯碱产能直接受益；出口中亚持续高增，防御属性强；RSI=26.6超卖后估值修复空间大</div>
+            </div>
+            <div class="signal-block">
+                <div class="signal-label">📡 信号依据</div>
+                <div class="signal-content">RSI=26.6超卖（RSI策略最强信号）<br>上引线WATCH关注（4月2日）<br>kb_score=5（最新4月13日）</div>
+            </div>
+        </div>
+        <div class="theme-block">
+            <div class="theme-label">🔥 热点主题</div>
+            <div class="theme-content">化工/能源化工（热度4）| 中东地缘+油价波动防御 | 出口链</div>
+        </div>
+    </div>
+
+    <!-- TOP 2 -->
+    <div class="bond-card rank2">
+        <div class="bond-header">
+            <div class="rank-badge">🥈</div>
+            <div class="bond-title-group">
+                <div class="bond-name">韦尔转债</div>
+                <div class="bond-meta">113616.SH | 半导体/CIS芯片</div>
+            </div>
+            <div class="score-badge">42.0</div>
+        </div>
+        <div class="bond-body">
+            <div class="logic-block">
+                <div class="logic-label">🔬 核心逻辑</div>
+                <div class="logic-content">韦尔股份全球第三大CIS芯片厂；车载CIS+折叠屏手机CIS双轮驱动；汽车智能化加速，渗透率持续提升；折叠屏手机放量带动消费级CIS需求爆发；国产替代加速核心受益</div>
+            </div>
+            <div class="signal-block">
+                <div class="signal-label">📡 信号依据</div>
+                <div class="signal-content">上引线WATCH关注（4月2日）<br>kb_score=5（半导体国产替代主线）<br>正股（韦尔股份603501）强势</div>
+            </div>
+        </div>
+        <div class="theme-block">
+            <div class="theme-label">🔥 热点主题</div>
+            <div class="theme-content">半导体/AI算力（热度5）| 折叠屏 | 汽车智能化 | 国产替代</div>
+        </div>
+    </div>
+
+    <!-- TOP 3 -->
+    <div class="bond-card rank3">
+        <div class="bond-header">
+            <div class="rank-badge">🥉</div>
+            <div class="bond-title-group">
+                <div class="bond-name">上声转债</div>
+                <div class="bond-meta">118037.SH | 汽车零部件/汽车声学</div>
+            </div>
+            <div class="score-badge">36.5</div>
+        </div>
+        <div class="bond-body">
+            <div class="logic-block">
+                <div class="logic-label">🔬 核心逻辑</div>
+                <div class="logic-content">汽车声学系统龙头，喇叭+功放已进入多家新能源品牌供应链；自主品牌崛起叠加新能源车智能化升级，车载音频需求高增；公司出口持续放量，欧洲/东南亚市场拓展顺利；正股上声电子(688533)近期强势</div>
+            </div>
+            <div class="signal-block">
+                <div class="signal-label">📡 信号依据</div>
+                <div class="signal-content">上引线BUY强信号（shadow_ratio=47%，4月2日唯一BUY信号）<br>kb_score=4（汽车智能化赛道）<br>正股RSI中等，具备补涨空间</div>
+            </div>
+        </div>
+        <div class="theme-block">
+            <div class="theme-label">🔥 热点主题</div>
+            <div class="theme-content">汽车智能化/自主崛起（热度5）| 新能源车载音频 | 出口链</div>
+        </div>
+    </div>
+</div>
+
+<div class="excluded-section">
+    <div class="excluded-title">🚫 已排除转债（已强赎/疑似强赎/最后交易日）</div>
+    <div class="excluded-bonds">
+        亿纬转债(123254) — 今日(4月20日)最后交易日，赎回价100.034，务必卖出或转股！<br>
+        信服转债 — 已触发强赎，停止交易<br>
+        伟测转债(118055) — 已触发强赎程序<br>
+        松霖转债(113651) — 已触发强赎程序<br>
+        锋工转债(123239) — 已触发强赎程序<br>
+        微导转债(118058) — 已触发强赎程序<br>
+        应流转债(113697) — 2026-04-09价格异常(+154%)，疑似触发强赎<br>
+        银轮转债(127037) — 2026-04-09价格异常(+237%)，疑似触发强赎<br>
+        万凯转债(123247) — 2026-04-09价格异常(+125%)，疑似触发强赎<br>
+        金诚转债(113615) — 2026-04-09价格异常(+479%)，疑似触发强赎<br>
+        精达转债(110074) — 2026-04-09价格异常(+258%)，疑似触发强赎
+    </div>
+</div>
+
+<div class="footer">
+    <p>数据来源：RSI策略(4月1日) + 上引线策略(4月2日) + bond_kb.py知识库(4月13日) + 集思录实时数据</p>
+    <p>⚠️ 本报告仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
+    <p>生成时间：2026-04-20 兵部·情报分析司</p>
+</div>
+
+</div>
+</body>
+</html>

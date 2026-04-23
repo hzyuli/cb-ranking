@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>可转债每日推荐 2026-04-23</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif; background: #0d1117; color: #e6edf3; padding: 24px; font-size: 15px; line-height: 1.6; }
+  .container { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; color: #58a6ff; margin-bottom: 6px; }
+  .subtitle { color: #8b949e; font-size: 13px; margin-bottom: 24px; }
+  .meta { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px; font-size: 13px; color: #8b949e; }
+  .meta span { color: #e6edf3; margin-right: 18px; }
+  .alert { background: #2d1515; border: 1px solid #f85149; border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 13px; }
+  .alert-title { color: #f85149; font-weight: 600; margin-bottom: 6px; }
+  .alert a { color: #f0883e; }
+  .bond-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; margin-bottom: 20px; overflow: hidden; }
+  .bond-header { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .bond-rank { font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+  .rank-1 { background: #ffd700; color: #1a1a1a; }
+  .rank-2 { background: #c0c0c0; color: #1a1a1a; }
+  .rank-3 { background: #cd7f32; color: #fff; }
+  .bond-name { font-size: 18px; font-weight: 700; color: #e6edf3; }
+  .bond-code { font-size: 12px; color: #8b949e; margin-left: 8px; }
+  .bond-score { font-size: 28px; font-weight: 800; color: #58a6ff; }
+  .bond-score-label { font-size: 11px; color: #8b949e; }
+  .bond-body { padding: 0 20px 16px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+  .tag-rsi { background: #0d4429; color: #3fb950; }
+  .tag-shadow { background: #1c1a3e; color: #a371f7; }
+  .tag-kb { background: #0d2d4a; color: #58a6ff; }
+  .tag-hot { background: #3d1f1f; color: #f0883e; }
+  .bond-score-row { display: flex; gap: 14px; margin-bottom: 14px; }
+  .score-chip { background: #0d1117; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; flex: 1; text-align: center; }
+  .score-chip .val { font-size: 18px; font-weight: 700; color: #e6edf3; }
+  .score-chip .lbl { font-size: 11px; color: #8b949e; }
+  .bond-logic { background: #0d1117; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #8b949e; margin-bottom: 12px; line-height: 1.7; }
+  .bond-logic strong { color: #e6edf3; }
+  .signal-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .signal-chip { padding: 4px 12px; border-radius: 6px; font-size: 12px; }
+  .signal-buy { background: #0d4429; color: #3fb950; border: 1px solid #238636; }
+  .signal-watch { background: #1c1a3e; color: #a371f7; border: 1px solid #6e40c9; }
+  .signal-neutral { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
+  .section-title { font-size: 14px; font-weight: 600; color: #58a6ff; margin-bottom: 10px; margin-top: 24px; border-left: 3px solid #58a6ff; padding-left: 8px; }
+  .excluded-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .excluded-table th { background: #161b22; color: #8b949e; text-align: left; padding: 8px 12px; border-bottom: 1px solid #30363d; }
+  .excluded-table td { padding: 7px 12px; border-bottom: 1px solid #21262d; color: #e6edf3; }
+  .excluded-table tr.redeemed td { color: #f85149; }
+  .excluded-table tr.warn td { color: #f0883e; }
+  .macro { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; }
+  .macro p { font-size: 13px; color: #8b949e; margin-bottom: 8px; }
+  .macro .hot { display: inline-block; background: #3d1f1f; color: #f0883e; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin: 2px; }
+  .footer { text-align: center; color: #484f58; font-size: 11px; margin-top: 32px; padding-top: 16px; border-top: 1px solid #21262d; }
+  .data-warning { background: #2d200a; border: 1px solid #9e6a03; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #d29922; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>📊 可转债每日推荐</h1>
+<div class="subtitle">2026年4月23日（周四）09:00 自动化推送 | Claw每日可转债推荐系统 v2</div>
+
+<div class="meta">
+  <span>📅 数据日期: RSI策略=2026-04-01 | 上引线=2026-04-02 | bond_kb=2026-04-13</span>
+  <span>⚠️ 数据滞后约3周，建议结合实时行情综合判断</span>
+</div>
+
+<div class="macro">
+  <p><strong>今日宏观背景</strong></p>
+  <p>中美关税摩擦持续，A股围绕4000点整固；AI算力+半导体+军工结构性主线明确。<br>
+  热点: <span class="hot">AI算力/AIDC</span><span class="hot">人形机器人</span><span class="hot">军工/红外</span><span class="hot">低空经济</span><span class="hot">半导体材料/CMP</span></p>
+</div>
+
+<div class="alert">
+  <div class="alert-title">⚠️ 强赎风险警示</div>
+  亿纬转债(4/20最后交易日)、汇成转债(4/21)、中环转2(已摘牌) 已确认完成赎回。<br>
+  银轮(+237%)/应流(+154%)/万凯(+125%)/金诚(+479%)/精达(+258%)/华亚(+104%) 价格异常，建议核实赎回公告后再操作！
+</div>
+
+<!-- Bond 1 -->
+<div class="bond-card">
+  <div class="bond-header">
+    <div>
+      <span class="bond-rank rank-1">🥇 第一名</span>
+      <span class="bond-name">天业转债</span>
+      <span class="bond-code">110087.SH</span>
+    </div>
+    <div style="text-align:right">
+      <div class="bond-score">58.5</div>
+      <div class="bond-score-label">综合评分</div>
+    </div>
+  </div>
+  <div class="bond-body">
+    <div class="tag-row">
+      <span class="tag tag-rsi">RSI=26.6 ✅</span>
+      <span class="tag tag-shadow">上引线WATCH</span>
+      <span class="tag tag-kb">知识库score=5</span>
+      <span class="tag tag-hot">PVC/氯碱热度4</span>
+    </div>
+    <div class="bond-score-row">
+      <div class="score-chip"><div class="val">26.6</div><div class="lbl">RSI-6</div></div>
+      <div class="score-chip"><div class="val">WATCH</div><div class="lbl">上引线</div></div>
+      <div class="score-chip"><div class="val">5</div><div class="lbl">kb_score</div></div>
+      <div class="score-chip"><div class="val">~135</div><div class="lbl">价格参考</div></div>
+    </div>
+    <div class="bond-logic">
+      <strong>核心逻辑</strong>：中东地缘→油价↑→乙烯法竞争对手成本上升→天业电石法成本优势扩大，烧碱价格持续涨价；97万吨PVC产能中亚出口畅通；美国关税对化工品直接影响有限，属于防御+进攻双属性品种。<br>
+      <strong>行业</strong>：PVC/氯碱化工 | <strong>评级</strong>：AA+
+    </div>
+    <div class="signal-row">
+      <span class="signal-chip signal-buy">✅ RSI超卖</span>
+      <span class="signal-chip signal-watch">🔍 上引线WATCH</span>
+      <span class="signal-chip signal-watch">🔥 中东地缘催化</span>
+      <span class="signal-chip signal-neutral">⚠️ 需确认强赎状态</span>
+    </div>
+  </div>
+</div>
+
+<!-- Bond 2 -->
+<div class="bond-card">
+  <div class="bond-header">
+    <div>
+      <span class="bond-rank rank-2">🥈 第二名</span>
+      <span class="bond-name">睿创转债</span>
+      <span class="bond-code">118030.SH</span>
+    </div>
+    <div style="text-align:right">
+      <div class="bond-score">53.0</div>
+      <div class="bond-score-label">综合评分</div>
+    </div>
+  </div>
+  <div class="bond-body">
+    <div class="tag-row">
+      <span class="tag tag-rsi">RSI隐含超卖</span>
+      <span class="tag tag-shadow">无直接信号</span>
+      <span class="tag tag-kb">知识库score=5</span>
+      <span class="tag tag-hot">军工/红外热度5</span>
+    </div>
+    <div class="bond-score-row">
+      <div class="score-chip"><div class="val">2025全年</div><div class="lbl">净利+93%</div></div>
+      <div class="score-chip"><div class="val">Q4单季</div><div class="lbl">净利+359%</div></div>
+      <div class="score-chip"><div class="val">~135</div><div class="lbl">价格参考</div></div>
+      <div class="score-chip"><div class="val">极低</div><div class="lbl">溢价率</div></div>
+    </div>
+    <div class="bond-logic">
+      <strong>核心逻辑</strong>：睿创微纳非制冷红外探测器国内龙头；2025全年净利+93%验证景气，Q4单季+359%超预期，Q1 2026淡季不淡；地缘风险升温持续催化军工红外需求；低溢价率（接近纯债）提供强债底保护，兼顾防御和正股弹性。<br>
+      <strong>行业</strong>：军工/红外探测器 | <strong>评级</strong>：—
+    </div>
+    <div class="signal-row">
+      <span class="signal-chip signal-buy">✅ Q4净利+359%</span>
+      <span class="signal-chip signal-buy">✅ Q1淡季不淡</span>
+      <span class="signal-chip signal-watch">🔥 军工景气验证</span>
+      <span class="signal-chip signal-neutral">⚠️ 需确认强赎状态</span>
+    </div>
+  </div>
+</div>
+
+<!-- Bond 3 -->
+<div class="bond-card">
+  <div class="bond-header">
+    <div>
+      <span class="bond-rank rank-3">🥉 第三名</span>
+      <span class="bond-name">金田转债</span>
+      <span class="bond-code">113046.SH</span>
+    </div>
+    <div style="text-align:right">
+      <div class="bond-score">48.5</div>
+      <div class="bond-score-label">综合评分</div>
+    </div>
+  </div>
+  <div class="bond-body">
+    <div class="tag-row">
+      <span class="tag tag-rsi">无直接RSI信号</span>
+      <span class="tag tag-shadow">无直接信号</span>
+      <span class="tag tag-kb">知识库score=5</span>
+      <span class="tag tag-hot">AI算力铜导线热度5</span>
+    </div>
+    <div class="bond-score-row">
+      <div class="score-chip"><div class="val">H1收入</div><div class="lbl">同比+820%</div></div>
+      <div class="score-chip"><div class="val">前三季</div><div class="lbl">净利+104%</div></div>
+      <div class="score-chip"><div class="val">~135</div><div class="lbl">价格参考</div></div>
+      <div class="score-chip"><div class="val">29.88%</div><div class="lbl">溢价率</div></div>
+    </div>
+    <div class="bond-logic">
+      <strong>核心逻辑</strong>：液冷铜管导入全球头部算力服务器，H1收入同比+820%，2025前三季净利+104%；DeepSeek V4持续催化国内AIDC建设，液冷散热需求井喷；4月21日已验证未触发强赎，溢价率29.88%可控；三重热点（AI算力/AIDC+液冷散热+算力铜导线）覆盖，趋势交易首选。<br>
+      <strong>行业</strong>：铜加工/AI算力散热 | <strong>评级</strong>：—
+    </div>
+    <div class="signal-row">
+      <span class="signal-chip signal-buy">✅ H1收入+820%</span>
+      <span class="signal-chip signal-buy">✅ 液冷铜管龙头</span>
+      <span class="signal-chip signal-watch">🔥 三重AI算力热点</span>
+      <span class="signal-chip signal-neutral">✅ 已核实未强赎</span>
+    </div>
+  </div>
+</div>
+
+<!-- 操作建议 -->
+<div class="section-title">操作建议对比</div>
+<table class="excluded-table">
+  <tr style="background:#161b22">
+    <th>标的</th><th>评分</th><th>推荐理由</th><th>入场参考</th><th>止损参考</th><th>强赎风险</th>
+  </tr>
+  <tr>
+    <td><strong>天业转债</strong></td><td>58.5</td><td>中东催化+RSI超卖+上引线共振</td><td>135元附近</td><td>130元</td><td style="color:#f0883e">低（未预警）</td>
+  </tr>
+  <tr>
+    <td><strong>睿创转债</strong></td><td>53.0</td><td>Q4净利+359%+低溢价强防御</td><td>135元附近</td><td>130元</td><td style="color:#f0883e">低（未预警）</td>
+  </tr>
+  <tr>
+    <td><strong>金田转债</strong></td><td>48.5</td><td>H1收入+820%三重热点趋势</td><td>135元附近</td><td>128元</td><td style="color:#3fb950">已核实未赎</td>
+  </tr>
+</table>
+
+<!-- 排除清单 -->
+<div class="section-title">强赎排除清单（务必核查）</div>
+<table class="excluded-table">
+  <tr style="background:#161b22">
+    <th>转债</th><th>代码</th><th>状态</th><th>备注</th>
+  </tr>
+  <tr class="redeemed">
+    <td>亿纬转债</td><td>123254.SZ</td><td>✅ 已完成赎回</td><td>4月20日最后交易日</td>
+  </tr>
+  <tr class="redeemed">
+    <td>汇成转债</td><td>118049.SH</td><td>✅ 已完成赎回</td><td>4月21日最后交易日</td>
+  </tr>
+  <tr class="redeemed">
+    <td>中环转2</td><td>123146.SZ</td><td>✅ 已摘牌</td><td>bond_kb确认</td>
+  </tr>
+  <tr class="redeemed">
+    <td>信服转债</td><td>123262.SH</td><td>✅ 已赎回</td><td>bond_kb redeemed: True</td>
+  </tr>
+  <tr class="redeemed">
+    <td>伟测转债</td><td>118055.SH</td><td>✅ 已赎回</td><td>bond_kb确认</td>
+  </tr>
+  <tr class="redeemed">
+    <td>松霖转债</td><td>113651.SH</td><td>✅ 已赎回</td><td>bond_kb确认</td>
+  </tr>
+  <tr class="warn">
+    <td>银轮转债</td><td>127037.SZ</td><td>⚠️ 价格异常</td><td>4月9日+237%，疑似强赎</td>
+  </tr>
+  <tr class="warn">
+    <td>应流转债</td><td>113697.SH</td><td>⚠️ 价格异常</td><td>4月9日+154%，疑似强赎</td>
+  </tr>
+  <tr class="warn">
+    <td>金诚转债</td><td>113615.SH</td><td>⚠️ 价格异常</td><td>4月9日+479%，疑似强赎</td>
+  </tr>
+  <tr class="warn">
+    <td>精达转债</td><td>110074.SH</td><td>⚠️ 价格异常</td><td>4月9日+258%，疑似强赎</td>
+  </tr>
+  <tr class="warn">
+    <td>万凯转债</td><td>123247.SZ</td><td>⚠️ 价格异常</td><td>4月9日+125%，疑似强赎</td>
+  </tr>
+  <tr class="warn">
+    <td>华亚转债</td><td>127079.SZ</td><td>⚠️ 价格异常</td><td>4月9日+104%，疑似强赎</td>
+  </tr>
+</table>
+
+<div class="data-warning">
+  ⚠️ 数据时效声明：RSI策略最新数据为2026-04-01，上引线策略最新数据为2026-04-02，bond_kb知识库最新为2026-04-13，距今日（4月23日）约3周。强赎风险随时可能发生，请在操作前务必核实最新赎回公告。
+</div>
+
+<div class="footer">
+  本报告基于历史数据、静态知识库和滞后策略信号，不构成投资建议。<br>
+  Claw每日可转债推荐系统 v2 | 生成时间: 2026-04-23 09:00
+</div>
+
+</div>
+</body>
+</html>

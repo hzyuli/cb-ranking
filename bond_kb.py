@@ -514,6 +514,14 @@ BOND_LOGIC = {
     "天业转债":  {"score": 3, "industry": "化工", "logic": "供给侧改革深化，行业集中度提升，龙头议价能力增强", "updated": "2026-04-14", "code": "110087.SH"},
 }
 
+    "金杨转债":  {"score": 3, "industry": "有色金属", "logic": "行业景气度回升，公司经营改善，估值处于低位", "updated": "2026-04-23", "code": "123269"},
+
+    "本川转债":  {"score": 3, "industry": "通用", "logic": "行业景气度回升，公司经营改善，估值处于低位", "updated": "2026-04-23", "code": "123268"},
+
+    "珂玛转债":  {"score": 3, "industry": "通用", "logic": "行业景气度回升，公司经营改善，估值处于低位", "updated": "2026-04-23", "code": "123267"},
+
+    "斯达转债":  {"score": 3, "industry": "通用", "logic": "行业景气度回升，公司经营改善，估值处于低位", "updated": "2026-04-23", "code": "113702"},
+
 # 已赎回/停止交易的转债集合（自动生成，无需手动维护）
 REDEEMED = {k for k, v in BOND_LOGIC.items() if v.get("redeemed")}
 

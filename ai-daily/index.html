@@ -1,87 +1,238 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI日报 2026-04-20</title>
-<style>
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #fafafa; color: #333; }
-h1 { color: #1a1a2e; border-bottom: 3px solid #4f46e5; padding-bottom: 10px; }
-h2 { color: #4f46e5; margin-top: 30px; border-left: 4px solid #4f46e5; padding-left: 12px; }
-h3 { color: #333; margin-top: 20px; }
-p { line-height: 1.7; margin: 10px 0; }
-a { color: #4f46e5; text-decoration: none; }
-a:hover { text-decoration: underline; }
-hr { border: none; border-top: 1px solid #e5e7eb; margin: 30px 0; }
-blockquote { background: #f3f4f6; border-left: 4px solid #9ca3af; padding: 12px 16px; margin: 15px 0; border-radius: 4px; }
-.meta { color: #6b7280; font-size: 14px; }
-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 13px; text-align: center; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI日报 · 2026-05-07</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
+        .container { max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+        .header { text-align: center; margin-bottom: 28px; }
+        .header .date { font-size: 13px; color: #86868b; letter-spacing: 1px; margin-bottom: 6px; }
+        .header h1 { font-size: 26px; font-weight: 700; color: #1d1d1f; }
+        .header .subtitle { font-size: 14px; color: #86868b; margin-top: 4px; }
+
+        .card { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .card-section { border-top: 3px solid; margin-bottom: 0; }
+        .card-section.ai-frontier { border-color: #ff6b6b; }
+        .card-section.ai-finance { border-color: #ffd93d; }
+        .card-section.ai-productivity { border-color: #6bcbff; }
+
+        .section-title { font-size: 17px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+        .section-title .emoji { font-size: 20px; }
+
+        .news-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+        .news-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .news-item:first-child { padding-top: 0; }
+
+        .news-title { font-size: 15px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px; line-height: 1.5; }
+        .news-desc { font-size: 13px; color: #515154; margin-bottom: 6px; line-height: 1.55; }
+        .news-tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; margin-right: 6px; vertical-align: middle; }
+        .tag-hot { background: #ffe0e0; color: #d63031; }
+        .tag-new { background: #e0f0ff; color: #0984e3; }
+        .tag-eco { background: #e8f5e9; color: #2d6a4f; }
+        .tag-hots { background: #fff3cd; color: #856404; }
+        .news-link { font-size: 12px; color: #0071e3; text-decoration: none; }
+        .news-link:hover { text-decoration: underline; }
+
+        .divider { height: 1px; background: #e5e5ea; margin: 8px 0; }
+
+        .think-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 14px; padding: 18px 20px; margin-top: 16px; color: #fff; }
+        .think-box .label { font-size: 12px; font-weight: 700; letter-spacing: 1px; opacity: 0.8; margin-bottom: 6px; }
+        .think-box .question { font-size: 15px; font-weight: 600; line-height: 1.6; }
+
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #86868b; }
+        .footer a { color: #86868b; text-decoration: none; }
+
+        .update-info { font-size: 12px; color: #86868b; text-align: right; margin-top: 14px; }
+
+        @media (prefers-color-scheme: dark) {
+            body { background: #1c1c1e; color: #f5f5f7; }
+            .card { background: #2c2c2e; box-shadow: none; }
+            .news-item { border-color: #3a3a3c; }
+            .news-title { color: #f5f5f7; }
+            .news-desc { color: #98989d; }
+            .divider { background: #3a3a3c; }
+        }
+    </style>
 </head>
 <body>
-# AI 日报 | 2026年4月20日
+<div class="container">
 
-> 每交易日 16:00 自动推送 | 覆盖 AI 前沿 × AI+金融 × AI生产力
+    <!-- Header -->
+    <div class="header">
+        <div class="date">2026年5月7日 · 星期四</div>
+        <h1>🤖 AI日报</h1>
+        <div class="subtitle">AI前沿 · AI+金融 · AI生产力</div>
+    </div>
 
-<hr>
+    <!-- 🔬 AI前沿 -->
+    <div class="card card-section ai-frontier">
+        <div class="section-title">
+            <span class="emoji">🔬</span> AI前沿
+        </div>
 
-<h2>🔬 AI前沿</h2>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-hot">🔥 爆热</span>
+                GPT-5.5 正式发布：OpenAI 反击 Anthropic，编程能力暴涨
+            </div>
+            <div class="news-desc">
+                OpenAI 于4月23日发布 GPT-5.5，以"自主Agentic"为核心理念，在 Terminal-Bench 2.0 编程任务中拿下 <strong>82.7%</strong>（vs Claude Opus 4.7 的 69.4%），以更少 token 完成更复杂任务。Cursor 联创 Michael Truell 评价："比 GPT-5.4 更聪明、更有韧性。"奥特曼本人则让 GPT-5.5 策划自己的发布会——答案让他"异常兴奋"。
+            </div>
+            <a class="news-link" href="https://www.ifanr.com/1663666" target="_blank">📰 爱范儿完整报道 →</a>
+        </div>
 
-<strong>1. 斯坦福 HAI 发布《2026年AI指数报告》</strong>
-被誉为 AI 领域"年度体检"的斯坦福报告再度来袭，今年的报告揭示了一个核心结论：AI 能力正在全面爆发——相关科学论文数量刷新纪录，且中美差距正在缩小。对于持续关注 AI 发展的投资者而言，这意味着技术迭代速度比以往任何时候都快，相关赛道值得持续跟踪。
-🔗 <a href="https://news.qq.com/rain/a/20260414A03PKT00" target="_blank">腾讯新闻报道</a>
+        <div class="divider"></div>
 
-<strong>2. Hermes Agent 暴涨 6 万星：AI智能体进入"进化记忆"时代</strong>
-2月25日上线的开源项目 Hermes Agent 在一个多月内狂揽 6 万 Stars，被称作"会进化的伙伴"。与传统的"金鱼记忆"AI不同，它具备长期记忆和持续学习能力——这正是当前 Agent 赛道最核心的突破方向。开发者和投资人均可关注其生态演进。
-🔗 <a href="https://news.qq.com/rain/a/20260413A029LL00" target="_blank">腾讯新闻报道</a>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-hots">⚡ 突发</span>
+                Anthropic 估值突破万亿美元，Claude Code 降智风波后紧急道歉
+            </div>
+            <div class="news-desc">
+                GPT-5.5 发布当天，Anthropic 在私募二级市场估值正式突破 <strong>1 万亿美元</strong>——超越 OpenAI 最新融资估值（8520亿美元）。与此同时，Anthropic 就 Claude Code 过去一个多月的"降智"问题发布道歉声明，承认是三项产品调整叠加失效所致，并重置了所有订阅用户的使用额度。
+            </div>
+            <a class="news-link" href="https://www.36kr.com/p/3780358673863687" target="_blank">📰 36氪：Anthropic道歉 →</a>
+        </div>
 
-<strong>3. Cursor 融资 20 亿美元，估值冲破 500 亿美元</strong>
-据 TechCrunch 4月19日披露，AI 编程初创企业 Cursor 即将完成新一轮融资，融资额至少 20 亿美元，估值高达 500 亿美元。作为成立仅四年的公司，Cursor 已成为 AI 编程赛道的超级独角兽，AI 编程工具的商业价值正在被市场加速定价。
-🔗 <a href="https://www.ithome.com/0/940/814.htm" target="_blank">IT之家报道</a>
+        <div class="divider"></div>
 
-<hr>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-new">🆕 新动态</span>
+                ChatGPT 默认模型升级 GPT-5.5 Instant：幻觉降低 52.5%
+            </div>
+            <div class="news-desc">
+                OpenAI 5月5日宣布 ChatGPT 默认模型切换为 <strong>GPT-5.5 Instant</strong>，聚焦准确性与简洁性，幻觉率最高减少 52.5%，回复中"不必要表情符号"也一并清除。GPT-5.5 API 定价：每百万输入 $5 / 输出 $30，上下文窗口达 1M token。
+            </div>
+            <a class="news-link" href="https://finance.sina.com.cn/tech/digi/2026-05-06/doc-inhwxaeq8494701.shtml" target="_blank">📰 新浪科技报道 →</a>
+        </div>
 
-<h2>💰 AI+金融</h2>
+        <div class="divider"></div>
 
-<strong>1. AccuQuant 发布 2026 版 AI 量化交易机器人</strong>
- fintech 公司 AccuQuant 于 4 月 8 日正式推出其旗舰 AI 驱动量化交易系统，主打机器学习驱动的多因子策略。与传统量化工具相比，新版在信号生成速度、回测精度上均有显著提升，可视为 AI 量化工具从"辅助参考"向"自主决策"跃迁的又一信号。
-🔗 <a href="https://financewire.com/2026/04/08/next-generation-quantitative-trading-accuquant-launches-its-ai-trading-robot-for-2026/" target="_blank">FinanceWire 报道</a>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-eco">🌏 监管</span>
+                中国阻止 Meta 20亿美元收购 AI Agent 创业公司 Manus
+            </div>
+            <div class="news-desc">
+                中国国家发改委正式下令 Meta 和 AI Agent 创业公司 Manus 解除收购关系，成为北京对外国科技收购的最重大监管干预之一。Manus 以通用 AI Agent 闻名，此次被叫停表明中国对AI Agent领域的战略资产高度警惕。
+            </div>
+            <a class="news-link" href="https://siliconangle.com/2026/04/27/china-blocks-metas-acquisition-ai-agent-developer-manus/" target="_blank">📰 SiliconAngle 报道 →</a>
+        </div>
 
-<strong>2. 清华开设《AI + 量化金融》课程，大模型正式进入金融工程课堂</strong>
-清华大学 2026 年春季学期开设专项课程，系统讲授大模型在量化交易中的实战应用，涵盖经典因子模型、时间序列和现代 AI 策略。这标志着 AI 量化从"民间自发"走向"学院正统"，也意味着未来市场参与者的技术迭代将更快。
-🔗 <a href="https://people.iiis.tsinghua.edu.cn/~jianli/courses/QUANT2026spring/AIQUANT-2026s.htm" target="_blank">清华课程主页</a>
+        <div class="update-info">信息更新时间：2026-05-07 17:30</div>
+    </div>
 
-<strong>3. 2026 Q1 全球融资创纪录：AI 占 1890 亿美元</strong>
-2026 年第一季度全球创业公司融资总额创下 2970 亿美元的历史新高，其中 AI 相关投资贡献了约 1890 亿美元。资本狂潮意味着更多 AI 金融科技公司将在接下来 1-2 年内推出产品，对可转债等细分市场也将带来更多量化工具和信息服务。
-🔗 <a href="https://simonaking.com/blog/ai-funding-2026-q1/" target="_blank">SimonAKing 深度分析</a>
+    <!-- 💰 AI+金融 -->
+    <div class="card card-section ai-finance">
+        <div class="section-title">
+            <span class="emoji">💰</span> AI+金融
+        </div>
 
-<hr>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-hots">📊 研报</span>
+                摩根士丹利：AI 已成核心宏观经济变量，2026年贡献美国 GDP 增长 25%
+            </div>
+            <div class="news-desc">
+                摩根士丹利研究所最新报告《AI Market Trends 2026》指出，<strong>~2.9万亿美元</strong>资金将在2025-2028年注入全球数据中心建设。市场正在从"AI概念"转向"AI变现能力"验证阶段——已采用AI的标普500公司现金流利润率扩张速度是全球平均水平的 <strong>2倍</strong>。对可转债投资者而言，关注AI变现能力强的上市公司将是下一阶段的核心逻辑。
+            </div>
+            <a class="news-link" href="https://www.morganstanley.com/insights/articles/ai-market-trends-institute-2026" target="_blank">📰 摩根士丹利完整报告 →</a>
+        </div>
 
-<h2>⚡ AI生产力</h2>
+        <div class="divider"></div>
 
-<strong>1. 2026 AI 编程助手横评出炉：Claude Code / Cursor / Copilot 三足鼎立</strong>
-4月最新横评数据显示，59% 的开发者已采用"混合搭配"方案——用 Claude Code 做复杂推理，用 Cursor 处理前端代码，用 Copilot 覆盖日常补全。核心趋势：2026 年的主战场已从"补全"转向"Agent 化"，让 AI 自主完成完整开发任务的能力成为决胜关键。
-🔗 <a href="https://eastondev.com/blog/zh/posts/ai/20260419-ai-coding-assistants-comparison/" target="_blank">Easton 深度横评</a>
-🔗 <a href="https://aiproducthub.cn/wpnote/ai-coding-tools-comparison-2026-cursor-claude-code-copilot/" target="_blank">AI产品汇报道</a>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-new">💡 工具</span>
+                JPMorgan AI 审查 24,771 份 K-1 税务文件，比往年提前两周完成
+            </div>
+            <div class="news-desc">
+                OpenAI 内部透露，财务团队借助 AI 工具审查了 <strong>24,771份 K-1 税务文件（共71,637页）</strong>，比上一年提前两周完成。AI+金融的落地已从概念走向真实效率提升。量化私募 BigQuant、聚宽等平台也在持续迭代 AI 量化策略，可转债多因子策略（如 StockRanker）值得关注。
+            </div>
+            <a class="news-link" href="https://www.ifanr.com/1663666" target="_blank">📰 爱范儿报道 →</a>
+        </div>
 
-<strong>2. GitHub 本周 9 大 AI 开源爆款：月省 1500 美元不是梦</strong>
-技术社区本周评选出的 GitHub 最火开源 AI 项目，涵盖 AI 编程、文档处理、数据分析等多个场景。这类工具的崛起对于个人投资者和量化研究者意义重大——用开源工具替代高价商业服务，可以低成本搭建自己的投研分析平台。
-🔗 <a href="https://www.jdon.com/91488-github-9-ai-tools-2026-4.html" target="_blank">Jdon 报道</a>
+        <div class="divider"></div>
 
-<strong>3. Perplexity 推出 Comet 浏览器，AI 研究进入"操作系统"时代</strong>
-Perplexity 于 4 月中旬发布 Comet 浏览器，宣称让 AI 真正介入用户的整个研究工作流——不只是搜索答案，而是帮你规划、执行和整理整个研究过程。对于需要每日处理大量信息的投资者，这意味着信息获取效率可能迎来又一次量级提升。
-🔗 <a href="https://www.howdoiuseai.com/blog/2026-04-16-newest-ai-tools-2026" target="_blank">HowDoIUseAI 工具评测</a>
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-eco">🏛️ 格局</span>
+                Google 计划向 Anthropic 投资至多 400亿美元，AI 基础设施融资潮持续
+            </div>
+            <div class="news-desc">
+                Google 宣布计划向 Anthropic 投资至多 <strong>400亿美元</strong>（现金+算力），反映 Claude 生态的市场需求持续火爆。2026年Q1全球 AI 领域融资已超 2970亿美元，其中近 1880亿流向 AI 公司。这种资本密度意味着 AI 基础设施层（算力、数据、模型）仍是确定性最高的投资方向。
+            </div>
+            <a class="news-link" href="https://theaitrack.com/ai-news-may-2026-in-depth-and-concise/" target="_blank">📰 The AI Track 汇总 →</a>
+        </div>
 
-<hr>
+        <div class="update-info">关联可转债标的：关注 AI 算力概念、券商/银行 AI 转型受益股</div>
+    </div>
 
-<h2>💭 今日思考</h2>
+    <!-- ⚡ AI生产力 -->
+    <div class="card card-section ai-productivity">
+        <div class="section-title">
+            <span class="emoji">⚡</span> AI生产力
+        </div>
 
-> 斯坦福报告指出 AI 论文数量持续爆发，而资本市场也在疯狂注资 AI 赛道。在这种"技术+资本"双轮驱动下，你觉得 AI 能力的"通货膨胀"会来得比预期更快，还是泡沫正在悄悄积累？
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-hot">🔥 热门</span>
+                Claude Code 2.1 发布：技能热重载 + 分叉子 Agent，正式升级为"Agent 操作系统"
+            </div>
+            <div class="news-desc">
+                Anthropic 发布 Claude Code 2.1，带来三项关键更新：<strong>技能热重载</strong>（运行时动态加载/更新 Skill）、<strong>生命周期钩子</strong>（精细控制 Agent 启动/运行/结束阶段）、<strong>分叉子 Agent</strong>（主 Agent 可派生子 Agent 并行处理复杂任务）。这不只是功能更新——它将 Claude Code 从"高级终端助手"直接升级为完整的 Agent 操作系统。
+            </div>
+            <a class="news-link" href="https://cloud.tencent.com/developer/article/2628440" target="_blank">📰 腾讯云社区深度解读 →</a>
+        </div>
 
-<hr>
+        <div class="divider"></div>
 
-*本报告基于当日 Web 搜索聚合生成，仅供资讯参考，不构成投资建议。*
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-new">🆕 开源</span>
+                OpenClaw：开源 AI 编程新势力，与 Claude Code 并列 2026 年最热选项
+            </div>
+            <div class="news-desc">
+                开源社区的 <strong>OpenClaw</strong> 已成 Claude Code 的最强替代方案，支持多模型网关、热插拔架构，在 GitHub 持续霸榜。与 Claude Code 闭源路线不同，OpenClaw 面向需要本地部署、数据隐私敏感的团队。两者如何选？简单说：追求极致体验选 Claude Code，追求灵活可控选 OpenClaw。
+            </div>
+            <a class="news-link" href="https://zhuanlan.zhihu.com/p/2014737146280420263" target="_blank">📰 知乎深度对比 →</a>
+        </div>
 
-<footer>本报告基于 Web 搜索聚合生成，仅供资讯参考，不构成投资建议。</footer>
+        <div class="divider"></div>
+
+        <div class="news-item">
+            <div class="news-title">
+                <span class="news-tag tag-hots">💼 协作</span>
+                OpenAI Workspace Agents 全面上线：ChatGPT Business/Edu 用户可用
+            </div>
+            <div class="news-desc">
+                OpenAI 正式推出面向 ChatGPT Business、Enterprise、Edu 和教师计划的 <strong>Workspace Agents</strong>，标志着 AI 从"个人助手"向"团队员工"的大规模渗透。该功能将逐步取代 Custom GPTs，成为企业 AI 协作的核心入口。对于知识工作者，这意味着"AI 同事"正在从期货变成现货。
+            </div>
+            <a class="news-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank">📰 AI Tools Recap 汇总 →</a>
+        </div>
+
+        <div class="update-info">推荐实践：用 Claude Code 2.1 处理可转债数据清洗，用 Workspace Agents 自动生成每日盯盘摘要</div>
+    </div>
+
+    <!-- 今日思考 -->
+    <div class="think-box">
+        <div class="label">💭 今日思考</div>
+        <div class="question">
+            Anthropic 估值突破万亿美元，而 OpenAI 最新估值停留在 8520亿——但 GPT-5.5 的发布让 OpenAI 打了一场漂亮的反击战。<br><br>
+            <strong>问题：如果 AI 公司的估值最终取决于"AI 变现能力"而非"模型参数规模"，那么像可转债这样专注于企业基本面和价格错配的策略，会不会被 AI 时代重新定价？</strong>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        AI日报 · 每日 16:00 自动更新<br>
+        <a href="https://hzyuli.github.io/cb-ranking/" target="_blank">hzyuli.github.io/cb-ranking</a>
+    </div>
+
+</div>
 </body>
 </html>

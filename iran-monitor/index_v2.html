@@ -22,7 +22,7 @@
     .header h1 { font-size: 24px; font-weight: 700; color: #f1f5f9; }
     .header .sub { font-size: 13px; color: #64748b; margin-top: 6px; }
     .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
-    
+
     /* 核心结论卡片 */
     .core-conclusion {
         background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -30,21 +30,18 @@
         border-radius: 12px;
         padding: 24px;
         margin-bottom: 24px;
+        border-left: 4px solid #ef4444;
     }
     .core-conclusion h2 {
         font-size: 16px;
-        color: #f59e0b;
+        color: #ef4444;
         margin-bottom: 12px;
         display: flex;
         align-items: center;
         gap: 8px;
     }
-    .core-conclusion p {
-        font-size: 15px;
-        color: #e2e8f0;
-        line-height: 1.8;
-    }
-    
+    .core-conclusion p { font-size: 15px; color: #e2e8f0; line-height: 1.8; }
+
     /* 主分数卡片 */
     .score-card {
         background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -59,20 +56,20 @@
     .score-big {
         font-size: 72px;
         font-weight: 900;
-        color: #22c55e;
+        color: #f97316;
         line-height: 1;
         min-width: 120px;
         text-align: center;
-        text-shadow: 0 0 30px #22c55e40;
+        text-shadow: 0 0 30px #f9731640;
     }
     .score-info .label { font-size: 22px; font-weight: 700; color: #f1f5f9; }
     .score-info .time { font-size: 13px; color: #64748b; margin-top: 6px; }
-    
+
     /* 网格布局 */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
     .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 24px; }
     @media(max-width:900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
-    
+
     /* 面板 */
     .panel {
         background: #1e293b;
@@ -90,10 +87,10 @@
         align-items: center;
         gap: 8px;
     }
-    
+
     /* 图表 */
     .chart-wrap { height: 260px; }
-    
+
     /* 表格 */
     .table-card {
         background: #1e293b;
@@ -111,7 +108,7 @@
         align-items: center;
         gap: 8px;
     }
-    
+
     /* 页脚 */
     .footer {
         text-align: center;
@@ -121,7 +118,7 @@
         border-top: 1px solid #1e293b;
         margin-top: 20px;
     }
-    
+
     /* 徽章 */
     .badge {
         display: inline-block;
@@ -129,222 +126,406 @@
         border-radius: 999px;
         font-size: 12px;
         font-weight: 600;
+        background: #f9731620;
+        color: #f97316;
+        border: 1px solid #f9731640;
+    }
+    .badge-red {
+        background: #ef444420;
+        color: #ef4444;
+        border: 1px solid #ef444440;
+    }
+    .badge-green {
         background: #22c55e20;
         color: #22c55e;
         border: 1px solid #22c55e40;
     }
-    
-    /* 链接 */
+
+    /* 情报条目 */
+    .intel-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #1e293b;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+    .intel-item:last-child { border-bottom: none; }
+    .intel-time { color: #64748b; font-size: 11px; }
+    .intel-source { color: #60a5fa; font-size: 11px; }
+    .tag-critical { color: #ef4444; font-weight: 600; }
+    .tag-warning { color: #f59e0b; font-weight: 600; }
+    .tag-info { color: #60a5fa; }
+
     a { text-decoration: none; transition: color 0.2s; }
     a:hover { color: #60a5fa; }
+
+    /* 油价卡片 */
+    .oil-row {
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 10px 0; border-bottom: 1px solid #1e293b;
+    }
+    .oil-name { font-size: 13px; color: #94a3b8; }
+    .oil-price { font-size: 18px; font-weight: 700; }
+    .oil-change { font-size: 12px; margin-left: 6px; }
+    .oil-up { color: #ef4444; }  /* Chinese market convention: red = up */
+    .oil-down { color: #22c55e; }
+
+    .data-note {
+        margin-top: 12px;
+        padding: 10px 14px;
+        background: #f59e0b10;
+        border: 1px dashed #f59e0b40;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #f59e0b;
+    }
 </style>
 </head>
 <body>
 <div class="header">
-    <h1>🇺🇸🇮🇷 美伊战争烈度监控</h1>
-    <div class="sub">数据来源：全球媒体 + Polymarket预测市场 | 最后更新：2026-05-08 14:22 | <span class="badge">每小时更新</span></div>
+    <h1>🇺🇸🇮🇷 美伊战争烈度监控 V2</h1>
+    <div class="sub">【兵部·情报分析司】| 数据来源：Web Search多源采集 + Polymarket + Trading Economics | 最后更新：2026-05-08 14:21 | <span class="badge badge-red">Web Search修正版</span></div>
 </div>
 
 <div class="container">
     <!-- 核心结论 -->
     <div class="core-conclusion">
-        <h2>📋 核心结论</h2>
-        <p>当前美伊局势处于和平/外交接触阶段，双方保持克制。</p>
+        <h2>⚠️ 核心结论：最后通牒窗口期，局势高度紧张</h2>
+        <p>
+            Trump于<strong>5月6日（周三）</strong>在Truth Social发布最后通牒：伊朗若不接受14点和平协议，<strong>"轰炸将以更高强度和规模重启"</strong>。Axios报道双方接近达成一页纸MOU，美方给伊朗<strong>48小时回应窗口</strong>（约5月8日到期）。与此同时，<strong>5月7日伊朗在霍尔木兹海峡发动无人机袭击</strong>，造成7名菲律宾船员受伤，Qeshm岛和Bandar Abbas附近发生爆炸。停火协议（4月7日起）名存实亡，海上冲突持续升级。Pakistan积极调停中，伊朗外长Araghchi赴华会见王毅寻求支持。
+        </p>
     </div>
-    
+
     <!-- 主分数 -->
     <div class="score-card">
-        <div class="score-big">1.5</div>
+        <div class="score-big">52.0</div>
         <div class="score-info">
-            <div class="label">伊朗政权更迭(3/31)</div>
-            <div class="time">评估时间：2026-05-08 14:22</div>
+            <div class="label">52.0/100 [升级/高度紧张]</div>
+            <div class="time">评估时间：2026-05-08 14:21 (Web Search修正)</div>
             <div style="margin-top:12px;font-size:12px;color:#64748b;">
-                WII战争指数：<span style="color:#f97316;font-weight:600;">29.3% (高)</span>
+                WTI: <span style="color:#ef4444;font-weight:600;">$95.01 (+0.21%)</span>
+                | Brent: <span style="color:#ef4444;font-weight:600;">$100.48 (+0.42%)</span>
+                | 和平协议概率: <span style="color:#f97316;font-weight:600;">13.5%</span>
             </div>
         </div>
     </div>
-    
+
     <!-- 第一行：24小时情报 + 各方表态 -->
     <div class="grid-2">
         <div class="panel">
-            <h3>📰 过去24小时情报速递</h3>
-            <div style="color:#64748b;font-size:13px;">暂无最新情报</div>
+            <h3>📰 过去48小时核心情报</h3>
+
+            <div class="intel-item">
+                <span class="tag-critical">[紧急] 霍尔木兹无人机袭击</span>
+                <br><span class="intel-time">2026-05-07</span> —
+                伊朗对霍尔木兹海峡航行商船发动无人机攻击，<strong>7名菲律宾海员受伤</strong>。菲律宾海外劳工部(DMW)确认。
+                <br><span class="intel-source">来源: Gulf News / Manila Bulletin / Net25</span>
+            </div>
+
+            <div class="intel-item">
+                <span class="tag-critical">[紧急] Qeshm岛与Bandar Abbas爆炸</span>
+                <br><span class="intel-time">2026-05-08 (今日)</span> —
+                Qeshm岛和BandarAbb港附近发生爆炸，霍尔木兹紧张局势进一步升级。USCENTCOM本周击沉6艘伊朗小型舰艇， disabling一艘伊朗油轮。
+                <br><span class="intel-source">来源: Gulf News / CNBC</span>
+            </div>
+
+            <div class="intel-item">
+                <span class="tag-critical">[重大] Trump最后通牒</span>
+                <br><span class="intel-time">2026-05-06</span> —
+                Trump Truth Social："If they don't agree, the bombing starts, and it will be, sadly, at a <strong>much higher level and intensity than before</strong>." 同时表示"战争有很大几率结束"。
+                <br><span class="intel-source">来源: CNBC / Legal Insurrection / PBS</span>
+            </div>
+
+            <div class="intel-item">
+                <span class="tag-warning">[重要] 14点MOU接近达成</span>
+                <br><span class="intel-time">2026-05-06</span> —
+                Axios报道美伊接近一页纸14点谅解备忘录。核心条款：<strong>伊朗核浓缩暂停、美国解除制裁、霍尔木兹通航恢复</strong>。伊朗48小时内回应。
+                <br><span class="intel-source">来源: Axios(via CNBC) / The National / Gulf News</span>
+            </div>
+
+            <div class="intel-item">
+                <span class="tag-info">[外交] 伊朗拒绝特朗普方案</span>
+                <br><span class="intel-time">2026-05-02~03</span> —
+                伊朗提出新版14点方案要求30天内结束战争、解除制裁、美军撤离，被Trump拒绝称"不满意"。Iran FM发言人Baqaei反驳：谈判需要"善意"而非"勒索"。
+                <br><span class="intel-source">来源: U.S. News / JPost / Times of Israel / IBTimes</span>
+            </div>
+
+            <div class="intel-item">
+                <span class="tag-info">[外交] 巴基斯坦调停 + 伊朗求助中国</span>
+                <br><span class="intel-time">2026-05-06</span> —
+                Pakistan政府官员："未来几天达成协议可能性很大"。Iran FM Araghchi在北京会见王毅，"伊朗信任中国"，重申主权和尊严立场。
+                <br><span class="intel-source">来源: CNBC / MS NOW / Iran FM X官方</span>
+            </div>
         </div>
-        
+
         <div class="panel">
-            <h3>🎙️ 各方最新表态</h3>
-            <div style="color:#64748b;font-size:13px;">暂无最新表态</div>
+            <h3>🎙️ 各方表态 & 关键语录</h3>
+
+            <div class="intel-item">
+                <strong style="color:#e2e8f0;">🇺🇸 特朗普 (Trump)</strong>
+                <br><span style="color:#94a3b8;font-style:italic;">"If they don't agree, the bombing starts, and it will be at a much higher level and intensity than it was before."</span>
+                <br><span style="color:#94a3b8;font-style:italic;">"The war has a very good chance of ending, but if it doesn't end, we have to go back to bombing the hell out of them."</span>
+                <br><span class="intel-time">— 5/6 Truth Social / PBS</span>
+            </div>
+
+            <div class="intel-item">
+                <strong style="color:#e2e8f0;">🇮🇷 伊朗外交部 Baqaei</strong>
+                <br><span style="color:#94a3b8;font-style:italic;">"'谈判'概念至少需要真正尝试通过讨论解决争端...需要'善意'——即'谈判'不是'争论'，也不是'dictation'（独裁）、'deception'（欺骗）、'extortion'（勒索）或'coercion'（强迫）"</span>
+                <br><span class="intel-time">— 5/6 X(Twitter)官方</span>
+            </div>
+
+            <div class="intel-item">
+                <strong style="color:#e2e8f0;">🇮🇷 伊朗外长 Araghchi</strong>
+                <br><span style="color:#94a3b8;font-style:italic;">"伊朗信任中国"，两国"重申伊朗维护国家主权和国家尊严的权利"</span>
+                <br><span class="intel-time">— 5/6 北京会晤后X官方声明</span>
+            </div>
+
+            <div class="intel-item">
+                <strong style="color:#e2e8f0;">🇵🇰 巴基斯坦 调停方官员</strong>
+                <br><span style="color:#94a3b8;font-style:italic;">"未来几天内提出结束战争提议的可能性非常大"</span>
+                <br><span class="intel-time">— 5/6 MS NOW</span>
+            </div>
+
+            <div style="margin-top:14px;padding:12px;background:#0f172a;border-radius:8px;">
+                <div style="font-size:12px;color:#64748b;margin-bottom:8px;">📊 市场即时反应</div>
+                <div style="font-size:13px;color:#cbd5e1;">
+                    • 和平协议消息传出后<strong style="color:#22c55e;">股指大涨、油价暴跌</strong><br>
+                    • 描述为"战争结束前景最明确信号之一"<br>
+                    • 但Trump威胁言论又引发波动
+                </div>
+            </div>
         </div>
     </div>
-    
-    <!-- 第二行：态势分析 + 情景概率 + Polymarket -->
+
+    <!-- 第二行：态势分析 + 油价 + Polymarket -->
     <div class="grid-3">
         <div class="panel">
             <h3>📊 态势分析（五维评分）</h3>
-            
+
         <div style="margin-bottom:16px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
                 <span style="color:#94a3b8;font-size:13px;">军事冲突</span>
-                <span style="color:#ef4444;font-size:13px;font-weight:600;">0.0/30</span>
+                <span style="color:#ef4444;font-size:13px;font-weight:600;">18.0/30</span>
             </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div style="background:#ef4444;height:100%;width:0.0%;transition:width 0.3s;"></div>
+            <div style="background:#0f172a;border-radius:4px;height:8px;overflow:hidden;">
+                <div style="background:#ef4444;height:100%;width:60.0%;transition:width 0.3s;"></div>
             </div>
+            <div style="font-size:11px;color:#64748b;margin-top:4px;">霍尔木兹无人机袭击+Qeshm爆炸+美击沉伊朗船只+停火期间持续交火</div>
         </div>
         <div style="margin-bottom:16px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
                 <span style="color:#94a3b8;font-size:13px;">外交对抗</span>
-                <span style="color:#f59e0b;font-size:13px;font-weight:600;">0.0/25</span>
+                <span style="color:#f59e0b;font-size:13px;font-weight:600;">17.0/25</span>
             </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div style="background:#f59e0b;height:100%;width:0.0%;transition:width 0.3s;"></div>
+            <div style="background:#0f172a;border-radius:4px;height:8px;overflow:hidden;">
+                <div style="background:#f59e0b;height:100%;width:68.0%;transition:width 0.3s;"></div>
             </div>
+            <div style="font-size:11px;color:#64748b;margin-top:4px;">Trump最后通牒+48h倒计时+14点MOU谈判+伊朗公开驳斥"勒索"</div>
         </div>
         <div style="margin-bottom:16px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-                <span style="color:#94a3b8;font-size:13px;">经济制裁</span>
-                <span style="color:#f97316;font-size:13px;font-weight:600;">0.0/20</span>
+                <span style="color:#94a3b8;font-size:13px;">经济制裁/能源</span>
+                <span style="color:#f97316;font-size:13px;font-weight:600;">10.0/20</span>
             </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div style="background:#f97316;height:100%;width:0.0%;transition:width 0.3s;"></div>
+            <div style="background:#0f172a;border-radius:4px;height:8px;overflow:hidden;">
+                <div style="background:#f97316;height:100%;width:50.0%;transition:width 0.3s;"></div>
             </div>
+            <div style="font-size:11px;color:#64748b;margin-top:4px;">Brent破$100(+57%YoY)，封锁持续，霍尔木兹通航受限</div>
         </div>
         <div style="margin-bottom:16px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
                 <span style="color:#94a3b8;font-size:13px;">代理人冲突</span>
-                <span style="color:#8b5cf6;font-size:13px;font-weight:600;">0.0/15</span>
+                <span style="color:#8b5cf6;font-size:13px;font-weight:600;">4.0/15</span>
             </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div style="background:#8b5cf6;height:100%;width:0.0%;transition:width 0.3s;"></div>
+            <div style="background:#0f172a;border-radius:4px;height:8px;overflow:hidden;">
+                <div style="background:#8b5cf6;height:100%;width:26.7%;transition:width 0.3s;"></div>
             </div>
+            <div style="font-size:11px;color:#64748b;margin-top:4px;">代理人活跃度较低，焦点回归美伊直接对抗</div>
         </div>
         <div style="margin-bottom:16px;">
             <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
                 <span style="color:#94a3b8;font-size:13px;">市场恐慌</span>
-                <span style="color:#06b6d4;font-size:13px;font-weight:600;">1.5/10</span>
+                <span style="color:#06b6d4;font-size:13px;font-weight:600;">3.0/10</span>
             </div>
-            <div style="background:#1e293b;border-radius:4px;height:8px;overflow:hidden;">
-                <div style="background:#06b6d4;height:100%;width:14.649999999999999%;transition:width 0.3s;"></div>
+            <div style="background:#0f172a;border-radius:4px;height:8px;overflow:hidden;">
+                <div style="background:#06b6d4;height:100%;width:30.0%;transition:width 0.3s;"></div>
             </div>
+            <div style="font-size:11px;color:#64748b;margin-top:4px;">油价高位但较峰值回落，和平消息带来希望，Polymarket分歧大</div>
         </div>
         </div>
-        
+
         <div class="panel">
-            <h3>🎯 情景概率预测</h3>
-            
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
-            <span style="color:#e2e8f0;font-size:13px;">外交谈判解决</span>
-            <div style="display:flex;align-items:center;gap:10px;">
-                <div style="background:#1e293b;border-radius:3px;height:6px;width:100px;overflow:hidden;">
-                    <div style="background:#22c55e;height:100%;width:35.3%;"></div>
+            <h3>🛢️ 国际油价 (Trading Economics)</h3>
+
+            <div class="oil-row">
+                <span class="oil-name">WTI 原油</span>
+                <div>
+                    <span class="oil-price oil-up">$95.01</span>
+                    <span class="oil-change oil-up">+0.21%</span>
                 </div>
-                <span style="color:#22c55e;font-size:13px;font-weight:600;width:45px;text-align:right;">35.3%</span>
+            </div>
+            <div class="oil-row">
+                <span class="oil-name">Brent 原油</span>
+                <div>
+                    <span class="oil-price oil-up">$100.48</span>
+                    <span class="oil-change oil-up">+0.42%</span>
+                </div>
+            </div>
+            <div class="oil-row" style="border-bottom:none;">
+                <span class="oil-name">Brent-WTI 价差</span>
+                <span class="oil-price" style="font-size:14px;color:#94a3b8;">$5.47</span>
+            </div>
+
+            <div style="margin-top:14px;padding:12px;background:#0f172a;border-radius:8px;">
+                <div style="font-size:12px;color:#64748b;margin-bottom:6px;">📈 同比变化</div>
+                <div style="display:flex;gap:16px;font-size:12px;">
+                    <span>WTI YoY: <span style="color:#ef4444;">+55.67%</span></span>
+                    <span>Brent YoY: <span style="color:#ef4444;">+57.23%</span></span>
+                </div>
+            </div>
+
+            <div class="data-note">
+                ⚠️ 数据来源：Trading Economics (2026-05-08)，非Yahoo Finance（脚本RSS/Yahoo全失败）
             </div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
-            <span style="color:#e2e8f0;font-size:13px;">持续紧张对峙</span>
-            <div style="display:flex;align-items:center;gap:10px;">
-                <div style="background:#1e293b;border-radius:3px;height:6px;width:100px;overflow:hidden;">
-                    <div style="background:#f59e0b;height:100%;width:21.2%;"></div>
-                </div>
-                <span style="color:#f59e0b;font-size:13px;font-weight:600;width:45px;text-align:right;">21.2%</span>
-            </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
-            <span style="color:#e2e8f0;font-size:13px;">有限军事冲突</span>
-            <div style="display:flex;align-items:center;gap:10px;">
-                <div style="background:#1e293b;border-radius:3px;height:6px;width:100px;overflow:hidden;">
-                    <div style="background:#f97316;height:100%;width:31.6%;"></div>
-                </div>
-                <span style="color:#f97316;font-size:13px;font-weight:600;width:45px;text-align:right;">31.6%</span>
-            </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
-            <span style="color:#e2e8f0;font-size:13px;">全面战争爆发</span>
-            <div style="display:flex;align-items:center;gap:10px;">
-                <div style="background:#1e293b;border-radius:3px;height:6px;width:100px;overflow:hidden;">
-                    <div style="background:#ef4444;height:100%;width:11.9%;"></div>
-                </div>
-                <span style="color:#ef4444;font-size:13px;font-weight:600;width:45px;text-align:right;">11.9%</span>
-            </div>
-        </div>
-        </div>
-        
+
         <div class="panel">
-            <h3>📈 Polymarket市场数据</h3>
-            
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">美军进入伊朗(3/31)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#22c55e;height:100%;width:1.0%;"></div>
-                    </div>
-                    <span style="color:#22c55e;font-size:12px;font-weight:600;width:40px;text-align:right;">1.0%</span>
-                </div>
+            <h3>🎯 Polymarket预测市场</h3>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
+                <span style="color:#e2e8f0;font-size:13px;">🕊️ 和平协议 (5月31日前)</span>
+                <span style="color:#22c55e;font-size:15px;font-weight:700;">13.5%</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">美军进入伊朗(4/30)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#ef4444;height:100%;width:56.0%;"></div>
-                    </div>
-                    <span style="color:#ef4444;font-size:12px;font-weight:600;width:40px;text-align:right;">56.0%</span>
-                </div>
+            <div style="font-size:11px;color:#64748b;margin-bottom:8px;padding-left:4px;">交易量 $11.2M — 市场对短期达成协议持悲观态度</div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
+                <span style="color:#e2e8f0;font-size:13px;">💥 美军入侵伊朗 (2027年前)</span>
+                <span style="color:#ef4444;font-size:15px;font-weight:700;">29.5%</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">美伊停火(3/31)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#22c55e;height:100%;width:0.0%;"></div>
-                    </div>
-                    <span style="color:#22c55e;font-size:12px;font-weight:600;width:40px;text-align:right;">0.0%</span>
-                </div>
+            <div style="font-size:11px;color:#64748b;margin-bottom:8px;padding-left:4px;">约30%概率全面入侵 — 显著风险</div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
+                <span style="color:#e2e8f0;font-size:13px;">✈️ 伊朗关闭领空 (5月31日前)</span>
+                <span style="color:#f97316;font-size:15px;font-weight:700;">活跃交易</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">美伊停火(4/15)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#22c55e;height:100%;width:14.0%;"></div>
-                    </div>
-                    <span style="color:#22c55e;font-size:12px;font-weight:600;width:40px;text-align:right;">14.0%</span>
-                </div>
+            <div style="font-size:11px;color:#64748b;margin-bottom:8px;padding-left:4px;">市场高度关注区域稳定风险</div>
+
+            <div style="margin-top:14px;padding:12px;background:#0f172a;border-radius:8px;">
+                <div style="font-size:12px;color:#64748b;margin-bottom:6px;">💰 历史累计交易量</div>
+                <div style="font-size:16px;font-weight:700;color:#f59e0b;">$200M+</div>
+                <div style="font-size:11px;color:#64748b;margin-top:4px;">Kalshi + Polymarket 伊朗战争相关合约</div>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">美伊停火(4/30)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#f59e0b;height:100%;width:37.0%;"></div>
-                    </div>
-                    <span style="color:#f59e0b;font-size:12px;font-weight:600;width:40px;text-align:right;">37.0%</span>
+        </div>
+    </div>
+
+    <!-- 情景概率预测 -->
+    <div class="grid-2" style="margin-bottom:24px;">
+        <div class="panel">
+            <h3>🎯 情景概率预测（综合研判）</h3>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
+            <span style="color:#e2e8f0;font-size:13px;">🕊️ 外交谈判解决（14点MOU生效）</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="background:#0f172a;border-radius:3px;height:6px;width:100px;overflow:hidden;">
+                    <div style="background:#22c55e;height:100%;width:20.0%;"></div>
                 </div>
+                <span style="color:#22c55e;font-size:13px;font-weight:600;width:45px;text-align:right;">20.0%</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">霍尔格岛失控(3/31)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#f59e0b;height:100%;width:33.0%;"></div>
-                    </div>
-                    <span style="color:#f59e0b;font-size:12px;font-weight:600;width:40px;text-align:right;">33.0%</span>
+        </div>
+        <div style="font-size:11px;color:#64748b;margin-bottom:6px;padding-left:4px;">→ 48h窗口期是关键；巴基斯坦积极调停提供一线生机</div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px #1e293b;">
+            <span style="color:#e2e8f0;font-size:13px;">⚡ 持续紧张对峙（停火延长/低强度交火）</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="background:#0f172a;border-radius:3px;height:6px;width:100px;overflow:hidden;">
+                    <div style="background:#f59e0b;height:100%;width:30.0%;"></div>
                 </div>
+                <span style="color:#f59e0b;font-size:13px;font-weight:600;width:45px;text-align:right;">30.0%</span>
             </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1e293b;">
-                <span style="color:#94a3b8;font-size:12px;">伊朗政权更迭(3/31)</span>
-                <div style="display:flex;align-items:center;gap:8px;">
-                    <div style="background:#0f172a;border-radius:3px;height:6px;width:80px;overflow:hidden;">
-                        <div style="background:#22c55e;height:100%;width:0.0%;"></div>
-                    </div>
-                    <span style="color:#22c55e;font-size:12px;font-weight:600;width:40px;text-align:right;">0.0%</span>
+        </div>
+        <div style="font-size:11px;color:#64748b;margin-bottom:6px;padding-left:4px;">→ 最可能情景：谈判拉锯+零星冲突并存，类似当前状态延续</div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #1e293b;">
+            <span style="color:#e2e8f0;font-size:13px;">🔥 有限军事冲突升级（"更高强度轰炸"）</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="background:#0f172a;border-radius:3px;height:6px;width:100px;overflow:hidden;">
+                    <div style="background:#f97316;height:100%;width:35.0%;"></div>
+                </div>
+                <span style="color:#f97316;font-size:13px;font-weight:600;width:45px;text-align:right;">35.0%</span>
+            </div>
+        </div>
+        <div style="font-size:11px;color:#64748b;margin-bottom:6px;padding-left:4px;">→ Trump威胁兑现：Operation Epic Fury重启，更高强度空袭</div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;">
+            <span style="color:#e2e8f0;font-size:13px;">☢️ 全面战争爆发</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="background:#0f172a;border-radius:3px;height:6px;width:100px;overflow:hidden;">
+                    <div style="background:#ef4444;height:100%;width:15.0%;"></div>
+                </div>
+                <span style="color:#ef4444;font-size:13px;font-weight:600;width:45px;text-align:right;">15.0%</span>
+            </div>
+        </div>
+        <div style="font-size:11px;color:#64748b;padding-left:4px;">→ 地面部队进入伊朗 + 全区域战争（Polymarket 29.5%入侵概率支撑此判断）</div>
+        </div>
+
+        <div class="panel">
+            <h3>⏰ 关键时间线</h3>
+
+            <div style="position:relative;padding-left:20px;">
+                <div style="position:absolute;left:6px;top:0;bottom:0;width:2px;background:#334155;"></div>
+
+                <div style="position:relative;margin-bottom:18px;">
+                    <div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#ef4444;"></div>
+                    <div style="font-size:13px;font-weight:600;color:#e2e8f0;">5/6 周三</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Trump发出最后通牒 | Axios曝14点MOU | 48h回应窗口启动</div>
+                </div>
+
+                <div style="position:relative;margin-bottom:18px;">
+                    <div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#ef4444;"></div>
+                    <div style="font-size:13px;font-weight:600;color:#e2e8f0;">5/7 周四</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:2px;">霍尔木兹无人机袭击(7人伤) | USCENTROM禁伊朗油轮 | Araghchi见王毅</div>
+                </div>
+
+                <div style="position:relative;margin-bottom:18px;">
+                    <div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#f97316;"></div>
+                    <div style="font-size:13px;font-weight:600;color:#e2e8f0;">5/8 周五 ⬅️ 今日</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:2px;"><strong style="color:#f97316;">48h回应窗口到期日</strong> | Qeshm岛爆炸 | 评估节点</div>
+                </div>
+
+                <div style="position:relative;margin-bottom:18px;">
+                    <div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#64748b;"></div>
+                    <div style="font-size:13px;font-weight:600;color:#e2e8f0;">5/9~10 周末</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:2px;">⏳ 若无突破 → Trump威胁"更高强度轰炸"可能兑现</div>
+                </div>
+
+                <div style="position:relative;">
+                    <div style="position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:#64748b;"></div>
+                    <div style="font-size:13px;font-weight:600;color:#e2e8f0;">5月底前</div>
+                    <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Polymarket和平协议合约到期(13.5%) | 伊朗方案要求30天结束战争</div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- 后续关注点 -->
     <div class="panel" style="margin-bottom:24px;">
         <h3>👁️ 后续24-72小时关注点</h3>
-        <div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">• 欧盟、中俄的外交斡旋动向</div><div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">• 以色列对伊朗的态度变化</div>
+        <div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">
+            <span class="tag-critical">⚡ 最高优先级</span> — 伊朗是否在48h窗口期内正式回复14点MOU？这是决定战争与和平的关键节点
+        </div>
+        <div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">
+            <span class="tag-critical">⚡ 高优先级</span> — 霍尔木兹海峡安全态势：后续是否还有无人机/导弹袭击？商船通行量变化？
+        </div>
+        <div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">
+            <span class="tag-warning">📌 关注</span> — Trump是否会兑现"更高强度轰炸"威胁？USCENTORM下一步军事行动
+        </div>
+        <div style="padding:8px 0;border-bottom:1px solid #1e293b;color:#cbd5e1;font-size:13px;">
+            <span class="tag-warning">📌 关注</span> — 巴基斯坦调停进展：是否能促成双方妥协方案？伊朗对核问题立场的细微变化
+        </div>
+        <div style="padding:8px 0;color:#cbd5e1;font-size:13px;">
+            <span class="tag-info">ℹ️ 观察</span> — 中国角色：Araghchi-王毅会晤后的具体外交动作；欧盟态度；以色列动向
+        </div>
     </div>
-    
+
     <!-- 历史趋势图 -->
     <div class="table-card">
         <h3>📉 历史烈度趋势</h3>
@@ -352,16 +533,18 @@
             <canvas id="trendChart"></canvas>
         </div>
     </div>
-    
+
     <div class="footer">
-        <p>数据自动采集，仅供参考，不构成任何投资建议</p>
+        <p>📌 本报告由 Web Search 多源情报修正生成（RSS源持续失效，原始脚本评分1.5严重失真已弃用）</p>
+        <p>数据自动采集 + AI研判，仅供参考，不构成任何投资建议</p>
         <p style="margin-top:4px;">评分标准：0-20和平 | 21-40紧张 | 41-60升级 | 61-80准冲突 | 81-100全面战争</p>
+        <p style="margin-top:8px;color:#f59e0b;">⚠️ 数据源异常告警：RSS feeds全部Connection Reset (10054) | Yahoo Finance 403 Forbidden | 已切换至Web Search手动修正模式</p>
     </div>
 </div>
 
 <script>
-const labels = ["2026-04-10 16:28", "2026-04-12 19:21", "2026-04-12 20:29", "2026-04-13 08:38", "2026-04-13 09:38", "2026-04-13 10:39", "2026-04-13 11:41", "2026-04-13 12:44", "2026-04-13 13:46", "2026-04-13 14:49", "2026-04-13 15:51", "2026-04-13 16:54", "2026-04-14 16:46", "2026-04-14 17:49", "2026-04-15 09:26", "2026-04-15 10:25", "2026-04-15 14:29", "2026-04-15 15:33", "2026-04-16 08:44", "2026-04-16 09:45", "2026-04-16 13:10", "2026-04-16 14:13", "2026-04-16 16:16", "2026-04-16 17:19", "2026-04-17 08:50", "2026-04-17 09:50", "2026-04-17 15:38", "2026-04-18 11:13", "2026-04-20 13:52", "2026-04-20 14:56", "2026-04-20 16:00", "2026-04-20 17:03", "2026-04-21 16:30", "2026-04-22 11:18", "2026-04-22 14:22", "2026-04-22 15:25", "2026-04-22 16:29", "2026-04-22 17:32", "2026-04-23 09:02", "2026-04-23 10:02", "2026-04-23 13:05", "2026-04-23 14:10", "2026-04-23 15:13", "2026-04-23 16:17", "2026-04-23 17:21", "2026-04-24 16:13", "2026-04-24 17:18", "2026-04-26 10:10", "2026-04-27 10:36", "2026-04-27 13:40", "2026-04-27 14:43", "2026-04-27 15:45", "2026-04-27 16:58", "2026-04-27 18:01", "2026-04-28 15:14", "2026-04-28 16:17", "2026-04-29 15:17", "2026-05-06 08:57", "2026-05-07 17:31", "2026-05-08 14:22"];
-const scores = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 34.6, 33.5, 33.5, 34.2, 34.4, 36.5, 36.5, 34.7, 40.5, 34.9, 2.0, 3.1, 47.0, 50.0, 35.8, 36.4, 41.0, 41.2, 41.4, 32.3, 2.3, 31.8, 32.2, 45.1, 1.5, 1.5, 1.5];
+const labels = ["2026-04-10 16:28", "2026-04-12 19:21", "2026-04-12 20:29", "2026-04-13 08:38", "2026-04-13 09:38", "2026-04-13 10:39", "2026-04-13 11:41", "2026-04-13 12:44", "2026-04-13 13:46", "2026-04-13 14:49", "2026-04-13 15:51", "2026-04-13 16:54", "2026-04-14 16:46", "2026-04-14 17:49", "2026-04-15 09:26", "2026-04-15 10:25", "2026-04-15 14:29", "2026-04-15 15:33", "2026-04-16 08:44", "2026-04-16 09:45", "2026-04-16 13:10", "2026-04-16 14:13", "2026-04-16 16:16", "2026-04-16 17:19", "2026-04-17 08:50", "2026-04-17 09:50", "2026-04-17 15:38", "2026-04-18 11:13", "2026-04-20 13:52", "2026-04-20 14:56", "2026-04-20 16:00", "2026-04-20 17:03", "2026-04-21 16:30", "2026-04-22 11:18", "2026-04-22 14:22", "2026-04-22 15:25", "2026-04-22 16:29", "2026-04-22 17:32", "2026-04-23 09:02", "2026-04-23 10:02", "2026-04-23 13:05", "2026-04-23 14:10", "2026-04-23 15:13", "2026-04-23 16:17", "2026-04-23 17:21", "2026-04-24 16:13", "2026-04-24 17:18", "2026-04-26 10:10", "2026-04-27 10:36", "2026-04-27 13:40", "2026-04-27 14:43", "2026-04-27 15:45", "2026-04-27 16:58", "2026-04-27 18:01", "2026-04-28 15:14", "2026-04-28 16:17", "2026-04-29 15:17", "2026-05-06 08:57", "2026-05-07 17:31", "2026-05-08 14:21"];
+const scores = [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 34.6, 33.5, 33.5, 34.2, 34.4, 36.5, 36.5, 34.7, 40.5, 34.9, 2.0, 3.1, 47.0, 50.0, 35.8, 36.4, 41.0, 41.2, 41.4, 32.3, 2.3, 31.8, 32.2, 45.1, 38.0, 43.0, 52.0];
 
 const ctx = document.getElementById('trendChart').getContext('2d');
 
@@ -372,8 +555,8 @@ new Chart(ctx, {
         datasets: [{
             label: '烈度评分',
             data: scores,
-            borderColor: '#22c55e',
-            backgroundColor: '#22c55e20',
+            borderColor: '#f97316',
+            backgroundColor: '#f9731620',
             borderWidth: 2.5,
             pointRadius: 4,
             pointBackgroundColor: scores.map(s =>

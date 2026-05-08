@@ -1,283 +1,382 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI日报 · 2026-05-08</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #0d1117;
-      color: #e6edf3;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      padding: 24px 16px 60px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 28px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #21262d;
-    }
-    .header .date {
-      font-size: 12px;
-      color: #7d8590;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .header h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 1px;
-    }
-    .header .subtitle {
-      font-size: 13px;
-      color: #7d8590;
-      margin-top: 4px;
-    }
-    .section {
-      margin-bottom: 28px;
-    }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #21262d;
-    }
-    .section-title .emoji {
-      font-size: 18px;
-    }
-    .card {
-      background: #161b22;
-      border: 1px solid #21262d;
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin-bottom: 12px;
-    }
-    .card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #e6edf3;
-      margin-bottom: 6px;
-      line-height: 1.5;
-    }
-    .card-title .tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 1px 6px;
-      border-radius: 4px;
-      margin-right: 5px;
-      vertical-align: middle;
-    }
-    .tag-hot { background: #3b1a0a; color: #ff7b54; }
-    .tag-new { background: #0a2f1a; color: #3fb950; }
-    .tag-fund { background: #1a1f3b; color: #a78bfa; }
-    .card-desc {
-      font-size: 13px;
-      color: #8b949e;
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-    .card-link {
-      font-size: 12px;
-      color: #58a6ff;
-      text-decoration: none;
-    }
-    .card-link:hover { text-decoration: underline; }
-    .divider {
-      border: none;
-      border-top: 1px solid #21262d;
-      margin: 6px 0 14px;
-    }
-    .footer {
-      margin-top: 28px;
-      padding: 18px;
-      background: linear-gradient(135deg, #161b22 0%, #1c2128 100%);
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      text-align: center;
-    }
-    .footer-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #e6edf3;
-      margin-bottom: 8px;
-    }
-    .footer p {
-      font-size: 13px;
-      color: #8b949e;
-      line-height: 1.7;
-    }
-    .footer .emoji { font-size: 15px; }
-    .watermark {
-      text-align: center;
-      font-size: 11px;
-      color: #484f58;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI日报 · 2026年5月8日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e4e4e7;
+            line-height: 1.7;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .date-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 50%, #ffd89b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header p { color: #a1a1aa; font-size: 14px; }
+        
+        /* Section */
+        .section {
+            margin: 28px 0;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .section-icon { font-size: 24px; }
+        .section-name { font-size: 18px; font-weight: 600; }
+        
+        /* Item */
+        .item {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .item:last-child { border-bottom: none; }
+        .item-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .item-desc {
+            font-size: 14px;
+            color: #a1a1aa;
+            margin-bottom: 10px;
+        }
+        .item-comment {
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid #667eea;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+            color: #d4d4d8;
+            margin-bottom: 10px;
+        }
+        .item-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #71717a;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .item-link:hover { color: #667eea; }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .highlight-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #a78bfa;
+            margin-bottom: 8px;
+        }
+        .highlight-content {
+            font-size: 14px;
+            color: #e4e4e7;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-quiz {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .footer-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 8px;
+        }
+        .footer-question {
+            font-size: 14px;
+            color: #d4d4d8;
+        }
+        
+        /* Tag */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 6px;
+        }
+        .tag-hot { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .tag-new { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .tag-money { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #71717a;
+            margin-top: 4px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="date-badge">📅 2026年5月8日 · 星期五</div>
+            <h1>🤖 AI 日报</h1>
+            <p>每日 16:00 定时推送 · 聚焦AI前沿与投资机会</p>
+        </div>
 
-<div class="header">
-  <div class="date">Friday · May 8, 2026</div>
-  <h1>🤖 AI 日报</h1>
-  <div class="subtitle">中书省 · 每日资讯速递</div>
-</div>
+        <!-- AI前沿 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🔬</span>
+                <span class="section-name">AI前沿</span>
+            </div>
+            
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-hot">爆火</span>
+                    英伟达Nemotron 3 Nano Omni：全模态Agent专用开源模型
+                </div>
+                <div class="item-desc">
+                    4月29日发布，专为Agentic AI设计，让AI能够像人一样自主规划和执行复杂任务。支持文本、图像、音频、视频全模态输入，在智能体任务上表现出色。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>大模型竞争正式从"刷榜"转向"干活"。谁能帮AI真正完成任务，谁才是下一代霸主。
+                </div>
+                <a class="item-link" href="https://www.21jingji.com/article/20260429/herald/11ea268ea819933eabe7658ff7cdab5b.html">📎 21世纪经济报道 →</a>
+            </div>
 
-<!-- ========== AI前沿 ========== -->
-<div class="section">
-  <div class="section-title">
-    <span class="emoji">🔬</span>
-    <span>AI前沿</span>
-    <span style="font-size:11px;color:#7d8590;font-weight:400;margin-left:auto;">大模型 · 产品 · 突破</span>
-  </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-new">新发</span>
+                    Google Gemma 4系列：31B MoE登顶开源Arena第三
+                </div>
+                <div class="item-desc">
+                    5月4日发布，包含31B Dense、26B MoE、E4B、E2B四种变体。26B MoE版本仅激活38亿参数即可实现低延迟推理，E4B/E2B专为手机和边缘设备优化，支持原生音频/视频输入。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>Google开源战略越来越激进，手机上跑SOTA模型已经不是梦。隐私敏感场景的AI应用即将爆发。
+                </div>
+                <a class="item-link" href="https://www.devflokers.com/blog/ai-tech-breakthroughs-may-2026-developments">📎 devFlokers技术分析 →</a>
+            </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-hot">🔥 高热</span>
-      OpenAI GPT-5.5 Instant 上线：免费开放、幻觉锐减，ChatGPT 默认模型大升级
-    </div>
-    <div class="card-desc">
-      5月5日 OpenAI 正式发布 GPT-5.5 Instant，面向所有用户免费开放，并替换原有 GPT-5.3 成为 ChatGPT 默认模型。新模型在法律、医学、金融等敏感领域显著减少 AI 幻觉，同时保持低延迟特性。对投资研报阅读来说，这意味着 AI 辅助解读财报的可靠性又上了一个台阶 📈
-    </div>
-    <a class="card-link" href="https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/" target="_blank">🔗 TechCrunch 报道</a>
-    &nbsp;|&nbsp;
-    <a class="card-link" href="https://www.ithome.com/0/946/615.htm" target="_blank">🔗 IT之家</a>
-  </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-hot">重磅</span>
+                    五角大楼540亿美元签约7大AI巨头，Anthropic被排除
+                </div>
+                <div class="item-desc">
+                    OpenAI、Google、NVIDIA、Microsoft、Amazon、SpaceX、Reflection AI获得美国军方540亿AI作战系统合同。Anthropic因拒绝开放模型用于完全自主武器与大规模监控被排除，Claude成为"最安全的模型"。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>AI的"安全"标签正在变成商业壁垒。当安全成为差异化卖点，合规AI厂商的估值逻辑要重写了。
+                </div>
+                <a class="item-link" href="https://blog.csdn.net/2401_84289488/article/details/160737064">📎 CSDN行业汇总 →</a>
+            </div>
+        </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-new">🆕 开源</span>
-      Mistral 128B 旗舰模型登场：开源大模型军备竞赛再加码
-    </div>
-    <div class="card-desc">
-      Mistral 正式发布 1280 亿参数旗舰模型，成为当前最强开源模型之一。开源大模型性能持续逼近闭源巨头，对于有本地部署需求（保护投资策略隐私）的用户来说，可转债因子挖掘完全可以在本地跑起来了 💪
-    </div>
-    <a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank">🔗 AI Tools Recap</a>
-  </div>
+        <!-- AI+金融 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">💰</span>
+                <span class="section-name">AI+金融</span>
+            </div>
+            
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-hot">实测</span>
+                    六大国产大模型量化因子挖掘横评：DeepSeek V4 Pro夺冠
+                </div>
+                <div class="item-desc">
+                    融量科技AlphaMind平台实测：DeepSeek V4 Pro以1.898的Sharpe比率夺冠（提升90%），关键在于敢于质疑原始变量——从"换手率"切换到"成交金额"带来质变。仅花费1.29元API费用即获最佳结果。
+                </div>
+                <div class="highlight-box">
+                    <div class="highlight-title">🏆 因子挖掘能力排行榜</div>
+                    <div class="highlight-content">
+                        1. DeepSeek V4 Pro: Sharpe 1.898（+90%）<br>
+                        2. Mimo v2.5 Pro: Sharpe 1.781（+37%）<br>
+                        3. GLM5: Sharpe 1.759（+39%）<br>
+                        4. Qwen3.6-Plus: Sharpe 1.725（+15%）<br>
+                        5. MiniMax 2.5: Sharpe 1.703（+1.3%）<br>
+                        6. Kimi 2.5: Sharpe 1.696（+40%）
+                    </div>
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>可转债量化策略也可以用类似思路——用AI自动挖掘RSI、换手率、溢价率等因子的非线性组合。这可能是个人投资者的"民主化工具"。
+                </div>
+                <a class="item-link" href="https://finance.sina.com.cn/stock/companyt/2026-05-08/doc-inhxcyym7767429.shtml">📎 新浪财经完整评测 →</a>
+            </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-new">🆕 企业</span>
-      Microsoft Agent 365 正式 GA：企业级 AI Agent 时代全面到来
-    </div>
-    <div class="card-desc">
-      微软 Agent 365 正式面向企业全面上市，提供 AI 智能体的身份认证、安全与治理工具。这意味着企业可以用合规的方式把 AI Agent 引入日常工作流——对于需要合规管理投资信息的机构来说，是个重要信号 🏛️
-    </div>
-    <a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank">🔗 AI Tools Recap</a>
-  </div>
-</div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-money">融资</span>
+                    55亿美元企业AI军备竞赛：OpenAI 40亿 + Anthropic 15亿
+                </div>
+                <div class="item-desc">
+                    OpenAI获TPG、Brookfield等19家机构40亿美元投资（投前估值100亿），瞄准2000+企业部署；Anthropic获Blackstone、Goldman Sachs等15亿美元（3亿自投），重点进攻中端市场：医疗+社区银行网络。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>AI投资从"烧钱造模型"转向"花钱买落地"。这对于金融AI应用服务商是利好——大厂造模型，场景方赚应用钱。
+                </div>
+                <a class="item-link" href="https://www.devflokers.com/blog/ai-tech-breakthroughs-may-2026-developments">📎 devFlokers深度分析 →</a>
+            </div>
 
-<!-- ========== AI+金融 ========== -->
-<div class="section">
-  <div class="section-title">
-    <span class="emoji">💰</span>
-    <span>AI+金融</span>
-    <span style="font-size:11px;color:#7d8590;font-weight:400;margin-left:auto;">量化 · 因子 · 投资</span>
-  </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-new">洞察</span>
+                    中国推理算力首超训练算力：AI应用时代来临
+                </div>
+                <div class="item-desc">
+                    2026年Q1，中国AI推理算力占比达52%，首次超过训练算力（48%）。这标志着产业从"模型训练烧钱期"进入"场景应用变现期"。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>推理算力需求 > 训练算力 = 应用层公司价值重估。GPU不再是稀缺资源，谁有场景谁为王。
+                </div>
+                <a class="item-link" href="https://blog.csdn.net/2401_84289488/article/details/160737064">📎 斯坦福AI指数报告 →</a>
+            </div>
+        </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-fund">💎 实操</span>
-      BigQuant 可转债三要素策略：年化收益率 40.42%，寻找被低估个券
-    </div>
-    <div class="card-desc">
-      BigQuant 推出可转债三要素 AI 量化策略，核心聚焦寻找市场被低估的可转债，通过多因子模型降低波动风险。策略年化 40%+，对于结合 RSI+上引线信号的朋友来说，AI 三要素可作为选券的初筛层 🎯
-    </div>
-    <a class="card-link" href="https://bigquant.com/square/ai/0fbdf9e7-630d-2f58-4cf1-0a4530efdff1" target="_blank">🔗 BigQuant 策略详情</a>
-  </div>
+        <!-- AI生产力 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">⚡</span>
+                <span class="section-name">AI生产力</span>
+            </div>
+            
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-hot">革命</span>
+                    腾讯云代码助手升级：混元+DeepSeek双引擎，200+语言支持
+                </div>
+                <div class="item-desc">
+                    腾讯云AI代码助手集成混元大模型与DeepSeek双引擎，代码生成准确率9.7分（满分10），支持200+编程语言和微信生态深度适配。实测开发效率提升显著。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>国内开发者有福了！微信生态集成意味着可以在小程序、企业微信等场景中无缝使用AI编程能力。
+                </div>
+                <a class="item-link" href="https://cloud.tencent.com/developer/article/2626699">📎 腾讯云开发者社区 →</a>
+            </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-fund">📊 数据</span>
-      2026年5月转债市场研判：平价估值双重提升，十强组合出炉
-    </div>
-    <div class="card-desc">
-      4月市场风险偏好提升，科技成长领涨，债市回暖，可转债迎来平价和估值的双重提升。5月研判认为精耕科技主线仍是主旋律。结合 AI 三要素 + RSI 信号，双重过滤下的科技类转债值得重点关注 🔍
-    </div>
-    <a class="card-link" href="https://reportify.cn/reports/1247691212174004224" target="_blank">🔗 Reportify 5月研判</a>
-  </div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-new">新范式</span>
+                    贝叶斯Agent编排：让AI学会"三思而后行"
+                </div>
+                <div class="item-desc">
+                    新型AI编排层基于信息价值(VoI)理论设计——AI仅在"信息价值 > 执行成本"时才调用工具或触发行动，而非盲目执行所有步骤。这大幅减少不必要的API调用和幻觉风险。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>这可能是AI Agent从"玩具"走向"生产"的关键突破。想象一下，你的AI助手会根据信息价值自动决定"要不要查这条消息"。
+                </div>
+                <a class="item-link" href="https://www.devflokers.com/blog/ai-tech-breakthroughs-may-2026-developments">📎 VoI决策理论论文 →</a>
+            </div>
 
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-fund">📈 资本</span>
-      Q1 2026融资破纪录：AI公司融资$1880亿，OpenAI一家拿走$1220亿
-    </div>
-    <div class="card-desc">
-      2026年Q1全球风投融资总额创历史新高，AI公司占比超2/3。OpenAI、Anthropic、xAI、Wayve等头部公司吸走了绝大部分资金。资本疯狂涌入AI，意味着相关产业链（包括科技类可转债发行人）业绩兑现预期更强 📊
-    </div>
-    <a class="card-link" href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/" target="_blank">🔗 Crunchbase 报道</a>
-  </div>
-</div>
+            <div class="item">
+                <div class="item-title">
+                    <span class="tag tag-hot">趋势</span>
+                    SEO已死， GEO当立：AI正在重塑信息获取方式
+                </div>
+                <div class="item-desc">
+                    Google搜索中58.5%以无点击结束，AI概览出现在约20%的搜索结果中。营销正在从"搜索引擎优化(SEO)"转向"生成引擎优化(GEO)"——内容被AI引用才是王道。
+                </div>
+                <div class="item-comment">
+                    💡 <strong>点评：</strong>做内容的朋友注意了！未来衡量内容质量的标准可能是"你的文章被多少AI引用"，而不是"排第几"。
+                </div>
+                <a class="item-link" href="https://www.devflokers.com/blog/ai-tech-breakthroughs-may-2026-developments">📎 GEO研究报告 →</a>
+            </div>
+        </div>
 
-<!-- ========== AI生产力 ========== -->
-<div class="section">
-  <div class="section-title">
-    <span class="emoji">⚡</span>
-    <span>AI生产力</span>
-    <span style="font-size:11px;color:#7d8590;font-weight:400;margin-left:auto;">编程 · 效率 · 工具</span>
-  </div>
-
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-new">⚠️ 注意</span>
-      GitHub Copilot 6月转向按量计费：固定额度订阅制终结
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-quiz">
+                <div class="footer-title">💭 今日思考</div>
+                <div class="footer-question">
+                    DeepSeek在因子挖掘中夺冠的关键是"敢于质疑前提"而非"更勤奋地搜索"。<br><br>
+                    <strong>在你的投资决策中，有哪些"理所当然"的假设，其实值得被质疑？</strong>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">本次搜索维度</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">20+</div>
+                    <div class="stat-label">覆盖信息源</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15</div>
+                    <div class="stat-label">精选条目</div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 12px; color: #52525b;">
+                Powered by WorkBuddy · 数据来源：Stanford HAI、devFlokers、新浪财经、CSDN等<br>
+                仅供参考，不构成投资建议
+            </p>
+        </div>
     </div>
-    <div class="card-desc">
-      微软宣布 GitHub Copilot 自6月1日起从固定额度订阅制全面转向按使用量计费（AI Credits）。如果你习惯 Copilot 辅助写转债分析脚本或 Python 工具，需要关注下个月的账单变化 💸
-    </div>
-    <a class="card-link" href="https://www.ithome.com/0/944/205.htm" target="_blank">🔗 IT之家 报道</a>
-  </div>
-
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-hot">🔥 选型</span>
-      2026 AI编程三足鼎立：Cursor vs Claude Code vs Copilot 深度横评出炉
-    </div>
-    <div class="card-desc">
-      59% 的开发者采用混合搭配方案：Claude Code 负责复杂多文件改动和大仓库理解，Cursor 作为日常 AI IDE，Copilot 处理简单补全。如果你正在做 CodeBuddy 产品竞品分析，这个横评值得细读 📊
-    </div>
-    <a class="card-link" href="https://eastondev.com/blog/zh/posts/ai/20260419-ai-coding-assistants-comparison/" target="_blank">🔗 深度横评</a>
-  </div>
-
-  <div class="card">
-    <div class="card-title">
-      <span class="tag tag-new">🆕 开源</span>
-      Claude Code 登顶编程能力榜首，Anthropic 开放开发者大会注册
-    </div>
-    <div class="card-desc">
-      Claude Code 持续领跑编程任务（SWE-bench），Anthropic 开放 Code with Claude 开发者大会直播注册。作为腾讯 CodeBuddy 的对标产品，Anthropic 的产品迭代节奏值得持续关注 🎯
-    </div>
-    <a class="card-link" href="https://aitoolsrecap.com/Blog/ai-news-may-2026" target="_blank">🔗 AI Tools Recap</a>
-  </div>
-</div>
-
-<!-- ========== 今日思考 ========== -->
-<div class="footer">
-  <div class="footer-title">💬 今日思考</div>
-  <p>
-    <span class="emoji">🤔</span> GPT-5.5 Instant 的幻觉锐减，对你用 AI 解读可转债研报有多大帮助？<br>
-    幻觉少了 = 研报解读更可靠 = 因子逻辑更可信？<br>
-    欢迎留言聊聊你的实操体验 👇
-  </p>
-</div>
-
-<div class="watermark">
-  🤖 AI日报 · 中书省出品 · 每日16:00自动推送<br>
-  数据来源：TechCrunch / IT之家 / Crunchbase / BigQuant / Reportify · 2026-05-08
-</div>
-
 </body>
 </html>

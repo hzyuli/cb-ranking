@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI日报 | 2026年6月5日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
+    line-height: 1.8;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .header {
+    text-align: center;
+    padding: 30px 0 20px;
+  }
+  .header h1 {
+    font-size: 2em;
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+  .header .date {
+    color: #888;
+    font-size: 0.9em;
+  }
+  .header .subtitle {
+    color: #aaa;
+    font-size: 0.85em;
+    margin-top: 4px;
+  }
+  .section {
+    background: rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    border-left: 4px solid;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s;
+  }
+  .section:hover { transform: translateY(-2px); }
+  .section.frontier { border-left-color: #f7971e; }
+  .section.finance { border-left-color: #00b894; }
+  .section.productivity { border-left-color: #6c5ce7; }
+  .section h2 { font-size: 1.25em; margin-bottom: 14px; }
+  .item {
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .item h3 { font-size: 1.05em; color: #fff; margin-bottom: 4px; }
+  .item .desc { color: #bbb; font-size: 0.93em; margin-bottom: 4px; }
+  .item .comment {
+    color: #f0a040;
+    font-size: 0.88em;
+    font-style: italic;
+  }
+  .item .link {
+    font-size: 0.82em;
+    color: #6c9fff;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .item .link:hover { text-decoration: underline; }
+  .think-box {
+    background: rgba(255,215,0,0.08);
+    border: 1px dashed rgba(255,215,0,0.3);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .think-box .label { color: #ffd200; font-size: 0.85em; margin-bottom: 6px; }
+  .think-box .question { color: #e8e8e8; font-size: 1em; font-weight: 600; }
+  .footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.78em;
+    padding: 20px 0;
+  }
+  .footer a { color: #6c9fff; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🤖 AI 日报</h1>
+  <div class="date">2026年6月5日 · 星期五</div>
+  <div class="subtitle">覆盖三大领域：AI前沿 · AI+金融 · AI生产力</div>
+</div>
+
+<!-- ====== 🔬 AI前沿 ====== -->
+<div class="section frontier">
+  <h2>🔬 AI前沿</h2>
+
+  <div class="item">
+    <h3>🏗️ 华为云一口气发布十余款 Agentic AI 新品</h3>
+    <div class="desc">今日华为云INSPIRE创想者大会上，CEO周跃峰推出覆盖四大层面的新品矩阵：<strong>灵衢智算集群</strong>（10万卡级，200 EFLOPS，Token生成<10ms）、<strong>Agentic记忆存储</strong>（PB级分层记忆，支持天级长程任务）、<strong>智果AgentArts</strong>（企业级智能体全生命周期平台）、<strong>码道CodeArts</strong>（AI编程智能体正式商用）。还发布了全球首个全流程具身智能开发平台 CloudRobo。</div>
+    <div class="comment">💡 华为云正从"卖算力"升级为"卖AI代理能力"，Agentic AI基础设施化趋势明显加速。</div>
+    <a class="link" href="https://news.qq.com/rain/a/20260605A05DTF00" target="_blank">📎 腾讯新闻：华为云一次发布了十几款AI新品</a>
+  </div>
+
+  <div class="item">
+    <h3>⚠️ Claude 全球宕机引发 AI 依赖风险大讨论</h3>
+    <div class="desc">6月2日，Anthropic旗下 Claude（Opus 4.6、API、Claude Code）发生大规模全球服务中断，影响从开发团队到客服、数据工程乃至财务、物流等跨部门业务。ThoughtWorks发文指出：许多企业将单一厂商API硬编码进业务系统，构成了<strong>严重的单点故障风险</strong>，呼吁将AI服务当作基础设施来设计高可用架构。</div>
+    <div class="comment">💡 对可转债投资者而言：当量化模型和AI投研工具成为日常依赖时，"API宕机"意味着策略真空期，多模型路由和多数据源备份值得提前规划。</div>
+    <a class="link" href="https://www.thoughtworks.com/en-cn/insights/blog/generative-ai/claude-outage-june-2026" target="_blank">📎 ThoughtWorks：Claude宕机后的AI韧性思考</a>
+  </div>
+
+  <div class="item">
+    <h3>🧠 6月大模型"超级发布月"拉开帷幕</h3>
+    <div class="desc">OpenAI GPT-5.6（150万Token上下文，可一次性输入《三体》三部曲全文）、Google Gemini 3.5 Pro（推理准确率提升35%+）、Anthropic Claude Sonnet 4.8（企业级Agent强化）均预计6月发布。国产阵营也不甘示弱：通义千问Qwen3.6全系列、智谱GLM-5.1、月之暗面Kimi K2.6（200万+ Token上下文）同样在路上。</div>
+    <div class="comment">💡 150万Token意味着什么？相当于AI可以"一口气读完"三大报表+全部附注+行业研报，财务分析的门槛将再次大幅降低。</div>
+    <a class="link" href="https://www.yidaoit.cn/news-2026-06-02-b.html" target="_blank">📎 一手科技：2026年6月AI大模型密集发布潮</a>
+  </div>
+</div>
+
+<!-- ====== 💰 AI+金融 ====== -->
+<div class="section finance">
+  <h2>💰 AI+金融</h2>
+
+  <div class="item">
+    <h3>🤖 金融AI Agent进入L4自主决策时代</h3>
+    <div class="desc">最新行业研究显示，2026年金融AI Agent已从"信息摘要"进化到<strong>"自主逻辑推理"</strong>——能自动拆解复杂任务（如"分析某半导体企业信用风险并对比行业均值"），调用API检索财报、语义分析MD&A风险点、Python建模计算关键指标，全程无需人工干预。TradingAgents等多智能体协作投研系统在开源社区受到关注，模拟真实金融机构的多空研究员辩论流程。</div>
+    <div class="comment">💡 可转债投研的"研究员+交易员+风控"三层架构，正在被AI原生复刻。审慎使用是加速器，盲信则可能放大人性偏见。</div>
+    <a class="link" href="https://blog.csdn.net/SHIZAIZHINENG/article/details/159799473" target="_blank">📎 CSDN：2026年金融AI Agent落地全景拆解</a>
+  </div>
+
+  <div class="item">
+    <h3>🏦 六大行2025年金融科技投入超千亿，AI渗透加速</h3>
+    <div class="desc">随着上市银行2025年年报收官，数据揭示金融业AI转型全貌：工商银行全年金融科技投入<strong>285.88亿元</strong>，招商银行AI应用替代超<strong>1556万人工小时</strong>，平安银行大模型应用场景<strong>翻倍至近400个</strong>。华为云也在今日大会上宣布：金融私有云基础设施中国市场份额第一。</div>
+    <div class="comment">💡 银行AI军备竞赛的受益者是谁？金融机构降本增效直接利好运营效率和ROE；而AI基础设施供应商（云厂商、芯片、数据库）则是确定性更高的"卖铲人"。</div>
+    <a class="link" href="http://m.article.kangzeyaofang.cn/forge/202606/article_914441.shtml" target="_blank">📎 每日经济新闻：上市银行年报中的AI竞赛</a>
+  </div>
+
+  <div class="item">
+    <h3>📊 微软MAI模型套件亮相，Codex财务场景方案上线</h3>
+    <div class="desc">微软Build 2026发布的7款MAI模型持续发酵：MAI-Thinking-1在SWE Bench Pro上媲美Claude Opus 4.6，MAI-Code-1-Flash原生集成VS Code和GitHub Copilot。特别值得关注的是MAI模型与Fabric数据平台深度集成，允许智能体安全访问企业数据库Schema<strong>而不暴露原始数据</strong>——这对金融合规场景意义重大。</div>
+    <div class="comment">💡 Rayfin SDK的"不暴露原始数据表"设计思路，可转债投研工具同样适用——本地部署模型+脱敏数据访问=合规红线内的AI赋能。</div>
+    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：2026年6月AI新闻汇总</a>
+  </div>
+</div>
+
+<!-- ====== ⚡ AI生产力 ====== -->
+<div class="section productivity">
+  <h2>⚡ AI生产力</h2>
+
+  <div class="item">
+    <h3>🎬 ZoomMate正式上线：会议AI自动变行动文档</h3>
+    <div class="desc">Zoom于6月1日发布ZoomMate（$20/人/月），能在会议中实时将决策自动同步至Salesforce、Jira、ServiceNow、Slack等企业系统，并提供"Complete"功能将会议记录一键转化为精美文档或PPT。同时推出AI生产力套件（$10/人/月），包含Canvas、Slides、Sheets、Paper四件套，<strong>完全兼容Office格式</strong>。</div>
+    <div class="comment">💡 会议纪要自动化终于从"碰运气"升级到"可依赖"——对于每天3-5场会议的产品经理和投研人员来说，这几乎是刚需中的刚需。</div>
+    <a class="link" href="https://www.aiapps.com/blog/ai-news-breakthroughs-launches-trends-must-read/" target="_blank">📎 AIApps：2026年6月AI产品发布汇总</a>
+  </div>
+
+  <div class="item">
+    <h3>🖥️ NVIDIA DGX Spark + NemoClaw：开源AI本地部署新范式</h3>
+    <div class="desc">NVIDIA发布DGX Spark智能体部署环境，内置NemoClaw开源编排框架+<strong>OpenShell沙箱安全网关</strong>。预置Playbook包括每日新闻摘要、软件开发智能体、文档审查器、日历协商助手。支持本地运行Qwen3.6-35B等模型，实现<strong>数据不出本地的AI能力</strong>。</div>
+    <div class="comment">💡 "数据不出本地"对金融行业是刚需——投研分析、策略回测、客户数据处理都要过合规关。NVIDIA这套方案给出了一条清晰的本地AI落地路径。</div>
+    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：NVIDIA DGX Spark详情</a>
+  </div>
+
+  <div class="item">
+    <h3>📉 斯坦福2026 AI指数：初级开发者岗位减少近20%</h3>
+    <div class="desc">斯坦福最新AI指数报告披露多项惊人数据：美国领先中国顶级模型的差距已缩小至<strong>仅2.7%</strong>；2025年全球AI企业融资达<strong>5817亿美元</strong>（同比+130%）；初级软件开发岗位减少近20%，样板代码自动化正在压缩初级招聘市场；NeurIPS 2026投稿中<strong>28.2%</strong>被检测为100%自动生成文本。</div>
+    <div class="comment">💡 "AI不会取代你，但会用AI的人会"——这话正在变成现实。投研领域同样如此：能驾驭AI工具的量化研究员vs.只会Excel的分析师，差距只会越来越大。</div>
+    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：斯坦福2026 AI指数关键数据</a>
+  </div>
+</div>
+
+<!-- ====== 💭 今日思考 ====== -->
+<div class="think-box">
+  <div class="label">💭 今日思考</div>
+  <div class="question">华为云今日发布十余款Agentic AI产品、ZoomMate让AI在会议中自主执行业务操作、金融AI Agent从"辅助"走向"自主决策"……当AI代理不再是噱头而是日常，我们每个人的工作流是否已准备好从"人→工具"进化为"人→AI团队"？<br>如果给你配3个AI代理（研究员/交易员/风控），你最愿意把哪个环节先交给AI全权负责？</div>
+</div>
+
+<div class="footer">
+  <p>📬 每日16:00自动推送 | <a href="https://hzyuli.github.io/cb-ranking/ai-daily/" target="_blank">往期归档</a></p>
+  <p style="margin-top:4px;">数据来源：公开新闻检索 · 仅供参考，不构成投资建议</p>
+</div>
+
+</div>
+</body>
+</html>

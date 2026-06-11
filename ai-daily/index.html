@@ -3,192 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI日报 | 2026年6月5日</title>
+<title>AI日报 | 2026年6月11日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    color: #e0e0e0;
-    line-height: 1.8;
-    padding: 20px;
-    min-height: 100vh;
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #21262d; margin-bottom: 28px; }
+  .header .date { font-size: 13px; color: #8b949e; letter-spacing: 2px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #58a6ff, #d2a8ff, #f78166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 8px 0; }
+  .header .subtitle { font-size: 14px; color: #8b949e; }
+  .section { margin-bottom: 28px; }
+  .section-title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #21262d; }
+  .section-title .icon { font-size: 22px; }
+  .card { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; transition: border-color 0.2s; }
+  .card:hover { border-color: #30363d; }
+  .card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px; font-weight: 600; }
+  .tag-frontier { background: rgba(88,166,255,0.15); color: #58a6ff; }
+  .tag-finance { background: rgba(247,129,102,0.15); color: #f78166; }
+  .tag-productivity { background: rgba(210,168,255,0.15); color: #d2a8ff; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #e6edf3; }
+  .card p { font-size: 13.5px; color: #8b949e; margin-bottom: 8px; }
+  .card .comment { font-size: 13px; color: #f0883e; padding: 6px 10px; background: rgba(240,136,62,0.08); border-radius: 6px; border-left: 3px solid #f0883e; }
+  .card a { color: #58a6ff; text-decoration: none; font-size: 12.5px; }
+  .card a:hover { text-decoration: underline; }
+  .thinking { background: linear-gradient(135deg, #1a1e2e, #1c2333); border: 1px solid #30363d; border-radius: 12px; padding: 20px 24px; margin-top: 8px; }
+  .thinking h3 { font-size: 15px; color: #d2a8ff; margin-bottom: 8px; }
+  .thinking p { font-size: 13.5px; color: #8b949e; }
+  .footer { text-align: center; padding: 24px 0 16px; font-size: 12px; color: #484f58; border-top: 1px solid #21262d; margin-top: 32px; }
+  .highlight { color: #f78166; font-weight: 600; }
+  @media (max-width: 480px) {
+    .container { padding: 16px 12px; }
+    .header h1 { font-size: 22px; }
+    .card { padding: 14px 16px; }
   }
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .header {
-    text-align: center;
-    padding: 30px 0 20px;
-  }
-  .header h1 {
-    font-size: 2em;
-    background: linear-gradient(90deg, #f7971e, #ffd200);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-  }
-  .header .date {
-    color: #888;
-    font-size: 0.9em;
-  }
-  .header .subtitle {
-    color: #aaa;
-    font-size: 0.85em;
-    margin-top: 4px;
-  }
-  .section {
-    background: rgba(255,255,255,0.05);
-    border-radius: 14px;
-    padding: 22px 24px;
-    margin-bottom: 18px;
-    border-left: 4px solid;
-    backdrop-filter: blur(10px);
-    transition: transform 0.2s;
-  }
-  .section:hover { transform: translateY(-2px); }
-  .section.frontier { border-left-color: #f7971e; }
-  .section.finance { border-left-color: #00b894; }
-  .section.productivity { border-left-color: #6c5ce7; }
-  .section h2 { font-size: 1.25em; margin-bottom: 14px; }
-  .item {
-    margin-bottom: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .item h3 { font-size: 1.05em; color: #fff; margin-bottom: 4px; }
-  .item .desc { color: #bbb; font-size: 0.93em; margin-bottom: 4px; }
-  .item .comment {
-    color: #f0a040;
-    font-size: 0.88em;
-    font-style: italic;
-  }
-  .item .link {
-    font-size: 0.82em;
-    color: #6c9fff;
-    text-decoration: none;
-    word-break: break-all;
-  }
-  .item .link:hover { text-decoration: underline; }
-  .think-box {
-    background: rgba(255,215,0,0.08);
-    border: 1px dashed rgba(255,215,0,0.3);
-    border-radius: 12px;
-    padding: 18px 20px;
-    margin-top: 10px;
-    text-align: center;
-  }
-  .think-box .label { color: #ffd200; font-size: 0.85em; margin-bottom: 6px; }
-  .think-box .question { color: #e8e8e8; font-size: 1em; font-weight: 600; }
-  .footer {
-    text-align: center;
-    color: #666;
-    font-size: 0.78em;
-    padding: 20px 0;
-  }
-  .footer a { color: #6c9fff; text-decoration: none; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header">
-  <h1>🤖 AI 日报</h1>
-  <div class="date">2026年6月5日 · 星期五</div>
-  <div class="subtitle">覆盖三大领域：AI前沿 · AI+金融 · AI生产力</div>
-</div>
-
-<!-- ====== 🔬 AI前沿 ====== -->
-<div class="section frontier">
-  <h2>🔬 AI前沿</h2>
-
-  <div class="item">
-    <h3>🏗️ 华为云一口气发布十余款 Agentic AI 新品</h3>
-    <div class="desc">今日华为云INSPIRE创想者大会上，CEO周跃峰推出覆盖四大层面的新品矩阵：<strong>灵衢智算集群</strong>（10万卡级，200 EFLOPS，Token生成<10ms）、<strong>Agentic记忆存储</strong>（PB级分层记忆，支持天级长程任务）、<strong>智果AgentArts</strong>（企业级智能体全生命周期平台）、<strong>码道CodeArts</strong>（AI编程智能体正式商用）。还发布了全球首个全流程具身智能开发平台 CloudRobo。</div>
-    <div class="comment">💡 华为云正从"卖算力"升级为"卖AI代理能力"，Agentic AI基础设施化趋势明显加速。</div>
-    <a class="link" href="https://news.qq.com/rain/a/20260605A05DTF00" target="_blank">📎 腾讯新闻：华为云一次发布了十几款AI新品</a>
+  <div class="header">
+    <div class="date">2026 · 06 · 11</div>
+    <h1>🤖 AI 日报</h1>
+    <div class="subtitle">每日三分钟，AI不脱节</div>
   </div>
 
-  <div class="item">
-    <h3>⚠️ Claude 全球宕机引发 AI 依赖风险大讨论</h3>
-    <div class="desc">6月2日，Anthropic旗下 Claude（Opus 4.6、API、Claude Code）发生大规模全球服务中断，影响从开发团队到客服、数据工程乃至财务、物流等跨部门业务。ThoughtWorks发文指出：许多企业将单一厂商API硬编码进业务系统，构成了<strong>严重的单点故障风险</strong>，呼吁将AI服务当作基础设施来设计高可用架构。</div>
-    <div class="comment">💡 对可转债投资者而言：当量化模型和AI投研工具成为日常依赖时，"API宕机"意味着策略真空期，多模型路由和多数据源备份值得提前规划。</div>
-    <a class="link" href="https://www.thoughtworks.com/en-cn/insights/blog/generative-ai/claude-outage-june-2026" target="_blank">📎 ThoughtWorks：Claude宕机后的AI韧性思考</a>
+  <!-- 🔬 AI前沿 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🔬</span> AI前沿</div>
+
+    <div class="card">
+      <span class="tag tag-frontier">重磅发布</span>
+      <h3>Anthropic发布Claude Fable 5 / Mythos 5 — "神话级"模型屠榜</h3>
+      <p>6月9日Anthropic推出Claude Fable 5面向公众开放，Mythos 5面向合作方限量开放。Fable 5在软件工程、视觉处理、科学研究等多项基准测试中全面领先，长周期高复杂度任务的自主运行能力远超前代Opus。Stripe测试中Fable 5仅用一天完成过去需数周的开发任务。</p>
+      <div class="comment">💡 "寓言"级能力开放给普通人，AI从"工具"向"同事"又近了一步。可转债投研中长链推理能力的提升值得期待。</div>
+      <a href="https://finance.sina.com.cn/tech/digi/2026-06-10/doc-iniawiea2872386.shtml" target="_blank">🔗 新浪财经报道</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">苹果AI</span>
+      <h3>WWDC 2026：Siri AI正式亮相，苹果全面拥抱Gemini</h3>
+      <p>苹果发布酝酿两年的AI版Siri，底层由Gemini驱动，iOS 27全面AI重构。支持无缝切换ChatGPT、Claude等第三方模型。Core AI框架开放开发者接口。这也是库克以CEO身份主持的最后一届WWDC，9月将由John Ternus接任。</p>
+      <div class="comment">💡 苹果终于从"AI追赶者"变为"AI整合者"。端侧AI+多模型切换，可能改变投资者获取金融信息的方式。</div>
+      <a href="https://finance.sina.com.cn/roll/2026-06-09/doc-iniatxxe3470802.shtml" target="_blank">🔗 新浪科技全汇总</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">资本竞速</span>
+      <h3>OpenAI与Anthropic竞速IPO — AI双雄估值逼近万亿美元</h3>
+      <p>Anthropic 6月1日率先向SEC秘密递交S-1（估值9650亿美元），OpenAI 6月8日紧随其后（估值8520亿美元）。两家合计超1.8万亿美元，最快今年秋季登陆美股。这将是史上最大规模的AI IPO浪潮。</p>
+      <div class="comment">💡 万亿级AI公司上市将重塑科技股估值锚，对转债市场正股的"AI概念溢价"可能产生估值重定价压力。</div>
+      <a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawttu6036132.shtml" target="_blank">🔗 新浪财经报道</a>
+    </div>
   </div>
 
-  <div class="item">
-    <h3>🧠 6月大模型"超级发布月"拉开帷幕</h3>
-    <div class="desc">OpenAI GPT-5.6（150万Token上下文，可一次性输入《三体》三部曲全文）、Google Gemini 3.5 Pro（推理准确率提升35%+）、Anthropic Claude Sonnet 4.8（企业级Agent强化）均预计6月发布。国产阵营也不甘示弱：通义千问Qwen3.6全系列、智谱GLM-5.1、月之暗面Kimi K2.6（200万+ Token上下文）同样在路上。</div>
-    <div class="comment">💡 150万Token意味着什么？相当于AI可以"一口气读完"三大报表+全部附注+行业研报，财务分析的门槛将再次大幅降低。</div>
-    <a class="link" href="https://www.yidaoit.cn/news-2026-06-02-b.html" target="_blank">📎 一手科技：2026年6月AI大模型密集发布潮</a>
-  </div>
-</div>
+  <!-- 💰 AI+金融 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> AI+金融</div>
 
-<!-- ====== 💰 AI+金融 ====== -->
-<div class="section finance">
-  <h2>💰 AI+金融</h2>
+    <div class="card">
+      <span class="tag tag-finance">转债量化</span>
+      <h3>广发金工6月转债月报：估值因子持续走弱，组合5月回撤-3.20%</h3>
+      <p>广发金工跟踪32个基本面因子+80个低频价量因子+32个高频价量因子，月度调仓组合2025年以来累计收益25.95%，但5月回撤-3.20%，超额-1.08%。估值因子持续走弱是当前转债量化策略的核心挑战。</p>
+      <div class="comment">💡 估值因子走弱意味着"便宜选债"逻辑短期失效，结合AI多因子模型动态调整因子权重可能是破局方向。</div>
+      <a href="https://baijiahao.baidu.com/s?id=1866877174592150643" target="_blank">🔗 广发金工月报</a>
+    </div>
 
-  <div class="item">
-    <h3>🤖 金融AI Agent进入L4自主决策时代</h3>
-    <div class="desc">最新行业研究显示，2026年金融AI Agent已从"信息摘要"进化到<strong>"自主逻辑推理"</strong>——能自动拆解复杂任务（如"分析某半导体企业信用风险并对比行业均值"），调用API检索财报、语义分析MD&A风险点、Python建模计算关键指标，全程无需人工干预。TradingAgents等多智能体协作投研系统在开源社区受到关注，模拟真实金融机构的多空研究员辩论流程。</div>
-    <div class="comment">💡 可转债投研的"研究员+交易员+风控"三层架构，正在被AI原生复刻。审慎使用是加速器，盲信则可能放大人性偏见。</div>
-    <a class="link" href="https://blog.csdn.net/SHIZAIZHINENG/article/details/159799473" target="_blank">📎 CSDN：2026年金融AI Agent落地全景拆解</a>
-  </div>
+    <div class="card">
+      <span class="tag tag-finance">转债策略</span>
+      <h3>6月转债策略展望：极致分化后的再平衡</h3>
+      <p>多家券商6月转债策略聚焦"科技+新能源+顺周期"三线布局：AI算力与半导体主线推荐瑞可/联瑞/鼎龙/神宇转债；新能源主线关注油价波动下的能源自主；同时考虑强赎风险和估值性价比做均衡配置。</p>
+      <div class="comment">💡 "极致分化后"的再平衡，意味着前期扎堆的AI概念转债可能需要警惕估值回调，而低关注度板块或迎来修复。</div>
+      <a href="https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/833714557326/index.phtml" target="_blank">🔗 新浪财经研报</a>
+    </div>
 
-  <div class="item">
-    <h3>🏦 六大行2025年金融科技投入超千亿，AI渗透加速</h3>
-    <div class="desc">随着上市银行2025年年报收官，数据揭示金融业AI转型全貌：工商银行全年金融科技投入<strong>285.88亿元</strong>，招商银行AI应用替代超<strong>1556万人工小时</strong>，平安银行大模型应用场景<strong>翻倍至近400个</strong>。华为云也在今日大会上宣布：金融私有云基础设施中国市场份额第一。</div>
-    <div class="comment">💡 银行AI军备竞赛的受益者是谁？金融机构降本增效直接利好运营效率和ROE；而AI基础设施供应商（云厂商、芯片、数据库）则是确定性更高的"卖铲人"。</div>
-    <a class="link" href="http://m.article.kangzeyaofang.cn/forge/202606/article_914441.shtml" target="_blank">📎 每日经济新闻：上市银行年报中的AI竞赛</a>
-  </div>
-
-  <div class="item">
-    <h3>📊 微软MAI模型套件亮相，Codex财务场景方案上线</h3>
-    <div class="desc">微软Build 2026发布的7款MAI模型持续发酵：MAI-Thinking-1在SWE Bench Pro上媲美Claude Opus 4.6，MAI-Code-1-Flash原生集成VS Code和GitHub Copilot。特别值得关注的是MAI模型与Fabric数据平台深度集成，允许智能体安全访问企业数据库Schema<strong>而不暴露原始数据</strong>——这对金融合规场景意义重大。</div>
-    <div class="comment">💡 Rayfin SDK的"不暴露原始数据表"设计思路，可转债投研工具同样适用——本地部署模型+脱敏数据访问=合规红线内的AI赋能。</div>
-    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：2026年6月AI新闻汇总</a>
-  </div>
-</div>
-
-<!-- ====== ⚡ AI生产力 ====== -->
-<div class="section productivity">
-  <h2>⚡ AI生产力</h2>
-
-  <div class="item">
-    <h3>🎬 ZoomMate正式上线：会议AI自动变行动文档</h3>
-    <div class="desc">Zoom于6月1日发布ZoomMate（$20/人/月），能在会议中实时将决策自动同步至Salesforce、Jira、ServiceNow、Slack等企业系统，并提供"Complete"功能将会议记录一键转化为精美文档或PPT。同时推出AI生产力套件（$10/人/月），包含Canvas、Slides、Sheets、Paper四件套，<strong>完全兼容Office格式</strong>。</div>
-    <div class="comment">💡 会议纪要自动化终于从"碰运气"升级到"可依赖"——对于每天3-5场会议的产品经理和投研人员来说，这几乎是刚需中的刚需。</div>
-    <a class="link" href="https://www.aiapps.com/blog/ai-news-breakthroughs-launches-trends-must-read/" target="_blank">📎 AIApps：2026年6月AI产品发布汇总</a>
+    <div class="card">
+      <span class="tag tag-finance">AI量化</span>
+      <h3>2026 AI量化工具测评：AlphaGBM领衔五维雷达</h3>
+      <p>CSDN发布2026年AI量化工具深度测评，AlphaGBM在结构化数据挖掘领域持续领跑。微软Qlib开源平台Star突破4.1万，从因子挖掘到策略回测全流程覆盖，成为散户量化的"瑞士军刀"。</p>
+      <div class="comment">💡 开源量化工具降低门槛，转债散户也可用Qlib+AlphaGBM构建因子库，但需警惕"同质化策略"的踩踏风险。</div>
+      <a href="https://devpress.csdn.net/v1/article/detail/161677031" target="_blank">🔗 CSDN深度测评</a>
+    </div>
   </div>
 
-  <div class="item">
-    <h3>🖥️ NVIDIA DGX Spark + NemoClaw：开源AI本地部署新范式</h3>
-    <div class="desc">NVIDIA发布DGX Spark智能体部署环境，内置NemoClaw开源编排框架+<strong>OpenShell沙箱安全网关</strong>。预置Playbook包括每日新闻摘要、软件开发智能体、文档审查器、日历协商助手。支持本地运行Qwen3.6-35B等模型，实现<strong>数据不出本地的AI能力</strong>。</div>
-    <div class="comment">💡 "数据不出本地"对金融行业是刚需——投研分析、策略回测、客户数据处理都要过合规关。NVIDIA这套方案给出了一条清晰的本地AI落地路径。</div>
-    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：NVIDIA DGX Spark详情</a>
+  <!-- ⚡ AI生产力 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚡</span> AI生产力</div>
+
+    <div class="card">
+      <span class="tag tag-productivity">编程革命</span>
+      <h3>Claude Code + Fable 5：AI编程进入"自愈时代"</h3>
+      <p>5月底Claude Code发布史上最大更新，核心新增"自愈"功能——AI能自主检测并修复代码错误，无需人工反复检查。Fable 5发布后Claude Code团队内部反馈："以前我们检查Claude做对了没，用了Fable 5后发现不需要了。"</p>
+      <div class="comment">💡 "自愈"意味着AI从"被审查的助手"变为"可信赖的合作者"。转债量化策略代码的debug成本有望大幅下降。</div>
+      <a href="https://www.sohu.com/a/1029021297_121885030" target="_blank">🔗 搜狐报道</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">工具横评</span>
+      <h3>2026 AI编程工具终极实战指南：Cursor vs Claude Code vs Copilot</h3>
+      <p>51CTO发布深度横评：Cursor擅长IDE内闭环、Claude Code擅长终端级自主执行、Copilot企业级集成最深。关键差异在"竞技场模式"（Arena Mode）——生成多个候选输出供选择，目前仅出现在代码痕迹中尚未上线。</p>
+      <div class="comment">💡 选择AI编程工具像选转债——没有"最优解"，只有"最适合你的场景"。策略开发用Claude Code，日常写码用Cursor。</div>
+      <a href="https://jishuzhan.net/article/2063413642888032257" target="_blank">🔗 51CTO深度对比</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">生态开放</span>
+      <h3>苹果Core AI开放第三方模型接入 — "AI中转站"模式开启</h3>
+      <p>WWDC 2026宣布iOS 27支持第三方AI模型扩展，Siri无法解答时可无缝切换ChatGPT、Claude等。苹果成为AI时代的"入口层"——自己不做最强模型，但做最好的分发渠道。</p>
+      <div class="comment">💡 苹果玩的是转债里的"下修博弈"逻辑——自身模型不强但渠道占优，一旦开放就是最大的AI流量入口。</div>
+      <a href="https://www.sohu.com/a/1032655821_827544" target="_blank">🔗 搜狐前瞻</a>
+    </div>
   </div>
 
-  <div class="item">
-    <h3>📉 斯坦福2026 AI指数：初级开发者岗位减少近20%</h3>
-    <div class="desc">斯坦福最新AI指数报告披露多项惊人数据：美国领先中国顶级模型的差距已缩小至<strong>仅2.7%</strong>；2025年全球AI企业融资达<strong>5817亿美元</strong>（同比+130%）；初级软件开发岗位减少近20%，样板代码自动化正在压缩初级招聘市场；NeurIPS 2026投稿中<strong>28.2%</strong>被检测为100%自动生成文本。</div>
-    <div class="comment">💡 "AI不会取代你，但会用AI的人会"——这话正在变成现实。投研领域同样如此：能驾驭AI工具的量化研究员vs.只会Excel的分析师，差距只会越来越大。</div>
-    <a class="link" href="https://www.devflokers.com/blog/ai-news-june-2026-models-research-developments" target="_blank">📎 DevFlokers：斯坦福2026 AI指数关键数据</a>
+  <!-- 今日思考 -->
+  <div class="thinking">
+    <h3>🤔 今日思考</h3>
+    <p>当Anthropic和OpenAI合计1.8万亿美元估值冲击IPO，而苹果选择做"AI入口"而非"AI引擎"——<span class="highlight">在AI产业链中，是做"最强引擎"好，还是做"最大入口"好？映射到转债投资，你更偏好正股是"技术龙头"还是"平台龙头"？</span></p>
   </div>
-</div>
 
-<!-- ====== 💭 今日思考 ====== -->
-<div class="think-box">
-  <div class="label">💭 今日思考</div>
-  <div class="question">华为云今日发布十余款Agentic AI产品、ZoomMate让AI在会议中自主执行业务操作、金融AI Agent从"辅助"走向"自主决策"……当AI代理不再是噱头而是日常，我们每个人的工作流是否已准备好从"人→工具"进化为"人→AI团队"？<br>如果给你配3个AI代理（研究员/交易员/风控），你最愿意把哪个环节先交给AI全权负责？</div>
-</div>
-
-<div class="footer">
-  <p>📬 每日16:00自动推送 | <a href="https://hzyuli.github.io/cb-ranking/ai-daily/" target="_blank">往期归档</a></p>
-  <p style="margin-top:4px;">数据来源：公开新闻检索 · 仅供参考，不构成投资建议</p>
-</div>
+  <div class="footer">
+    <p>AI日报 · 每日16:00自动推送 · 由AI收集生成</p>
+    <p style="margin-top:4px;">📊 结合可转债/投资视角 · 三大板块均衡覆盖</p>
+  </div>
 
 </div>
 </body>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI日报 | 2026年7月8日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #21262d; margin-bottom: 28px; }
+  .header .date { font-size: 13px; color: #8b949e; letter-spacing: 2px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #58a6ff, #d2a8ff, #f78166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 8px 0; }
+  .header .subtitle { font-size: 14px; color: #8b949e; }
+  .section { margin-bottom: 28px; }
+  .section-title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #21262d; }
+  .section-title .icon { font-size: 22px; }
+  .card { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; transition: border-color 0.2s; }
+  .card:hover { border-color: #30363d; }
+  .card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px; font-weight: 600; }
+  .tag-frontier { background: rgba(88,166,255,0.15); color: #58a6ff; }
+  .tag-finance { background: rgba(247,129,102,0.15); color: #f78166; }
+  .tag-productivity { background: rgba(210,168,255,0.15); color: #d2a8ff; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #e6edf3; }
+  .card p { font-size: 13.5px; color: #8b949e; margin-bottom: 8px; }
+  .card .comment { font-size: 13px; color: #f0883e; padding: 6px 10px; background: rgba(240,136,62,0.08); border-radius: 6px; border-left: 3px solid #f0883e; }
+  .card a { color: #58a6ff; text-decoration: none; font-size: 12.5px; }
+  .card a:hover { text-decoration: underline; }
+  .thinking { background: linear-gradient(135deg, #1a1e2e, #1c2333); border: 1px solid #30363d; border-radius: 12px; padding: 20px 24px; margin-top: 8px; }
+  .thinking h3 { font-size: 15px; color: #d2a8ff; margin-bottom: 8px; }
+  .thinking p { font-size: 13.5px; color: #8b949e; }
+  .footer { text-align: center; padding: 24px 0 16px; font-size: 12px; color: #484f58; border-top: 1px solid #21262d; margin-top: 32px; }
+  .highlight { color: #f78166; font-weight: 600; }
+  @media (max-width: 480px) {
+    .container { padding: 16px 12px; }
+    .header h1 { font-size: 22px; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="date">2026 · 07 · 08</div>
+    <h1>🤖 AI 日报</h1>
+    <div class="subtitle">每日三分钟，AI不脱节</div>
+  </div>
+
+  <!-- 🔬 AI前沿 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🔬</span> AI前沿</div>
+
+    <div class="card">
+      <span class="tag tag-frontier">监管风暴</span>
+      <h3>Anthropic 今日起强制实名验证 — AI行业最严身份管控上线</h3>
+      <p>Anthropic于7月8日正式执行新版隐私政策：所有Claude用户（Free/Pro/Max）必须上传政府核发身份证+实时人脸扫描比对才能继续使用，数据处理由第三方Persona负责。此前Claude Code被曝通过Unicode隐写术标记中国用户，新规将进一步影响国内开发者对Claude生态的信任。</p>
+      <div class="comment">💡 身份验证+生物识别采集，在隐私保护与安全合规之间走了一条最激进的路。对中国开发者而言，Claude的使用门槛再上一级。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 7月8日AI行业资讯速览</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">芯片突围</span>
+      <h3>DeepSeek 被曝自研 AI 推理芯片 — 走出第三条路</h3>
+      <p>路透社7月7日报道：三位知情人士透露DeepSeek正在自研AI推理专用芯片，以减少对英伟达和华为昇腾的依赖。项目约一年前启动，正在大力招募芯片架构工程师、接触晶圆代工厂和存储企业。核心策略：不碰训练芯片，全部投入推理场景。这意味着DeepSeek正在搭建"既不绑定英伟达、也不过度依赖华为"的第三条路。</p>
+      <div class="comment">💡 有海量真实落地场景的DeepSeek做软硬件深度协同，推理成本有望断崖式下降——这对所有AI应用层（包括金融AI）都是利好。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 路透社报道摘要</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">AI制药里程碑</span>
+      <h3>全球首款 AI 全流程研发药物进入 III 期临床 — 从靶点发现到III期仅30个月</h3>
+      <p>英矽智能（Insilico Medicine）宣布核心管线Rentosertib正式启动III期临床试验，用于治疗特发性肺纤维化。这是全球首个由AI完成靶点发现和分子设计的创新药进入III期临床——从AI靶点发现到候选分子确定仅用18个月（传统需4-5年），累计达成四笔BD合作近70亿美元。</p>
+      <div class="comment">💡 AI制药从概念验证迈入商业化冲刺。映射到投资：创新药转债正股的AI赋能不再是"PPT概念"，开始有了可量化的临床管线里程碑。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 英矽智能III期临床</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">太空+AI</span>
+      <h3>马斯克 xAI 正式更名为 SpaceXAI — 太空与AI深度整合落地</h3>
+      <p>7月7日，马斯克创立的xAI官宣更名为SpaceXAI，同步更换品牌标识。此前5月马斯克宣布xAI并入SpaceX，此次更名宣告整合全面落地。恰逢SpaceX6月完成史上最大IPO（筹资750亿美元），马斯克意图为星链、太空通信和火星计划提供AI底层支撑——不只是做聊天机器人，而是"太空AI基础设施"。</p>
+      <div class="comment">💡 SpaceX+AI的组合意味着"卫星数据+AI推理"的新商业模式——另类数据投资者值得关注星链数据在金融场景的应用潜力。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 SpaceXAI更名报道</a>
+    </div>
+  </div>
+
+  <!-- 💰 AI+金融 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> AI+金融</div>
+
+    <div class="card">
+      <span class="tag tag-finance">转债策略</span>
+      <h3>7月转债月报：AI阶段承压，分层布局低位科技</h3>
+      <p>西部证券7月转债月报核心判断：AI算力链短期面临调整但长期逻辑未破，7月应"弹性抓科技、底仓配均衡、博弈选条款"。6月TMT成交占比达48.5%创2023年以来新高，科技赛道拥挤度偏高，部分资金"高切低"。建议逢回调分批布局低溢价次新科技转债，适度增配医药、电力设备等均衡品种。6月转债发行17支（228.8亿元），7/8月或迎新券上市放量。</p>
+      <div class="comment">💡 "AI阶段承压"不是终点而是消化期——转债分层策略的本质是：用债底保护守住下行，用低位科技的期权弹性捕获反弹。</div>
+      <a href="https://baijiahao.baidu.com/s?id=1870120258686942308" target="_blank">🔗 西部固收7月转债月报</a>
+      <a href="https://www.cnfin.com/zs-lb/detail/20260702/4434847_1.html" style="margin-left:12px">🔗 七月转债分层布局</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-finance">去依附化</span>
+      <h3>微软 Office 用自研 MAI 模型替换 OpenAI/Anthropic — 最亲密盟友也在为"断供"做准备</h3>
+      <p>Bloomberg报道：微软已在Excel和Outlook等产品中开始用自研MAI模型替代OpenAI和Anthropic模型，每周数万条AI任务由MAI完成。微软AI负责人Suleyman6月曾表态目标是让内部模型在更多场景中具备竞争力。微软是OpenAI最大投资方，这一动作意味深长——即便最亲密的盟友，也在降低对第三方AI供应商的依赖。</p>
+      <div class="comment">💡 "去依附化"趋势映射到投资：AI产业链中，掌握自有技术栈的平台型公司（微软、DeepSeek）比纯依赖第三方API的公司更有长期护城河。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 Bloomberg报道摘要</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-finance">规模碾压</span>
+      <h3>中国大模型周调用量 23.45万亿 Token — 达美国的 5.5 倍</h3>
+      <p>OpenRouter最新数据：6月29日至7月5日一周，中国大模型周调用量23.45万亿Token（环比增长15%，连续十周增长），美国仅4.28万亿。DeepSeek V4 Flash连续7周位居全球榜首（周调用量5.34万亿Token）。开源免费+高性能的组合正在大规模替代付费闭源模型——中国在Token消耗量这一反映真实生产力的指标上已建立绝对领先。</p>
+      <div class="comment">💡 Token调用量是AI真实落地能力的"硬指标"。5.5倍的差距意味着中国AI应用的渗透深度远超想象——金融AI工具的国产替代正在加速。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 OpenRouter数据</a>
+    </div>
+  </div>
+
+  <!-- ⚡ AI生产力 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚡</span> AI生产力</div>
+
+    <div class="card">
+      <span class="tag tag-productivity">编程王者回归</span>
+      <h3>Claude Fable 5 重夺编程冠军 — SWE-bench Pro 80.3%，出口管制6月30日解除</h3>
+      <p>Claude Fable 5于7月1日正式回归（出口管制6月30日解除），重新夺回编程能力榜首：SWE-bench Pro得分80.3%，SWE-bench Verified 95.0%。同时Claude Sonnet 5（6月30日发布）成为Free/Pro默认模型，在6项可比较基准测试中全面击败GPT-5.5，定价$2/$10（介绍价至8月31日），被誉为"最佳性价比编程模型"。</p>
+      <div class="comment">💡 编程AI的"性价比之战"正在重塑开发者选择逻辑——Sonnet 5一半价格击败GPT-5.5，对日常投研代码生成而言是极佳选择。</div>
+      <a href="https://finance.sina.com.cn/tech/digi/2026-07-01/doc-iniffyta1132506.shtml" target="_blank">🔗 Claude Sonnet 5发布</a>
+      <a href="https://aitoolsrecap.com/Blog/best-ai-tools-july-2026-updated-rankings" style="margin-left:12px">🔗 7月AI工具排名</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">Agent专用芯片</span>
+      <h3>英伟达 Vera CPU：首款"AI Agent 专用处理器"，Perplexity 确认采用</h3>
+      <p>Perplexity于7月8日确认采用英伟达新推出的Vera CPU支持其AI代理工作负载。Vera在处理AI代理编码任务时速度约为传统CPU的1.5倍，被英伟达定位为"首款AI Agent专用处理器"，预计本财年末带来200亿美元营收。AI代理的工作模式（执行代码、调用工具、沙盒输出、反复推理）对CPU而非GPU的代码执行能力提出了更高要求。</p>
+      <div class="comment">💡 从GPU训练到CPU推理再到"Agent专用CPU"，AI基础设施正在为"自主执行"范式重新设计——这意味着Agent类金融AI工具的响应速度和成本都将大幅优化。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 Perplexity + Vera CPU</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">人形机器人量产</span>
+      <h3>人形机器人量产提速 — 优必选订单破1.1万台、智元1.5万台下线、宇树42亿IPO</h3>
+      <p>7月8日具身智能板块催化密集：优必选"U1系列"全渠道订单突破1.1万台（售价11.98-99万），智元机器人第15000台精灵G2量产下线（从万台到1.5万台不足3个月），宇树科技科创板IPO注册获同意（募资42.02亿，估值420亿，104天闪电过会）。中金研报指出产业已从"demo演示"跨入"可交付"阶段。</p>
+      <div class="comment">💡 从万台到1.5万台仅3个月——人形机器人产业链转债正股（伺服电机、减速器、传感器）的业绩兑现窗口正在打开。</div>
+      <a href="https://iaipie.com/2026%E5%B9%B47%E6%9C%888%E6%97%A5ai%E8%A1%8C%E4%B8%9A%E8%B5%84%E8%AE%AF%E9%80%9F%E8%A7%88/" target="_blank">🔗 人形机器人量产报道</a>
+    </div>
+  </div>
+
+  <!-- 💭 今日思考 -->
+  <div class="thinking">
+    <h3>💭 今日思考</h3>
+    <p>Anthropic强制实名验证、微软用自研模型替换OpenAI、DeepSeek自研芯片走出第三条路——今天的新闻有一个共同主题：<span class="highlight">"去依附、自主化"</span>。</p>
+    <p style="margin-top:8px">当全球AI巨头都在降低对外部依赖时，转债投资中那些<span class="highlight">正股高度依赖单一技术供应商或单一客户的标的</span>，是否也需要重新评估其护城河的稳固程度？自主可控，不仅是国家战略，也是企业生存策略。</p>
+  </div>
+
+  <div class="footer">
+    AI日报 · 2026年7月8日 · 自动生成<br>
+    信息来源：路透社、Bloomberg、新浪财经、西部证券、OpenRouter、aitoolsrecap等<br>
+    推送时间：16:00 CST
+  </div>
+
+</div>
+</body>
+</html>

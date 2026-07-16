@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI日报 | 2026年7月16日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.8; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #21262d; margin-bottom: 28px; }
+  .header .date { font-size: 13px; color: #8b949e; letter-spacing: 2px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #58a6ff, #d2a8ff, #f78166); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 8px 0; }
+  .header .subtitle { font-size: 14px; color: #8b949e; }
+  .section { margin-bottom: 28px; }
+  .section-title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #21262d; }
+  .section-title .icon { font-size: 22px; }
+  .card { background: #161b22; border: 1px solid #21262d; border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; transition: border-color 0.2s; }
+  .card:hover { border-color: #30363d; }
+  .card .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-bottom: 8px; font-weight: 600; }
+  .tag-frontier { background: rgba(88,166,255,0.15); color: #58a6ff; }
+  .tag-finance { background: rgba(247,129,102,0.15); color: #f78166; }
+  .tag-productivity { background: rgba(210,168,255,0.15); color: #d2a8ff; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #e6edf3; }
+  .card p { font-size: 13.5px; color: #8b949e; margin-bottom: 8px; }
+  .card .comment { font-size: 13px; color: #f0883e; padding: 6px 10px; background: rgba(240,136,62,0.08); border-radius: 6px; border-left: 3px solid #f0883e; }
+  .card a { color: #58a6ff; text-decoration: none; font-size: 12.5px; }
+  .card a:hover { text-decoration: underline; }
+  .thinking { background: linear-gradient(135deg, #1a1e2e, #1c2333); border: 1px solid #30363d; border-radius: 12px; padding: 20px 24px; margin-top: 8px; }
+  .thinking h3 { font-size: 15px; color: #d2a8ff; margin-bottom: 8px; }
+  .thinking p { font-size: 13.5px; color: #8b949e; }
+  .footer { text-align: center; padding: 24px 0 16px; font-size: 12px; color: #484f58; border-top: 1px solid #21262d; margin-top: 32px; }
+  .highlight { color: #f78166; font-weight: 600; }
+  @media (max-width: 480px) {
+    .container { padding: 16px 12px; }
+    .header h1 { font-size: 22px; }
+    .card { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="date">2026 · 07 · 16</div>
+    <h1>🤖 AI 日报</h1>
+    <div class="subtitle">每日三分钟，AI不脱节</div>
+  </div>
+
+  <!-- 🔬 AI前沿 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🔬</span> AI前沿</div>
+
+    <div class="card">
+      <span class="tag tag-frontier">开源大模型</span>
+      <h3>前OpenAI CTO Murati 携 Thinking Machines 发布 975B 参数开放权重模型 Inkling</h3>
+      <p>7月16日，OpenAI前首席技术官 Mira Murati 创办的 Thinking Machines Lab 正式走出隐身模式，推出首个通用基础模型 Inkling 并开放完整权重。Inkling 采用 MoE 架构，总参数 9750 亿（单次激活 410 亿），支持 100 万 Token 上下文窗口，预训练数据规模约 45 万亿 Token，覆盖文本、图像、音频、视频多模态。设计 Arena 智能体网页开发测试 1257 分，与 Claude Opus 4.6 持平、接近 GPT-5.6 Sol（1260 分）。最特别的是"思考强度"可调——开发者可在性能、生成 Token 数、延迟和成本间做取舍，Terminal Bench 2.1 达到与英伟达 Nemotron 3 Ultra 相近成绩时仅用其 1/3 Token。</p>
+      <div class="comment">💡 "前OpenAI CTO + 完全开源 + 准万亿参数 + 可调思考强度"——四张牌一起打。Inkling 不会超越 GPT-5.6/Opus 4.8 的最强榜单，但开放权重意味着企业可私有部署+成本可控，威胁的是"闭源高价 API"的护城河。</div>
+      <a href="https://www.163.com/dy/article/L1UNHL850511D6RL.html" target="_blank">🔗 网易科技详细报道</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">AI 助力科研</span>
+      <h3>GPT-5.6 Sol 推翻 30 年统计学猜想，90 分钟完成人类数十年未解之题</h3>
+      <p>7月16日，my2cents 报道：宾夕法尼亚大学教授使用 GPT-5.6 Sol Pro 在约 90 分钟内推翻了关于 Benjamini-Hochberg 多重检验修正的一个存在数十年的猜想。这道题长期未被人类数学家攻克，AI 模型首次做出"原创性数学贡献"而非"复现已知"。该结果尚未经过同行评议正式确认，但已加入"前沿模型产生原创数学成果"案例库。前沿模型开始进入"科研合作者"角色，不只是写代码写文案。</p>
+      <div class="comment">💡 AI 当"研究员"——当模型能推翻人类数十年未解的猜想，传统研究范式将出现根本性变化。投研工作中"数据挖掘+假设生成+反例发现"全流程可由 AI 加速，转债量化中的因子挖掘尤其受益。</div>
+      <a href="https://www.my2cents.ai/news/2026-07-16" target="_blank">🔗 My2Cents AI News</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-frontier">端侧 AI</span>
+      <h3>Apple Intelligence 获批入华：搭载千问模型，7 款端侧 AI 完成备案</h3>
+      <p>7月15日，网信中国公布新增 7 款手机端侧生成式 AI 服务备案名单，Apple 智能、华为小艺、OPPO AndesGPT、vivo、小米、三星、中兴（努比亚豆包手机大模型）全部在列。其中 Apple 智能将搭载阿里千问模型满足本地化合规要求，这是 Apple Intelligence 首次进入中国市场。"国行苹果 AI 用千问"成 7 月 16 日最重要合规进展——意味着全球顶级终端厂商正式以"中国模型+本地合规"模式落地。明日（7月17日）字节联合中兴努比亚的第二代豆包 AI 手机将在世界人工智能大会（WAIC）亮相。</p>
+      <div class="comment">💡 苹果低头用千问——这是中国大模型"出海受阻"反向倒逼"国内大客户绑定"的标志性事件。端侧 AI 落地带动国产芯片、模型适配、AI 应用分发全链条，转债中"国产算力+消费电子"组合受益最直接。</div>
+      <a href="https://www.163.com/dy/article/L1UQR4P205118O8G.html" target="_blank">🔗 爱范儿早报</a>
+    </div>
+  </div>
+
+  <!-- 💰 AI+金融 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💰</span> AI+金融</div>
+
+    <div class="card">
+      <span class="tag tag-finance">资本运作</span>
+      <h3>DeepSeek 计划明年在上海 IPO，同时寻求 15 亿美元新融资</h3>
+      <p>7月16日，DeepSeek 被曝准备 2027 年在上海上市，并同步寻求约 15 亿美元新融资。若成行将是国产大模型公司首次登陆 A 股资本市场——此前国内大模型公司"不上市、靠融资烧钱"的格局将彻底改变。AI 拟人化互动服务管理办法今起正式施行，叠加"价值创造+资本退出"的明确路径，国产 AI 头部企业估值有望进入"二级市场定价"阶段。</p>
+      <div class="comment">💡 DeepSeek 上市是 A 股 AI 板块的"超级催化剂"——参考宁德时代/比亚迪的"产业链龙头上市"效应。转债市场上"AI 算力+端侧芯片+大模型"相关标的可能提前抢跑，建议关注国产 GPU、推理芯片、AI 服务器液冷等细分赛道。</div>
+      <a href="https://www.163.com/dy/article/L1UQR4P205118O8G.html" target="_blank">🔗 DeepSeek 上市+合规落地</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-finance">转债策略</span>
+      <h3>信堡转债年中展望："三高"环境下，量化突围首选偏股性策略组合</h3>
+      <p>7月15日，信堡投研发布 2026 年转债年中策略。核心观点：当前转债"价格 134 元、溢价率 48%"处于近 3 年 85.91% 分位，"高估值+高强赎+高波动"格局延续。推荐"年度主线+希腊字母+Easyball"三大偏股性策略组合：年度主线聚焦半导体材料、算电协同、存储芯片；希腊字母策略赚波动率的钱；Easyball 赚技术趋势的钱。2026 年以来组合收益 5.05%，强调"重交易轻配置、保留弹药等待中报兑现"。</p>
+      <div class="comment">💡 "三高"格局下择券空间狭窄——量化策略的"动态调仓+多因子打分"比纯主观判断更稳健。半导体材料+算电协同+存储是 AI 主线下半场的高赔率方向，转债玩家重点跟踪液冷、电子特气、HBM 产业链相关个券。</div>
+      <a href="https://dy.163.com/article/L1SOJ9LH05568W0A.html" target="_blank">🔗 信堡转债展望</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-finance">AI 治理</span>
+      <h3>26 名 Meta 员工起诉 AI 裁员系统：8000 人裁员由"星座"系统自动评分</h3>
+      <p>7月13日，26 名 Meta 员工在美国加州联邦法院提起诉讼，指控公司在 5 月约 8000 人裁员中使用由 Metamate 聊天机器人、AI 仪表板、键盘监控等组成的"星座"系统自动评分并筛选裁员名单，导致休医疗假、育儿假等受保护假期的员工被不成比例地裁撤。这是美国首起员工起诉大型科技公司使用 AI 系统裁员的案件，正值加州 SB7 法案（2026年1月生效）要求高风险就业决策必须有人类复核的关键节点。</p>
+      <div class="comment">💡 "AI 替雇主背锅"——这把双刃剑的另一面是 AI 治理成为企业法务、HR、合规部门的硬性支出。AI 决策可解释性、审计追溯将催生新赛道，国内相关合规科技公司值得关注。</div>
+      <a href="https://www.my2cents.ai/news/2026-07-16" target="_blank">🔗 Meta 员工诉讼</a>
+    </div>
+  </div>
+
+  <!-- ⚡ AI生产力 -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚡</span> AI生产力</div>
+
+    <div class="card">
+      <span class="tag tag-productivity">硬件革命</span>
+      <h3>OpenAI Codex 首款硬件亮相：1500 元，重定义"AI 生产力工具"形态</h3>
+      <p>7月16日，OpenAI 旗下 Codex 业务线发布首款硬件产品，定价约 1500 元。这是 ChatGPT/Codex 软件能力向硬件入口延伸的关键一步——继 Apple Intelligence 入华、华为小艺、OPPO AndesGPT 等 7 款端侧 AI 完成备案后，AI Agent 正式从"软件订阅"走向"软硬一体"。同期 ChatGPT 服务中断约 45 分钟（登录、聊天等功能受影响），再次暴露单点服务依赖的脆弱性。</p>
+      <div class="comment">💡 1500 元的 AI 硬件——是 OpenAI 对"端侧推理"和"AI 入口"的硬件卡位。当 AI 模型白菜价、API 同质化时，硬件+订阅的捆绑销售可能成为新护城河。</div>
+      <a href="https://www.163.com/dy/article/L1UQR4P205118O8G.html" target="_blank">🔗 爱范儿早报</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">企业落地</span>
+      <h3>亚马逊云科技中国峰会：小鹏"灵犀"平台 AI 代码覆盖率超 70%，AI 治理 AI</h3>
+      <p>7月16日，亚马逊云科技中国峰会上，小鹏集团数据及 AI 中台负责人何锐邦披露：基于 Kiro 编程内核+Amazon Bedrock 基础模型搭建的"灵犀"平台已实现 AI 代码覆盖率超 70%。全自主模式下 AI 不只写代码，还负责发现错误、反复测试直到通过验证才触发部署。工程师从"执行者"变成"监督者"，产品经理、运营人员也可在平台上把想法直接转化为可验证的产品原型——"AI 治理 AI"成为新范式。储瑞松判断这是"Agentic AI 爆发的拐点"。</p>
+      <div class="comment">💡 70% 代码由 AI 写——这意味着软件公司的"人月"成本结构正在崩塌。对投研工作而言，未来"AI 写代码+AI 调回测+AI 写研报"全链路闭环已不遥远，重点是建立"监督+验证"的能力。</div>
+      <a href="https://news.sina.com.cn/o/2026-07-16/doc-inihyqhi8030068.shtml" target="_blank">🔗 亚马逊云科技峰会</a>
+    </div>
+
+    <div class="card">
+      <span class="tag tag-productivity">端侧模型</span>
+      <h3>PrismML Bonsai 27B：27B 参数推理模型压缩到 4GB 以内，能在 iPhone 上跑</h3>
+      <p>7月16日，PrismML 发布开源推理模型 Bonsai 27B——将 27B 参数的推理模型压缩到不足 4GB，能在 iPhone 上本地运行，且据称保留约 90% 性能。Apple 正测试其底层压缩技术，意味着一旦商业化，capable reasoning 模型将无需云端调用即可在消费级设备运行。同日 Mistral 发布 Leanstral 1.5（119B MoE，主攻 Lean 4 形式化证明，PutnamBench 解决 587/672 题，每题成本仅 4 美元，对比竞品 300+ 美元）、Poolside 发布 Laguna XS 2.1 + M.1 双尺寸 Agentic 编程模型。"端侧+小而强"成为开源模型新战场。</p>
+      <div class="comment">💡 4GB 跑 27B 推理模型——"端侧 AI"已从概念变成可量产的现实。对消费者意味着"永远在线+隐私不外传"，对企业意味着推理成本再降一个数量级。投研场景中"本地因子挖掘+离线回测"可行性大幅提升。</div>
+      <a href="https://www.my2cents.ai/news/2026-07-16" target="_blank">🔗 Bonsai 27B + 多家模型发布</a>
+    </div>
+  </div>
+
+  <!-- 💭 今日思考 -->
+  <div class="thinking">
+    <h3>💭 今日思考</h3>
+    <p>今天的关键词是<span class="highlight">"端侧+开源+上市"</span>：Thinking Machines 准万亿参数开放权重、Apple Intelligence 入华搭载千问、DeepSeek 计划明年上海 IPO、Codex 推出 1500 元硬件、Bonsai 27B 把推理模型塞进 iPhone、亚马逊云峰会"AI 治理 AI"落地。</p>
+    <p style="margin-top:8px">当最贵和最便宜的 AI 同步爆发——准万亿参数开源可私有部署、27B 端侧 4GB 可离线运行——AI 行业的"模型层"正快速演变为<span class="highlight">"水电煤"基础设施</span>。留给上层应用、硬件入口和合规治理的窗口期正在收窄。<span class="highlight">对转债投资者而言：DeepSeek 上市前夜的 A 股 AI 算力链、信堡建议的半导体材料+算电协同+存储组合，以及端侧 AI 拉动的小型化芯片+低功耗存储，谁能率先拿到"AI 平民化"的订单，谁就是下半年的弹性主角？</span></p>
+  </div>
+
+  <div class="footer">
+    AI日报 · 2026年7月16日 · 自动生成<br>
+    信息来源：网易科技、爱范儿、My2Cents、腾讯新闻、亚马逊云科技、信堡投研、新浪财经、my2cents.ai 等<br>
+    推送时间：16:00 CST
+  </div>
+
+</div>
+</body>
+</html>

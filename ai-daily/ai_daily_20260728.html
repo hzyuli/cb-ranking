@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI日报 | 2026.07.28</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #5a5a7a;
+            --accent: #6366f1;
+            --accent-light: #e0e7ff;
+            --border: #e2e8f0;
+            --frontier: #8b5cf6;
+            --finance: #10b981;
+            --productivity: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container { max-width: 720px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            padding: 32px 0 24px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 28px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--frontier));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header .date { color: var(--text-secondary); font-size: 14px; }
+        .section { margin-bottom: 28px; }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        .section-title.frontier { border-color: var(--frontier); }
+        .section-title.finance { border-color: var(--finance); }
+        .section-title.productivity { border-color: var(--productivity); }
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+        .card .title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        .card .summary {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .card .comment {
+            font-size: 13px;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        .card .link {
+            font-size: 12px;
+        }
+        .card .link a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .card .link a:hover { text-decoration: underline; }
+        .think-box {
+            background: linear-gradient(135deg, #faf5ff, #ede9fe);
+            border: 1px solid #c4b5fd;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 28px 0;
+        }
+        .think-box h3 { color: var(--frontier); font-size: 16px; margin-bottom: 8px; }
+        .think-box p { font-size: 14px; color: #4c1d95; line-height: 1.7; }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 32px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+        .highlight { font-weight: 600; color: #e11d48; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+    <h1>🤖 AI 日报</h1>
+    <div class="date">2026年7月28日 · 星期二</div>
+</div>
+
+<!-- 🔬 AI前沿 -->
+<div class="section">
+    <div class="section-title frontier">🔬 AI 前沿</div>
+
+    <div class="card">
+        <div class="title">🌍 Kimi K3 正式全栈开源！2.8万亿参数，30分钟登顶HuggingFace</div>
+        <div class="summary">
+            7月27日深夜，月之暗面放出Kimi K3完整模型权重、47页技术报告，并同步开源MoonEP、FlashKDA、AgentEnv三大底层Infra技术。HuggingFace半小时获4000+赞，创平台最快发布纪录。华为昇腾、阿里云真武M890、Cursor、Devin、Nebius等国内外厂商全部Day0适配。马斯克公开称赞"令人印象深刻"后，xAI随即宣布启动2万亿参数Grok训练对标K3。
+        </div>
+        <div class="comment">💡 不是"又一个开源模型"——K3用修改版MIT许可证全栈开放，意味着2.8万亿参数的MoE架构可以私有化部署。对金融场景而言，这意味着敏感数据的本地化AI推理不再依赖闭源API。</div>
+        <div class="link">🔗 <a href="https://www.nbd.com.cn/articles/2026-07-28/4522645.html" target="_blank">每日经济新闻：Kimi K3全栈开源</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">🧠 Claude Opus 5 发布：Fable 5 性能，一半价格</div>
+        <div class="summary">
+            7月24日，Anthropic发布新一代旗舰Claude Opus 5，定价维持$5/$25（Fable 5的一半），但在编程（SWE-bench Pro 79.2%、Frontier-Bench翻倍+）和知识工作（GDPval-AA 1861 Elo超Fable 5）上全面跃升。ARC-AGI 3得分30.2%，是第二名3倍。已成为Claude Max默认模型。<span class="highlight">性价比直接成为新武器。</span>
+        </div>
+        <div class="comment">💡 Anthropic这波操作很妙：用Opus 5吃掉中高端市场，Fable 5守住天花板。对金融投研而言，$5的"准前沿"模型做财报分析、尽调（Box实测比Opus 4.8好17%）是性价比利器。</div>
+        <div class="link">🔗 <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank">Anthropic官方：Introducing Claude Opus 5</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">📊 中国大模型调用量碾压美国14倍，前五全为中国模型</div>
+        <div class="summary">
+            据OpenRouter最新数据（7/20-26），中国大模型周调用量达33万亿Token（美国仅2.34万亿），连续13周超美国。小米MiMo-V2.5以10.5万亿Token登顶全球第一，前五全部为中国模型（DeepSeek V4系、腾讯HY3、智谱GLM-5.2等）。中国模型在OpenRouter的份额已达63.5%。
+        </div>
+        <div class="comment">💡 Token调用量不等于技术领先，但说明中国AI生态的"使用量"形成了正向飞轮——用得越多，反馈越多，迭代越快。这对算力链、AI应用标的的业绩是实打实的支撑。</div>
+        <div class="link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052" target="_blank">每日经济新闻：中国大模型周调用量是美国14倍</a></div>
+    </div>
+</div>
+
+<!-- 💰 AI+金融 -->
+<div class="section">
+    <div class="section-title finance">💰 AI + 金融</div>
+
+    <div class="card">
+        <div class="title">📈 光大证券"AI+固收"深度研报：AI Agent 零代码搞定可转债量化回测</div>
+        <div class="summary">
+            7月27日，光大证券发布"AI+固收"系列首篇，展示AI Agent如何通过自然语言交互直接生成可转债量化回测代码。以双低择券策略为例，AI从Wind/企查查/恒生聚源三源融合获取数据，完成"六步标准化工作流+七维打分"。可转债策略开发的技术壁垒正被AI消解。
+        </div>
+        <div class="comment">💡 这意味着什么？以前写一个可转债因子回测要半天，现在对着AI说句话就行。量化策略的"民主化"正在加速，但这也意味着传统因子策略的超额会更难做。</div>
+        <div class="link">🔗 <a href="https://news.10jqka.com.cn/20260728/c678469169.shtml" target="_blank">同花顺：AI如何赋能固定收益投研</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">🎯 广发金工7月转债择时：维持1/3低仓位，量化组合25年超额4.53%</div>
+        <div class="summary">
+            广发证券最新转债月报显示，基于价量模型、定价偏差和转债弹性三维度的择时系统维持1/3仓位。量化转债组合（基本面+低频价量+高频价量三套因子体系）2025年以来累计收益26.17%，超额中证转债指数4.53%。
+        </div>
+        <div class="comment">💡 广发金工持续跟进32个基本面+80个低频+32个高频因子——这就是AI赋能传统金工的典型范式：不是取代研究员，而是让他们管更多因子。</div>
+        <div class="link">🔗 <a href="https://k.sina.cn/article_5953190046_162d6789e06703f6va.html" target="_blank">广发金工：可转债择时系统维持低仓位</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">🏦 富国基金"空气指增+AI因子+可转债"三维策略，近一年回报最高11.49%</div>
+        <div class="summary">
+            富国和信回报三个月持有今日起发行，由管理680亿的陈斯扬掌舵。策略不绑固定指数，AI动态迭代因子组合全市场选股；可转债端采用三步量化定价模型（理论定价→正股联动→波动率监控）。在管产品近一年回报9.88%-11.49%，最大回撤<3%。
+        </div>
+        <div class="comment">💡 "固收+"的AI进化路径清晰：把"人判断"换成"模型判断"，不需要预测方向，只需要找到定价偏差。可转债天然适合这种范式——它是中国特有的"结构化产品"，定价维度多，AI恰好擅长。</div>
+        <div class="link">🔗 <a href="https://new.qq.com/rain/a/20260723A04Q3V00" target="_blank">腾讯新闻：量化"固收+"富国和信回报发行</a></div>
+    </div>
+</div>
+
+<!-- ⚡ AI生产力 -->
+<div class="section">
+    <div class="section-title productivity">⚡ AI 生产力</div>
+
+    <div class="card">
+        <div class="title">🏢 中国AI Agent"三国杀"：腾讯、阿里、美团同日亮剑</div>
+        <div class="summary">
+            7月27日一天内三巨头同时出击：<b>腾讯WorkBuddy</b>正式上架鸿蒙电脑应用市场，月活已破2097万（马化腾亲自督战）；<b>阿里"千问办公"</b>启动小范围测试，整合QoderWork/悟空/MuleRun，由钉钉新CEO陈宇森负责；<b>美团"小团"2.0</b>全面升级，从"问"进化到"帮"，直接下单/打车/订位全闭环。AI Agent从"能聊"进入"能办"时代。
+        </div>
+        <div class="comment">💡 打了一年的"大模型参数战"之后，2026年7月正式进入"Agent落地战"。办公、本地生活、生态入口三条路线各有优劣，但共同点只有一个：谁能嵌入用户真实工作流，谁就赢。</div>
+        <div class="link">🔗 <a href="https://new.qq.com/rain/a/20260728A027YV00" target="_blank">每日经济新闻：AI智能体大战爆发</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">💻 Claude Opus 5 + Cursor：编程性价比新标杆</div>
+        <div class="summary">
+            CursorBench最新榜单：Opus 5 Max档70.0%（Fable 5 70.5%），但每任务仅$8.23（Fable 5 $17.32），token用量少了40%。在Extra High档甚至全面超过Fable 5。同时，Kimi K3也已被Cursor和Devin接入，成为首个性能逼近前沿水平的开源编程模型。
+        </div>
+        <div class="comment">💡 编程AI的定价战正式打响。OpenAI Codex用户破800万、Claude Code按量付费延后、Kimi K3免费开源——开发者的选择前所未有地多。如果你还没用AI编程工具，现在是最佳入场时机。</div>
+        <div class="link">🔗 <a href="https://www.claudecoworkexpert.com/en/news/claude-opus-5-launch" target="_blank">Claude Cowork Expert：Opus 5深度解读</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">🏛️ 工信部发布中小企业AI融合指引，"小快轻准"数字化路径明确</div>
+        <div class="summary">
+            7月27日，工信部发布《"小快轻准"数字化产品和服务培育指引（2026年版）》，明确提出深化AI应用，从辅助决策向多模态感知、预测、自主执行演进。鼓励产品深度融合AI技术，推动中小企业数字化转型。
+        </div>
+        <div class="comment">💡 政策信号明确：AI不是大企业专利。"小快轻准"指向的是Agent化的SaaS工具——低门槛、快部署、精准场景。这可能是2026年下半年AI应用层最大的增量市场。</div>
+        <div class="link">🔗 <a href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5556a67e4fa45052" target="_blank">每日经济新闻：工信部AI融合指引</a></div>
+    </div>
+</div>
+
+<!-- 今日思考 -->
+<div class="think-box">
+    <h3>💭 今日思考</h3>
+    <p>
+        今天的关键词是<b>"开源冲击波 × 性价比革命"</b>——Kimi K3全栈开源+Claude Opus 5半价狙击+中国模型调用量碾压美国14倍，三件事指向同一个趋势：<b>AI正在从"奢侈品"变成"基础设施"</b>。<br><br>
+        对中国可转债投资者而言，这意味着什么？算力基建（HBM存储、先进封装）、AI应用落地（Agent化SaaS）、以及"AI+量化"策略本身，都可能在降本浪潮中获得重新定价的机会。但反过来想：当人人都能用AI写因子、做回测，传统量化策略的超额还能持续多久？<br><br>
+        <b>问题抛给你</b>：当2.8万亿参数的开源模型可以在本地跑，你的投资研究流程会发生什么改变？🤔
+    </p>
+</div>
+
+<div class="footer">
+    <p>📬 AI日报 | 每日16:00自动推送 | 轻量版</p>
+    <p>内容仅供参考，不构成投资建议</p>
+</div>
+
+</div>
+</body>
+</html>

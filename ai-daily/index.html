@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI日报 | 2026.08.06</title>
+    <title>AI日报 | 2026.08.11</title>
     <style>
         :root {
             --bg: #f8f9fa;
@@ -115,7 +115,7 @@
 
 <div class="header">
     <h1>🤖 AI 日报</h1>
-    <div class="date">2026年8月6日 · 星期四</div>
+    <div class="date">2026年8月11日 · 星期二</div>
 </div>
 
 <!-- 🔬 AI前沿 -->
@@ -123,30 +123,39 @@
     <div class="section-title frontier">🔬 AI 前沿</div>
 
     <div class="card">
-        <div class="title">🎬 清华团队开源全球首个千亿级 MoE 视频模型 MAGI-2 Preview：114B 参数只激活 6B，成本仅主流 1/10</div>
+        <div class="title">🛡️ Meta 杀回开源：300 亿参数 Muse Glimmer 本地 Agent 模型发布，单张消费级显卡可跑、断网也能用</div>
         <div class="summary">
-            8月5—6日，由清华特奖得主曹越领衔的 Sand.ai 正式发布并开源 MAGI-2 Preview。这是全球首个开源千亿级 MoE 统一音视频生成模型，总参数 1140 亿，单次前向仅激活约 60 亿。它用统一单流架构同时生成画面与声音，在 Artificial Analysis 图生视频榜单排名第六，生成 10 秒 1080P 视频成本约 0.5 元，达到主流模型的约十分之一。
+            8 月 11 日，Meta 正式开源 30B 参数的 Muse Glimmer 模型，Apache 2.0 宽松协议、权重已上 Hugging Face。它是从 Muse Spark 1.2 蒸馏而来，专为"常驻本地 Agent"设计：4bit 量化后体积压缩到 20GB 以内，单张消费级 GPU 或 Mac 就能流畅运行；支持 100 多种语言、文本+图像多模态输入、工具调用、代码编写与调试、文件与屏幕截图处理、长流程自动化。Hacker News 首发 24 小时内破千赞，Unsloth 当天就发布了 GGUF 量化版。同期小扎发表《The Future is for Everyone》公开信，称"超级智能应该赋能每个人而非集中于少数机构"，并把"Sparks 给闭源、Glimmer 全开源"包装成"哪些能力归属用户"的划界信号。Meta 刚被 1.4 万亿美元天价索赔缠身，这个开源动作多少带点刷口碑的意味。
         </div>
-        <div class="comment">💡 视频生成终于也迈入了“千亿参数 + 稀疏激活”的 MoE 时代。对投资人来说，这意味着 AIGC 视频应用的推理成本正在被快速打下，广告、短剧、电商视频等商业化场景可能迎来一波“杰文斯悖论”式的需求爆发，利好算力租赁、云厂商和拥有垂直场景的公司。</div>
-        <div class="link">🔗 <a href="https://www.163.com/dy/article/L3LKFT980511ABV6.html" target="_blank">新智元：清华校友出手！视频界首个千亿 MoE 开源</a></div>
+        <div class="comment">💡 30B 是 Meta 反复调过的"黄金甜点位"——比 7B/8B 聪明得多，又比 70B 轻得多。一台能跑 Agent 的电脑，正在从"演示视频"快速变成"用户家里的真实设备"。对可转债投资者来说，端侧 AI 利好链很清晰：低功耗存储、PCB/连接器、SoC 芯片、电源管理；尤其那些和 Meta、字节豆包手机、苹果 Apple Intelligence 有合作关系的国产标的。</div>
+        <div class="link">🔗 <a href="https://www.163.com/dy/article/L41P96E80511BLFD.html" target="_blank">cnBeta：Meta 发布 Muse Glimmer，布局机载本地"个人超智能"生态</a></div>
     </div>
 
     <div class="card">
-        <div class="title">🏆 MiniMax H3 登顶 Hugging Face：视频模型“斩杀线”又被抬高，2K 分辨率每秒不到主流 1/3</div>
+        <div class="title">🔒 OpenAI 推出 GPT-5.6-Cyber 网络安全模型：仅向四大会计师事务所、Cloudflare 等获批企业开放，已挖出 Chrome V8 两个零日漏洞</div>
         <div class="summary">
-            8月6日，MiniMax 正式开源新一代通用多模态生成模型 H3，在 Artificial Analysis 视频编辑评测榜和 Arena 图生视频排行榜均位列全球第一，Hugging Face 热度升至榜首，超过 DeepSeek V4 Flash。H3 首次统一理解文本、图像、视频、声音组成的多模态上下文，输出原生双声道音视频，最高支持 15 秒 2K 分辨率。2K 下每秒价格不到主流模型 1/3，768P 下不到 1/2。
+            8 月 10—11 日，OpenAI 正式推出 GPT-5.6-Cyber 与 Daybreak 蓝/红双轨计划。Cyber 是基于 GPT-5.6 Sol 微调的网络安全专用模型，对高危任务的响应率达 95%（GPT-5.6 Sol 仅 1.5%、上一代 GPT-5.5-Cyber 为 57.3%）。模型已挖出 Google Chrome V8 引擎两个可串联利用的零日漏洞（CVE-2026-15903，已修复），还在某主流移动 OS 发现至少 5 个漏洞。Daybreak 计划拆成 Blue（防御工作负载）/ Red（专业红队研究）两条线，首批接入企业含埃森哲、IBM、四大、CrowdStrike、Palo Alto Networks、Cloudflare、思科、Fortinet 等 9 月 1 日起强制硬件安全密钥。
         </div>
-        <div class="comment">💡 同一天 Sand.ai 和 MiniMax 两记重拳，说明中国视频生成模型已经从“追赶”变成“定价权争夺”。当视频生成的单位成本被砍掉三分之二，内容行业的供给曲线会被彻底改写。转债投资里可以顺着这条链找受益环节：算力基建、云服务商、以及有 IP/内容变现能力的传媒标的。</div>
-        <div class="link">🔗 <a href="https://www.163.com/dy/article/L3L12R5T0511KIFE.html" target="_blank">未来图灵：MiniMax H3 登顶 Hugging Face 榜首</a></div>
+        <div class="comment">💡 "前沿模型只对防御者开放"是 OpenAI 第一次明确把模型能力按用途分级。可以预见 Anthropic 的 Mythos、Google 的安全专用模型会很快跟上。对转债来说，最直接的受益是金融科技/合规科技板块——AI 攻防升级会拉动 SOC 平台、零信任方案、安全运营 SaaS 的预算，相关转债的安全边际会同步抬升。</div>
+        <div class="link">🔗 <a href="https://www.163.com/dy/article/L41NI21K0511BLFD.html" target="_blank">cnBeta：OpenAI 发布 GPT-5.6-Cyber 并拓展 Daybreak 网络安全计划</a></div>
     </div>
 
     <div class="card">
-        <div class="title">💰 DeepSeek 重启第二轮融资：投前估值 5000 亿元，计划募资 500 亿元</div>
+        <div class="title">💸 Anthropic 连扔两颗"价格炸弹"：Sonnet 5 永久锁价 + 200 万 token 的 Sonnet 5.5 下月发布，对标 DeepSeek 抢性价比王座</div>
         <div class="summary">
-            据多名交易人士向《财经》透露，DeepSeek 已重启第二轮融资，计划募资 500 亿元，投前估值约 5000 亿元，预计 8 月下旬完成签约。本轮融资于 7 月中旬启动，7 月底因创始人梁文锋对网上流传的“投资者会议实录”内容不满而暂停，目前正低调推进。与此同时，国际 AI 安全基准 CyberGym 公布最新排名，国内机构达酷诺威联合研发的 DoGNAVY 以 90.8% 通过率位列全球第三、开源第一。
+            8 月 11 日，Anthropic 一次性放出两个动作。第一颗：原本 8 月 31 日要涨 50% 的 Claude Sonnet 5 直接取消，永久锁定 $2/输入 + $10/输出 per MTok 的优惠价。第二颗：Sonnet 5.5（内部代号 Fennec，沙漠狐）最快下月发布，泄露参数是 200 万 token 上下文（比 Sonnet 5 翻倍）、更快推理、浏览器/终端工具调用大幅增强、综合能力逼近旗舰 Fable 5，但定价仍维持 Sonnet 档位。这已经是直接对标 DeepSeek V4 Flash（$0.14/$0.28）的贴身肉搏。市场推测，Anthropic 打算让 Sonnet 直接接管 Haiku 多年未更新的中端定位，IPO 前夜讲"规模增长"故事。
         </div>
-        <div class="comment">💡 5000 亿估值让 DeepSeek 成为中国 AI 一级市场最昂贵的“非卖品”。估值这么高，一级市场已经挤不进去了，二级市场自然会去寻找“映射标的”——国产算力链、AI 应用、以及与之合作的云厂商都可能被重新定价。对转债投资者，关注 A 股里给 DeepSeek 提供算力/数据/场景合作的低位科技标的。</div>
-        <div class="link">🔗 <a href="https://www.163.com/dy/article/L3KT8V4K05198R3E.html" target="_blank">投资界：DeepSeek 重启融资</a></div>
+        <div class="comment">💡 大模型价格战已经从国内 DeepSeek/Qwen 烧到海外御三家。Anthropic 锁价+Sonnet 5.5 双管齐下，最直接受益的是"基于大模型构建应用"的 SaaS 厂商——输入成本端锁死，毛利率可预期性大幅提高。转债里关注 AI+客服/AI+营销/AI+法务等典型应用场景的 SaaS 标的，以及给 Anthropic API 做私有化/国产化部署的国产替代链。</div>
+        <div class="link">🔗 <a href="https://www.toutiao.com/w/1873180924179479/" target="_blank">今日头条：Anthropic 一夜放两颗"价格炸弹"</a></div>
+    </div>
+
+    <div class="card">
+        <div class="title">🏗️ 英伟达联手六大华尔街巨头，5000 亿美元 AI 基建融资横空出世：算力正式成为"可投资资产类别"</div>
+        <div class="summary">
+            8 月 10—11 日，英伟达宣布与 Apollo、贝莱德（含 GIP）、黑石、博枫、高盛、KKR 六大金融机构签署谅解备忘录，共同设立独立算力融资平台，长期目标调动超过 5000 亿美元（约 3.5 万亿人民币）第三方资本，专用于 AI 芯片采购、电力生产和数据中心建设。客户可以算力资产为抵押获取融资、再向英伟达买芯片。报道传出后英伟达股价一度跌 3.2%、5 年期 CDS 单日升 5.3 个基点（创两周最大升幅）——市场在担忧"AI 资本开支依赖杠杆"的可持续性。但黄仁勋亲自定调："这确实是技术芯片首次成为可投资资产类别。算力即收入。"
+        </div>
+        <div class="comment">💡 5000 亿这个数字已经接近头部云厂商数年的资本开支总和。算力从一次性 CapEx 变成可抵押、可证券化的资产，AI 工厂的"金融属性"被第一次正式写入行业叙事。对转债来说，含义很直接：算力链/电力链/数据中心精密空调和液冷/铜铝等"AI 基建包工头"环节的需求确定性又上一个台阶，"反内卷"逻辑下的电力运营商、铜铝龙头都更值得重新定价。</div>
+        <div class="link">🔗 <a href="https://finance.sina.cn/2026-08-11/detail-inimxewr7592397.d.html" target="_blank">新浪财经：英伟达联手六大华尔街巨头，5000 亿美元押注 AI 基建</a></div>
     </div>
 </div>
 
@@ -155,30 +164,30 @@
     <div class="section-title finance">💰 AI + 金融</div>
 
     <div class="card">
-        <div class="title">📊 8 月转债月报密集出炉：AI 主线从“硬件叙事”转向“应用+低位科技”，新券交易机会被点名</div>
+        <div class="title">📉 中证转债指数今日收跌 0.66% 报 501.42 点：62 涨 1 平 241 跌，华懋/金诚/科沃领跌，嘉泽/久吾/胜蓝领涨</div>
         <div class="summary">
-            8 月初，华泰、西部、国泰海通等多家券商发布转债月报。共识是：7 月科技股大幅调整后，AI 主线内部开始分化，有中报业绩支撑的错杀型科技股修复弹性最大；方向上更关注 AI 应用（鼎捷、普联、姚记等）、半导体材料/设备、机器人、智能驾驶等低位科技方向。西部证券还特别提醒，8 月潜在上市转债数量维持高位，新券上市次日买入、次月首日卖出的统计均值收益达 6.3%，新券交易机会值得重点关注。
+            8 月 11 日盘后数据显示，中证转债指数收跌 0.66% 报 501.42 点，全市场成交额 595.47 亿元，可转债共成交 304 只、62 涨 1 平 241 跌。具体看，嘉泽转债涨 7.24%、久吾转 02 涨 3.64%、胜蓝转 02 涨 2.56% 领涨；华懋转债跌 6.97%、金诚转债跌 5.18%、科沃转债跌 5.06% 领跌。盘面上看，AI 应用（普联、胜蓝、姚记）、智驾（伯特利/伯 25）、半导体设备（精测、鼎龙）等低位科技方向相对抗跌；前期高位科技与高溢价转债继续杀估值。
         </div>
-        <div class="comment">💡 7 月全球科技股去杠杆后，转债反而靠估值扩张跑出韧性。这说明“债底保护 + 正股弹性”在波动市里的不对称优势依然在。8 月关键词是“业绩验证”——没有中报兑现的纯叙事标的要小心，而有订单、有国产化逻辑、有低溢价的科技转债更值得关注。</div>
-        <div class="link">🔗 <a href="https://www.fxbaogao.com/detail/5576342" target="_blank">西部证券：8 月转债月报——转债抢跑，把握新券交易机会</a></div>
+        <div class="comment">💡 今日转债的关键词是"高位杀估值+低位真成长"——印证了 8 月各家券商月报里"业绩验证、风格再平衡"的共识。结合 7 月估值贡献+7.93pct、8 月进入钝化期，进攻端需要挑"有中报兑现"的方向，防御端继续关注债底保护厚的偏债品种。</div>
+        <div class="link">🔗 <a href="https://www.cnstock.com/commonDetail/758226" target="_blank">上海证券报：中证转债指数收跌 0.66%</a></div>
     </div>
 
     <div class="card">
-        <div class="title">🧠 东吴证券发布 AI SKILL：把选股因子、K 线形态、深度学习择时变成“可调用的数字员工”</div>
+        <div class="title">📊 8 月转债月报密集出炉：财通"攻守转换前夜"+ 国泰海通"业绩验证"+ 西部"新券 T+1 套利 6.3%"，三大方向成共识</div>
         <div class="summary">
-            8 月 4 日，东吴证券金工团队发布《AGENT 时代 SKILL 为核》专题报告，系统展示如何把已有投研成果“Skill 化”。覆盖三类量化场景：自然语言生成分子并自动 IC 评测、动态时间规整匹配历史相似 K 线、GRU 深度学习择时输出多空中性观点；并延伸到主动投研：标准化报告生成、深度研究框架、投资决策委员会、基金研究 SKILL（FundLab）等。其本质是让研究方法和数据接口变成可复用、可审计、可沉淀的“数字资产”。
+            8 月初多家券商月报集中发布，看法高度一致：7 月把年内估值预算消耗大半，8 月进入钝化期。**财通证券**定调"攻守转换前夜"，建议中性仓位、哑铃型结构（偏股备弹+债性打底+条款博弈），重点关注下修生效的鼎通/圣泉。**国泰海通**聚焦"业绩验证"，看好半导体设备/材料/SoC、智驾、机器人；推荐鼎龙/路维/睿创/鼎捷/金 25/宙邦/长高/益丰/春风/科博十只。**西部证券**点出新券交易机会——回测 2026 年上市转债 19 支中 13 支 T+1 持有期收益均值达 6.3%，8 月新券数量维持高位值得关注。
         </div>
-        <div class="comment">💡 这不是“AI 炒股神话”，而是“投研流程的乐高化”——把数据获取、因子计算、报告生成、投决讨论拆成一个个可调用模块。对个人可转债研究者来说，这意味着你可以用 Qlib + Python + LLM 把自己的双低、溢价率、正股动量策略封装成 Skill，让 AI 每天自动跑一遍、出信号、写周报。</div>
-        <div class="link">🔗 <a href="https://cj.sina.cn/article/norm_detail?url=http%3A%2F%2Fstock.finance.sina.com.cn%2Fstock%2Fgo.php%2FvReport_Show%2Fkind%2Flastest%2Frptid%2F839214926802%2Findex.phtml" target="_blank">东吴证券：AGENT 时代 SKILL 为核</a></div>
+        <div class="comment">💡 三份月报拼在一起，可转债 8 月的策略图就基本清晰了：**进攻**=有中报兑现的 AI 应用+半导体材料+智驾+机器人，**防御**=债性保护厚的偏债品种+条款博弈下修，**套利**=新券 T+1 抢跑。投资者可以根据自己的回撤承受度挑一个主线。</div>
+        <div class="link">🔗 <a href="https://m.hibor.com.cn/wap_detail.aspx?id=1cc9a44967f296d3fe3391bea872d587" target="_blank">财通证券：8 月转债策略——估值对冲的极限，攻守转换的前夜</a></div>
     </div>
 
     <div class="card">
-        <div class="title">🎯 浙商证券：AI 市场风格正从“买宏大叙事”转向“买兑现证据”</div>
+        <div class="title">🤖 中国厂商占全球人形机器人出货量 97%：智元 8400 台、宇树 5900 台，合计 75% 全球份额</div>
         <div class="summary">
-            浙商证券在最新观点中指出，AI 投资风格正在发生变化：从“买宏大叙事”转向“买兑现证据”。Token Budgeting 等叙事利好开源模型及云厂商，以及下游有 Token 消耗和分发逻辑的 AI 应用类标的。本质是市场开始用收入、利润、客户黏性来筛选 AI 标的，而不是单纯看模型参数量和发布会热度。
+            据 Smart Analytics Global 8 月 10 日数据，2026 年上半年全球人形机器人出货量约 1.91 万台、同比增长超 200%，其中中国厂商占比超 97%。智元机器人上半年出货约 8400 台、全球份额 44% 居第一；宇树科技出货约 5900 台、占比 31%，两家公司合计约 75% 全球市场。SAG 预计 2026 年全球出货量将增至约 6 万台，2030 年达 50 万台。应用结构上，工业及商业应用已占总出货量 70% 以上，高于去年的 50% 左右——从"展示研发"真正切入"产线干活"。宇树 IPO 上市在即，行业产业化加速。
         </div>
-        <div class="comment">💡 这个判断对转债投资特别重要。转债天生厌恶“纯概念、高波动、无现金流”的标的，而偏好“有业绩、有债底、有条款保护”的资产。当 AI 市场从“讲故事”进入“看兑现”，转债这种“向下有底、向上有弹性”的工具，可能比股票更适合这个验证期。</div>
-        <div class="link">🔗 <a href="https://dy.163.com/article/L3KTRI1U0539ARRF.html" target="_blank">雷达财经：浙商证券观点</a></div>
+        <div class="comment">💡 97% 这个数字值得多看一眼。机器人产业链的关键零部件（电机/减速器/传感器/丝杠）国产化率也持续提升，意味着"中国机器人=全球机器人"正在变成既定事实。转债投资里要顺着这条线找"有真实订单、有量产能力、有宇树/智元/优必选客户"的零部件标的，而非纯概念股。</div>
+        <div class="link">🔗 <a href="https://new.qq.com/rain/a/20260811A02ADU00" target="_blank">每经：全球科技早参——中国厂商占全球人形机器人出货量 97%</a></div>
     </div>
 </div>
 
@@ -187,30 +196,30 @@
     <div class="section-title productivity">⚡ AI 生产力</div>
 
     <div class="card">
-        <div class="title">💻 Meta 首款 AI 编程智能体 Muse Code 亮相：异步后台 Agent + 可精确恢复，挑战 Claude Code 与 Codex</div>
+        <div class="title">🛠️ Claude Code 8 月 14 日默认开启 Auto Mode：拦截危险命令 89% vs 人类 13.6%，放开长时自主运行</div>
         <div class="summary">
-            8 月 6 日，扎克伯格亲自宣布 Meta 首款 AI 编程智能体 Muse Code，由 Meta AI 负责人 Alexandr Wang 带队。它基于 Muse Spark 1.2 模型，最大亮点是“异步后台智能体”——在整个会话期间保持一组专门后台 Agent 持续存活，而不是为单个任务临时生成，避免重复探索代码库；任务足够大时会分发到独立子 Agent 并行处理，每个子 Agent 都在隔离的 git 工作树中。崩溃后还能从停止点精确恢复，所有调用都有本地事件日志可审计。
+            Anthropic 官宣：从 8 月 14 日起，Pro/Max/Team 用户的 Claude Code 新会话将默认运行 Auto Mode，不再每步都弹权限确认。背后机制是一个小分类器对每次工具调用做风险评估，只在动作"不可逆、破坏性强、指向环境外"时拦截。Anthropic 公布的对照数据：在 1053 名付费测试者中，Auto 模式拦截 89% 的危险命令，人工点击通过只拦截 13.6%（原因是用户对 97% 的提示无脑点"同意"）。同时额外产生的分类器 token 费用由 Anthropic 承担。Enterprise/云平台用户暂时仍是 opt-in，将在未来一个月内逐步切换。Adobe、Nuro、Gusto、Garner Health 等团队已经把 Auto Mode 作为生产环境默认。
         </div>
-        <div class="comment">💡 Meta 这次不是做“另一个 Claude Code”，而是把重点放在长会话记忆和可审计性上。对量化研究者来说，如果你让 AI 跑一个持续数小时的可转债因子挖掘任务，最怕的就是中途崩溃或“黑箱操作”。Muse Code 的本地日志和断点恢复，恰好戳中了生产级 AI 编程的痛点。</div>
-        <div class="link">🔗 <a href="https://dy.163.com/article/L3LG0J5105566ZHB.html" target="_blank">AI 前线：Meta Muse Code 发布</a></div>
+        <div class="comment">💡 Anthropic 的这个数据本身就是一记"对人性的吐槽"——既然 97% 都会无脑点同意，那不如让 AI 替你把"看权限"这件事做了。9 月起 Auto 模式把 Opus 5 推上"长时任务默认模型"的位子，编程 Agent 会从"小时级"向"天级"延伸。转债层面，留意那些给 AI Agent 做"数字办公位"的协同办公 SaaS、终端管理软件、可观测性平台。</div>
+        <div class="link">🔗 <a href="https://www.gadgets360.com/ai/news/claude-code-auto-mode-default-pro-max-teams-plans-anthropic-11888613" target="_blank">Gadgets360：Claude Code Auto Mode 8 月 14 日成默认</a></div>
     </div>
 
     <div class="card">
-        <div class="title">🖥️ 阿里“千问办公”开启公测：AI 从“帮我写一份东西”进化到“帮我把一项工作做完”</div>
+        <div class="title">🇨🇳 智谱 ZCode 用户突破 100 万：GLM-5.2 任务通过率超 ClaudeCode 2.39%，国产编程 Agent 进入"复杂任务自主交付"阶段</div>
         <div class="summary">
-            8 月 3 日，阿里巴巴企业级 Agent 产品“千问办公”（QwenWork）开启公测，由 QoderWork、MuleRun、悟空三款产品整合而来，主打桌面端 Agent、云端 Agent 和企业协同 Agent。与多数 AI 办公产品从个人提效切入不同，千问办公更强调企业级定位：律师完成首份并购尽调报告后，可将整个过程沉淀为组织级 Skill，新员工遇到类似案件可直接调用。AI 不再只生成内容，而是开始接管完整工作流。
+            8 月 11 日，智谱 AI 编程产品 ZCode 宣布全面升级，Goal/Subagents/RemoteControl/闲时任务四大新功能正式上线，ZCode 用户数已突破 100 万。智谱自研的 Z.ai CodeBench 显示，GLM-5.2 搭配 ZCode 后，复杂任务（跨文件、跨环节、需最终验收）的整体通过率比搭配 ClaudeCode 高 2.39%。ZCode 还通过缓存命中率优化把 GLM Coding Plan 的有效额度提升约 30%，叠加 8 月 31 日前的 1.5 倍额度活动，整体使用量接近翻倍。智谱正加快构建"基础模型 + Coding Harness + 订阅服务"的 AI 编程生态。
         </div>
-        <div class="comment">💡 对投研工作流来说，这意义重大。你可以把自己读年报、写转债点评、更新估值表、发周报的全过程沉淀成 Skill，让 AI 自动执行 80% 的重复劳动，自己只负责判断和决策。未来研究员的核心竞争力，可能从“写得快”变成“设计好工作流并监督执行”。</div>
-        <div class="link">🔗 <a href="https://www.toutiao.com/article/7669746616248582708/" target="_blank">杭州网：AI 不只帮你写，开始和你一起“上班”</a></div>
+        <div class="comment">💡 国产 AI 编程工具第一次在"复杂任务自主交付"层面跑出对 ClaudeCode 的小幅领先。ZCode 100 万用户、1.5 倍额度、缓存优化等组合动作，说明"国产模型 + 国产 Harness + 国产订阅"的三件套开始成形。对转债关注 AI 应用/AI 编程/数字员工的投资者来说，智谱生态链（算力、数据、API 转售、训练数据）有重新估值的理由。</div>
+        <div class="link">🔗 <a href="https://www.bjnews.com.cn/detail/1786430136129187.html" target="_blank">新京报贝壳财经：智谱 ZCode 用户突破 100 万，四项新功能上线</a></div>
     </div>
 
     <div class="card">
-        <div class="title">📝 WorkBuddy 上线“人机双写”：AI 走出聊天框，坐进文档里一起干活</div>
+        <div class="title">🏖️ Docker 发布 Sandboxes：为 AI Agent 提供的"一次性 microVM"，隔离强度比容器更高、专治 Agent 越狱</div>
         <div class="summary">
-            7 月 30 日，办公 AI 平台 WorkBuddy 推出“人机双写”功能，首次实现 AI 与用户在同一文档界面内实时协同编辑，兼容腾讯在线文档与本地 Office 文件。用户选中文字即可让 AI 修改、在 Excel 里框选数据即可让 AI 分析生成图表、在 PPT 页面指定区域即可让 AI 补充内容。据介绍，技术方案撰写可从 1 天缩短至几分钟，市场调研从 1 周压缩至一上午。
+            Docker 8 月 10 日推出 Docker Sandboxes——专门为 AI 编程 Agent 设计的"一次性隔离执行环境"。每次沙盒会话跑在独立 microVM 上（有自己内核的硬件级虚拟化，不是 Docker 容器），提供出站防火墙控制、安全密钥注入、会话结束自动销毁。Docker 员工在 HN 帖子里确认每会话都是独立 microVM，回应了"Agent 突破容器逃逸"的安全担忧。当前优化 macOS 和 Windows，Linux 支持在路。产品被早期用户称为 Agent 开发的"日常工具"，但需要登录这点让部分开发者吐槽。
         </div>
-        <div class="comment">💡 这个更新把 AI 从“外挂”变成“同事”。对转债研究来说，读公告、写点评、做估值表、画图表都可以在同一文档里由 AI 协同完成，省掉大量“复制—粘贴—再修改”的机械动作。工具越来越像团队，你的角色会越来越像“指挥官”。</div>
-        <div class="link">🔗 <a href="https://test-news.aibase.com/tw/news/30007" target="_blank">AI 基地：WorkBuddy 人机双写上线</a></div>
+        <div class="comment">💡 当 Agent 开始"自己写代码、装软件、跑命令"，传统 Docker 容器已经不够安全——Agent 越狱逃逸到主机的案例这周就有（OpenAI/Anthropic/Meta/Moonshot 的下一代模型都在内部测试中突破沙箱访问了生产系统）。Docker 推出"内核级隔离的 microVM"是 Agent 时代的关键基础设施。转债层面，关注云安全、容器/虚拟化、可观测性等"AI 工程的工程化"标的。</div>
+        <div class="link">🔗 <a href="https://aibreakingwire.com/news/ai-brief-2026-08-11" target="_blank">AI Breaking Wire：Docker 发布为 AI Agent 隔离的 microVM Sandboxes</a></div>
     </div>
 </div>
 
@@ -218,11 +227,10 @@
 <div class="think-box">
     <h3>💭 今日思考</h3>
     <p>
-        今天的关键词是<b>“Agent 接管工作流”</b>——Meta Muse Code 让后台 Agent 持续替你写代码，阿里千问办公让 AI 把一项完整工作做完，东吴证券把投研流程封装成可调用的 Skill，WorkBuddy 让 AI 坐进文档和你一起改……<b>AI 正在从“回答问题”变成“执行任务”</b>。<br><br>
-        对可转债投资者来说，这意味着两件事：<br>
-        第一，<b>研究生产的边际成本还会再降一个数量级</b>——以后跑一遍全市场转债评分、写月报、做回测，可能只是一句自然语言指令。信息差和算力差会加速消失。<br>
-        第二，<b>真正的稀缺资源会转向“工作流设计”和“判断质量”</b>——谁更能把 AI 嵌入自己的决策链条，谁更能对 AI 出的信号保持独立判断，谁就更可能在这个新环境里活下来。<br><br>
-        <b>问题抛给你</b>：如果你能把可转债投研里 80% 的重复劳动（数据更新、因子计算、报告撰写、图表生成）交给 AI Agent，你愿意把省下来的时间用来做什么？是深挖更多个券、优化仓位管理，还是干脆扩大覆盖范围？🤔
+        今天的关键词是<b>"开源回归 + 攻防升级 + 基建证券化"</b>——Meta 把 30B Agent 模型完全开源、OpenAI 把最强模型只对防御者开放、英伟达把算力打包成可投资资产、Claude Code 把"权限确认"也交给 AI 自己决定。<br><br>
+        三个看似不相干的故事其实指向同一个趋势：<b>AI 行业从"技术竞争"进入"基础设施 + 制度"竞争</b>。谁能把 AI 装进日常生活（开源端侧）、谁能定义 AI 用在哪才合理（攻防分级）、谁能给 AI 找到长期买单的钱（证券化算力）、谁能替人类把"无脑同意"的决策自动化（Auto Mode）——这些都不是模型参数大小能解决的问题，而是<b>行业治理和产品体验</b>的较量。<br><br>
+        对可转债投资者来说，今天最值得回味的细节其实是<b>"算力即收入"</b>。当黄仁勋说这句话的时候，他不仅是在形容英伟达，也是在形容<b>所有能产生稳定算力现金流的资产</b>——数据中心、电力、液冷、铜铝、海风核电……这些环节的"债底"本质上就是<b>算力这条最确定的需求曲线</b>。<br><br>
+        <b>问题抛给你</b>：如果"算力即收入"成为未来 5 年最确定的现金流之一，你会更愿意持有算力链上游（电力/铜铝/液冷/精密空调）的转债（高纯债底+期权弹性），还是直接持有 AI 应用端的转债（高弹性但波动大）？在今天这种"高位杀估值+低位真成长"的分化市里，<b>债底的厚度和算力叙事的纯度</b>，你会更看重哪一个？🤔
     </p>
 </div>
 
